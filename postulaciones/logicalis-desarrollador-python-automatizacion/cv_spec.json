@@ -1,0 +1,129 @@
+{
+  "blocks": [
+    {
+      "type": "paragraph",
+      "style": "CVTitle",
+      "text": "DIEGO DE LA FUENTE ALONSO"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVSubtitle",
+      "text": "Desarrollador Python & Automatización | Backend · APIs REST · Scripting · ETL · SQL & Git"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVContact",
+      "text": "España (100% Remoto / Valladolid)  |  (+34) 626 68 71 79  |  diegodelafuentealonso@gmail.com"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVHeading",
+      "text": "PERFIL PROFESIONAL"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVBody",
+      "text": "Desarrollador de software especializado en Python para automatización de procesos, scripting avanzado, pipelines ETL y construcción de aplicaciones y servicios backend (APIs RESTful). Experiencia práctica analizando requerimientos funcionales de alto nivel y transformándolos en soluciones técnicas mantenibles, integrando sistemas mediante APIs y protocolo MCP, y trabajando bajo control de versiones con Git y ciclos estructurados de calidad y despliegue (DEV, QAS, PRD) en entornos corporativos. Doble titulación superior en desarrollo de aplicaciones (DAM y DAW) y Especialización en IA y Big Data."
+    },
+    {
+      "type": "paragraph",
+      "style": "CVHeading",
+      "text": "COMPETENCIAS TÉCNICAS CLAVE"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Desarrollo en Python y Automatización: Python avanzado orientado a scripting, automatización y mejora continua de procesos, desarrollo de herramientas internas de software, servicios de monitorización y flujos ETL automatizados.",
+        "Backend, APIs REST y Frameworks Web: Diseño, implementación y aseguramiento de servicios backend y endpoints de APIs RESTful en Python, arquitectura de microservicios y aplicaciones web (experiencia productiva con APIs en Python y Spring Boot MVC; conocimientos de frameworks web en Python).",
+        "Ingeniería de Software, Calidad y Entornos Enterprise: Control de versiones con Git, traducción de requerimientos a diseño técnico, pruebas funcionales y gestión rigurosa de entregas entre entornos (DEV, QAS, PRD); programación adicional en Go, Java, C# (.NET) y ABAP.",
+        "Bases de Datos, SQL e Integración Inteligente: SQL avanzado y optimización de consultas y procedimientos en SQL Server (SSMS) y Google BigQuery, modelado declarativo con validaciones de calidad en Dataform y orquestación de automatizaciones con agentes de IA y MCP."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVHeading",
+      "text": "EXPERIENCIA PROFESIONAL"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobHeader",
+      "text": "HORSE Technologies — Data Analyst & Software / AI Developer"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobDate",
+      "text": "Valladolid, España | Julio 2026 – Actualidad"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Automatización y monitorización de flujos de procesos y pipelines de datos ETL mediante scripts y servicios modulares en Python.",
+        "Desarrollo de aplicaciones y utilidades internas de software en Python y Go a partir de requerimientos operativos de alto nivel, mejorando fiabilidad y tiempos de proceso.",
+        "Diseño e implementación de flujos de automatización con agentes de IA (agent harness, loop engineering) e integración con sistemas internos mediante APIs y Model Context Protocol (MCP).",
+        "Modelado, consulta y validación de calidad de datos en SQL avanzado sobre Google BigQuery y Dataform, junto a cuadros de mando en Looker."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobHeader",
+      "text": "FDS, a DXC Technology Company — Consultor Técnico SAP"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobDate",
+      "text": "España | Febrero 2026 – Junio 2026"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Análisis de requerimientos funcionales, desarrollo de soluciones a medida en ABAP y gestión rigurosa de pruebas y órdenes de transporte entre entornos corporativos (DEV, QAS, PRD)."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobHeader",
+      "text": "Ayuntamiento de Roperuelos del Páramo — Desarrollador de Software"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobDate",
+      "text": "León, España | Junio 2024 – Octubre 2024 y Junio 2023 – Septiembre 2023"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Diseño, implementación, pruebas y aseguramiento de servicios backend y endpoints de APIs REST en Python, junto al desarrollo de portales y aplicaciones web interactivas con Spring Boot (Java)."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobHeader",
+      "text": "Craftelier — Desarrollador de Software"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobDate",
+      "text": "España | Marzo 2024 – Mayo 2024"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Desarrollo y mantenimiento de aplicaciones empresariales en .NET / C#, optimización de procedimientos y consultas en SQL Server (SSMS) y pruebas de módulos móviles Android en Kotlin."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVHeading",
+      "text": "FORMACIÓN ACADÉMICA E IDIOMAS"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Curso de Especialización en Inteligencia Artificial y Big Data (2024 – 2025): Modelos predictivos, Deep Learning, arquitecturas Big Data y procesamiento a escala.",
+        "Técnico Superior en Desarrollo de Aplicaciones Web (DAW) — IES San Andrés (2025 – 2026).",
+        "Técnico Superior en Desarrollo de Aplicaciones Multiplataforma (DAM) — IES San Andrés (2022 – 2024).",
+        "Idiomas: Español (Nativo) · Inglés (Nivel B1 — lectura técnica de documentación, repositorios y comunicación escrita)."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "output_pdf": "Diego_de_la_Fuente_Alonso_Carta_Presentacion_Xeridia.pdf",
+  "output_cv_pdf": "Diego_de_la_Fuente_Alonso_CV_Xeridia_Software_Engineer.pdf",
+  "output_cv_docx": "Diego_de_la_Fuente_Alonso_CV_Xeridia_Software_Engineer.docx",
+  "role_header": "Software & AI Engineer | Java · C# (.NET) · JS · SQL · Spec-Driven Dev & MCP",
+  "contact_header": "Valladolid / León (Castilla y León)  |  (+34) 626 68 71 79  |  diegodelafuentealonso@gmail.com",
+  "date": "26 de noviembre de 2026",
+  "recipient": "Para: Equipo de Personas y Talento — Xeridia (León / Valladolid)",
+  "subject": "Asunto: Candidatura a Software Engineer (León / Valladolid)",
+  "salutation": "Estimado equipo de Xeridia,",
+  "opening_paragraphs": [
+    "Les escribo con gran interés para presentar mi candidatura al puesto de Software Engineer en León y Valladolid. Comparto plenamente la visión de Xeridia: en la era del desarrollo asistido por Inteligencia Artificial, el criterio de ingeniería, las especificaciones bien definidas antes de codificar y la calidad del diseño pesan más que nunca. Además, construir software de alta complejidad técnica para grandes compañías desde Castilla y León supone un proyecto profesional con el que me siento totalmente identificado.",
+    "En mi etapa actual en HORSE Technologies combino la ingeniería de software tradicional con el desarrollo práctico de sistemas agénticos de IA en producción, trabajando diariamente sobre flujos donde los modelos de lenguaje ayudan a acelerar la entrega bajo especificaciones claras y revisión humana estricta."
+  ],
+  "bullets": [
+    "IA agéntica, MCP y desarrollo guiado por especificaciones: En HORSE Technologies diseño e implanto agentes de Inteligencia Artificial mediante arquitecturas agent harness y loop engineering, conectándolos con sistemas de la empresa a través del protocolo Model Context Protocol (MCP) y modelos como Claude, Gemini y OpenAI. Trabajo redactando especificaciones técnicas y contratos de interfaz como fuente de verdad antes de implementar, evaluando críticamente cada fragmento generado por IA.",
+    "Base polivalente en Java, C#, desarrollo web y SQL: Cuento con experiencia previa desarrollando aplicaciones y portales web con Java (Spring Boot) en el Ayuntamiento de Roperuelos del Páramo, software empresarial en C# (.NET) y consultas optimizadas en SQL Server en Craftelier, además de programación en Python y Go, desarrollo web en JavaScript (CFGS DAW) y modelado analítico avanzado sobre Google BigQuery y Dataform.",
+    "Cultura de entrega, calidad y arraigo en Castilla y León: Conozco de primera mano la disciplina de entregas entre entornos corporativos (DEV, QAS y PRD) adquirida en FDS (DXC Technology), cuento con doble titulación superior en DAM y DAW en León y especialización en IA y Big Data, y tengo vínculo directo tanto con Valladolid como con León para colaborar en modalidad híbrida."
+  ],
+  "closing_paragraphs": [
+    "Cuento con disponibilidad para incorporarme con un preaviso estándar de 15 días naturales y una motivación genuina por aportar desde el primer día mientras sigo profundizando junto al equipo en prácticas DevOps e infraestructura como código.",
+    "Agradezco de antemano su tiempo y consideración. Quedo a su entera disposición para mantener una entrevista técnica y comentar en detalle cómo trabajo con especificaciones, MCP y desarrollo de software."
+  ],
+  "signoff": "Atentamente,",
+  "signature_role": "Software & AI Engineer"
+}

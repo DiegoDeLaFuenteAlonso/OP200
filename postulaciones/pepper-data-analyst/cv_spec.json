@@ -1,0 +1,195 @@
+{
+  "page": {
+    "width_mm": 210,
+    "height_mm": 297,
+    "margins_mm": {
+      "top": 20,
+      "bottom": 20,
+      "left": 20,
+      "right": 20
+    }
+  },
+  "styles": [
+    {
+      "name": "CVTitle",
+      "base": "Normal",
+      "font": "Calibri",
+      "size_pt": 20,
+      "bold": true,
+      "color": "003366"
+    },
+    {
+      "name": "CVSubtitle",
+      "base": "Normal",
+      "font": "Calibri",
+      "size_pt": 12,
+      "bold": true,
+      "color": "4A5568"
+    },
+    {
+      "name": "CVContact",
+      "base": "Normal",
+      "font": "Calibri",
+      "size_pt": 10,
+      "color": "718096"
+    },
+    {
+      "name": "CVHeading",
+      "base": "Normal",
+      "font": "Calibri",
+      "size_pt": 13,
+      "bold": true,
+      "color": "003366"
+    },
+    {
+      "name": "CVJobHeader",
+      "base": "Normal",
+      "font": "Calibri",
+      "size_pt": 11,
+      "bold": true,
+      "color": "1A202C"
+    },
+    {
+      "name": "CVJobDate",
+      "base": "Normal",
+      "font": "Calibri",
+      "size_pt": 9.5,
+      "italic": true,
+      "color": "718096"
+    },
+    {
+      "name": "CVBody",
+      "base": "Normal",
+      "font": "Calibri",
+      "size_pt": 10,
+      "color": "2D3748"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "paragraph",
+      "style": "CVTitle",
+      "text": "DIEGO DE LA FUENTE ALONSO"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVSubtitle",
+      "text": "Data Analyst & Jr. Data Scientist | SQL Server, BI Dashboards & LLM Integration"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVContact",
+      "text": "Valladolid / Madrid, España | (+34) 626 68 71 79 | diegodelafuentealonso@gmail.com | LinkedIn | GitHub"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVHeading",
+      "text": "PERFIL PROFESIONAL"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVBody",
+      "text": "Analista de datos con perfil híbrido orientado a analítica avanzada, visualización y desarrollo de soluciones impulsadas por IA. Experiencia práctica en HORSE Technologies gestionando cuadros de mando analíticos en Looker, consultas SQL complejas sobre petabytes y desarrollo de agentes de Inteligencia Artificial mediante agent harnesses e integración MCP. Dominio de SQL Server, Python y modelado de datos para negocio. Sólida formación con doble grado superior en DAM/DAW y Especialización en Inteligencia Artificial y Big Data. Mentalidad proactiva para el prototipado rápido de MVPs y optimización de procesos."
+    },
+    {
+      "type": "paragraph",
+      "style": "CVHeading",
+      "text": "COMPETENCIAS TÉCNICAS"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Analítica de Datos & Business Intelligence: Looker / Looker Studio, diseño de paneles y dashboards ejecutivos, visualización de métricas de negocio, data storytelling.",
+        "Bases de Datos & SQL: SQL Server (SSMS, consultas complejas, optimización, procedimientos), Google BigQuery, Dataform, bases de datos relacionales y NoSQL.",
+        "Inteligencia Artificial & LLMs: Integración nativa de LLMs (Claude, Gemini, OpenAI) en workflows de análisis, desarrollo de agentes autónomos, loop engineering, Model Context Protocol (MCP).",
+        "Programación & ETL: Python (procesamiento de datos, automatización, scripting avanzado), Go, Java (Spring Boot, APIs RESTful), .NET / C#.",
+        "Metodologías: Prototipado ágil de MVPs, trabajo autónomo orientado a negocio, Git/GitHub, control de versiones."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVHeading",
+      "text": "EXPERIENCIA LABORAL"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobHeader",
+      "text": "HORSE Technologies — Data Analyst & Software / AI Developer"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobDate",
+      "text": "Valladolid | Julio 2026 – Actualidad"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Diseño, despliegue y mantenimiento de cuadros de mando analíticos en Looker para seguimiento de indicadores estratégicos.",
+        "Consultas analíticas avanzadas y transformación de grandes conjuntos de datos con Google BigQuery y Dataform.",
+        "Automatización de pipelines ETL y tareas de preparación de datos con Python.",
+        "Investigación e integración de agentes de Inteligencia Artificial para automatización y análisis asistido por LLMs (agent harness, MCP).",
+        "Desarrollo de herramientas internas de software en Python y Go."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobHeader",
+      "text": "Craftelier — Desarrollador de Software & Bases de Datos"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobDate",
+      "text": "Marzo 2024 – Mayo 2024"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Optimización de consultas y creación de scripts SQL en SQL Server Management Studio (SSMS).",
+        "Desarrollo de aplicaciones de escritorio en entorno .NET / C# sobre Visual Studio.",
+        "Desarrollo de módulos móviles en Android con Kotlin."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobHeader",
+      "text": "Ayuntamiento de Roperuelos del Páramo — Desarrollador Backend & APIs"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobDate",
+      "text": "Junio 2024 – Octubre 2024 | Junio 2023 – Septiembre 2023"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Desarrollo de plataformas web y microservicios con Java y Spring Boot.",
+        "Diseño de APIs REST en Python y optimización de flujos de datos relacionales."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVHeading",
+      "text": "FORMACIÓN ACADÉMICA"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Curso de Especialización en Inteligencia Artificial y Big Data (2024 – 2025).",
+        "Técnico Superior en Desarrollo de Aplicaciones Web (DAW) — IES San Andrés (2025 – 2026).",
+        "Técnico Superior en Desarrollo de Aplicaciones Multiplataforma (DAM) — IES San Andrés (2022 – 2024)."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVHeading",
+      "text": "IDIOMAS"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Español: Nativo.",
+        "Inglés: Nivel B1 técnico (documentación, lectura y entornos ágiles)."
+      ]
+    }
+  ]
+}

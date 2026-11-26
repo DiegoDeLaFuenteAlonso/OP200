@@ -1,0 +1,28 @@
+**DIEGO DE LA FUENTE ALONSO**
+Ingeniero Junior de Datos, IA & Software | Python · SQL (BigQuery) · Dataform · Looker · Go · Spring Boot · MCP
+Valladolid / León, España (Híbrido) | (+34) 626 68 71 79 | diegodelafuentealonso@gmail.com
+
+26 de noviembre de 2026
+
+Para: Equipo de Talento y Selección — Izertis (Programa FutureWave)
+Asunto: Candidatura al Programa de Talento Junior – FutureWave (Data & Intelligence, Hyperautomation & Software Solutions)
+
+Estimado equipo de Talento de Izertis:
+
+El crecimiento sostenido de Izertis como consultora tecnológica cotizada en BME Growth, junto con su capacidad para combinar áreas tan estratégicas como Data & Intelligence, Hyperautomation y Smart Software Labs en proyectos reales, hacen del Programa de Talento Junior – FutureWave el entorno idóneo para proyectar mi carrera profesional tras completar mi ciclo formativo en 2026.
+
+Resido en Valladolid (con vínculo directo con León) y actualmente trabajo en HORSE Technologies como Data Analyst y desarrollador de software e inteligencia artificial, tras haber pasado previamente por FDS (DXC Technology), el Ayuntamiento de Roperuelos del Páramo y Craftelier. Esta trayectoria me permite aportar base técnica práctica desde el primer día mientras crezco dentro de vuestro plan de carrera:
+
+- Data & Intelligence: Modelado analítico, optimización de consultas SQL en Google BigQuery, transformaciones con pruebas de calidad en Dataform y cuadros de mando en Looker en HORSE Technologies, complementado con SQL Server (SSMS) en Craftelier y el Curso de Especialización en Inteligencia Artificial y Big Data.
+- Hyperautomation e IA Aplicada: Automatización de flujos ETL en Python, utilidades internas en Python y Go, e implementación práctica de agentes de inteligencia artificial mediante agent harnesses, loop engineering y conectividad estandarizada con Model Context Protocol (MCP).
+- Software Solutions y rigor de consultoría: Doble titulación superior oficial en DAW (2026) y DAM (2024), desarrollo web y APIs REST con Java (Spring Boot) y Python, aplicaciones en C# (.NET) y Kotlin, y validación de despliegues entre entornos DEV, QAS y PRD con SAP ABAP en FDS (DXC).
+
+Como recién titulado en 2026 con motivación por la ingeniería bien hecha y la adopción continua de nuevas tecnologías, busco integrarme a jornada completa en las sedes de Valladolid o León bajo modalidad híbrida, aportando compromiso, criterio técnico y un preaviso estándar de 15 días naturales.
+
+Agradezco de antemano vuestro tiempo y consideración. Será un placer profundizar en cómo puedo contribuir al equipo de Izertis en una entrevista.
+
+Atentamente,
+
+Diego de la Fuente Alonso
+Ingeniero Junior de Datos, IA & Desarrollo de Software
+(+34) 626 68 71 79 | diegodelafuentealonso@gmail.com

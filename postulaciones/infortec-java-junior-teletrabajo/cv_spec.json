@@ -1,0 +1,207 @@
+{
+  "page": {
+    "width_mm": 210,
+    "height_mm": 297,
+    "margins_mm": {
+      "top": 15,
+      "bottom": 15,
+      "left": 18,
+      "right": 18
+    }
+  },
+  "styles": [
+    {
+      "name": "CVTitle",
+      "base": "Normal",
+      "font": "Calibri",
+      "size_pt": 19.5,
+      "bold": true,
+      "color": "111827"
+    },
+    {
+      "name": "CVSubtitle",
+      "base": "Normal",
+      "font": "Calibri",
+      "size_pt": 10.8,
+      "bold": true,
+      "color": "1F2937"
+    },
+    {
+      "name": "CVContact",
+      "base": "Normal",
+      "font": "Calibri",
+      "size_pt": 9.5,
+      "color": "4B5563"
+    },
+    {
+      "name": "CVHeading",
+      "base": "Normal",
+      "font": "Calibri",
+      "size_pt": 11.5,
+      "bold": true,
+      "color": "111827"
+    },
+    {
+      "name": "CVJobHeader",
+      "base": "Normal",
+      "font": "Calibri",
+      "size_pt": 10.5,
+      "bold": true,
+      "color": "111827"
+    },
+    {
+      "name": "CVJobDate",
+      "base": "Normal",
+      "font": "Calibri",
+      "size_pt": 9.5,
+      "italic": true,
+      "color": "4B5563"
+    },
+    {
+      "name": "CVBody",
+      "base": "Normal",
+      "font": "Calibri",
+      "size_pt": 9.8,
+      "color": "1F2937"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "paragraph",
+      "style": "CVTitle",
+      "text": "DIEGO DE LA FUENTE ALONSO"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVSubtitle",
+      "text": "Programador Java & Ingeniero de Integración de Datos (ETL / SQL) | Spring Boot, Hibernate, JDBC, JSP/JSTL, JavaScript & Docker"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVContact",
+      "text": "España (100% Teletrabajo / Valladolid) | (+34) 626 68 71 79 | diegodelafuentealonso@gmail.com"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVHeading",
+      "text": "PERFIL PROFESIONAL"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVBody",
+      "text": "Desarrollador de Software Java (Backend y Frontend) e Ingeniero de Datos con doble titulación de Grado Superior en Desarrollo de Aplicaciones Multiplataforma (DAM) y Desarrollo de Aplicaciones Web (DAW), más Especialización en IA y Big Data. Experiencia profesional combinada en desarrollo de aplicaciones empresariales con Java, Spring Boot, Hibernate/JPA, JDBC, JSP/JSTL y JavaScript, junto con el diseño de procesos ETL, optimización de consultas SQL complejas e integración de múltiples orígenes de datos (PostgreSQL, MySQL, SQL Server, hojas de cálculo y APIs REST) en formatos CSV, XML, JSON y YAML. Habituado a trabajar en entornos Linux, control de versiones con Git, contenedores Docker y gestión segura de datos (cifrado, control de sesiones, trazabilidad y buenas prácticas ITIL)."
+    },
+    {
+      "type": "paragraph",
+      "style": "CVHeading",
+      "text": "COMPETENCIAS TÉCNICAS Y STACK TECNOLÓGICO"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Desarrollo Java Backend & Frontend: Dominio de Java, Spring Boot, Hibernate (JPA), JDBC, servlets JSP/JSTL, APIs RESTful, Maven/Gradle y desarrollo frontend con JavaScript, HTML5 y CSS3.",
+        "Bases de Datos SQL & Optimización de Consultas: Diseño relacional, escritura de SQL avanzado y optimización de consultas e índices sobre PostgreSQL, MySQL, Microsoft SQL Server (SSMS), sistemas empresariales (Oracle/SAP) y Google BigQuery.",
+        "Procesos ETL, Integración & Formatos de Datos: Desarrollo y automatización de pipelines ETL/ELT conectando orígenes heterogéneos (bases de datos relacionales, APIs REST, hojas de cálculo Excel y ficheros planos) con parseo y transformación de formatos CSV, XML, JSON y YAML.",
+        "Sistemas Linux, Seguridad, Git & Contenedores Docker: Administración y operación en entornos Linux, gestión segura de datos (cifrado, gestión de sesiones, autenticación, trazabilidad y logs de auditoría), control de versiones con Git (GitFlow) y despliegue en contenedores Docker; aplicación de buenas prácticas de gestión de servicios TI (ITIL)."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVHeading",
+      "text": "EXPERIENCIA PROFESIONAL"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobHeader",
+      "text": "HORSE Technologies — Desarrollador de Software, Procesos ETL e Integración de Datos"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobDate",
+      "text": "Julio 2026 – Actualidad | Valladolid, España"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Diseñé, desarrollé y mantuve procesos ETL y flujos de integración automatizados para extraer, transformar y consolidar información desde orígenes diversos (bases de datos SQL como PostgreSQL/SQL Server/BigQuery, hojas de cálculo y APIs REST).",
+        "Implementé el procesamiento y validación de múltiples formatos de intercambio de datos (CSV, XML, JSON y YAML), aplicando optimización de consultas SQL que redujo los tiempos de carga y respuesta analítica.",
+        "Desarrollé servicios backend y herramientas de automatización en entornos Linux utilizando contenedores Docker y control de versiones con Git, asegurando la gestión segura de credenciales, cifrado, sesiones y trazabilidad completa de las operaciones."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobHeader",
+      "text": "Ayuntamiento de Roperuelos del Páramo — Programador Java Full-Stack (Spring Boot, Hibernate, JDBC, JSP/JSTL & JS)"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobDate",
+      "text": "Junio 2024 – Octubre 2024 | Junio 2023 – Septiembre 2023 | León, España"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Desarrollé y evolucioné aplicaciones web (backend y frontend) utilizando Java, Spring Boot, persistencia con Hibernate/JPA y JDBC, vistas dinámicas con JSP/JSTL y lógica cliente en JavaScript.",
+        "Diseñé y optimicé consultas SQL sobre bases de datos relacionales (MySQL y PostgreSQL), implementando endpoints de APIs REST para el intercambio de datos en JSON/XML y aplicando control de sesiones, cifrado y trazabilidad de usuarios.",
+        "Gestioné el código fuente mediante Git y el empaquetado/despliegue de servicios sobre servidores Linux y contenedores Docker."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobHeader",
+      "text": "FDS, a DXC Technology Company — Consultor Técnico de Desarrollo y Gestión de Servicios TI (ITIL)"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobDate",
+      "text": "Febrero 2026 – Junio 2026 | España"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Desarrollé y optimicé lógica de negocio y consultas SQL de alto rendimiento sobre bases de datos empresariales, aplicando metodologías de gestión de cambios, trazabilidad y buenas prácticas ITIL en el paso entre entornos (DEV, QAS, PRD)."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobHeader",
+      "text": "Craftelier — Desarrollador de Software & Bases de Datos SQL"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobDate",
+      "text": "Marzo 2024 – Mayo 2024 | España"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Desarrollé módulos de software de gestión conectados a bases de datos relacionales SQL, optimizando consultas, importación/exportación de hojas de cálculo y ficheros CSV/XML y mantenimiento evolutivo."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVHeading",
+      "text": "EDUCACIÓN Y TITULACIONES OFICIALES (GRADO SUPERIOR)"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Técnico Superior en Desarrollo de Aplicaciones Web (Grado Superior DAW) — IES San Andrés (2025 – 2026) — Desarrollo web con Java, JSP/JSTL, Spring Boot, Hibernate, JDBC, JavaScript, Docker y Linux.",
+        "Curso de Especialización en Inteligencia Artificial y Big Data — (2024 – 2025) — Procesos ETL, bases de datos SQL/NoSQL, procesamiento de formatos JSON/XML/CSV/YAML y contenedores Docker.",
+        "Técnico Superior en Desarrollo de Aplicaciones Multiplataforma (Grado Superior DAM) — IES San Andrés (2022 – 2024) — Programación en Java, JDBC, Hibernate, acceso a datos SQL y control de versiones con Git."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVHeading",
+      "text": "IDIOMAS Y DISPONIBILIDAD"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Español: Nativo | Inglés: Nivel técnico y profesional para lectura de documentación y desarrollo.",
+        "Modalidad: 100% Teletrabajo desde España (Residencia en Valladolid) | Disponibilidad: 15 días naturales."
+      ]
+    }
+  ]
+}

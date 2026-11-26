@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ARCHIVO: informe_parcelas_titular.jrxml
+  DOCUMENTO OFICIAL: Certificado Municipal de Parcelas Rústicas y Explotación Agraria
+  ENTIDAD: Ayuntamiento de Roperuelos del Páramo (León)
+  HERRAMIENTA: Jaspersoft Studio / JasperReports 6.x
+  AUTOR: Diego de la Fuente Alonso
+-->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd"
+              name="Certificado_Parcelas_Rusticas_Roperuelos"
+              pageWidth="595"
+              pageHeight="842"
+              columnWidth="535"
+              leftMargin="30"
+              rightMargin="30"
+              topMargin="25"
+              bottomMargin="25"
+              whenNoDataType="AllSectionsNoDetail"
+              uuid="7b382f10-8155-4f9a-9a14-002413600001">
+
+    <!-- =====================================================================
+         1. DEFINICIÓN DE PARÁMETROS DE ENTRADA ($P{...})
+            Recibidos desde Java mediante Map<String, Object> en JasperFillManager.
+         ===================================================================== -->
+    <!-- Clave primaria del Titular Agrario para filtrar la consulta SQL -->
+    <parameter name="ID_TITULAR" class="java.lang.Long">
+        <defaultValueExpression><![CDATA[1L]]></defaultValueExpression>
+    </parameter>
+
+    <!-- Año de la Campaña Agrícola / Catastral -->
+    <parameter name="CAMPANIA_AGRICOLA" class="java.lang.Integer">
+        <defaultValueExpression><![CDATA[2024]]></defaultValueExpression>
+    </parameter>
+
+    <!-- Código oficial del expediente aprobado (ej. EXP-ROP-2024-0001) -->
+    <parameter name="CODIGO_EXPEDIENTE" class="java.lang.String">
+        <defaultValueExpression><![CDATA["EXP-ROP-2024-0001"]]></defaultValueExpression>
+    </parameter>
+
+    <!-- Nombre oficial de la Administración que emite el certificado -->
+    <parameter name="NOMBRE_AYUNTAMIENTO" class="java.lang.String">
+        <defaultValueExpression><![CDATA["EXCMO. AYUNTAMIENTO DE ROPERUELOS DEL PÁRAMO (LEÓN)"]]></defaultValueExpression>
+    </parameter>
+
+    <!-- Código Seguro de Verificación (CSV) generado en el backend Java -->
+    <parameter name="CODIGO_CSV" class="java.lang.String">
+        <defaultValueExpression><![CDATA["CSV-24136-2024-VERIFICADO"]]></defaultValueExpression>
+    </parameter>
+
+    <!-- Flujo de imagen (InputStream) opcional con el escudo institucional -->
+    <parameter name="LOGO_STREAM" class="java.io.InputStream" isForPrompting="false"/>
+
+    <!-- =====================================================================
+         2. CONSULTA SQL PARAMETRIZADA (<queryString>)
+            Jasper Reports transforma automáticamente $P{ID_TITULAR} y
+            $P{CAMPANIA_AGRICOLA} en parámetros '?' de un PreparedStatement JDBC.
+         ===================================================================== -->
+    <queryString language="SQL">
+        <![CDATA[
+        SELECT
+            em.codigo_expediente      AS codigoExpediente,
+            t.nif_cif                 AS nifTitular,
+            t.nombre_completo         AS nombreTitular,
+            pr.poligono               AS poligono,
+            pr.parcela                AS parcela,
+            pr.recinto_sigpac         AS recintoSigpac,
+            pr.paraje_nombre          AS parajeNombre,
+            pr.referencia_catastral   AS referenciaCatastral,
+            pr.tipo_cultivo           AS tipoCultivo,
+            ep.cultivo_campania       AS cultivoDeclarado,
+            pr.regimen_tenencia       AS regimenTenencia,
+            ep.superficie_computada_ha AS superficieHa,
+            em.fecha_resolucion       AS fechaResolucion
+        FROM expedientes_municipales em
+        INNER JOIN titulares t            ON t.id_titular = em.id_titular
+        INNER JOIN expediente_parcelas ep ON ep.id_expediente = em.id_expediente
+        INNER JOIN parcelas_rusticas pr   ON pr.id_parcela = ep.id_parcela
+        WHERE t.id_titular = $P{ID_TITULAR}
+          AND em.campania_agricola = $P{CAMPANIA_AGRICOLA}
+          AND em.estado_expediente = 'APROBADO'
+        ORDER BY
+            pr.poligono ASC,
+            pr.parcela ASC,
+            pr.recinto_sigpac ASC
+        ]]>
+    </queryString>
+
+    <!-- =====================================================================
+         3. DEFINICIÓN DE CAMPOS ($F{...})
+            Los nombres coinciden tanto con los alias del SELECT SQL como con
+            los getters del DTO Java para soportar JDBC y JRBeanCollectionDataSource.
+         ===================================================================== -->
+    <field name="codigoExpediente"    class="java.lang.String"/>
+    <field name="nifTitular"          class="java.lang.String"/>
+    <field name="nombreTitular"       class="java.lang.String"/>
+    <field name="poligono"            class="java.lang.Integer"/>
+    <field name="parcela"             class="java.lang.Integer"/>
+    <field name="recintoSigpac"       class="java.lang.Integer"/>
+    <field name="parajeNombre"        class="java.lang.String"/>
+    <field name="referenciaCatastral" class="java.lang.String"/>
+    <field name="tipoCultivo"         class="java.lang.String"/>
+    <field name="cultivoDeclarado"    class="java.lang.String"/>
+    <field name="regimenTenencia"     class="java.lang.String"/>
+    <field name="superficieHa"        class="java.math.BigDecimal"/>
+    <field name="fechaResolucion"     class="java.time.LocalDate"/>
+
+    <!-- =====================================================================
+         4. VARIABLES DE CÁLCULO AUTOMÁTICO ($V{...})
+            Calculan en tiempo de ejecución el sumatorio de hectáreas y el
+            conteo total de recintos SIGPAC del titular.
+         ===================================================================== -->
+    <!-- Variable 1: Suma total de hectáreas (BigDecimal) en todo el informe -->
+    <variable name="TOTAL_HECTAREAS_TITULAR" class="java.math.BigDecimal" calculation="Sum">
+        <variableExpression><![CDATA[$F{superficieHa}]]></variableExpression>
+        <initialValueExpression><![CDATA[java.math.BigDecimal.ZERO]]></initialValueExpression>
+    </variable>
+
+    <!-- Variable 2: Contador total de parcelas/recintos certificados -->
+    <variable name="TOTAL_PARCELAS_CERTIFICADAS" class="java.lang.Integer" calculation="Count">
+        <variableExpression><![CDATA[$F{parcela}]]></variableExpression>
+        <initialValueExpression><![CDATA[0]]></initialValueExpression>
+    </variable>
+
+    <!-- Variable 3: Suma parcial de hectáreas de REGADÍO usando expresión ternaria -->
+    <variable name="TOTAL_HECTAREAS_REGADIO" class="java.math.BigDecimal" calculation="Sum">
+        <variableExpression><![CDATA["REGADIO".equalsIgnoreCase($F{tipoCultivo}) ? $F{superficieHa} : java.math.BigDecimal.ZERO]]></variableExpression>
+        <initialValueExpression><![CDATA[java.math.BigDecimal.ZERO]]></initialValueExpression>
+    </variable>
+
+    <!-- =====================================================================
+         5. BANDA TITLE (Se imprime una única vez en la primera página)
+         ===================================================================== -->
+    <title>
+        <band height="115" splitType="Stretch">
+            <!-- Nombre oficial del Ayuntamiento -->
+            <textField>
+                <reportElement x="0" y="0" width="535" height="22" uuid="10000001-0000-0000-0000-000000000001"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font fontName="SansSerif" size="13" isBold="true"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$P{NOMBRE_AYUNTAMIENTO}]]></textFieldExpression>
+            </textField>
+
+            <!-- Subtítulo Oficial del Certificado -->
+            <staticText>
+                <reportElement x="0" y="24" width="535" height="20" uuid="10000001-0000-0000-0000-000000000002"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font fontName="SansSerif" size="11" isBold="true" isUnderline="true"/>
+                </textElement>
+                <text><![CDATA[CERTIFICADO MUNICIPAL DE PARCELAS RÚSTICAS Y EXPLOTACIÓN AGRARIA (SIGPAC)]]></text>
+            </staticText>
+
+            <!-- Bloque de datos del Expediente y del Titular Agrario -->
+            <textField isBlankWhenNull="true">
+                <reportElement x="0" y="52" width="535" height="55" uuid="10000001-0000-0000-0000-000000000003"/>
+                <textElement textAlignment="Justified" verticalAlignment="Top">
+                    <font fontName="SansSerif" size="9"/>
+                </textElement>
+                <textFieldExpression><![CDATA["La Secretaría-Intervención del " + $P{NOMBRE_AYUNTAMIENTO} + " CERTIFICA que, consultados los antecedentes obrantes en el Padrón Catastral de Rústica y el Registro Municipal de Expedientes Agrarios correspondientes a la Campaña " + $P{CAMPANIA_AGRICOLA} + " (Expediente Nº " + $P{CODIGO_EXPEDIENTE} + "), figuran a nombre del titular D./Dña./Entidad " + $F{nombreTitular} + " con NIF/CIF " + $F{nifTitular} + " las siguientes parcelas y recintos rústicos:"]]></textFieldExpression>
+            </textField>
+        </band>
+    </title>
+
+    <!-- =====================================================================
+         6. BANDA PAGE HEADER (Se repite en la cabecera de todas las páginas)
+         ===================================================================== -->
+    <pageHeader>
+        <band height="22" splitType="Stretch">
+            <textField>
+                <reportElement x="0" y="2" width="350" height="16" uuid="20000001-0000-0000-0000-000000000001"/>
+                <textElement verticalAlignment="Middle">
+                    <font fontName="SansSerif" size="8" isItalic="true"/>
+                </textElement>
+                <textFieldExpression><![CDATA["Expediente: " + $P{CODIGO_EXPEDIENTE} + " | Campaña Agrícola: " + $P{CAMPANIA_AGRICOLA} + " | NIF: " + $F{nifTitular}]]></textFieldExpression>
+            </textField>
+            <textField pattern="dd/MM/yyyy HH:mm">
+                <reportElement x="350" y="2" width="185" height="16" uuid="20000001-0000-0000-0000-000000000002"/>
+                <textElement textAlignment="Right" verticalAlignment="Middle">
+                    <font fontName="SansSerif" size="8" isItalic="true"/>
+                </textElement>
+                <textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+            </textField>
+        </band>
+    </pageHeader>
+
+    <!-- =====================================================================
+         7. BANDA COLUMN HEADER (Cabecera de la tabla de parcelas en cada página)
+         ===================================================================== -->
+    <columnHeader>
+        <band height="24" splitType="Stretch">
+            <staticText>
+                <reportElement mode="Opaque" backcolor="#E2E8F0" x="0" y="0" width="55" height="22" uuid="30000001-0000-0000-0000-000000000001"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle"><font size="8" isBold="true"/></textElement>
+                <text><![CDATA[POLÍGONO]]></text>
+            </staticText>
+            <staticText>
+                <reportElement mode="Opaque" backcolor="#E2E8F0" x="55" y="0" width="55" height="22" uuid="30000001-0000-0000-0000-000000000002"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle"><font size="8" isBold="true"/></textElement>
+                <text><![CDATA[PARCELA]]></text>
+            </staticText>
+            <staticText>
+                <reportElement mode="Opaque" backcolor="#E2E8F0" x="110" y="0" width="55" height="22" uuid="30000001-0000-0000-0000-000000000003"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle"><font size="8" isBold="true"/></textElement>
+                <text><![CDATA[RECINTO]]></text>
+            </staticText>
+            <staticText>
+                <reportElement mode="Opaque" backcolor="#E2E8F0" x="165" y="0" width="160" height="22" uuid="30000001-0000-0000-0000-000000000004"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle"><font size="8" isBold="true"/></textElement>
+                <text><![CDATA[ SISTEMA / TIPO EXPLOTACIÓN]]></text>
+            </staticText>
+            <staticText>
+                <reportElement mode="Opaque" backcolor="#E2E8F0" x="325" y="0" width="110" height="22" uuid="30000001-0000-0000-0000-000000000005"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle"><font size="8" isBold="true"/></textElement>
+                <text><![CDATA[EXPEDIENTE]]></text>
+            </staticText>
+            <staticText>
+                <reportElement mode="Opaque" backcolor="#E2E8F0" x="435" y="0" width="100" height="22" uuid="30000001-0000-0000-0000-000000000006"/>
+                <textElement textAlignment="Right" verticalAlignment="Middle"><font size="8" isBold="true"/></textElement>
+                <text><![CDATA[SUPERFICIE (ha) ]]></text>
+            </staticText>
+        </band>
+    </columnHeader>
+
+    <!-- =====================================================================
+         8. BANDA DETAIL (Se itera 1 vez por cada recinto rústico del titular)
+         ===================================================================== -->
+    <detail>
+        <band height="20" splitType="Prevent">
+            <!-- Polígono -->
+            <textField>
+                <reportElement x="0" y="0" width="55" height="18" uuid="40000001-0000-0000-0000-000000000001"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle"><font size="8"/></textElement>
+                <textFieldExpression><![CDATA[$F{poligono}]]></textFieldExpression>
+            </textField>
+
+            <!-- Parcela -->
+            <textField>
+                <reportElement x="55" y="0" width="55" height="18" uuid="40000001-0000-0000-0000-000000000002"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle"><font size="8"/></textElement>
+                <textFieldExpression><![CDATA[$F{parcela}]]></textFieldExpression>
+            </textField>
+
+            <!-- Recinto SIGPAC -->
+            <textField>
+                <reportElement x="110" y="0" width="55" height="18" uuid="40000001-0000-0000-0000-000000000003"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle"><font size="8"/></textElement>
+                <textFieldExpression><![CDATA[$F{recintoSigpac}]]></textFieldExpression>
+            </textField>
+
+            <!-- Sistema de Cultivo (REGADIO / SECANO) con ajuste dinámico de altura si el texto es largo -->
+            <textField textAdjust="StretchHeight" isBlankWhenNull="true">
+                <reportElement x="165" y="0" width="160" height="18" uuid="40000001-0000-0000-0000-000000000004"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle"><font size="8"/></textElement>
+                <textFieldExpression><![CDATA[" " + $F{tipoCultivo}]]></textFieldExpression>
+            </textField>
+
+            <!-- Código de Expediente -->
+            <textField isBlankWhenNull="true">
+                <reportElement x="325" y="0" width="110" height="18" uuid="40000001-0000-0000-0000-000000000005"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle"><font size="8"/></textElement>
+                <textFieldExpression><![CDATA[$F{codigoExpediente}]]></textFieldExpression>
+            </textField>
+
+            <!-- Superficie en hectáreas formateada con 4 decimales exactos (#,##0.0000) -->
+            <textField pattern="#,##0.0000">
+                <reportElement x="435" y="0" width="100" height="18" uuid="40000001-0000-0000-0000-000000000006"/>
+                <textElement textAlignment="Right" verticalAlignment="Middle"><font size="8" isBold="true"/></textElement>
+                <textFieldExpression><![CDATA[$F{superficieHa}]]></textFieldExpression>
+            </textField>
+        </band>
+    </detail>
+
+    <!-- =====================================================================
+         9. BANDA PAGE FOOTER (CSV de verificación y "Página X de Y")
+         ===================================================================== -->
+    <pageFooter>
+        <band height="25" splitType="Stretch">
+            <!-- Código Seguro de Verificación (CSV) a la izquierda -->
+            <textField>
+                <reportElement x="0" y="5" width="350" height="15" uuid="50000001-0000-0000-0000-000000000001"/>
+                <textElement verticalAlignment="Middle"><font size="7" isItalic="true"/></textElement>
+                <textFieldExpression><![CDATA["Documento verificable en Sede Electrónica — CSV: " + $P{CODIGO_CSV}]]></textFieldExpression>
+            </textField>
+
+            <!-- "Página X de" evaluado en tiempo actual (evaluationTime="Now") -->
+            <textField evaluationTime="Now">
+                <reportElement x="350" y="5" width="145" height="15" uuid="50000001-0000-0000-0000-000000000002"/>
+                <textElement textAlignment="Right" verticalAlignment="Middle"><font size="8"/></textElement>
+                <textFieldExpression><![CDATA["Página " + $V{PAGE_NUMBER} + " de "]]></textFieldExpression>
+            </textField>
+
+            <!-- "Y" (total de páginas) evaluado al finalizar todo el reporte (evaluationTime="Report") -->
+            <textField evaluationTime="Report">
+                <reportElement x="495" y="5" width="40" height="15" uuid="50000001-0000-0000-0000-000000000003"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle"><font size="8"/></textElement>
+                <textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+            </textField>
+        </band>
+    </pageFooter>
+
+    <!-- =====================================================================
+         10. BANDA SUMMARY (Totales calculados por las variables $V{...} y firma)
+         ===================================================================== -->
+    <summary>
+        <band height="95" splitType="Stretch">
+            <!-- Total de recintos y suma de hectáreas de regadío + total general -->
+            <textField>
+                <reportElement mode="Opaque" backcolor="#F1F5F9" x="0" y="8" width="335" height="22" uuid="60000001-0000-0000-0000-000000000001"/>
+                <textElement verticalAlignment="Middle"><font size="9" isBold="true"/></textElement>
+                <textFieldExpression><![CDATA[" TOTAL RECINTOS CERTIFICADOS: " + $V{TOTAL_PARCELAS_CERTIFICADAS} + " (Regadío: " + $V{TOTAL_HECTAREAS_REGADIO} + " ha)"]]></textFieldExpression>
+            </textField>
+
+            <textField pattern="#,##0.0000">
+                <reportElement mode="Opaque" backcolor="#E2E8F0" x="335" y="8" width="200" height="22" uuid="60000001-0000-0000-0000-000000000002"/>
+                <textElement textAlignment="Right" verticalAlignment="Middle"><font size="10" isBold="true"/></textElement>
+                <textFieldExpression><![CDATA[$V{TOTAL_HECTAREAS_TITULAR}]]></textFieldExpression>
+            </textField>
+
+            <!-- Pie de firma institucional -->
+            <staticText>
+                <reportElement x="0" y="42" width="535" height="45" uuid="60000001-0000-0000-0000-000000000003"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font size="8"/>
+                </textElement>
+                <text><![CDATA[Y para que así conste y surta los efectos oportunos ante los organismos agrarios y catastrales competentes, se expide la presente certificación en Roperuelos del Páramo (León), firmada electrónicamente por la Secretaría-Intervención con el Vº Bº de la Alcaldía-Presidencia.]]></text>
+            </staticText>
+        </band>
+    </summary>
+
+</jasperReport>

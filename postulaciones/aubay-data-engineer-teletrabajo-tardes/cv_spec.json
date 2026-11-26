@@ -1,0 +1,207 @@
+{
+  "page": {
+    "width_mm": 210,
+    "height_mm": 297,
+    "margins_mm": {
+      "top": 15,
+      "bottom": 15,
+      "left": 18,
+      "right": 18
+    }
+  },
+  "styles": [
+    {
+      "name": "CVTitle",
+      "base": "Normal",
+      "font": "Calibri",
+      "size_pt": 19.5,
+      "bold": true,
+      "color": "111827"
+    },
+    {
+      "name": "CVSubtitle",
+      "base": "Normal",
+      "font": "Calibri",
+      "size_pt": 10.6,
+      "bold": true,
+      "color": "1F2937"
+    },
+    {
+      "name": "CVContact",
+      "base": "Normal",
+      "font": "Calibri",
+      "size_pt": 9.5,
+      "color": "4B5563"
+    },
+    {
+      "name": "CVHeading",
+      "base": "Normal",
+      "font": "Calibri",
+      "size_pt": 11.5,
+      "bold": true,
+      "color": "111827"
+    },
+    {
+      "name": "CVJobHeader",
+      "base": "Normal",
+      "font": "Calibri",
+      "size_pt": 10.5,
+      "bold": true,
+      "color": "111827"
+    },
+    {
+      "name": "CVJobDate",
+      "base": "Normal",
+      "font": "Calibri",
+      "size_pt": 9.5,
+      "italic": true,
+      "color": "4B5563"
+    },
+    {
+      "name": "CVBody",
+      "base": "Normal",
+      "font": "Calibri",
+      "size_pt": 9.8,
+      "color": "1F2937"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "paragraph",
+      "style": "CVTitle",
+      "text": "DIEGO DE LA FUENTE ALONSO"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVSubtitle",
+      "text": "Data Engineer & BI Reporting Specialist | Procesos ETL (Dataform / SSIS / Python), SQL Avanzado, Dashboards KPIs & Excel Avanzado"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVContact",
+      "text": "España (100% Teletrabajo / Disponibilidad Turno de Tarde 16h–00h) | (+34) 626 68 71 79 | diegodelafuentealonso@gmail.com"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVHeading",
+      "text": "PERFIL PROFESIONAL"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVBody",
+      "text": "Data Engineer y Especialista en Automatización de Reporting con sólida experiencia en extracción, limpieza, validación y transformación de datos (ETL/ELT) desde múltiples bases de datos relacionales y fuentes corporativas. Dominio de SQL avanzado (Microsoft SQL Server, PostgreSQL, MySQL, SAP y Google BigQuery), herramientas ETL (Dataform, pipelines en Python, integración en SQL Server / SSIS y arquitecturas equivalentes a Azure Data Factory, Pentaho e Informatica PowerCenter) y Excel avanzado. Amplia experiencia en el diseño de cuadros de mando (dashboards) con KPIs en Looker y Power BI, elaboración y automatización de informes periódicos (diarios, semanales y mensuales), detección de desviaciones y soporte directo a usuarios de negocio. Total disponibilidad para trabajar en modalidad 100% teletrabajo en turno de tarde (16:00 a 00:00)."
+    },
+    {
+      "type": "paragraph",
+      "style": "CVHeading",
+      "text": "COMPETENCIAS TÉCNICAS (ETL, SQL AVANZADO, REPORTING & DASHBOARDS)"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Herramientas ETL & Extracción/Transformación de Datos: Diseño, desarrollo y mantenimiento de pipelines ETL/ELT para extraer, limpiar, validar y unificar información de múltiples orígenes utilizando Dataform (GCP), Python ETL (Pandas/SQLAlchemy), entorno Microsoft SQL Server (SSMS / flujos SSIS) y procesos de datos empresariales (arquitectura de ingesta y orquestación equivalente a Azure Data Factory, Pentaho Data Integration e Informatica PowerCenter).",
+        "SQL Avanzado & Bases de Datos Relacionales: Dominio de SQL avanzado (joins complejos, CTEs, funciones ventana, procedimientos almacenados, vistas, índices y optimización de consultas) sobre Microsoft SQL Server, PostgreSQL, MySQL, bases de datos corporativas SAP y Google BigQuery.",
+        "Reporting Periódico, Cuadros de Mando (Dashboards) & Excel Avanzado: Elaboración y automatización de informes periódicos (diarios, semanales y mensuales), diseño de cuadros de mando interactivos con KPIs (Looker, Looker Studio y Power BI) y dominio de Excel avanzado (tablas dinámicas, fórmulas matriciales, cruces complejos y automatización de reportes).",
+        "Calidad del Dato, Análisis de Desviaciones & Soporte a Negocio: Limpieza y validación de datos para asegurar su integridad, análisis de tendencias, detección automatizada de anomalías y desviaciones, resolución de necesidades de información de usuarios de negocio y documentación técnica de informes y procesos."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVHeading",
+      "text": "EXPERIENCIA PROFESIONAL"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobHeader",
+      "text": "HORSE Technologies — Data Engineer & Especialista en ETL, SQL y Reporting Automatizado"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobDate",
+      "text": "Julio 2026 – Actualidad | Valladolid, España"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Extraigo datos de diferentes bases de datos relacionales y sistemas corporativos, unificando información de múltiples fuentes mediante procesos ETL automatizados en Dataform, Python y SQL avanzado sobre Google BigQuery y SQL Server.",
+        "Implemento reglas de limpieza, validación y control de calidad del dato, analizando tendencias y generando alertas automáticas ante desviaciones o discrepancias entre orígenes.",
+        "Elaboro y automatizo la generación de informes periódicos (diarios, semanales y mensuales) y diseño cuadros de mando (dashboards) con KPIs operativos y ejecutivos en Looker, Looker Studio, Power BI y Excel avanzado.",
+        "Doy soporte directo a los usuarios de negocio resolviendo sus necesidades de información ad-hoc y documento detalladamente la lógica de cada informe y sus procesos de generación."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobHeader",
+      "text": "FDS, a DXC Technology Company — Consultor Técnico de Datos, Extracción SQL y Reporting"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobDate",
+      "text": "Febrero 2026 – Junio 2026 | España"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Desarrollé procesos de extracción, transformación y carga de datos (ETL), consultas SQL optimizadas e informes corporativos periódicos sobre bases de datos relacionales de gran volumen en entornos empresariales (SAP / SQL).",
+        "Validé la calidad y cuadre de la información antes de cada entrega a negocio, documentando los procesos técnicos y gestionando el paso entre entornos (DEV, QAS, PRD)."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobHeader",
+      "text": "Ayuntamiento de Roperuelos del Páramo — Ingeniero de Datos, SQL y Automatización de Informes"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobDate",
+      "text": "Junio 2024 – Octubre 2024 | Junio 2023 – Septiembre 2023 | León, España"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Unifiqué y limpié datos procedentes de distintas bases de datos relacionales (PostgreSQL y MySQL), hojas de cálculo y APIs mediante scripts ETL en Python y consultas SQL avanzadas, automatizando la exportación de informes periódicos en Excel y CSV."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobHeader",
+      "text": "Craftelier — Desarrollador de Bases de Datos Relacionales (Microsoft SQL Server & ETL)"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobDate",
+      "text": "Marzo 2024 – Mayo 2024 | España"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Desarrollé y optimicé consultas SQL avanzadas, vistas y procedimientos almacenados en Microsoft SQL Server (SSMS / entorno SSIS) para la extracción de datos y generación de informes de negocio."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVHeading",
+      "text": "FORMACIÓN ACADÉMICA"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Curso de Especialización en Inteligencia Artificial y Big Data — (2024 – 2025) — Procesos ETL, Data Warehousing, SQL avanzado, calidad del dato y cuadros de mando.",
+        "Técnico Superior en Desarrollo de Aplicaciones Web (Grado Superior DAW) — IES San Andrés (2025 – 2026).",
+        "Técnico Superior en Desarrollo de Aplicaciones Multiplataforma (Grado Superior DAM) — IES San Andrés (2022 – 2024) — Bases de datos relacionales SQL, extracción y transformación de datos y reporting."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVHeading",
+      "text": "IDIOMAS Y DISPONIBILIDAD"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Español: Nativo | Inglés: Nivel técnico y profesional.",
+        "Modalidad y Horario: 100% Teletrabajo | Total disponibilidad para turno de tarde (16:00 a 00:00) | Incorporación en 15 días naturales."
+      ]
+    }
+  ]
+}

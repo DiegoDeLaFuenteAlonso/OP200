@@ -1,0 +1,207 @@
+{
+  "page": {
+    "width_mm": 210,
+    "height_mm": 297,
+    "margins_mm": {
+      "top": 16,
+      "bottom": 16,
+      "left": 18,
+      "right": 18
+    }
+  },
+  "styles": [
+    {
+      "name": "CVTitle",
+      "base": "Normal",
+      "font": "Calibri",
+      "size_pt": 20,
+      "bold": true,
+      "color": "111827"
+    },
+    {
+      "name": "CVSubtitle",
+      "base": "Normal",
+      "font": "Calibri",
+      "size_pt": 11.2,
+      "bold": true,
+      "color": "1F2937"
+    },
+    {
+      "name": "CVContact",
+      "base": "Normal",
+      "font": "Calibri",
+      "size_pt": 9.5,
+      "color": "4B5563"
+    },
+    {
+      "name": "CVHeading",
+      "base": "Normal",
+      "font": "Calibri",
+      "size_pt": 11.5,
+      "bold": true,
+      "color": "111827"
+    },
+    {
+      "name": "CVJobHeader",
+      "base": "Normal",
+      "font": "Calibri",
+      "size_pt": 10.5,
+      "bold": true,
+      "color": "111827"
+    },
+    {
+      "name": "CVJobDate",
+      "base": "Normal",
+      "font": "Calibri",
+      "size_pt": 9.5,
+      "italic": true,
+      "color": "4B5563"
+    },
+    {
+      "name": "CVBody",
+      "base": "Normal",
+      "font": "Calibri",
+      "size_pt": 10,
+      "color": "1F2937"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "paragraph",
+      "style": "CVTitle",
+      "text": "DIEGO DE LA FUENTE ALONSO"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVSubtitle",
+      "text": "Data Scientist & Data Analyst | Python (Pandas, NumPy, scikit-learn), Machine Learning, SQL, BigQuery & IA"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVContact",
+      "text": "España (100% Remoto / Valladolid - Madrid) | (+34) 626 68 71 79 | diegodelafuentealonso@gmail.com"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVHeading",
+      "text": "PERFIL PROFESIONAL"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVBody",
+      "text": "Data Scientist y Analista de Datos especializado en el análisis exploratorio, transformación y tratamiento de datos multi-fuente, así como en el desarrollo, entrenamiento, evaluación y puesta en producción de modelos de Machine Learning e Inteligencia Artificial. Experiencia práctica en HORSE Technologies trabajando con Python, SQL avanzado (Google BigQuery), modelado y preparación de datos (Dataform y pipelines ETL) y analítica de negocio en Looker. Titulado en el Curso de Especialización en Inteligencia Artificial y Big Data con dominio de librerías científicas en Python (Pandas, NumPy, scikit-learn), estadística, métricas de evaluación, control de versiones con Git/GitFlow y buenas prácticas de ingeniería de software."
+    },
+    {
+      "type": "paragraph",
+      "style": "CVHeading",
+      "text": "COMPETENCIAS TÉCNICAS Y STACK"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Data Science & Machine Learning: Desarrollo, entrenamiento, validación cruzada y evaluación de modelos predictivos y de clasificación/regresión con Python, Pandas, NumPy y scikit-learn; análisis estadístico, ingeniería de características (feature engineering), métricas de evaluación (F1, ROC-AUC, RMSE, MAE) y Deep Learning (PyTorch, Hugging Face).",
+        "Análisis Exploratorio (EDA), Tratamiento de Datos & SQL: Limpieza, normalización, transformación y preparación de grandes volúmenes de datos procedentes de múltiples fuentes; dominio de SQL avanzado en Google BigQuery, Microsoft SQL Server (SSMS) y PostgreSQL, y modelado declarativo en Dataform (dbt).",
+        "Ciclo de Vida de Modelos, MLOps & Entornos Cloud: Participación en el ciclo completo del dato y de los modelos desde el diseño hasta su despliegue en producción, automatización de pipelines ETL/ELT en Python, entornos Cloud (GCP / nociones de AWS), APIs REST para inferencia y contenedores Docker.",
+        "Visualización, Analítica de Negocio & IA Aplicada: Diseño de cuadros de mando y KPIs en Looker (LookML) para traducir resultados analíticos en decisiones de negocio, e integración de modelos de IA y agentes mediante Model Context Protocol (MCP).",
+        "Ingeniería de Software & Trabajo Colaborativo: Uso diario de Git y flujos colaborativos (GitFlow, code reviews), desarrollo limpio y modular en Python, Go, Java (Spring Boot) y C# (.NET)."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVHeading",
+      "text": "EXPERIENCIA PROFESIONAL"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobHeader",
+      "text": "HORSE Technologies — Data Analyst & AI / Data Science Developer"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobDate",
+      "text": "Julio 2026 – Actualidad | Valladolid, España"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Realicé análisis exploratorios (EDA), limpieza, transformación y tratamiento de grandes volúmenes de datos procedentes de múltiples fuentes utilizando Python (Pandas, NumPy) y SQL avanzado en Google BigQuery y Dataform para su explotación analítica y en modelos de IA.",
+        "Desarrollé, evalué e integré en producción soluciones analíticas e inteligentes en Python, aplicando métricas rigurosas de evaluación, validación estadística y control de calidad de extremo a extremo.",
+        "Diseñé y mantuve modelos analíticos y cuadros de mando interactivos en Looker (LookML), traduciendo patrones de datos y métricas predictivas en respuestas claras para las necesidades de negocio.",
+        "Trabajé de forma integrada dentro del equipo de Data & AI aplicando buenas prácticas de desarrollo, modularidad, versionado colaborativo con Git (GitFlow) y automatización de flujos de datos en producción."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobHeader",
+      "text": "FDS, a DXC Technology Company — Consultor Técnico de Datos y Procesos (SAP)"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobDate",
+      "text": "Febrero 2026 – Junio 2026 | España"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Implementé lógica de extracción, validación y tratamiento de datos corporativos en ABAP, gestionando el versionado y paso a producción (DEV, QAS, PRD) con trazabilidad completa."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobHeader",
+      "text": "Ayuntamiento de Roperuelos del Páramo — Desarrollador Backend & Datos (Python / SQL / Java)"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobDate",
+      "text": "Junio 2024 – Octubre 2024 | Junio 2023 – Septiembre 2023 | León, España"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Desarrollé servicios backend y APIs RESTful en Python y Java (Spring Boot) para la captura, transformación y explotación de datos sobre bases de datos relacionales SQL bajo control de versiones con Git."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobHeader",
+      "text": "Craftelier — Desarrollador de Bases de Datos SQL & Software (.NET / C#)"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobDate",
+      "text": "Marzo 2024 – Mayo 2024 | España"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Optimicé consultas analíticas y transaccionales, vistas y procedimientos almacenados en Microsoft SQL Server (SSMS) para mejorar el rendimiento en el tratamiento y explotación de datos comerciales."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVHeading",
+      "text": "FORMACIÓN ACADÉMICA Y ESPECIALIZACIÓN EN DATA SCIENCE & IA"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Curso de Especialización en Inteligencia Artificial y Big Data (2024 – 2025) — Desarrollo, entrenamiento y evaluación de modelos de Machine Learning con Python (Pandas, NumPy, scikit-learn), estadística aplicada, métricas de evaluación, análisis exploratorio de datos (EDA), Deep Learning y arquitecturas Big Data.",
+        "Técnico Superior en Desarrollo de Aplicaciones Web (DAW) — IES San Andrés (2025 – 2026).",
+        "Técnico Superior en Desarrollo de Aplicaciones Multiplataforma (DAM) — IES San Andrés (2022 – 2024)."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVHeading",
+      "text": "IDIOMAS Y DISPONIBILIDAD"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Español: Nativo | Inglés: Nivel B1/B2 técnico (lectura fluida de documentación científica, librerías de Python/ML y trabajo con equipos internacionales).",
+        "Modalidad: 100% Remoto desde España | Disponibilidad de incorporación: 15 días naturales (preaviso legal estándar)."
+      ]
+    }
+  ]
+}

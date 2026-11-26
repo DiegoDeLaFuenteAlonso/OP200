@@ -1,0 +1,208 @@
+{
+  "page": {
+    "width_mm": 210,
+    "height_mm": 297,
+    "margins_mm": {
+      "top": 18,
+      "bottom": 18,
+      "left": 18,
+      "right": 18
+    }
+  },
+  "styles": [
+    {
+      "name": "CVTitle",
+      "base": "Normal",
+      "font": "Calibri",
+      "size_pt": 20,
+      "bold": true,
+      "color": "111827"
+    },
+    {
+      "name": "CVSubtitle",
+      "base": "Normal",
+      "font": "Calibri",
+      "size_pt": 11.5,
+      "bold": true,
+      "color": "1F2937"
+    },
+    {
+      "name": "CVContact",
+      "base": "Normal",
+      "font": "Calibri",
+      "size_pt": 9.5,
+      "color": "4B5563"
+    },
+    {
+      "name": "CVHeading",
+      "base": "Normal",
+      "font": "Calibri",
+      "size_pt": 12,
+      "bold": true,
+      "color": "111827"
+    },
+    {
+      "name": "CVJobHeader",
+      "base": "Normal",
+      "font": "Calibri",
+      "size_pt": 10.5,
+      "bold": true,
+      "color": "111827"
+    },
+    {
+      "name": "CVJobDate",
+      "base": "Normal",
+      "font": "Calibri",
+      "size_pt": 9.5,
+      "italic": true,
+      "color": "4B5563"
+    },
+    {
+      "name": "CVBody",
+      "base": "Normal",
+      "font": "Calibri",
+      "size_pt": 10,
+      "color": "1F2937"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "paragraph",
+      "style": "CVTitle",
+      "text": "DIEGO DE LA FUENTE ALONSO"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVSubtitle",
+      "text": "AI Engineer & Full-Stack Data Developer | Python, LLMs (OpenAI/Claude/Gemini), PyTorch, Hugging Face, Agentes IA & SQL"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVContact",
+      "text": "Madrid / Valladolid (Remoto) | (+34) 626 68 71 79 | diegodelafuentealonso@gmail.com"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVHeading",
+      "text": "PERFIL PROFESIONAL"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVBody",
+      "text": "Ingeniero de Inteligencia Artificial y Desarrollador de Software con enfoque pragmático e iterativo, especializado en transformar necesidades de negocio en productos de IA escalables. Experiencia demostrada en HORSE Technologies diseñando e integrando soluciones basadas en LLMs, agentes autónomos (agent harnesses, loop engineering y protocolo MCP) y pipelines completos de recopilación, depuración y preparación de datos en Python y SQL. Sólida base en Deep Learning y modelos preentrenados (Especialización Superior en IA y Big Data: PyTorch, Hugging Face, evaluación y optimización de modelos) combinada con doble titulación en Desarrollo de Aplicaciones Web (DAW) y Multiplataforma (DAM) para integrar capacidades de IA de extremo a extremo en productos web, móviles y APIs."
+    },
+    {
+      "type": "paragraph",
+      "style": "CVHeading",
+      "text": "COMPETENCIAS TÉCNICAS Y STACK"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Inteligencia Artificial, LLMs & Deep Learning: Desarrollo en Python, integración de APIs de OpenAI, Anthropic (Claude) y Google (Gemini), uso de modelos preentrenados con Hugging Face y PyTorch, arquitecturas RAG, síntesis de voz (TTS) y técnicas de evaluación y optimización del rendimiento de modelos.",
+        "Sistemas Agénticos & Automatización: Diseño de agentes autónomos, arquitecturas agent harness, control de bucles de razonamiento (loop engineering), tool calling estructurado e integración estandarizada mediante Model Context Protocol (MCP).",
+        "Preparación de Datos, ETL & Previsión Analítica: Recopilación, limpieza, depuración y transformación de datos (ETL/ELT) con Python, modelado declarativo en Dataform y Google BigQuery, y preparación de datasets para entrenamiento e inferencia industrial.",
+        "Desarrollo Full-Stack, APIs & Bases de Datos: Integración de IA en servicios y aplicaciones mediante APIs RESTful (Python, Go, Java Spring Boot, .NET/C#), desarrollo web y móvil (DAW/DAM, Kotlin), y bases de datos relacionales (PostgreSQL, MySQL, Microsoft SQL Server) y NoSQL.",
+        "Metodología & Consultoría Técnica: Desarrollo iterativo orientado a valor de negocio, comunicación técnica con clientes y stakeholders, control de versiones con Git/GitHub, Docker y despliegue en entornos Cloud."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVHeading",
+      "text": "EXPERIENCIA PROFESIONAL"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobHeader",
+      "text": "HORSE Technologies — AI Developer & Data Engineer"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobDate",
+      "text": "Julio 2026 – Actualidad"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Aceleré la automatización de procesos operativos complejos mediante el diseño e implementación de soluciones de Inteligencia Artificial y agentes autónomos en Python y Go, aplicando patrones de agent harness, loop engineering e integración de APIs de LLMs (OpenAI, Claude, Gemini).",
+        "Estandaricé la conexión segura entre modelos de IA y bases de datos/servicios corporativos implementando servidores y herramientas bajo el protocolo Model Context Protocol (MCP), logrando respuestas verificables y reduciendo errores de inferencia.",
+        "Maximicé la eficacia y calidad de los datos de entrada para modelos analíticos e industriales mediante la construcción de pipelines automatizados de recopilación, depuración y transformación (ETL) en Python, Google BigQuery y Dataform.",
+        "Desarrollé cuadros de mando y modelos de previsión y seguimiento de métricas de negocio en Looker, colaborando estrechamente con los responsables de área para alinear las decisiones estructurales y técnicas con el impacto empresarial."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobHeader",
+      "text": "FDS, a DXC Technology Company — Consultor Técnico de Software (SAP)"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobDate",
+      "text": "Febrero 2026 – Junio 2026"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Optimicé procesos críticos del área de Logística y cadena de suministro desarrollando extensiones a medida en ABAP y gestionando el paso a producción (DEV, QAS, PRD) con altos estándares de fiabilidad."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobHeader",
+      "text": "Ayuntamiento de Roperuelos del Páramo — Desarrollador de Software Full-Stack / Backend (Python & Java)"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobDate",
+      "text": "Junio 2024 – Octubre 2024 | Junio 2023 – Septiembre 2023"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Desarrollé e integré de extremo a extremo portales web, servicios backend y APIs RESTful utilizando Python y Java (Spring Boot) sobre bases de datos relacionales SQL, priorizando la entrega iterativa y la mejora continua."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobHeader",
+      "text": "Craftelier — Desarrollador de Software & Bases de Datos"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobDate",
+      "text": "Marzo 2024 – Mayo 2024"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Mejoré el rendimiento de las aplicaciones de gestión comercial y e-commerce optimizando consultas y procedimientos almacenados en SQL Server (SSMS), y desarrollando funcionalidades de producto en .NET / C# y aplicaciones móviles Android (Kotlin)."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVHeading",
+      "text": "FORMACIÓN ACADÉMICA Y ESPECIALIZACIÓN EN IA"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Curso de Especialización en Inteligencia Artificial y Big Data (2024 – 2025) — Entrenamiento, ajuste y evaluación de modelos de Deep Learning y NLP/Visión (Python, PyTorch, Hugging Face), modelos predictivos de demanda y arquitecturas Big Data.",
+        "Técnico Superior en Desarrollo de Aplicaciones Web (DAW) — IES San Andrés (2025 – 2026) — Arquitectura full-stack web, JavaScript/TypeScript, APIs y bases de datos MySQL/PostgreSQL.",
+        "Técnico Superior en Desarrollo de Aplicaciones Multiplataforma (DAM) — IES San Andrés (2022 – 2024) — Desarrollo de software multiplataforma y móvil."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVHeading",
+      "text": "IDIOMAS Y DISPONIBILIDAD"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Español: Nativo (Excelente capacidad de comunicación oral y escrita para asesoramiento a clientes).",
+        "Inglés: Nivel B1/B2 técnico (Lectura fluida de documentación científica/técnica, papers de IA y comunicación escrita).",
+        "Disponibilidad: Remoto desde España con disponibilidad para reuniones en Madrid."
+      ]
+    }
+  ]
+}

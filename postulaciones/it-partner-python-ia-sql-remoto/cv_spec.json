@@ -1,0 +1,206 @@
+{
+  "page": {
+    "width_mm": 210,
+    "height_mm": 297,
+    "margins_mm": {
+      "top": 15,
+      "bottom": 15,
+      "left": 18,
+      "right": 18
+    }
+  },
+  "styles": [
+    {
+      "name": "CVTitle",
+      "base": "Normal",
+      "font": "Calibri",
+      "size_pt": 19.5,
+      "bold": true,
+      "color": "111827"
+    },
+    {
+      "name": "CVSubtitle",
+      "base": "Normal",
+      "font": "Calibri",
+      "size_pt": 10.5,
+      "bold": true,
+      "color": "1F2937"
+    },
+    {
+      "name": "CVContact",
+      "base": "Normal",
+      "font": "Calibri",
+      "size_pt": 9.5,
+      "color": "4B5563"
+    },
+    {
+      "name": "CVHeading",
+      "base": "Normal",
+      "font": "Calibri",
+      "size_pt": 11.5,
+      "bold": true,
+      "color": "111827"
+    },
+    {
+      "name": "CVJobHeader",
+      "base": "Normal",
+      "font": "Calibri",
+      "size_pt": 10.5,
+      "bold": true,
+      "color": "111827"
+    },
+    {
+      "name": "CVJobDate",
+      "base": "Normal",
+      "font": "Calibri",
+      "size_pt": 9.5,
+      "italic": true,
+      "color": "4B5563"
+    },
+    {
+      "name": "CVBody",
+      "base": "Normal",
+      "font": "Calibri",
+      "size_pt": 9.8,
+      "color": "1F2937"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "paragraph",
+      "style": "CVTitle",
+      "text": "DIEGO DE LA FUENTE ALONSO"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVSubtitle",
+      "text": "Desarrollador Python, Inteligencia Artificial & Conciliación de Datos | SQL Server/Oracle, Unix/Linux, APIs REST, Microservicios & Web"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVContact",
+      "text": "España (100% Remoto / Valladolid) | (+34) 626 68 71 79 | diegodelafuentealonso@gmail.com"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVHeading",
+      "text": "PERFIL PROFESIONAL"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVBody",
+      "text": "Desarrollador de Software especializado en Python, Inteligencia Artificial y Gestión/Conciliación de Datos, con doble titulación oficial de Grado Superior (DAM y DAW) y Curso de Especialización en Inteligencia Artificial y Big Data. Experiencia profesional en el desarrollo backend y web, parametrización y evolución de circuitos automatizados de conciliación y validación de datos, integración de modelos de IA y LLMs, y desarrollo de APIs REST y microservicios. Sólido dominio de entornos Unix/Linux, bases de datos relacionales (Microsoft SQL Server, PostgreSQL, MySQL, sistemas empresariales Oracle/SAP y BigQuery) y herramientas de integración continua y control de versiones (Git, GitHub, Jenkins y Jira)."
+    },
+    {
+      "type": "paragraph",
+      "style": "CVHeading",
+      "text": "COMPETENCIAS TÉCNICAS (PYTHON, IA, CONCILIACIÓN SQL, UNIX & MICROSERVICIOS)"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Desarrollo en Python, Inteligencia Artificial & Web: Programación avanzada en Python (FastAPI, Flask, Pandas, automatización de procesos), integración de soluciones de Inteligencia Artificial Generativa (LLMs, agentes, validación inteligente de patrones) y desarrollo de interfaces web modernas (JavaScript, TypeScript, React, Angular, HTML5 y CSS3).",
+        "Circuitos de Conciliación, Tratamiento de Datos & SQL (SQL Server / Oracle): Diseño, parametrización y evolución de flujos de conciliación operativa y cuadre de datos entre múltiples sistemas; dominio avanzado de SQL sobre Microsoft SQL Server (SSMS), PostgreSQL, MySQL, entornos corporativos Oracle/SAP y Google BigQuery.",
+        "Sistemas Unix / Linux, APIs REST & Microservicios: Operación, scripting (Bash/Shell) y despliegue de servicios sobre sistemas Unix y Linux; arquitectura, desarrollo e integración de APIs RESTful y microservicios escalables.",
+        "Integración Continua (CI/CD) & Gestión Ágil: Control de versiones y pipelines CI/CD con Git, GitHub (GitHub Actions), Jenkins y contenedores Docker; gestión de proyectos y seguimiento de tareas con Jira bajo metodologías Agile."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVHeading",
+      "text": "EXPERIENCIA PROFESIONAL"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobHeader",
+      "text": "HORSE Technologies — Desarrollador Python, IA & Procesos de Conciliación de Datos"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobDate",
+      "text": "Julio 2026 – Actualidad | Valladolid, España"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Desarrollo y evoluciono circuitos automatizados de conciliación operativa y validación cruzada de datos en Python y SQL (SQL Server, PostgreSQL y BigQuery) sobre entornos Unix/Linux, identificando patrones de discrepancia y asegurando el cuadre entre plataformas corporativas.",
+        "Diseño e integro soluciones de Inteligencia Artificial (agentes basados en LLMs y protocolo MCP), APIs REST y microservicios, junto con interfaces web de seguimiento y control operativo.",
+        "Aplico prácticas de integración continua y control de versiones con Git, GitHub, Docker y seguimiento en Jira, colaborando en la mejora continua del rendimiento y la fiabilidad de los procesos."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobHeader",
+      "text": "FDS, a DXC Technology Company — Consultor Técnico de Desarrollo y Conciliación de Datos Empresariales"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobDate",
+      "text": "Febrero 2026 – Junio 2026 | España"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Desarrollé y parametricé lógica de tratamiento y conciliación contable/operativa de datos sobre bases de datos relacionales corporativas de gran volumen (entornos SAP / SQL / Oracle), definiendo controles de integridad y resolviendo incidencias en producción.",
+        "Gestioné el ciclo de pruebas, validación y transporte estructurado de soluciones entre los entornos de Desarrollo, Calidad y Producción (DEV, QAS, PRD)."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobHeader",
+      "text": "Ayuntamiento de Roperuelos del Páramo — Desarrollador Full Stack (Python, APIs REST, Web & SQL)"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobDate",
+      "text": "Junio 2024 – Octubre 2024 | Junio 2023 – Septiembre 2023 | León, España"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Desarrollé aplicaciones web (frontend en JavaScript/React y backend con APIs REST y microservicios en Python y Java Spring Boot) desplegadas sobre servidores Linux/Unix y conectadas a bases de datos relacionales SQL (PostgreSQL y MySQL)."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobHeader",
+      "text": "Craftelier — Desarrollador de Software & Bases de Datos Microsoft SQL Server"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobDate",
+      "text": "Marzo 2024 – Mayo 2024 | España"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Desarrollé módulos de software y optimicé consultas, vistas y procedimientos almacenados en Microsoft SQL Server para el cuadre y validación de datos operativos, inventario y facturación."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVHeading",
+      "text": "FORMACIÓN ACADÉMICA"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Curso de Especialización en Inteligencia Artificial y Big Data — (2024 – 2025) — Desarrollo con Python, modelos de Inteligencia Artificial, procesamiento de datos en Linux/Unix y arquitecturas de microservicios.",
+        "Técnico Superior en Desarrollo de Aplicaciones Web (DAW) — IES San Andrés (2025 – 2026) — Desarrollo Frontend y Backend (JavaScript, React, Python, APIs REST, SQL, Git/GitHub y Jenkins/Docker).",
+        "Técnico Superior en Desarrollo de Aplicaciones Multiplataforma (DAM) — IES San Andrés (2022 – 2024)."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVHeading",
+      "text": "IDIOMAS Y DISPONIBILIDAD"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Español: Nativo | Inglés: Nivel técnico y profesional.",
+        "Modalidad: 100% Remoto desde España (Residencia en Valladolid) | Disponibilidad: 15 días naturales."
+      ]
+    }
+  ]
+}

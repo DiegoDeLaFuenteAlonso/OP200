@@ -1,0 +1,214 @@
+{
+  "page": {
+    "width_mm": 210,
+    "height_mm": 297,
+    "margins_mm": {
+      "top": 20,
+      "bottom": 20,
+      "left": 20,
+      "right": 20
+    }
+  },
+  "styles": [
+    {
+      "name": "CVTitle",
+      "base": "Normal",
+      "font": "Calibri",
+      "size_pt": 20,
+      "bold": true,
+      "color": "003366"
+    },
+    {
+      "name": "CVSubtitle",
+      "base": "Normal",
+      "font": "Calibri",
+      "size_pt": 12,
+      "bold": true,
+      "color": "4A5568"
+    },
+    {
+      "name": "CVContact",
+      "base": "Normal",
+      "font": "Calibri",
+      "size_pt": 10,
+      "color": "718096"
+    },
+    {
+      "name": "CVHeading",
+      "base": "Normal",
+      "font": "Calibri",
+      "size_pt": 13,
+      "bold": true,
+      "color": "003366"
+    },
+    {
+      "name": "CVJobHeader",
+      "base": "Normal",
+      "font": "Calibri",
+      "size_pt": 11,
+      "bold": true,
+      "color": "1A202C"
+    },
+    {
+      "name": "CVJobDate",
+      "base": "Normal",
+      "font": "Calibri",
+      "size_pt": 9.5,
+      "italic": true,
+      "color": "718096"
+    },
+    {
+      "name": "CVBody",
+      "base": "Normal",
+      "font": "Calibri",
+      "size_pt": 10,
+      "color": "2D3748"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "paragraph",
+      "style": "CVTitle",
+      "text": "DIEGO DE LA FUENTE ALONSO"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVSubtitle",
+      "text": "Data Analyst | Looker, BigQuery, Python & Business Intelligence"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVContact",
+      "text": "Valladolid / Castilla y León, España | (+34) 626 68 71 79 | diegodelafuentealonso@gmail.com | LinkedIn | GitHub"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVHeading",
+      "text": "PERFIL PROFESIONAL"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVBody",
+      "text": "Analista de datos con experiencia consolidada en diseño y desarrollo de cuadros de mando en Looker / Looker Studio, consultas analíticas avanzadas en Google BigQuery y automatización de procesos de datos mediante Python. Experiencia en entorno multinacional (HORSE Technologies) transformando datos en insights accionables para la dirección y equipos operativos. Formación técnica en Inteligencia Artificial, Big Data y desarrollo de aplicaciones. Con capacidad contrastada para comunicar métricas y recomendaciones claras a interlocutores técnicos y de negocio."
+    },
+    {
+      "type": "paragraph",
+      "style": "CVHeading",
+      "text": "COMPETENCIAS TÉCNICAS CLAVE"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Business Intelligence & Reporting: Looker, Looker Studio, diseño de dashboards ejecutivos y operacionales, definición de métricas y KPIs de negocio.",
+        "Plataformas de Datos & SQL: Google BigQuery (SQL avanzado, optimización de queries, agregaciones complejas), Dataform, SQL Server.",
+        "Programación & Automatización: Python (manejo y limpieza de datos, automatización de reporting, scripts analíticos), Go.",
+        "Análisis de Negocio: Segmentación, análisis de comportamiento, rendimiento de embudos de conversión, data storytelling.",
+        "Entornos & Herramientas: Google Cloud Platform (GCP), Git, metodologías ágiles, SAP (procesos de negocio)."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVHeading",
+      "text": "EXPERIENCIA PROFESIONAL"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobHeader",
+      "text": "HORSE Technologies — Data & Software / AI Developer"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobDate",
+      "text": "Valladolid | Julio 2026 – Actualidad"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Diseño, desarrollo y mantenimiento de dashboards analíticos en Looker para el seguimiento de métricas clave y toma de decisiones corporativas.",
+        "Consulta, extracción y agregación de grandes conjuntos de datos con Google BigQuery y Dataform.",
+        "Automatización de extracciones y transformaciones de datos utilizando Python para garantizar reportes actualizados y fiables.",
+        "Colaboración estrecha con responsables de área para traducir requisitos de negocio en soluciones visuales e informes comprensibles.",
+        "Desarrollo de herramientas internas en Python y Go para optimizar la operativa diaria."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobHeader",
+      "text": "FDS, a DXC Technology Company — Consultor Técnico SAP"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobDate",
+      "text": "Febrero 2026 – Junio 2026"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Desarrollo de extensiones y programación a medida en ABAP.",
+        "Gestión, trazabilidad y transporte de órdenes entre entornos de desarrollo, calidad y producción.",
+        "Soporte y análisis técnico en procesos vinculados al módulo de Logística de SAP."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobHeader",
+      "text": "Ayuntamiento de Roperuelos del Páramo — Desarrollador de Software Backend"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobDate",
+      "text": "Junio 2024 – Octubre 2024 | Junio 2023 – Septiembre 2023"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Desarrollo de servicios web y plataformas administrativas con Java y el framework Spring Boot.",
+        "Diseño e implementación de APIs RESTful utilizando Python para la gestión y tramitación de datos.",
+        "Diseño de modelos relacionales en bases de datos y optimización de consultas SQL."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobHeader",
+      "text": "Craftelier — Desarrollador de Software"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobDate",
+      "text": "Marzo 2024 – Mayo 2024"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Desarrollo de aplicaciones de escritorio en C# y .NET sobre Visual Studio.",
+        "Consultas avanzadas y optimización en bases de datos SQL Server mediante SSMS.",
+        "Desarrollo móvil en Android utilizando Kotlin."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVHeading",
+      "text": "FORMACIÓN ACADÉMICA"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Curso de Especialización en Inteligencia Artificial y Big Data (2024 – 2025).",
+        "Técnico Superior en Desarrollo de Aplicaciones Web (DAW) — IES San Andrés (2025 – 2026).",
+        "Técnico Superior en Desarrollo de Aplicaciones Multiplataforma (DAM) — IES San Andrés (2022 – 2024)."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVHeading",
+      "text": "IDIOMAS"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Español: Nativo.",
+        "Inglés: Nivel B1 (Capacidad técnica para documentación, lectura y comunicación profesional)."
+      ]
+    }
+  ]
+}

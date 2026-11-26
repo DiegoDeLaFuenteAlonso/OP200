@@ -1,0 +1,208 @@
+{
+  "page": {
+    "width_mm": 210,
+    "height_mm": 297,
+    "margins_mm": {
+      "top": 18,
+      "bottom": 18,
+      "left": 18,
+      "right": 18
+    }
+  },
+  "styles": [
+    {
+      "name": "CVTitle",
+      "base": "Normal",
+      "font": "Calibri",
+      "size_pt": 20,
+      "bold": true,
+      "color": "111827"
+    },
+    {
+      "name": "CVSubtitle",
+      "base": "Normal",
+      "font": "Calibri",
+      "size_pt": 11.5,
+      "bold": true,
+      "color": "1F2937"
+    },
+    {
+      "name": "CVContact",
+      "base": "Normal",
+      "font": "Calibri",
+      "size_pt": 9.5,
+      "color": "4B5563"
+    },
+    {
+      "name": "CVHeading",
+      "base": "Normal",
+      "font": "Calibri",
+      "size_pt": 12,
+      "bold": true,
+      "color": "111827"
+    },
+    {
+      "name": "CVJobHeader",
+      "base": "Normal",
+      "font": "Calibri",
+      "size_pt": 10.5,
+      "bold": true,
+      "color": "111827"
+    },
+    {
+      "name": "CVJobDate",
+      "base": "Normal",
+      "font": "Calibri",
+      "size_pt": 9.5,
+      "italic": true,
+      "color": "4B5563"
+    },
+    {
+      "name": "CVBody",
+      "base": "Normal",
+      "font": "Calibri",
+      "size_pt": 10,
+      "color": "1F2937"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "paragraph",
+      "style": "CVTitle",
+      "text": "DIEGO DE LA FUENTE ALONSO"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVSubtitle",
+      "text": "Data Engineer & AI Agent Builder | Python, SQL, GCP (BigQuery), Declarative Data Modeling (Dataform/dbt), Looker & MCP"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVContact",
+      "text": "Spain (100% Remote, GMT+1) | (+34) 626 68 71 79 | diegodelafuentealonso@gmail.com"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVHeading",
+      "text": "PROFESSIONAL SUMMARY"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVBody",
+      "text": "AI-first Data Engineer and Backend Software Developer specializing in end-to-end cloud data pipelines, declarative SQL transformation layers, self-service BI, and autonomous AI agent systems. Proven experience at HORSE Technologies architecting and scaling data workflows on Google Cloud Platform (BigQuery, Dataform/dbt-style modeling, Looker) and Python ETLs, while pioneering production AI agent harnesses, loop engineering, and standardized tool integrations via the Model Context Protocol (MCP) to serve data and operational workflows. Strong software engineering fundamentals across Python, Go, SQL, and REST APIs, combining structured data modeling with practical AI automation."
+    },
+    {
+      "type": "paragraph",
+      "style": "CVHeading",
+      "text": "CORE TECHNICAL STACK"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Modern Data Stack & Pipelines: Python (ETL/ELT ingestion, automation, pandas, REST APIs), Advanced SQL, Google BigQuery (partitioning, clustering, query optimization, scheduled queries), Microsoft SQL Server (SSMS).",
+        "Data Transformation & Quality (dbt / Dataform): Declarative SQL modeling in Dataform (dbt-equivalent DAGs, staging/intermediate/mart layers, incremental models, schema documentation, and automated data quality assertions).",
+        "Self-Service BI & Semantic Layer: Looker & LookML (semantic modeling, certified KPI definitions, self-service explores, and operational/executive dashboards).",
+        "AI Agents for Data & Orchestration: Autonomous AI Agent Architectures, Agent Harnesses, Loop Engineering, Model Context Protocol (MCP) server/tool integration, RAG pipelines, LLM APIs (Anthropic Claude, Google Gemini, OpenAI, ElevenAPI).",
+        "Software Engineering & Infra Fundamentals: Python, Go (Golang), Java (Spring Boot), C# (.NET), Git/GitHub, CI/CD workflows, Docker, Linux, and cloud data architectures (GCP)."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVHeading",
+      "text": "PROFESSIONAL EXPERIENCE"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobHeader",
+      "text": "HORSE Technologies — Data Analyst & Software / AI Engineer"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobDate",
+      "text": "Valladolid, Spain | July 2026 – Present"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Streamlined end-to-end data availability from raw ingestion to business delivery by engineering automated Python ETL pipelines and orchestrating declarative SQL transformations in Google BigQuery and Dataform (following dbt best practices for modular DAGs, incremental loads, and automated quality controls).",
+        "Reduced query latency and warehouse compute costs across large-scale analytical datasets by implementing table partitioning, clustering, and optimized SQL data models in BigQuery.",
+        "Empowered cross-functional teams with self-service data access by designing, documenting, and maintaining the semantic metrics layer and executive dashboards in Looker (LookML).",
+        "Created production AI agents and internal developer tooling in Python and Go—implementing custom agent harnesses, deterministic loop engineering patterns, and Model Context Protocol (MCP) integrations—to connect LLMs safely with enterprise systems and serve data-driven workflows."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobHeader",
+      "text": "FDS, a DXC Technology Company — SAP Technical Consultant"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobDate",
+      "text": "Spain | February 2026 – June 2026"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Ensured data integrity and release reliability across enterprise Logistics systems by developing custom ABAP data extensions and managing multi-environment transport pipelines (DEV, QAS, PRD) with strict quality controls."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobHeader",
+      "text": "Ayuntamiento de Roperuelos del Páramo — Backend Software Developer (Python & Java)"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobDate",
+      "text": "León, Spain | June 2024 – October 2024 & June 2023 – September 2023"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Automated data ingestion and administrative workflows by designing and deploying backend RESTful APIs in Python and web services in Java (Spring Boot), backed by normalized relational SQL schemas."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobHeader",
+      "text": "Craftelier — Software & Database Developer"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobDate",
+      "text": "Spain | March 2024 – May 2024"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Improved transactional and analytical query performance by optimizing complex stored procedures and relational data models in Microsoft SQL Server (SSMS), while maintaining internal business applications in .NET / C# and Kotlin."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVHeading",
+      "text": "EDUCATION & SPECIALIZATIONS"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Postgraduate Specialization in Artificial Intelligence & Big Data (2024 – 2025) — Focus on large-scale data processing, distributed Big Data architectures, MLOps, and predictive/generative AI models.",
+        "Higher Technician in Web Application Development (DAW) — IES San Andrés (2025 – 2026).",
+        "Higher Technician in Multi-Platform Application Development (DAM) — IES San Andrés (2022 – 2024)."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVHeading",
+      "text": "LANGUAGES & WORK SETUP"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Spanish: Native.",
+        "English: Professional technical proficiency (B1/B2 reading, technical documentation, and written engineering communication).",
+        "Location & Timezone: Based in Spain (CET / GMT+1), full EU work authorization, equipped for 100% remote collaboration."
+      ]
+    }
+  ]
+}

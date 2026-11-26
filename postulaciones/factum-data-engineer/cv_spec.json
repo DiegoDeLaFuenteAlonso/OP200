@@ -1,0 +1,214 @@
+{
+  "page": {
+    "width_mm": 210,
+    "height_mm": 297,
+    "margins_mm": {
+      "top": 20,
+      "bottom": 20,
+      "left": 20,
+      "right": 20
+    }
+  },
+  "styles": [
+    {
+      "name": "CVTitle",
+      "base": "Normal",
+      "font": "Calibri",
+      "size_pt": 20,
+      "bold": true,
+      "color": "003366"
+    },
+    {
+      "name": "CVSubtitle",
+      "base": "Normal",
+      "font": "Calibri",
+      "size_pt": 12,
+      "bold": true,
+      "color": "4A5568"
+    },
+    {
+      "name": "CVContact",
+      "base": "Normal",
+      "font": "Calibri",
+      "size_pt": 10,
+      "color": "718096"
+    },
+    {
+      "name": "CVHeading",
+      "base": "Normal",
+      "font": "Calibri",
+      "size_pt": 13,
+      "bold": true,
+      "color": "003366"
+    },
+    {
+      "name": "CVJobHeader",
+      "base": "Normal",
+      "font": "Calibri",
+      "size_pt": 11,
+      "bold": true,
+      "color": "1A202C"
+    },
+    {
+      "name": "CVJobDate",
+      "base": "Normal",
+      "font": "Calibri",
+      "size_pt": 9.5,
+      "italic": true,
+      "color": "718096"
+    },
+    {
+      "name": "CVBody",
+      "base": "Normal",
+      "font": "Calibri",
+      "size_pt": 10,
+      "color": "2D3748"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "paragraph",
+      "style": "CVTitle",
+      "text": "DIEGO DE LA FUENTE ALONSO"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVSubtitle",
+      "text": "Data Engineer & MLOps | Python, FastAPI, Pipelines ETL & Arquitecturas ML"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVContact",
+      "text": "Valladolid / España (100% Remoto) | (+34) 626 68 71 79 | diegodelafuentealonso@gmail.com | LinkedIn | GitHub"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVHeading",
+      "text": "PERFIL PROFESIONAL"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVBody",
+      "text": "Ingeniero de datos y desarrollador backend con sólida experiencia en diseño e implementación de pipelines ETL/ELT automatizados en Python, desarrollo de APIs RESTful con FastAPI y despliegue de soluciones analíticas y modelos de Machine Learning. Experiencia en HORSE Technologies optimizando flujos de datos a gran escala, integrando sistemas agénticos mediante Model Context Protocol (MCP) y construyendo servicios de alto rendimiento en Python y Go. Formación técnica integral con doble titulación técnica en desarrollo de aplicaciones (DAM / DAW) y Especialización Superior en Inteligencia Artificial y Big Data (MLflow, arquitecturas distribuidas). Acostumbrado a entornos ágiles, pruebas unitarias automatizadas (pytest) y contenedores Docker."
+    },
+    {
+      "type": "paragraph",
+      "style": "CVHeading",
+      "text": "COMPETENCIAS TÉCNICAS CLAVE"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Desarrollo Backend & APIs: Python (avanzado), desarrollo de servicios y APIs REST con FastAPI / Flask, testing automatizado con pytest, validación de datos con Pydantic, Go (Golang), Java (Spring Boot, microservicios).",
+        "Data Engineering & Pipelines ETL: Construcción, orquestación y automatización de pipelines de datos en Python, modelado declarativo de transformaciones con Dataform, procesamiento analítico a gran escala.",
+        "MLOps & Inteligencia Artificial: Gestión del ciclo de vida de modelos ML mediante MLflow (tracking, versionado, empaquetado y registro), despliegue de soluciones inteligentes en producción, interoperabilidad mediante Model Context Protocol (MCP).",
+        "Bases de Datos & Cloud: SQL Server (SSMS, consultas complejas, optimización, procedimientos almacenados), Google BigQuery (optimización de queries, clustering, particionado), Azure SQL, diseño relacional y NoSQL.",
+        "DevOps, Contenedores & Entornos: Docker, conceptos de Kubernetes / AKS, integración y despliegue continuo (CI/CD), Git / GitHub, observabilidad y monitorización, Linux."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVHeading",
+      "text": "EXPERIENCIA LABORAL"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobHeader",
+      "text": "HORSE Technologies — Data & Software / AI Developer"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobDate",
+      "text": "Valladolid | Julio 2026 – Actualidad"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Desarrollo y automatización de pipelines de datos y procesos ETL de extremo a extremo utilizando Python, garantizando la fiabilidad y calidad del dato analítico.",
+        "Construcción de servicios backend y utilidades internas de alto rendimiento desarrolladas en Python y Go.",
+        "Pionero en la industrialización de agentes de Inteligencia Artificial para automatización operativa, implementando agent harnesses, control de bucles de ejecución y protocolos estandarizados (MCP).",
+        "Consulta, explotación y modelado de datos sobre petabytes en Google BigQuery y Dataform, aplicando técnicas de optimización de rendimiento y reducción de costes de computación.",
+        "Diseño y publicación de modelos analíticos y dashboards de reporting en Looker para la toma de decisiones de negocio."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobHeader",
+      "text": "FDS, a DXC Technology Company — Consultor Técnico SAP"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobDate",
+      "text": "Febrero 2026 – Junio 2026"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Desarrollo y mantenimiento de personalizaciones de software y reportes en ABAP.",
+        "Gestión, validación y despliegue de órdenes de transporte a través de entornos de desarrollo, pruebas y producción.",
+        "Soporte técnico y análisis de procesos en el módulo de Logística de SAP en entorno multinacional."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobHeader",
+      "text": "Ayuntamiento de Roperuelos del Páramo — Desarrollador Backend & APIs"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobDate",
+      "text": "Junio 2024 – Octubre 2024 | Junio 2023 – Septiembre 2023"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Diseño e implementación de servicios backend y APIs REST en Python para la automatización de la tramitación de expedientes y gestión de datos.",
+        "Desarrollo de aplicaciones web y microservicios robustos utilizando Java con Spring Boot.",
+        "Diseño de modelos relacionales de bases de datos y optimización de consultas SQL."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobHeader",
+      "text": "Craftelier — Desarrollador de Software & Bases de Datos"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobDate",
+      "text": "Marzo 2024 – Mayo 2024"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Consultas avanzadas, optimización de rendimiento y mantenimiento de bases de datos en SQL Server mediante SQL Server Management Studio (SSMS).",
+        "Desarrollo y evolución de aplicaciones de escritorio empresariales bajo plataforma .NET / C# en Visual Studio.",
+        "Desarrollo de módulos para aplicaciones móviles Android en Kotlin."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVHeading",
+      "text": "FORMACIÓN ACADÉMICA"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Curso de Especialización en Inteligencia Artificial y Big Data (2024 – 2025) — Ciclo de vida de modelos ML (MLflow), arquitecturas de datos distribuidas y procesamiento masivo.",
+        "Técnico Superior en Desarrollo de Aplicaciones Web (DAW) — IES San Andrés (2025 – 2026).",
+        "Técnico Superior en Desarrollo de Aplicaciones Multiplataforma (DAM) — IES San Andrés (2022 – 2024)."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVHeading",
+      "text": "IDIOMAS"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Español: Nativo.",
+        "Inglés: Nivel B1 técnico (Capacidad demostrada para lectura de documentación técnica, especificaciones de arquitectura y comunicación escrita)."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,128 @@
+{
+  "blocks": [
+    {
+      "type": "paragraph",
+      "style": "CVTitle",
+      "text": "DIEGO DE LA FUENTE ALONSO"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVSubtitle",
+      "text": "Desarrollador Web & Software Junior (CFGS DAW / DAM) | HTML · CSS · JS · Java · SQL · Git"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVContact",
+      "text": "Castilla y León (Valladolid / Disponibilidad Miranda de Ebro)  |  (+34) 626 68 71 79  |  diegodelafuentealonso@gmail.com"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVHeading",
+      "text": "PERFIL PROFESIONAL"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVBody",
+      "text": "Desarrollador de software y aplicaciones web titulado con doble Grado Superior en Desarrollo de Aplicaciones Web (DAW) y Multiplataforma (DAM), complementado con el Curso de Especialización en Inteligencia Artificial y Big Data. Experiencia profesional en construcción de portales web interactivos con Java (Spring Boot), servicios REST en Python, tratamiento de datos en SQL y mantenimiento evolutivo con control de entregas entre entornos (DEV, QAS, PRD). Perfil resolutivo y orientado a la calidad de código en Castilla y León."
+    },
+    {
+      "type": "paragraph",
+      "style": "CVHeading",
+      "text": "COMPETENCIAS TÉCNICAS CLAVE"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Desarrollo Web y Estándares Front-End: Maquetación e interfaces web con HTML5, CSS3 y JavaScript (CFGS DAW), desarrollo de portales interactivos y base sólida para especialización rápida en Angular, React y Web Components.",
+        "Lenguajes y Frameworks Backend: Java (Spring Boot), Python (APIs RESTful y automatización), Go (Golang), C# (.NET) y Kotlin (Android).",
+        "Bases de Datos y Tratamiento SQL: Consultas avanzadas, procedimientos y modelado en Microsoft SQL Server (SSMS), Google BigQuery y Dataform.",
+        "Calidad, Versionado y Despliegues: Control de versiones en Git, pruebas funcionales/técnicas, mantenimiento correctivo y evolutivo y gestión de órdenes entre entornos (DEV, QAS, PRD)."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVHeading",
+      "text": "EXPERIENCIA PROFESIONAL"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobHeader",
+      "text": "HORSE Technologies — Software / AI Developer & Data Analyst"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobDate",
+      "text": "Valladolid, Castilla y León | Julio 2026 – Actualidad"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Desarrollo de herramientas internas de software en Python y Go, automatización de procesos e integración de APIs mediante el estándar MCP.",
+        "Tratamiento y modelado de información en SQL (Google BigQuery y Dataform), pruebas de calidad y publicación de cuadros de mando operativos en Looker."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobHeader",
+      "text": "FDS, a DXC Technology Company — Consultor Técnico SAP"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobDate",
+      "text": "España | Febrero 2026 – Junio 2026"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Desarrollo técnico a medida en ABAP, validación de soluciones y gestión controlada de despliegues mediante órdenes de transporte entre entornos (DEV, QAS, PRD)."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobHeader",
+      "text": "Ayuntamiento de Roperuelos del Páramo — Desarrollador de Software"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobDate",
+      "text": "León, Castilla y León | Junio 2024 – Octubre 2024 y Junio 2023 – Septiembre 2023"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Construcción, mantenimiento correctivo y evolutivo de portales y aplicaciones web interactivas utilizando Java (Spring Boot).",
+        "Diseño, implementación, pruebas y aseguramiento de servicios web y endpoints de APIs REST en Python para gestión administrativa."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobHeader",
+      "text": "Craftelier — Desarrollador de Software & Bases de Datos"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobDate",
+      "text": "España | Marzo 2024 – Mayo 2024"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Mantenimiento de aplicaciones empresariales en .NET / C#, desarrollo de módulos móviles en Android (Kotlin) y optimización SQL en SQL Server (SSMS)."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVHeading",
+      "text": "FORMACIÓN ACADÉMICA E IDIOMAS"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Técnico Superior en Desarrollo de Aplicaciones Web (DAW) — IES San Andrés (2025 – 2026).",
+        "Técnico Superior en Desarrollo de Aplicaciones Multiplataforma (DAM) — IES San Andrés (2022 – 2024).",
+        "Curso de Especialización en Inteligencia Artificial y Big Data (2024 – 2025).",
+        "Idiomas: Español (Nativo) · Inglés (Nivel B1 — lectura técnica de documentación)."
+      ]
+    }
+  ]
+}

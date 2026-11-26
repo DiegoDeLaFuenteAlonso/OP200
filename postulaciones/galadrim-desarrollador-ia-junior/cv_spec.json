@@ -1,0 +1,129 @@
+{
+  "blocks": [
+    {
+      "type": "paragraph",
+      "style": "CVTitle",
+      "text": "DIEGO DE LA FUENTE ALONSO"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVSubtitle",
+      "text": "AI Engineer & Full-Stack Developer Junior | Agentes IA · LLMs · Python · APIs & SQL"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVContact",
+      "text": "Valladolid / Disponibilidad Madrid (Híbrido)  |  (+34) 626 68 71 79  |  diegodelafuentealonso@gmail.com"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVHeading",
+      "text": "PERFIL PROFESIONAL"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVBody",
+      "text": "Desarrollador de soluciones de Inteligencia Artificial y software Full-Stack con experiencia práctica diseñando agentes de IA, arquitecturas agent harness, bucles de razonamiento (loop engineering) e integraciones estandarizadas vía Model Context Protocol (MCP) con modelos Claude, Gemini y OpenAI. Combino programación sólida en Python, Go y Java/Web con preparación de datos (BigQuery, Dataform, SQL) y desarrollo end-to-end (DAM, DAW y Curso de Especialización en IA y Big Data), manteniendo control estricto del codebase en flujos asistidos por IA."
+    },
+    {
+      "type": "paragraph",
+      "style": "CVHeading",
+      "text": "COMPETENCIAS TÉCNICAS CLAVE"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "IA Generativa, LLMs y Agentes: Diseño de sistemas multi-agente, agent harnesses, loop engineering, tool calling, Model Context Protocol (MCP), arquitecturas RAG, vectorización y APIs de OpenAI, Anthropic (Claude) y Google (Gemini).",
+        "Python, Datos y Modelos Predictivos: Python avanzado (ETL, limpieza de datos, automatización e ingesta), Google BigQuery, Dataform, SQL Server y base de Deep Learning y modelos predictivos (Especialización en IA y Big Data).",
+        "Desarrollo Full-Stack End-to-End y Backend: Go (Golang), Java (Spring Boot), .NET / C#, Kotlin (Android), diseño de APIs RESTful, modelado SQL/NoSQL, desarrollo web (DAW) y control de versiones con Git.",
+        "Flujo de Ingeniería Pragmático: Desarrollo iterativo rápido orientado a negocio con asistentes de código IA manteniendo arquitectura limpia, pruebas y trazabilidad en entornos corporativos (DEV, QAS, PRD)."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVHeading",
+      "text": "EXPERIENCIA PROFESIONAL"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobHeader",
+      "text": "HORSE Technologies — AI & Software Developer / Data Analyst"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobDate",
+      "text": "Valladolid, España | Julio 2026 – Actualidad"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Diseño e implementación práctica de agentes de Inteligencia Artificial aplicados a procesos internos mediante agent harnesses, loop engineering y orquestación de tareas complejas.",
+        "Integración de modelos y agentes con sistemas de la compañía a través del estándar Model Context Protocol (MCP) y APIs externas.",
+        "Desarrollo de herramientas internas de software y utilidades backend en Python y Go, junto a pipelines ETL de extracción, depuración y transformación de datos.",
+        "Modelado analítico en Google BigQuery y Dataform y creación de cuadros de mando operativos en Looker orientados a negocio."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobHeader",
+      "text": "FDS, a DXC Technology Company — Consultor Técnico SAP"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobDate",
+      "text": "España | Febrero 2026 – Junio 2026"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Desarrollo de soluciones a medida en ABAP y validación de entregas mediante órdenes de transporte entre entornos (DEV, QAS, PRD)."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobHeader",
+      "text": "Ayuntamiento de Roperuelos del Páramo — Desarrollador de Software"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobDate",
+      "text": "León, España | Junio 2024 – Octubre 2024 y Junio 2023 – Septiembre 2023"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Desarrollo end-to-end de plataformas y portales web con Spring Boot (Java) y diseño de servicios backend y APIs REST en Python."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobHeader",
+      "text": "Craftelier — Desarrollador de Software & Bases de Datos"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobDate",
+      "text": "España | Marzo 2024 – Mayo 2024"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Desarrollo de aplicaciones empresariales en .NET / C#, módulos móviles Android en Kotlin y optimización de consultas en SQL Server (SSMS)."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVHeading",
+      "text": "FORMACIÓN ACADÉMICA E IDIOMAS"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Curso de Especialización en Inteligencia Artificial y Big Data (2024 – 2025): Modelos predictivos, Deep Learning y procesamiento a escala.",
+        "Técnico Superior en Desarrollo de Aplicaciones Web (DAW) — IES San Andrés (2025 – 2026).",
+        "Técnico Superior en Desarrollo de Aplicaciones Multiplataforma (DAM) — IES San Andrés (2022 – 2024).",
+        "Idiomas: Español (Nativo) · Inglés (Nivel B1 — lectura de documentación, redacción y preparación de exposición técnica)."
+      ]
+    }
+  ]
+}

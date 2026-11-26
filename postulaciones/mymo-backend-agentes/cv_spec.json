@@ -1,0 +1,195 @@
+{
+  "page": {
+    "width_mm": 210,
+    "height_mm": 297,
+    "margins_mm": {
+      "top": 20,
+      "bottom": 20,
+      "left": 20,
+      "right": 20
+    }
+  },
+  "styles": [
+    {
+      "name": "CVTitle",
+      "base": "Normal",
+      "font": "Calibri",
+      "size_pt": 20,
+      "bold": true,
+      "color": "003366"
+    },
+    {
+      "name": "CVSubtitle",
+      "base": "Normal",
+      "font": "Calibri",
+      "size_pt": 12,
+      "bold": true,
+      "color": "4A5568"
+    },
+    {
+      "name": "CVContact",
+      "base": "Normal",
+      "font": "Calibri",
+      "size_pt": 10,
+      "color": "718096"
+    },
+    {
+      "name": "CVHeading",
+      "base": "Normal",
+      "font": "Calibri",
+      "size_pt": 13,
+      "bold": true,
+      "color": "003366"
+    },
+    {
+      "name": "CVJobHeader",
+      "base": "Normal",
+      "font": "Calibri",
+      "size_pt": 11,
+      "bold": true,
+      "color": "1A202C"
+    },
+    {
+      "name": "CVJobDate",
+      "base": "Normal",
+      "font": "Calibri",
+      "size_pt": 9.5,
+      "italic": true,
+      "color": "718096"
+    },
+    {
+      "name": "CVBody",
+      "base": "Normal",
+      "font": "Calibri",
+      "size_pt": 10,
+      "color": "2D3748"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "paragraph",
+      "style": "CVTitle",
+      "text": "DIEGO DE LA FUENTE ALONSO"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVSubtitle",
+      "text": "Backend & AI Agent Engineer | Loop Engineering, Agent Harness & LLM APIs"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVContact",
+      "text": "Valladolid / España (100% Remoto) | (+34) 626 68 71 79 | diegodelafuentealonso@gmail.com | LinkedIn | GitHub"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVHeading",
+      "text": "PERFIL PROFESIONAL"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVBody",
+      "text": "Ingeniero de software especializado en el diseño, desarrollo y orquestación de sistemas basados en agentes autónomos de Inteligencia Artificial y APIs de LLMs (Claude, OpenAI, Gemini). Experiencia práctica en HORSE Technologies construyendo agent harnesses, flujos de control de razonamiento (loop engineering, human-in-the-loop) e integración de herramientas mediante Model Context Protocol (MCP). Sólida formación con doble grado superior en DAM/DAW y Especialización en Inteligencia Artificial y Big Data. Dominio técnico de backend en Python y Go, junto con experiencia profesional previa en el ecosistema .NET / C# y bases de datos relacionales."
+    },
+    {
+      "type": "paragraph",
+      "style": "CVHeading",
+      "text": "COMPETENCIAS TÉCNICAS CLAVE"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Sistemas Agénticos & Orquestación: Diseño de ecosistemas multi-agente, arquitecturas agent harness, loop engineering, patrones human-in-the-loop (propuesta, validación y auditoría), control de estados y memoria.",
+        "APIs de Modelos LLM & Protocolos: Integración avanzada de Claude API (Anthropic), OpenAI y Gemini, tool calling estructurado, Model Context Protocol (MCP), validación de salidas.",
+        "Desarrollo Backend & Lenguajes: Python (avanzado, APIs RESTful, frameworks de automatización), Go (Golang), .NET / C# (desarrollo previo en Craftelier), Java (Spring Boot), microservicios.",
+        "Bases de Datos & Persistencia: SQL Server (SSMS, consultas complejas, integridad relacional), BigQuery, diseño de esquemas para trazabilidad y logs de auditoría.",
+        "Entornos & Metodologías: Git / GitHub, Docker, APIs RESTful seguras, trabajo en remoto con comunicación proactiva y autonomía técnica."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVHeading",
+      "text": "EXPERIENCIA LABORAL"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobHeader",
+      "text": "HORSE Technologies — Data & Software / AI Developer"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobDate",
+      "text": "Valladolid | Julio 2026 – Actualidad"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Diseño, desarrollo y despliegue de soluciones basadas en agentes de Inteligencia Artificial para la automatización de procesos técnicos corporativos.",
+        "Implementación de agent harnesses y bucles de razonamiento (loop engineering) con supervisión humana y registro de acciones.",
+        "Integración de agentes con herramientas y sistemas de información utilizando el estándar Model Context Protocol (MCP).",
+        "Desarrollo de servicios backend y utilidades internas de alto rendimiento con Python y Go.",
+        "Automatización de pipelines ETL y consultas analíticas a gran escala sobre Google BigQuery."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobHeader",
+      "text": "Craftelier — Desarrollador de Software (.NET / C#) & SQL Server"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobDate",
+      "text": "Marzo 2024 – Mayo 2024"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Desarrollo y evolución de aplicaciones empresariales utilizando el ecosistema .NET y C# en Visual Studio.",
+        "Consultas avanzadas, optimización de procedimientos y modelado relacional en SQL Server (SSMS).",
+        "Desarrollo de módulos móviles en Android con Kotlin."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobHeader",
+      "text": "Ayuntamiento de Roperuelos del Páramo — Desarrollador Backend & APIs REST"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobDate",
+      "text": "Junio 2024 – Octubre 2024 | Junio 2023 – Septiembre 2023"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Desarrollo de endpoints y servicios backend de APIs REST en Python para gestión y tramitación de datos.",
+        "Construcción de aplicaciones web administrativas y microservicios con Java y Spring Boot."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVHeading",
+      "text": "FORMACIÓN ACADÉMICA"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Curso de Especialización en Inteligencia Artificial y Big Data (2024 – 2025).",
+        "Técnico Superior en Desarrollo de Aplicaciones Web (DAW) — IES San Andrés (2025 – 2026).",
+        "Técnico Superior en Desarrollo de Aplicaciones Multiplataforma (DAM) — IES San Andrés (2022 – 2024)."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVHeading",
+      "text": "IDIOMAS"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Español: Nativo.",
+        "Inglés: Nivel B1 técnico (Capacidad para lectura fluida de documentación de APIs, especificaciones de arquitectura y comunicación escrita)."
+      ]
+    }
+  ]
+}

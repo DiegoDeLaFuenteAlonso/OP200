@@ -1,0 +1,140 @@
+{
+  "blocks": [
+    {
+      "type": "paragraph",
+      "style": "CVTitle",
+      "text": "DIEGO DE LA FUENTE ALONSO"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVSubtitle",
+      "text": "Producto Digital, Datos & Tecnología | Validación de Datos (SQL / Python / Looker) · Requisitos IT · IA & Smart Mobility"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVContact",
+      "text": "Valladolid, España (Presencial / Híbrido)  |  (+34) 626 68 71 79  |  diegodelafuentealonso@gmail.com"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVHeading",
+      "text": "PERFIL PROFESIONAL"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVBody",
+      "text": "Perfil técnico-analítico recién titulado en 2026 (Especialización en Inteligencia Artificial y Big Data, CFGS DAW y CFGS DAM) residente en Valladolid y con experiencia en HORSE Technologies, FDS (DXC Technology) y entorno municipal (Ayuntamiento de Roperuelos del Páramo). Especializado en recogida, validación y análisis de datos (SQL, Python, Google BigQuery, Dataform, Looker y SQL Server), redacción técnica de requisitos y coordinación directa con equipos de desarrollo para evolucionar soluciones tecnológicas."
+    },
+    {
+      "type": "paragraph",
+      "style": "CVHeading",
+      "text": "COMPETENCIAS CLAVE (PRODUCTO TECNOLÓGICO, DATOS & COORDINACIÓN IT)"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Recogida, Validación de Datos & Análisis de Pilotos: Extracción, limpieza, control de integridad y análisis de resultados con Python, SQL avanzado (Google BigQuery y SQL Server) y Dataform; diseño de cuadros de mando y métricas operativas en Looker para detectar mejoras.",
+        "Documentación Funcional, Coordinación IT & Metodologías Ágiles: Toma y síntesis de requisitos funcionales y técnicos, interlocución entre negocio y equipos de desarrollo, seguimiento iterativo de tareas e incidencias y control de entregas entre entornos (DEV, QAS, PRD).",
+        "IA, Visión de Datos & Tecnología Aplicada: Curso de Especialización en IA y Big Data (modelos predictivos y deep learning aplicables a evaluación de pilotos como LPR u optimización de rutas) y automatización de procesos en Python y Go.",
+        "Ingeniería de Producto & Seguridad de la Información: Base sólida en arquitectura de software (Java Spring Boot, APIs REST en Python, C# .NET y Kotlin), aseguramiento de endpoints, calidad del dato y cumplimiento de normativas técnicas."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVHeading",
+      "text": "EXPERIENCIA PROFESIONAL"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobHeader",
+      "text": "HORSE Technologies — Data Analyst & Software / AI Developer"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobDate",
+      "text": "Julio 2026 – Actualidad  |  Valladolid, España"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Diseño, mantengo y publico cuadros de mando y métricas clave en Looker para dar soporte a la toma de decisiones de producto y operaciones.",
+        "Ejecuto la recogida, validación y transformación de datos en Google BigQuery, Dataform y Python mediante pipelines ETL automatizados con foco en calidad del dato.",
+        "Desarrollo herramientas internas en Python y Go e integro soluciones de IA y automatización (agent harnesses y MCP) conectadas a sistemas de la compañía."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobHeader",
+      "text": "FDS, a DXC Technology Company — Consultor Técnico SAP"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobDate",
+      "text": "Febrero 2026 – Junio 2026  |  España"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Participé en la parametrización, documentación de requisitos y soporte técnico en procesos del módulo de Logística de SAP mediante desarrollos en ABAP.",
+        "Gestioné y validé órdenes de transporte entre los entornos DEV, QAS y PRD asegurando la trazabilidad y calidad antes de cada paso a producción."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobHeader",
+      "text": "Ayuntamiento de Roperuelos del Páramo — Desarrollador de Software"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobDate",
+      "text": "Junio 2024 – Octubre 2024  |  Junio 2023 – Septiembre 2023  |  León, España"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Construí portales y aplicaciones web municipales con Spring Boot (Java) e implementé servicios backend y endpoints de APIs REST asegurados en Python."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobHeader",
+      "text": "Craftelier — Desarrollador de Software"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobDate",
+      "text": "Marzo 2024 – Mayo 2024  |  España"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Desarrollé aplicaciones de escritorio en .NET / C# (Visual Studio), optimicé consultas y procedimientos en SQL Server (SSMS) y probé módulos Android en Kotlin."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVHeading",
+      "text": "EDUCACIÓN Y TITULACIONES OFICIALES"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Curso de Especialización en Inteligencia Artificial y Big Data (2024 – 2025) — Modelos predictivos, deep learning y arquitecturas Big Data.",
+        "Técnico Superior en Desarrollo de Aplicaciones Web (DAW) — IES San Andrés (2025 – 2026).",
+        "Técnico Superior en Desarrollo de Aplicaciones Multiplataforma (DAM) — IES San Andrés (2022 – 2024)."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVHeading",
+      "text": "IDIOMAS Y DISPONIBILIDAD"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Español: Nativo  |  Inglés: Nivel B1 (lectura fluida de documentación técnica y de producto, especificaciones y comunicación escrita).",
+        "Residencia actual en Valladolid  |  Disponibilidad presencial / híbrida a jornada completa (preaviso estándar de 15 días naturales)."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,208 @@
+{
+  "page": {
+    "width_mm": 210,
+    "height_mm": 297,
+    "margins_mm": {
+      "top": 16,
+      "bottom": 16,
+      "left": 18,
+      "right": 18
+    }
+  },
+  "styles": [
+    {
+      "name": "CVTitle",
+      "base": "Normal",
+      "font": "Calibri",
+      "size_pt": 20,
+      "bold": true,
+      "color": "111827"
+    },
+    {
+      "name": "CVSubtitle",
+      "base": "Normal",
+      "font": "Calibri",
+      "size_pt": 11.5,
+      "bold": true,
+      "color": "1F2937"
+    },
+    {
+      "name": "CVContact",
+      "base": "Normal",
+      "font": "Calibri",
+      "size_pt": 9.5,
+      "color": "4B5563"
+    },
+    {
+      "name": "CVHeading",
+      "base": "Normal",
+      "font": "Calibri",
+      "size_pt": 11.5,
+      "bold": true,
+      "color": "111827"
+    },
+    {
+      "name": "CVJobHeader",
+      "base": "Normal",
+      "font": "Calibri",
+      "size_pt": 10.5,
+      "bold": true,
+      "color": "111827"
+    },
+    {
+      "name": "CVJobDate",
+      "base": "Normal",
+      "font": "Calibri",
+      "size_pt": 9.5,
+      "italic": true,
+      "color": "4B5563"
+    },
+    {
+      "name": "CVBody",
+      "base": "Normal",
+      "font": "Calibri",
+      "size_pt": 10,
+      "color": "1F2937"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "paragraph",
+      "style": "CVTitle",
+      "text": "DIEGO DE LA FUENTE ALONSO"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVSubtitle",
+      "text": "Data Engineer GCP | Google BigQuery, Dataform (dbt), Pipelines ETL/ELT, Modelado de Datos, SQL & Python"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVContact",
+      "text": "España (100% Remoto / Valladolid - Madrid) | (+34) 626 68 71 79 | diegodelafuentealonso@gmail.com"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVHeading",
+      "text": "PERFIL PROFESIONAL"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVBody",
+      "text": "Ingeniero de Datos (Data Engineer) y Analista especializado en el diseño, desarrollo y evolución de procesos de integración y transformación de datos sobre Google Cloud Platform (GCP). Experiencia demostrada en producción en HORSE Technologies construyendo y optimizando pipelines ETL/ELT en Python, modelado dimensional y analítico sobre grandes volúmenes de datos en Google BigQuery (SQL avanzado, particionado y clustering) y orquestación de transformaciones declarativas con Dataform (flujos DAG, modelos incrementales y aserciones de calidad equivalentes a dbt). Acostumbrado a colaborar en entornos ágiles con arquitectos, analistas y equipos de negocio para desplegar soluciones escalables de reporting (Looker) e Inteligencia Artificial gobernadas de extremo a extremo."
+    },
+    {
+      "type": "paragraph",
+      "style": "CVHeading",
+      "text": "COMPETENCIAS TÉCNICAS Y STACK DE DATOS"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Google Cloud Platform (GCP) & Data Warehousing: Google BigQuery (SQL avanzado, optimización de rendimiento y costes, particionado por tiempo/rango, clustering, vistas materializadas), integración con servicios de almacenamiento y procesamiento en la nube (Cloud Storage / entornos GCP).",
+        "Transformación de Datos (Dataform / dbt): Desarrollo de pipelines ELT declarativos con Dataform (equivalente nativo en GCP a dbt), definición de dependencias (DAGs), cargas incrementales, documentación de esquemas, linaje y pruebas automatizadas de calidad y gobierno del dato.",
+        "Ingeniería de Datos & Procesos ETL/ELT: Diseño, construcción, automatización y monitorización de pipelines de extracción, transformación y carga en Python y Go, integrando múltiples fuentes heterogéneas (APIs REST, bases de datos relacionales y ficheros).",
+        "Modelado Analítico, BI & Bases de Datos: Modelado dimensional (esquemas en estrella, tablas de hechos y dimensiones) para analítica y reporting corporativo, desarrollo de capas semánticas (LookML) y cuadros de mando en Looker, y administración/optimización en Microsoft SQL Server (SSMS), PostgreSQL y NoSQL.",
+        "Data & AI Integration y Metodología Ágil: Conexión segura de plataformas de datos con agentes de IA mediante Model Context Protocol (MCP), desarrollo de microservicios (Java Spring Boot, .NET/C#, SAP ABAP), control de versiones con Git y trabajo colaborativo bajo metodologías Agile/Scrum."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVHeading",
+      "text": "EXPERIENCIA PROFESIONAL"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobHeader",
+      "text": "HORSE Technologies — Data Engineer & Analytics / AI Developer (Entorno GCP)"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobDate",
+      "text": "Julio 2026 – Actualidad | Valladolid, España"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Diseñé, desarrollé y mantuve pipelines de transformación ELT y modelos de datos en Google BigQuery y Dataform (arquitectura declarativa equivalente a dbt), estructurando dependencias DAG, tablas incrementales y validaciones de calidad para el procesamiento eficiente de grandes volúmenes de información.",
+        "Optimicé el rendimiento de consultas SQL complejas y el consumo de recursos en Google BigQuery aplicando estrategias de particionado, clustering y refactorización de queries analíticas, garantizando tiempos de respuesta óptimos para los equipos de negocio.",
+        "Automaticé procesos de integración y extracción de datos (ETL) desde múltiples fuentes internas y APIs mediante servicios y scripts robustos en Python y Go, incorporando control de errores, trazabilidad y monitorización continua.",
+        "Construí y goberné el modelado analítico y la capa de reporting en Looker (LookML y dashboards operativos), colaborando estrechamente con arquitectos, analistas y stakeholders de negocio para traducir necesidades funcionales en soluciones de datos escalables.",
+        "Integré la plataforma de datos analíticos con sistemas de Inteligencia Artificial y agentes autónomos mediante el estándar Model Context Protocol (MCP), habilitando consultas gobernadas y seguras sobre el ciclo de vida del dato."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobHeader",
+      "text": "FDS, a DXC Technology Company — Consultor Técnico de Datos y Procesos SAP"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobDate",
+      "text": "Febrero 2026 – Junio 2026 | España"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Desarrollé lógica de extracción, validación y tratamiento de datos empresariales en ABAP para el módulo de Logística, gestionando el ciclo de despliegue y transporte entre entornos (DEV, QAS, PRD) bajo estrictos estándares de calidad y gobierno."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobHeader",
+      "text": "Ayuntamiento de Roperuelos del Páramo — Desarrollador Backend & Integración de Datos (Python / Java)"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobDate",
+      "text": "Junio 2024 – Octubre 2024 | Junio 2023 – Septiembre 2023 | León, España"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Diseñé e implementé servicios backend, pipelines de ingesta y endpoints de APIs REST en Python y Java (Spring Boot) conectados a bases de datos relacionales SQL, asegurando la integridad, disponibilidad y normalización de la información."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobHeader",
+      "text": "Craftelier — Desarrollador de Bases de Datos SQL & Software (.NET / C#)"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobDate",
+      "text": "Marzo 2024 – Mayo 2024 | España"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Optimicé el procesamiento de datos transaccionales y de catálogo mediante la creación y ajuste de procedimientos almacenados, vistas y consultas SQL avanzadas en Microsoft SQL Server (SSMS), integrándolos con aplicaciones empresariales en .NET/C#."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVHeading",
+      "text": "EDUCACIÓN Y ESPECIALIZACIÓN"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Curso de Especialización en Inteligencia Artificial y Big Data (2024 – 2025) — Arquitecturas Big Data y Cloud, procesamiento masivo de datos, pipelines ETL/ELT, modelado analítico y Machine Learning.",
+        "Técnico Superior en Desarrollo de Aplicaciones Web (DAW) — IES San Andrés (2025 – 2026).",
+        "Técnico Superior en Desarrollo de Aplicaciones Multiplataforma (DAM) — IES San Andrés (2022 – 2024)."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVHeading",
+      "text": "IDIOMAS E INFORMACIÓN ADICIONAL"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Español: Nativo | Inglés: Nivel B1/B2 técnico (lectura fluida de documentación técnica de GCP/Dataform y trabajo con equipos multidisciplinares).",
+        "Disponibilidad: Preaviso legal estándar de 15 días | Modalidad: 100% Remoto desde España (con total disponibilidad para desplazamientos puntuales a las oficinas de Madrid)."
+      ]
+    }
+  ]
+}

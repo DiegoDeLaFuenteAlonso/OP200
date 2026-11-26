@@ -1,0 +1,205 @@
+{
+  "page": {
+    "width_mm": 210,
+    "height_mm": 297,
+    "margins_mm": {
+      "top": 15,
+      "bottom": 15,
+      "left": 18,
+      "right": 18
+    }
+  },
+  "styles": [
+    {
+      "name": "CVTitle",
+      "base": "Normal",
+      "font": "Calibri",
+      "size_pt": 19.5,
+      "bold": true,
+      "color": "111827"
+    },
+    {
+      "name": "CVSubtitle",
+      "base": "Normal",
+      "font": "Calibri",
+      "size_pt": 10.8,
+      "bold": true,
+      "color": "1F2937"
+    },
+    {
+      "name": "CVContact",
+      "base": "Normal",
+      "font": "Calibri",
+      "size_pt": 9.5,
+      "color": "4B5563"
+    },
+    {
+      "name": "CVHeading",
+      "base": "Normal",
+      "font": "Calibri",
+      "size_pt": 11.5,
+      "bold": true,
+      "color": "111827"
+    },
+    {
+      "name": "CVJobHeader",
+      "base": "Normal",
+      "font": "Calibri",
+      "size_pt": 10.5,
+      "bold": true,
+      "color": "111827"
+    },
+    {
+      "name": "CVJobDate",
+      "base": "Normal",
+      "font": "Calibri",
+      "size_pt": 9.5,
+      "italic": true,
+      "color": "4B5563"
+    },
+    {
+      "name": "CVBody",
+      "base": "Normal",
+      "font": "Calibri",
+      "size_pt": 9.8,
+      "color": "1F2937"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "paragraph",
+      "style": "CVTitle",
+      "text": "DIEGO DE LA FUENTE ALONSO"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVSubtitle",
+      "text": "Técnico DevSecOps & Automatización Junior | Pipelines CI/CD (GitHub Actions), Python/Bash/PowerShell, Docker, APIs REST & SQL/PostgreSQL"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVContact",
+      "text": "España (100% Remoto / Horario 7:30–15:30h) | (+34) 626 68 71 79 | diegodelafuentealonso@gmail.com"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVHeading",
+      "text": "PERFIL PROFESIONAL"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVBody",
+      "text": "Técnico de Automatización, Despliegue Continuo (CI/CD) y Desarrollo de Software Junior con más de 1 año de experiencia práctica (dentro del rango de 6 meses a 1,5 años) en entornos tecnológicos de producción. Especializado en el desarrollo de scripts y automatizaciones con Python, Bash y PowerShell sobre sistemas Linux y Windows, implementación y mantenimiento de pipelines CI/CD con GitHub y GitHub Actions, gestión de contenedores con Docker y Kubernetes, administración de APIs REST y bases de datos relacionales SQL y PostgreSQL. Habituado a colaborar en la gestión segura de credenciales y secretos, aplicación del principio de mínimo privilegio, hardening básico en despliegues y resolución ágil de incidencias técnicas."
+    },
+    {
+      "type": "paragraph",
+      "style": "CVHeading",
+      "text": "COMPETENCIAS TÉCNICAS (DEVSECOPS, CI/CD, SCRIPTING & CLOUD)"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Pipelines CI/CD & Ciclo de Desarrollo: Colaboración en la implementación y mantenimiento de pipelines de integración y despliegue continuo con GitHub Actions y Git/GitHub; manejo de herramientas de gestión y calidad del ciclo de vida del software (Jira, control de entregas entre entornos DEV/QAS/PRD, nociones de Jenkins y SonarQube).",
+        "Scripting, Automatización & Sistemas Operativos: Automatización avanzada de procesos técnicos con Python, Go, Bash y PowerShell; conocimientos avanzados y operación diaria sobre sistemas operativos Linux y Windows.",
+        "Contenedores, Cloud & Observabilidad: Despliegue y gestión de servicios en contenedores con Docker, familiaridad con orquestación en Kubernetes y entornos Cloud (GCP, conocimientos de AWS y Azure); monitorización de logs, trazas y métricas de servicios.",
+        "APIs REST, SQL/PostgreSQL & Seguridad (DevSecOps): Experiencia en el uso, integración y administración de APIs RESTful, dominio de bases de datos SQL y PostgreSQL (además de SQL Server y BigQuery), y gestión de credenciales y secretos aplicando principios de mínimo privilegio, cumplimiento y hardening básico."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVHeading",
+      "text": "EXPERIENCIA PROFESIONAL"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobHeader",
+      "text": "HORSE Technologies — Técnico de Automatización, Python Scripting, APIs & Despliegues Cloud"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobDate",
+      "text": "Julio 2026 – Actualidad | Valladolid, España"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Desarrollo scripts y automatizaciones en Python, Go, Bash y PowerShell sobre entornos Linux y Windows para integrar herramientas corporativas, consumir y administrar APIs REST y automatizar procesos operativos repetitivos.",
+        "Colaboro en el mantenimiento de repositorios en GitHub, pipelines CI/CD con GitHub Actions y despliegue de servicios contenerizados con Docker, aplicando gestión segura de credenciales y secretos, principio de mínimo privilegio y medidas de hardening.",
+        "Administro y optimizo consultas y procesos sobre bases de datos SQL (PostgreSQL, SQL Server y BigQuery), monitorizando logs y trazas de ejecución para diagnosticar y resolver incidencias técnicas en sistemas y despliegues."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobHeader",
+      "text": "FDS, a DXC Technology Company — Consultor Técnico de Sistemas y Gestión de Despliegues"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobDate",
+      "text": "Febrero 2026 – Junio 2026 | España"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Gestioné y validé el ciclo de paso y despliegue de software entre los entornos de Desarrollo, Calidad y Producción (DEV, QAS, PRD), asegurando el cumplimiento normativo, el control de permisos, la trazabilidad de cambios y la resolución de incidencias en despliegues."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobHeader",
+      "text": "Ayuntamiento de Roperuelos del Páramo — Desarrollador Backend, APIs REST & PostgreSQL"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobDate",
+      "text": "Junio 2024 – Octubre 2024 | Junio 2023 – Septiembre 2023 | León, España"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Implementé y administré servicios backend y APIs REST en Python y Java (Spring Boot) conectados a bases de datos PostgreSQL y MySQL, gestionando el control de versiones en Git/GitHub y el despliegue sobre servidores Linux con Docker."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobHeader",
+      "text": "Craftelier — Técnico de Desarrollo de Software & Bases de Datos SQL"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobDate",
+      "text": "Marzo 2024 – Mayo 2024 | España"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Desarrollé automatizaciones internas en entornos Windows (.NET/C#) y administré consultas, vistas y control de accesos en bases de datos relacionales SQL Server."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVHeading",
+      "text": "FORMACIÓN ACADÉMICA"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Curso de Especialización en Inteligencia Artificial y Big Data — (2024 – 2025) — Infraestructuras Cloud (AWS, Azure, GCP), contenedores Docker/Kubernetes, automatización con Python y administración Linux.",
+        "Técnico Superior en Desarrollo de Aplicaciones Web (DAW) — IES San Andrés (2025 – 2026) — Despliegue de aplicaciones, pipelines CI/CD con GitHub Actions, Docker, Linux/Windows, APIs REST y PostgreSQL.",
+        "Técnico Superior en Desarrollo de Aplicaciones Multiplataforma (DAM) — IES San Andrés (2022 – 2024)."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVHeading",
+      "text": "IDIOMAS Y DISPONIBILIDAD"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Español: Nativo | Inglés: Nivel técnico y profesional con capacidad de comunicación para entornos internacionales.",
+        "Residencia en España (Valladolid) | Modalidad 100% Remoto | Total disponibilidad para el horario de 7:30 a 15:30h e incorporación en 15 días naturales."
+      ]
+    }
+  ]
+}

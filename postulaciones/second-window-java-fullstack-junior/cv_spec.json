@@ -1,0 +1,205 @@
+{
+  "page": {
+    "width_mm": 210,
+    "height_mm": 297,
+    "margins_mm": {
+      "top": 15,
+      "bottom": 15,
+      "left": 18,
+      "right": 18
+    }
+  },
+  "styles": [
+    {
+      "name": "CVTitle",
+      "base": "Normal",
+      "font": "Calibri",
+      "size_pt": 19.5,
+      "bold": true,
+      "color": "111827"
+    },
+    {
+      "name": "CVSubtitle",
+      "base": "Normal",
+      "font": "Calibri",
+      "size_pt": 10.8,
+      "bold": true,
+      "color": "1F2937"
+    },
+    {
+      "name": "CVContact",
+      "base": "Normal",
+      "font": "Calibri",
+      "size_pt": 9.5,
+      "color": "4B5563"
+    },
+    {
+      "name": "CVHeading",
+      "base": "Normal",
+      "font": "Calibri",
+      "size_pt": 11.5,
+      "bold": true,
+      "color": "111827"
+    },
+    {
+      "name": "CVJobHeader",
+      "base": "Normal",
+      "font": "Calibri",
+      "size_pt": 10.5,
+      "bold": true,
+      "color": "111827"
+    },
+    {
+      "name": "CVJobDate",
+      "base": "Normal",
+      "font": "Calibri",
+      "size_pt": 9.5,
+      "italic": true,
+      "color": "4B5563"
+    },
+    {
+      "name": "CVBody",
+      "base": "Normal",
+      "font": "Calibri",
+      "size_pt": 9.8,
+      "color": "1F2937"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "paragraph",
+      "style": "CVTitle",
+      "text": "DIEGO DE LA FUENTE ALONSO"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVSubtitle",
+      "text": "Programador Java / Fullstack Junior | Java, Spring Boot, Angular, JavaScript, HTML5, CSS3 & SQL"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVContact",
+      "text": "España (100% Teletrabajo / Valladolid — Nacionalidad Española) | (+34) 626 68 71 79 | diegodelafuentealonso@gmail.com"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVHeading",
+      "text": "PERFIL PROFESIONAL"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVBody",
+      "text": "Programador Java / Fullstack Junior con más de 1 año de experiencia profesional desarrollando aplicaciones web empresariales tanto en el Backend con Java y Spring Boot (Spring Data JPA, Hibernate, JDBC, Maven y APIs REST) como en el Frontend con Angular, JavaScript (ES6+ / TypeScript), HTML5 y CSS3. Doble titulación oficial de Grado Superior en Desarrollo de Aplicaciones Web (DAW) y Desarrollo de Aplicaciones Multiplataforma (DAM), más Curso de Especialización en Inteligencia Artificial y Big Data. Sólido dominio de bases de datos relacionales SQL (PostgreSQL, MySQL y SQL Server) y control de versiones con Git. Busco incorporarme a un proyecto estable y de largo plazo en modalidad 100% teletrabajo desde España."
+    },
+    {
+      "type": "paragraph",
+      "style": "CVHeading",
+      "text": "COMPETENCIAS TÉCNICAS (JAVA, SPRING BOOT & FRONTEND ANGULAR / JS)"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Programación Backend con Java & Spring Boot: Más de 1 año de experiencia desarrollando servicios y lógica de negocio en Java (Java 11/17/21), diseño e implementación de APIs RESTful y microservicios con Spring Boot (Spring Web, Spring Data JPA, Spring Security), persistencia con Hibernate y JDBC, y gestión de proyectos con Maven y Gradle.",
+        "Desarrollo Frontend (Angular, JavaScript, HTML & CSS): Construcción de interfaces de usuario dinámicas, responsivas y mantenibles utilizando Angular, TypeScript, JavaScript (ES6+), HTML5, CSS3 (Flexbox, Grid, Bootstrap) y consumo de servicios REST mediante HttpClient / Fetch.",
+        "Bases de Datos Relacionales & SQL: Diseño de esquemas relacionales, escritura y optimización de consultas SQL complejas, vistas y procedimientos almacenados sobre PostgreSQL, MySQL, Microsoft SQL Server (SSMS) y Google BigQuery.",
+        "Calidad, Control de Versiones & Trabajo en Equipo: Uso diario de Git (GitHub / GitLab), pruebas con Postman y JUnit, contenedores Docker y metodologías ágiles (Scrum / Kanban) en proyectos estables de cliente final."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVHeading",
+      "text": "EXPERIENCIA PROFESIONAL"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobHeader",
+      "text": "HORSE Technologies — Desarrollador de Software Backend, Web & Datos SQL"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobDate",
+      "text": "Julio 2026 – Actualidad | Valladolid, España"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Desarrollo y mantengo aplicaciones de software, servicios backend, APIs REST e interfaces web internas (JavaScript, HTML5, CSS3), aplicando estándares de arquitectura limpia y control de versiones con Git.",
+        "Diseño y optimizo consultas SQL y procesos de integración de datos sobre motores relacionales (PostgreSQL y SQL Server) y analíticos, asegurando la estabilidad y el rendimiento de las soluciones en producción."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobHeader",
+      "text": "FDS, a DXC Technology Company — Desarrollador de Aplicaciones Empresariales & SQL"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobDate",
+      "text": "Febrero 2026 – Junio 2026 | España"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Participé en el desarrollo evolutivo y mantenimiento de aplicaciones corporativas y consultas SQL para clientes nacionales de primer nivel, gestionando las pruebas funcionales y el ciclo de paso a producción (DEV, QAS, PRD)."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobHeader",
+      "text": "Ayuntamiento de Roperuelos del Páramo — Programador Java / Fullstack (Spring Boot, Angular/JS, HTML, CSS & SQL)"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobDate",
+      "text": "Junio 2024 – Octubre 2024 | Junio 2023 – Septiembre 2023 | León, España"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Desarrollé aplicaciones web Fullstack utilizando Java y Spring Boot (con Hibernate/JPA y Maven) en el backend, exponiendo APIs REST consumidas por interfaces frontend desarrolladas con Angular, JavaScript, HTML5 y CSS3.",
+        "Modelé y administré las bases de datos relacionales en PostgreSQL y MySQL, implementando validaciones, autenticación y despliegue estable de los servicios."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobHeader",
+      "text": "Craftelier — Desarrollador de Software & Bases de Datos SQL"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobDate",
+      "text": "Marzo 2024 – Mayo 2024 | España"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Desarrollé módulos de software orientado a objetos y optimicé consultas y procedimientos almacenados sobre bases de datos Microsoft SQL Server."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVHeading",
+      "text": "FORMACIÓN ACADÉMICA (DOBLE GRADO SUPERIOR)"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Técnico Superior en Desarrollo de Aplicaciones Web (Grado Superior DAW) — IES San Andrés (2025 – 2026) — Desarrollo Fullstack con Java, Spring Boot, Angular, JavaScript, HTML5, CSS3, SQL y Git.",
+        "Curso de Especialización en Inteligencia Artificial y Big Data — (2024 – 2025).",
+        "Técnico Superior en Desarrollo de Aplicaciones Multiplataforma (Grado Superior DAM) — IES San Andrés (2022 – 2024) — Programación en Java, Hibernate/JPA, JDBC, diseño de interfaces y bases de datos SQL."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVHeading",
+      "text": "IDIOMAS Y DISPONIBILIDAD"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Español: Nativo (DNI español y residencia en Valladolid, España) | Inglés: Nivel técnico y profesional.",
+        "Modalidad: 100% Teletrabajo | Disponibilidad: 15 días naturales (compromiso total con las condiciones y la estabilidad a largo plazo del proyecto)."
+      ]
+    }
+  ]
+}

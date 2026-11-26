@@ -1,0 +1,205 @@
+{
+  "page": {
+    "width_mm": 210,
+    "height_mm": 297,
+    "margins_mm": {
+      "top": 15,
+      "bottom": 15,
+      "left": 18,
+      "right": 18
+    }
+  },
+  "styles": [
+    {
+      "name": "CVTitle",
+      "base": "Normal",
+      "font": "Calibri",
+      "size_pt": 19.5,
+      "bold": true,
+      "color": "111827"
+    },
+    {
+      "name": "CVSubtitle",
+      "base": "Normal",
+      "font": "Calibri",
+      "size_pt": 10.6,
+      "bold": true,
+      "color": "1F2937"
+    },
+    {
+      "name": "CVContact",
+      "base": "Normal",
+      "font": "Calibri",
+      "size_pt": 9.5,
+      "color": "4B5563"
+    },
+    {
+      "name": "CVHeading",
+      "base": "Normal",
+      "font": "Calibri",
+      "size_pt": 11.5,
+      "bold": true,
+      "color": "111827"
+    },
+    {
+      "name": "CVJobHeader",
+      "base": "Normal",
+      "font": "Calibri",
+      "size_pt": 10.5,
+      "bold": true,
+      "color": "111827"
+    },
+    {
+      "name": "CVJobDate",
+      "base": "Normal",
+      "font": "Calibri",
+      "size_pt": 9.5,
+      "italic": true,
+      "color": "4B5563"
+    },
+    {
+      "name": "CVBody",
+      "base": "Normal",
+      "font": "Calibri",
+      "size_pt": 9.8,
+      "color": "1F2937"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "paragraph",
+      "style": "CVTitle",
+      "text": "DIEGO DE LA FUENTE ALONSO"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVSubtitle",
+      "text": "Desarrollador Backend Python Junior (Jr Python Developer) | FastAPI, PyTest, Pandas, NumPy, PostgreSQL/MySQL/MongoDB, Docker & Cloud (GCP)"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVContact",
+      "text": "España (100% Remoto / Valladolid) | (+34) 626 68 71 79 | diegodelafuentealonso@gmail.com"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVHeading",
+      "text": "PERFIL PROFESIONAL"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVBody",
+      "text": "Desarrollador Backend Python Junior (Jr Python Developer) con más de 1 año de experiencia profesional diseñando, desarrollando y manteniendo servicios backend eficientes y escalables en entornos Cloud. Dominio práctico de Python y frameworks web como FastAPI, Flask y Django, implementación de pruebas automatizadas con PyTest, revisiones de código y análisis/procesamiento de datos con Pandas y NumPy. Experiencia trabajando con bases de datos relacionales y NoSQL (PostgreSQL, MySQL, MongoDB, SQL Server y Google BigQuery), sistemas de mensajería y notificaciones de eventos, contenedores Docker y Kubernetes, herramientas de monitoreo y logging, y arquitecturas en la nube (GCP, Azure e IBM Cloud). Doble titulación de Grado Superior en Desarrollo de Aplicaciones (DAM y DAW), Especialización en IA y Big Data y sólida iniciativa desarrollando proyectos propios de programación."
+    },
+    {
+      "type": "paragraph",
+      "style": "CVHeading",
+      "text": "COMPETENCIAS TÉCNICAS (PYTHON BACKEND, FASTAPI, PYTEST, PANDAS & CLOUD)"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Desarrollo Backend con Python & Frameworks: Diseño y desarrollo de APIs RESTful asíncronas y servicios backend escalables con Python y FastAPI (Pydantic, AsyncIO, OpenAPI), además de experiencia con Flask y Django; optimización del rendimiento de procesos y programación en Go y Java.",
+        "Testing con PyTest & Análisis de Datos (Pandas / NumPy): Implementación de suites de pruebas unitarias y de integración con PyTest (fixtures, mocks, cobertura), revisiones de código (Code Reviews) con Git/GitHub y análisis, limpieza y transformación de datos con Pandas y NumPy.",
+        "Bases de Datos (PostgreSQL, MySQL & MongoDB) & Eventos: Modelado y optimización de consultas en PostgreSQL (PostGre), MySQL, Microsoft SQL Server y Google BigQuery, así como bases de datos NoSQL documentales (MongoDB); implementación de sistemas de mensajería, colas y notificaciones de eventos / webhooks.",
+        "Entornos Cloud, Docker/Kubernetes & Monitoreo/Logging: Desarrollo y despliegue de soluciones estructuradas en Cloud —experiencia diaria en producción sobre Google Cloud Platform (GCP) y conocimientos de Azure e IBM Cloud—, contenedorización con Docker, nociones de Kubernetes y herramientas de monitoreo, observabilidad y logging estructurado."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVHeading",
+      "text": "EXPERIENCIA PROFESIONAL"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobHeader",
+      "text": "HORSE Technologies — Backend Python & Cloud Data Developer (FastAPI, Pandas, NumPy & GCP)"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobDate",
+      "text": "Julio 2026 – Actualidad | Valladolid, España"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Desarrollo y mantengo servicios backend eficientes y escalables en el Cloud (Google Cloud Platform - GCP) utilizando Python y FastAPI, optimizando el rendimiento de los procesos de negocio e integración.",
+        "Implemento flujos de análisis y transformación de datos con Pandas y NumPy, asegurando la calidad del software mediante revisiones de código y pruebas automatizadas con PyTest.",
+        "Desarrollo sistemas de mensajería y notificaciones automáticas de eventos (alertas de anomalías y webhooks) conectados a bases de datos SQL (PostgreSQL, SQL Server y BigQuery), desplegando en contenedores Docker con monitoreo continuo y logging estructurado."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobHeader",
+      "text": "FDS, a DXC Technology Company — Consultor Técnico de Desarrollo Backend y Calidad de Procesos"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobDate",
+      "text": "Febrero 2026 – Junio 2026 | España"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Participé en el desarrollo, optimización del rendimiento y mantenimiento de procesos backend empresariales y consultas de bases de datos, realizando revisiones de código, pruebas funcionales y gestión del paso entre entornos (DEV, QAS, PRD)."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobHeader",
+      "text": "Ayuntamiento de Roperuelos del Páramo — Desarrollador Backend Python (FastAPI / Flask, PostgreSQL & MySQL)"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobDate",
+      "text": "Junio 2024 – Octubre 2024 | Junio 2023 – Septiembre 2023 | León, España"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Diseñé e implementé servicios backend y APIs REST utilizando Python (FastAPI y Flask) conectados a bases de datos relacionales PostgreSQL y MySQL, incluyendo módulos de tratamiento de datos con Pandas, pruebas con PyTest y despliegue en Docker."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobHeader",
+      "text": "Craftelier — Desarrollador de Software Backend & Bases de Datos"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobDate",
+      "text": "Marzo 2024 – Mayo 2024 | España"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Desarrollé integraciones de software y optimicé consultas y procesos de datos para mejorar los tiempos de respuesta del sistema."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVHeading",
+      "text": "PROYECTOS PROPIOS DE PROGRAMACIÓN Y FORMACIÓN ACADÉMICA"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Proyectos Propios de Programación en Python: Desarrollo de arquitecturas de microservicios y servidores MCP en Python y FastAPI con sistemas de eventos, suites de testing en PyTest, contenedores Docker y análisis automatizado con Pandas/NumPy.",
+        "Curso de Especialización en Inteligencia Artificial y Big Data — (2024 – 2025) — Python avanzado, Pandas, NumPy, MongoDB, PostgreSQL, Docker, Kubernetes y entornos Cloud (GCP, Azure e IBM).",
+        "Técnico Superior en Desarrollo de Aplicaciones Web (DAW, 2025 – 2026) y Desarrollo de Aplicaciones Multiplataforma (DAM, 2022 – 2024) — IES San Andrés."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVHeading",
+      "text": "IDIOMAS Y DISPONIBILIDAD"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Español: Nativo | Inglés: Nivel técnico y profesional.",
+        "Modalidad: 100% Remota desde España | Total disponibilidad para rotación de turnos (mañana, mediodía y tarde), guardias remuneradas e incorporación en 15 días naturales."
+      ]
+    }
+  ]
+}

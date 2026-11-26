@@ -1,0 +1,129 @@
+{
+  "blocks": [
+    {
+      "type": "paragraph",
+      "style": "CVTitle",
+      "text": "DIEGO DE LA FUENTE ALONSO"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVSubtitle",
+      "text": "Software & AI Engineer | Java · C# (.NET) · JS · SQL · Spec-Driven Dev & Claude / MCP"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVContact",
+      "text": "Valladolid / León (Castilla y León · Híbrido)  |  (+34) 626 68 71 79  |  diegodelafuentealonso@gmail.com"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVHeading",
+      "text": "PERFIL PROFESIONAL"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVBody",
+      "text": "Ingeniero de software y desarrollador de soluciones de Inteligencia Artificial con base sólida en programación orientada a objetos, Java (Spring Boot), C# (.NET), desarrollo web (JavaScript, HTML/CSS), Python, Go y SQL avanzado. Experiencia práctica en entorno productivo diseñando agentes de IA, arquitecturas agent harness, loop engineering e integraciones mediante Model Context Protocol (MCP) con modelos Claude, Gemini y OpenAI. Trabajo orientado a especificaciones previas claras (Spec-Driven Development), código limpio y revisión crítica de cada salida generada con IA."
+    },
+    {
+      "type": "paragraph",
+      "style": "CVHeading",
+      "text": "COMPETENCIAS TÉCNICAS CLAVE"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Ingeniería de Software, POO y Stack Full-Stack: Java (Spring Boot), C# (.NET), JavaScript / desarrollo web (DAW), Python, Go (Golang), Kotlin, diseño de APIs RESTful, patrones de diseño, principios SOLID y Clean Code.",
+        "IA Agéntica, Claude / MCP y Spec-Driven Dev: Diseño de agentes de IA, agent harnesses, loop engineering, tool calling e integración vía Model Context Protocol (MCP); definición de especificaciones estructuradas como fuente de verdad antes de codificar y evaluación crítica de código generado con Claude, Gemini y OpenAI.",
+        "Bases de Datos, SQL y Cloud Data (GCP): SQL avanzado y optimización de consultas y procedimientos en Microsoft SQL Server (SSMS) y Google BigQuery; modelado declarativo con pruebas de calidad en Dataform y analítica en Looker.",
+        "Calidad, Automatización y Ciclo de Entrega: Automatización de utilidades y flujos ETL en Python y Go, control de versiones con Git, code reviews, validación funcional y despliegue controlado entre entornos (DEV, QAS, PRD)."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVHeading",
+      "text": "EXPERIENCIA PROFESIONAL"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobHeader",
+      "text": "HORSE Technologies — Software & AI Developer / Data Analyst"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobDate",
+      "text": "Valladolid, España | Julio 2026 – Actualidad"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Diseño e implementación en producción de agentes de IA mediante arquitecturas agent harness y loop engineering para orquestar tareas técnicas y de negocio con control de estado y evaluación de fallos.",
+        "Integración estandarizada de agentes y modelos de lenguaje (Claude, Gemini, OpenAI) con sistemas internos de la compañía mediante Model Context Protocol (MCP) y APIs.",
+        "Desarrollo de herramientas internas de software en Python y Go partiendo de especificaciones técnicas y contratos de interfaz claros, manteniendo trazabilidad y control del código asistido por IA.",
+        "Modelado analítico, SQL avanzado y validaciones de calidad en Google BigQuery y Dataform, junto a pipelines ETL en Python y cuadros de mando en Looker."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobHeader",
+      "text": "FDS, a DXC Technology Company — Consultor Técnico SAP"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobDate",
+      "text": "España | Febrero 2026 – Junio 2026"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Desarrollo de extensiones a medida en ABAP para el módulo de Logística, validación técnica y gestión controlada de órdenes de transporte entre entornos (DEV, QAS, PRD)."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobHeader",
+      "text": "Ayuntamiento de Roperuelos del Páramo — Desarrollador de Software"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobDate",
+      "text": "León, España | Junio 2024 – Octubre 2024 y Junio 2023 – Septiembre 2023"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Desarrollo end-to-end de aplicaciones y portales web interactivos con Spring Boot (Java) bajo principios de POO, junto al diseño y aseguramiento de servicios backend y APIs REST en Python."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobHeader",
+      "text": "Craftelier — Desarrollador de Software"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobDate",
+      "text": "España | Marzo 2024 – Mayo 2024"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Mantenimiento y desarrollo de aplicaciones empresariales de escritorio en .NET / C# (Visual Studio), optimización de procedimientos y consultas SQL Server (SSMS) y pruebas de módulos móviles Android en Kotlin."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVHeading",
+      "text": "FORMACIÓN ACADÉMICA E IDIOMAS"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Curso de Especialización en Inteligencia Artificial y Big Data (2024 – 2025): Modelos predictivos, Deep Learning, arquitecturas Big Data y procesamiento a escala.",
+        "Técnico Superior en Desarrollo de Aplicaciones Web (DAW) — IES San Andrés, León (2025 – 2026).",
+        "Técnico Superior en Desarrollo de Aplicaciones Multiplataforma (DAM) — IES San Andrés, León (2022 – 2024).",
+        "Idiomas: Español (Nativo) · Inglés (Nivel B1 — lectura técnica fluida de documentación, especificaciones y comunicación escrita)."
+      ]
+    }
+  ]
+}

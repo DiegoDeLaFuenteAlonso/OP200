@@ -1,0 +1,214 @@
+{
+  "page": {
+    "width_mm": 210,
+    "height_mm": 297,
+    "margins_mm": {
+      "top": 20,
+      "bottom": 20,
+      "left": 20,
+      "right": 20
+    }
+  },
+  "styles": [
+    {
+      "name": "CVTitle",
+      "base": "Normal",
+      "font": "Calibri",
+      "size_pt": 20,
+      "bold": true,
+      "color": "003366"
+    },
+    {
+      "name": "CVSubtitle",
+      "base": "Normal",
+      "font": "Calibri",
+      "size_pt": 12,
+      "bold": true,
+      "color": "4A5568"
+    },
+    {
+      "name": "CVContact",
+      "base": "Normal",
+      "font": "Calibri",
+      "size_pt": 10,
+      "color": "718096"
+    },
+    {
+      "name": "CVHeading",
+      "base": "Normal",
+      "font": "Calibri",
+      "size_pt": 13,
+      "bold": true,
+      "color": "003366"
+    },
+    {
+      "name": "CVJobHeader",
+      "base": "Normal",
+      "font": "Calibri",
+      "size_pt": 11,
+      "bold": true,
+      "color": "1A202C"
+    },
+    {
+      "name": "CVJobDate",
+      "base": "Normal",
+      "font": "Calibri",
+      "size_pt": 9.5,
+      "italic": true,
+      "color": "718096"
+    },
+    {
+      "name": "CVBody",
+      "base": "Normal",
+      "font": "Calibri",
+      "size_pt": 10,
+      "color": "2D3748"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "paragraph",
+      "style": "CVTitle",
+      "text": "DIEGO DE LA FUENTE ALONSO"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVSubtitle",
+      "text": "AI Solutions & Agent Engineer | Python, LLMs, MCP & Loop Engineering"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVContact",
+      "text": "Valladolid / Castilla y León, España | (+34) 626 68 71 79 | diegodelafuentealonso@gmail.com | LinkedIn | GitHub"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVHeading",
+      "text": "PERFIL PROFESIONAL"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVBody",
+      "text": "Ingeniero de software especializado en el diseño, desarrollo e integración de sistemas basados en agentes autónomos de Inteligencia Artificial y Large Language Models (LLMs). Experiencia directa en producción en HORSE Technologies implementando agent harnesses, ingeniería de bucles de razonamiento (loop engineering) e interoperabilidad estandarizada mediante Model Context Protocol (MCP). Sólido dominio de Python y Go para backend de alta concurrencia, junto con experiencia en pipelines de datos y microservicios. Doble titulación técnica en desarrollo de aplicaciones (DAM / DAW) y Especialización Superior en IA y Big Data."
+    },
+    {
+      "type": "paragraph",
+      "style": "CVHeading",
+      "text": "COMPETENCIAS TÉCNICAS CLAVE"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Arquitecturas de Agentes & LLMs: Diseño y despliegue de agentes autónomos, frameworks de agentes, agent harnesses, loop engineering, memory persistente, orquestación de tareas complejas.",
+        "Protocolos & Tool Calling: Model Context Protocol (MCP), llamadas a funciones estructuradas, diseño de herramientas y plugins para agentes, APIs RESTful.",
+        "Desarrollo & Backend: Python (avanzado), Go (Golang), Java, microservicios, APIs con FastAPI / REST, contenedores Docker.",
+        "Ecosistema de Modelos: Claude (Anthropic), Gemini, OpenAI GPT, arquitecturas RAG, vectorización e ingeniería de prompts avanzada.",
+        "Datos & Almacenamiento: Google BigQuery, SQL Server, NoSQL, pipelines de datos automatizados en Python."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVHeading",
+      "text": "EXPERIENCIA PROFESIONAL"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobHeader",
+      "text": "HORSE Technologies — Data & Software / AI Developer"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobDate",
+      "text": "Valladolid | Julio 2026 – Actualidad"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Diseño e implementación de soluciones pioneras basadas en agentes de Inteligencia Artificial para la automatización de procesos técnicos corporativos.",
+        "Desarrollo de agent harnesses robustos y control de flujos de razonamiento mediante técnicas avanzadas de loop engineering.",
+        "Integración de agentes con herramientas y fuentes de información internas empleando el estándar Model Context Protocol (MCP).",
+        "Desarrollo de servicios backend, utilidades de alto rendimiento y pipelines en Python y Go.",
+        "Modelado y consulta de datos en Google BigQuery para alimentar contextos e informes analíticos."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobHeader",
+      "text": "FDS, a DXC Technology Company — Consultor Técnico SAP"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobDate",
+      "text": "Febrero 2026 – Junio 2026"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Desarrollo de extensiones y programación a medida en ABAP.",
+        "Gestión, trazabilidad y transporte de órdenes entre entornos de desarrollo, calidad y producción.",
+        "Soporte y análisis técnico en procesos vinculados al módulo de Logística de SAP."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobHeader",
+      "text": "Ayuntamiento de Roperuelos del Páramo — Desarrollador de Software Backend"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobDate",
+      "text": "Junio 2024 – Octubre 2024 | Junio 2023 – Septiembre 2023"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Desarrollo de servicios web y plataformas administrativas con Java y el framework Spring Boot.",
+        "Diseño e implementación de APIs RESTful utilizando Python para la gestión y tramitación de datos.",
+        "Diseño de modelos relacionales en bases de datos y optimización de consultas SQL."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobHeader",
+      "text": "Craftelier — Desarrollador de Software"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobDate",
+      "text": "Marzo 2024 – Mayo 2024"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Desarrollo de aplicaciones de escritorio en C# y .NET sobre Visual Studio.",
+        "Consultas avanzadas y optimización en bases de datos SQL Server mediante SSMS.",
+        "Desarrollo móvil en Android utilizando Kotlin."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVHeading",
+      "text": "FORMACIÓN ACADÉMICA"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Curso de Especialización en Inteligencia Artificial y Big Data (2024 – 2025).",
+        "Técnico Superior en Desarrollo de Aplicaciones Web (DAW) — IES San Andrés (2025 – 2026).",
+        "Técnico Superior en Desarrollo de Aplicaciones Multiplataforma (DAM) — IES San Andrés (2022 – 2024)."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVHeading",
+      "text": "IDIOMAS"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Español: Nativo.",
+        "Inglés: Nivel B1 (Capacidad técnica para documentación, lectura y comunicación profesional)."
+      ]
+    }
+  ]
+}

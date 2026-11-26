@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ARCHIVO: gestion_expedientes_agricolas.xhtml
+  PROYECTO: Gestión Administrativa, Catastral y de Parcelas Rústicas — Ayuntamiento de Roperuelos del Páramo
+  TECNOLOGÍA: JSF 2.3 (Facelets) + PrimeFaces
+  AUTOR: Diego de la Fuente Alonso
+-->
+<!DOCTYPE html>
+<!-- Declaración de espacios de nombres XML (Namespaces) obligatorios en JSF y PrimeFaces:
+     xmlns:h  -> Componentes HTML estándar de JSF (formularios, inputs, combos, botones, textos)
+     xmlns:f  -> Núcleo de JSF (conversores, validadores, selectItems, etiquetas f:ajax)
+     xmlns:ui -> Plantillas Facelets (composiciones, fragmentos, iteraciones)
+     xmlns:p  -> Biblioteca de componentes ricos PrimeFaces (p:dataTable, p:dialog, p:growl) -->
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      lang="es">
+
+<!-- <h:head> es obligatorio en lugar de <head> plano para que JSF y PrimeFaces inyecten automáticamente
+     sus hojas de estilo CSS y librerías JavaScript (jQuery / PrimeFaces AJAX engine) -->
+<h:head>
+    <meta charset="UTF-8" />
+    <title>Gestión de Expedientes Agrarios y Certificados Catastrales — Ayto. de Roperuelos del Páramo</title>
+</h:head>
+
+<h:body style="font-family: Arial, sans-serif; margin: 20px; background-color: #f8fafc;">
+
+    <!-- =====================================================================
+         FORMULARIO PRINCIPAL DE BÚSQUEDA Y LISTADO PAGINADO (<h:form>)
+         Todo componente interactivo en JSF debe ir dentro de un <h:form> que
+         gestiona automáticamente el campo oculto javax.faces.ViewState.
+         ===================================================================== -->
+    <h:form id="formBandejaExpedientes">
+
+        <!-- <p:growl> muestra notificaciones flotantes con los FacesMessage añadidos desde ExpedienteManagedBean -->
+        <p:growl id="mensajesGlobales" showDetail="true" life="4500" />
+
+        <!-- Cabecera institucional de la pantalla -->
+        <p:panel header="Ayuntamiento de Roperuelos del Páramo — Gestión de Expedientes Agrarios, Catastro Rústico y Emisión de Certificados"
+                 style="margin-bottom: 16px;">
+
+            <!-- 1. PANEL DE FILTROS CON COMPONENTES JSF ESTÁNDAR (h:inputText, h:selectOneMenu, h:commandButton + f:ajax) -->
+            <h:panelGrid id="gridFiltros" columns="6" cellpadding="6" style="width: 100%;">
+
+                <!-- Filtro 1: Año de Campaña Agrícola con conversor numérico -->
+                <h:outputLabel for="txtCampania" value="Campaña Agrícola:" style="font-weight: bold;" />
+                <h:inputText id="txtCampania"
+                             value="#{expedienteManagedBean.filtroCampania}"
+                             label="Campaña Agrícola"
+                             maxlength="4"
+                             style="width: 90px;">
+                    <!-- Validador estándar JSF en Fase 3 (Process Validations) -->
+                    <f:validateLongRange minimum="2020" maximum="2035" />
+                </h:inputText>
+
+                <!-- Filtro 2: NIF / CIF del Agricultor o Titular Catastral -->
+                <h:outputLabel for="txtNif" value="NIF / CIF Titular:" style="font-weight: bold;" />
+                <h:inputText id="txtNif"
+                             value="#{expedienteManagedBean.filtroNifTitular}"
+                             label="NIF/CIF del Titular"
+                             maxlength="15"
+                             style="width: 150px;" />
+
+                <!-- Filtro 3: Desplegable (<h:selectOneMenu>) enlazado al Enum EstadoExpediente -->
+                <h:outputLabel for="selEstado" value="Estado Expediente:" style="font-weight: bold;" />
+                <h:selectOneMenu id="selEstado"
+                                 value="#{expedienteManagedBean.filtroEstado}"
+                                 style="width: 210px;">
+                    <!-- Opción por defecto nula ("Todos los estados") -->
+                    <f:selectItem itemLabel="-- Todos los estados --" itemValue="#{null}" noSelectionOption="true" />
+                    <!-- Carga dinámica de los valores del Enum desde el Managed Bean -->
+                    <f:selectItems value="#{expedienteManagedBean.estadosDisponibles}"
+                                   var="est"
+                                   itemLabel="#{est}"
+                                   itemValue="#{est}" />
+                </h:selectOneMenu>
+
+            </h:panelGrid>
+
+            <!-- Botonera de filtrado usando tanto JSF estándar con <f:ajax> como PrimeFaces -->
+            <div style="margin-top: 10px; display: flex; gap: 10px;">
+                <!-- <h:commandButton> con <f:ajax>:
+                     execute="gridFiltros @this" -> envía y valida únicamente los 3 campos de filtro en Fases 2-4.
+                     render="tablaExpedientes mensajesGlobales" -> repinta solo la tabla y los mensajes en Fase 6. -->
+                <h:commandButton id="btnBuscar"
+                                 value="Buscar Expedientes (JSF AJAX)"
+                                 action="#{expedienteManagedBean.buscarExpedientes()}"
+                                 style="padding: 6px 14px; font-weight: bold; cursor: pointer;">
+                    <f:ajax execute="gridFiltros @this" render="tablaExpedientes mensajesGlobales" />
+                </h:commandButton>
+
+                <!-- Botón para limpiar criterios -->
+                <h:commandButton id="btnLimpiar"
+                                 value="Limpiar Filtros"
+                                 action="#{expedienteManagedBean.limpiarFiltros()}"
+                                 style="padding: 6px 14px; cursor: pointer;">
+                    <f:ajax execute="@this" render="gridFiltros tablaExpedientes mensajesGlobales" />
+                </h:commandButton>
+            </div>
+        </p:panel>
+
+        <!-- =================================================================
+             2. TABLA RICA DE PRIMEFACES (<p:dataTable>) CON PAGINACIÓN,
+                ORDENACIÓN, FILTRADO POR COLUMNA Y DESCARGA PDF JASPER REPORTS
+             ================================================================= -->
+        <p:dataTable id="tablaExpedientes"
+                     var="exp"
+                     value="#{expedienteManagedBean.listaExpedientes}"
+                     rowKey="#{exp.id}"
+                     paginator="true"
+                     rows="10"
+                     paginatorPosition="bottom"
+                     rowsPerPageTemplate="5,10,25,50"
+                     emptyMessage="No se han encontrado expedientes agrarios para los criterios seleccionados."
+                     stripedRows="true">
+
+            <!-- Columna 1: Código Oficial del Expediente con ordenación y filtro integrado -->
+            <p:column headerText="Código Expediente"
+                      sortBy="#{exp.codigoExpediente}"
+                      filterBy="#{exp.codigoExpediente}"
+                      filterMatchMode="contains"
+                      style="width: 160px; font-weight: bold;">
+                <h:outputText value="#{exp.codigoExpediente}" />
+            </p:column>
+
+            <!-- Columna 2: Campaña Agrícola -->
+            <p:column headerText="Campaña"
+                      sortBy="#{exp.campaniaAgricola}"
+                      style="width: 85px; text-align: center;">
+                <h:outputText value="#{exp.campaniaAgricola}" />
+            </p:column>
+
+            <!-- Columna 3: NIF/CIF del Titular (cargado sin N+1 gracias al JOIN FETCH del repositorio) -->
+            <p:column headerText="NIF / CIF"
+                      sortBy="#{exp.titular.nifCif}"
+                      filterBy="#{exp.titular.nifCif}"
+                      filterMatchMode="contains"
+                      style="width: 115px;">
+                <h:outputText value="#{exp.titular.nifCif}" />
+            </p:column>
+
+            <!-- Columna 4: Nombre completo del Agricultor / Titular Catastral -->
+            <p:column headerText="Titular Agrario / Solicitante"
+                      sortBy="#{exp.titular.nombreCompleto}"
+                      filterBy="#{exp.titular.nombreCompleto}"
+                      filterMatchMode="contains">
+                <h:outputText value="#{exp.titular.nombreCompleto}" />
+            </p:column>
+
+            <!-- Columna 5: Superficie Total Declarada (ha) formateada a 4 decimales exactos con <f:convertNumber> -->
+            <p:column headerText="Superficie (ha)"
+                      sortBy="#{exp.superficieTotalDeclaradaHa}"
+                      style="width: 130px; text-align: right;">
+                <h:outputText value="#{exp.superficieTotalDeclaradaHa}">
+                    <f:convertNumber pattern="#,##0.0000" locale="es_ES" />
+                </h:outputText>
+                <h:outputText value=" ha" />
+            </p:column>
+
+            <!-- Columna 6: Importe Económico (EUR) formateado como moneda -->
+            <p:column headerText="Importe (€)"
+                      sortBy="#{exp.importeEconomicoEur}"
+                      style="width: 120px; text-align: right;">
+                <h:outputText value="#{exp.importeEconomicoEur}">
+                    <f:convertNumber type="currency" currencySymbol="€" locale="es_ES" />
+                </h:outputText>
+            </p:column>
+
+            <!-- Columna 7: Estado del Expediente -->
+            <p:column headerText="Estado"
+                      sortBy="#{exp.estado}"
+                      style="width: 150px; text-align: center;">
+                <h:outputText value="#{exp.estado}" style="font-weight: bold;" />
+            </p:column>
+
+            <!-- Columna 8: Acciones (Abrir Diálogo de Revisión/Aprobación + Descargar Certificado PDF de Jasper Reports) -->
+            <p:column headerText="Acciones y Jasper Reports" style="width: 260px; text-align: center;">
+
+                <!-- Botón 1: Abre el diálogo modal p:dialog mediante petición AJAX parcial -->
+                <p:commandButton value="Revisar / Editar"
+                                 icon="pi pi-pencil"
+                                 actionListener="#{expedienteManagedBean.prepararEdicionModal(exp)}"
+                                 process="@this"
+                                 update=":formDialogoEdicion:panelContenidoModal"
+                                 oncomplete="PF('widgetDialogoExpediente').show()"
+                                 style="margin-right: 6px;" />
+
+                <!-- Botón 2: Descarga el Certificado Oficial PDF generado con Jasper Reports.
+                     ¡MUY IMPORTANTE EN ENTREVISTA!: Lleva ajax="false" porque devuelve un stream binario
+                     application/pdf directo al navegador invocando facesContext.responseComplete(). -->
+                <p:commandButton value="PDF Jasper"
+                                 icon="pi pi-file-pdf"
+                                 ajax="false"
+                                 rendered="#{exp.estado eq 'APROBADO'}"
+                                 action="#{expedienteManagedBean.descargarCertificadoPdfJasper(exp)}"
+                                 title="Emitir y descargar Certificado Municipal de Parcelas Rústicas en PDF" />
+
+            </p:column>
+
+        </p:dataTable>
+
+    </h:form>
+
+    <!-- =====================================================================
+         3. DIÁLOGO MODAL DE REVISIÓN Y APROBACIÓN (<p:dialog>)
+            Se coloca en su propio <h:form> independiente (buena práctica en
+            PrimeFaces para evitar formularios anidados y aislar validaciones).
+         ===================================================================== -->
+    <p:dialog id="dialogoEdicionExpediente"
+              header="Revisión Técnica y Resolución de Expediente Agrario"
+              widgetVar="widgetDialogoExpediente"
+              modal="true"
+              resizable="false"
+              closable="true"
+              width="620">
+
+        <h:form id="formDialogoEdicion">
+            <h:panelGroup id="panelContenidoModal">
+
+                <!-- Solo se renderiza el interior si hay un expediente seleccionado en el Bean @ViewScoped -->
+                <h:panelGrid columns="2" cellpadding="8" style="width: 100%;"
+                             rendered="#{not empty expedienteManagedBean.expedienteSeleccionado}">
+
+                    <h:outputLabel value="Código de Expediente:" style="font-weight: bold;" />
+                    <h:outputText value="#{expedienteManagedBean.expedienteSeleccionado.codigoExpediente}" />
+
+                    <h:outputLabel value="Titular Solicitante:" style="font-weight: bold;" />
+                    <h:outputText value="#{expedienteManagedBean.expedienteSeleccionado.titular.nombreCompleto} (#{expedienteManagedBean.expedienteSeleccionado.titular.nifCif})" />
+
+                    <h:outputLabel value="Superficie Total Computada:" style="font-weight: bold;" />
+                    <h:outputText value="#{expedienteManagedBean.expedienteSeleccionado.superficieTotalDeclaradaHa} ha" />
+
+                    <h:outputLabel value="Estado Actual:" style="font-weight: bold;" />
+                    <h:outputText value="#{expedienteManagedBean.expedienteSeleccionado.estado}" />
+
+                    <h:outputLabel for="txtObs" value="Informe / Observaciones Secretaría:" style="font-weight: bold;" />
+                    <h:inputTextarea id="txtObs"
+                                     value="#{expedienteManagedBean.observacionesAprobacion}"
+                                     rows="4"
+                                     cols="45"
+                                     required="true"
+                                     requiredMessage="Debe indicar las observaciones técnicas o de secretaría antes de guardar o aprobar." />
+                </h:panelGrid>
+
+                <!-- Botonera del Diálogo Modal -->
+                <div style="margin-top: 14px; text-align: right;">
+                    <!-- Guardar observaciones manteniendo el estado actual -->
+                    <p:commandButton value="Guardar Observaciones"
+                                     icon="pi pi-save"
+                                     actionListener="#{expedienteManagedBean.guardarCambiosModal()}"
+                                     process="@form"
+                                     update=":formBandejaExpedientes:tablaExpedientes :formBandejaExpedientes:mensajesGlobales"
+                                     oncomplete="if (!args.validationFailed) PF('widgetDialogoExpediente').hide();"
+                                     style="margin-right: 8px;" />
+
+                    <!-- Aprobar oficialmente el expediente para habilitar el botón PDF de Jasper Reports -->
+                    <p:commandButton value="Aprobar Expediente y Habilitar Certificado"
+                                     icon="pi pi-check"
+                                     actionListener="#{expedienteManagedBean.aprobarExpedienteSeleccionado()}"
+                                     process="@form"
+                                     update=":formBandejaExpedientes:tablaExpedientes :formBandejaExpedientes:mensajesGlobales"
+                                     oncomplete="if (!args.validationFailed) PF('widgetDialogoExpediente').hide();"
+                                     style="margin-right: 8px;" />
+
+                    <!-- Botón Cancelar con immediate="true" para cerrar el modal sin disparar validaciones de campos requeridos -->
+                    <p:commandButton value="Cancelar"
+                                     icon="pi pi-times"
+                                     immediate="true"
+                                     onclick="PF('widgetDialogoExpediente').hide(); return false;" />
+                </div>
+
+            </h:panelGroup>
+        </h:form>
+    </p:dialog>
+
+</h:body>
+</html>

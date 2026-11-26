@@ -1,0 +1,215 @@
+{
+  "page": {
+    "width_mm": 210,
+    "height_mm": 297,
+    "margins_mm": {
+      "top": 20,
+      "bottom": 20,
+      "left": 20,
+      "right": 20
+    }
+  },
+  "styles": [
+    {
+      "name": "CVTitle",
+      "base": "Normal",
+      "font": "Calibri",
+      "size_pt": 20,
+      "bold": true,
+      "color": "003366"
+    },
+    {
+      "name": "CVSubtitle",
+      "base": "Normal",
+      "font": "Calibri",
+      "size_pt": 12,
+      "bold": true,
+      "color": "4A5568"
+    },
+    {
+      "name": "CVContact",
+      "base": "Normal",
+      "font": "Calibri",
+      "size_pt": 10,
+      "color": "718096"
+    },
+    {
+      "name": "CVHeading",
+      "base": "Normal",
+      "font": "Calibri",
+      "size_pt": 13,
+      "bold": true,
+      "color": "003366"
+    },
+    {
+      "name": "CVJobHeader",
+      "base": "Normal",
+      "font": "Calibri",
+      "size_pt": 11,
+      "bold": true,
+      "color": "1A202C"
+    },
+    {
+      "name": "CVJobDate",
+      "base": "Normal",
+      "font": "Calibri",
+      "size_pt": 9.5,
+      "italic": true,
+      "color": "718096"
+    },
+    {
+      "name": "CVBody",
+      "base": "Normal",
+      "font": "Calibri",
+      "size_pt": 10,
+      "color": "2D3748"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "paragraph",
+      "style": "CVTitle",
+      "text": "DIEGO DE LA FUENTE ALONSO"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVSubtitle",
+      "text": "Cloud Data Engineer | Analytics Solutions | GCP, BigQuery, Dataform & Python"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVContact",
+      "text": "Valladolid / Castilla y León, España | (+34) 626 68 71 79 | diegodelafuentealonso@gmail.com | LinkedIn | GitHub"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVHeading",
+      "text": "PERFIL PROFESIONAL"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVBody",
+      "text": "Ingeniero de datos y analista cloud especializado en arquitecturas analíticas en Google Cloud Platform (BigQuery, Dataform, Looker). Experiencia probada en el diseño y despliegue de pipelines ETL/ELT automatizados en Python y modelado declarativo de transformaciones con Dataform. Sólido background de ingeniería de software (Python, Java, Go) con doble titulación en desarrollo de aplicaciones (DAM / DAW) y especialización en Inteligencia Artificial y Big Data. Acostumbrado al trabajo en entornos ágiles multinacionales, optimización de costes cloud y diseño de soluciones analíticas de alto rendimiento."
+    },
+    {
+      "type": "paragraph",
+      "style": "CVHeading",
+      "text": "COMPETENCIAS TÉCNICAS CLAVE"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Google Cloud Platform & Analytics: Google BigQuery (SQL avanzado, particionado, clustering, optimización de costes y rendimiento), Dataform (gestión de dependencias, modelado e integridad de datos), Looker / LookML (creación de dashboards y modelos de reporting analítico).",
+        "Data Engineering & ETL: Pipelines automatizados en Python, transformación y limpieza de grandes volúmenes de datos, orquestación de flujos de datos.",
+        "Desarrollo de Software & Backend: Python (avanzado), Go (Golang), Java (Spring Boot, APIs RESTful, arquitectura de microservicios), SQL Server, bases de datos relacionales y NoSQL.",
+        "IA & Automatización: Desarrollo de arquitecturas de agentes, integración mediante Model Context Protocol (MCP), automatización de tareas y procesos operativos.",
+        "Metodologías y Entornos: Metodologías Ágiles (Scrum, Kanban), Git / GitHub, CI/CD, ERP SAP (ABAP, logística)."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVHeading",
+      "text": "EXPERIENCIA PROFESIONAL"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobHeader",
+      "text": "HORSE Technologies — Data Analyst & Cloud Analytics Engineer"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobDate",
+      "text": "Valladolid | Julio 2026 – Actualidad"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Diseño e implementación de flujos de transformación de datos escalables con Dataform, orquestando dependencias y asegurando la consistencia y calidad de los datos para analítica corporativa.",
+        "Consultas complejas y modelado analítico sobre petabytes en Google BigQuery, aplicando estrategias de optimización de rendimiento SQL y reducción de costes de procesamiento y almacenamiento.",
+        "Desarrollo de cuadros de mando y modelos de datos en Looker (incluyendo soporte LookML) para dar soporte analítico a la toma de decisiones estratégicas de negocio.",
+        "Construcción y mantenimiento de pipelines de extracción, transformación y carga (ETL) automatizados en Python para ingesta y unificación de datos.",
+        "Desarrollo de herramientas internas y microservicios de alto rendimiento utilizando Python y Go.",
+        "Pionero en la implementación de agentes de Inteligencia Artificial para automatización técnica, aplicando agent harnesses e integración con sistemas vía Model Context Protocol (MCP)."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobHeader",
+      "text": "FDS, a DXC Technology Company — Consultor Técnico SAP"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobDate",
+      "text": "Febrero 2026 – Junio 2026"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Desarrollo y depuración de software en ABAP para personalizaciones del ERP corporativo.",
+        "Gestión y trazabilidad de órdenes de transporte a través de los entornos de desarrollo, calidad y producción.",
+        "Soporte y análisis de procesos en el módulo de Logística de SAP en entorno multinacional."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobHeader",
+      "text": "Ayuntamiento de Roperuelos del Páramo — Desarrollador de Software Backend"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobDate",
+      "text": "Junio 2024 – Octubre 2024 | Junio 2023 – Septiembre 2023"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Desarrollo y mantenimiento de plataformas web robustas utilizando Java con el framework Spring Boot.",
+        "Diseño e implementación de endpoints y servicios de APIs RESTful utilizando Python para la gestión de trámites y datos.",
+        "Diseño de estructuras de bases de datos relacionales y optimización de consultas SQL."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobHeader",
+      "text": "Craftelier — Desarrollador de Software"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobDate",
+      "text": "Marzo 2024 – Mayo 2024"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Desarrollo de aplicaciones de escritorio en C# y entorno .NET sobre Visual Studio.",
+        "Optimización de bases de datos SQL Server y creación de consultas y procedimientos almacenados con SSMS.",
+        "Desarrollo de funcionalidades móviles en Android con Kotlin."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVHeading",
+      "text": "FORMACIÓN ACADÉMICA"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Curso de Especialización en Inteligencia Artificial y Big Data (2024 – 2025) — Modelos predictivos, arquitecturas de datos distribuidas y procesamiento masivo.",
+        "Técnico Superior en Desarrollo de Aplicaciones Web (DAW) — IES San Andrés (2025 – 2026).",
+        "Técnico Superior en Desarrollo de Aplicaciones Multiplataforma (DAM) — IES San Andrés (2022 – 2024)."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVHeading",
+      "text": "IDIOMAS"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Español: Nativo.",
+        "Inglés: Nivel B1 (Capacidad técnica para documentación, lectura y comunicación en equipos multidisciplinares)."
+      ]
+    }
+  ]
+}

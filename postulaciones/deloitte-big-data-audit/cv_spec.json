@@ -1,0 +1,129 @@
+{
+  "blocks": [
+    {
+      "type": "paragraph",
+      "style": "CVTitle",
+      "text": "DIEGO DE LA FUENTE ALONSO"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVSubtitle",
+      "text": "Analista Programador de Datos & Big Data | SQL · Python · Limpieza y Estandarización · BI"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVContact",
+      "text": "Valladolid / Disponibilidad Madrid (Híbrido)  |  (+34) 626 68 71 79  |  diegodelafuentealonso@gmail.com"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVHeading",
+      "text": "PERFIL PROFESIONAL"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVBody",
+      "text": "Analista de datos y desarrollador técnico especializado en estructuración, limpieza, calidad y modelado analítico de bases de datos mediante SQL y Python. Experiencia en HORSE Technologies diseñando flujos declarativos en Dataform sobre Google BigQuery, automatizaciones ETL en Python y cuadros de mando en Looker, así como trabajo previo en entorno Microsoft (.NET / C# y SQL Server SSMS) en Craftelier. Doble titulación CFGS en DAM y DAW y Curso de Especialización en Inteligencia Artificial y Big Data, con motivación directa por modernizar herramientas de tratamiento de datos hacia Python y analítica avanzada."
+    },
+    {
+      "type": "paragraph",
+      "style": "CVHeading",
+      "text": "COMPETENCIAS TÉCNICAS CLAVE"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "SQL y Bases de Datos: Diseño relacional, optimización de consultas, procedimientos almacenados y limpieza/estructuración en Microsoft SQL Server (SSMS), Google BigQuery y Dataform.",
+        "Python, ETL y Analítica: Scripts y pipelines ETL en Python orientados a formateo, validación, estandarización de datos, resolución de incidencias y modelos analíticos (IA & Big Data).",
+        "Business Intelligence y Ecosistema Microsoft: Construcción de dashboards e indicadores de negocio en Looker (LookML) con traslado directo a Power BI; manejo de Excel, Visual Studio y .NET / C#.",
+        "Desarrollo de Software y Control: Java (Spring Boot), Go, SAP ABAP, APIs RESTful, Git y trazabilidad técnica entre entornos."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVHeading",
+      "text": "EXPERIENCIA PROFESIONAL"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobHeader",
+      "text": "HORSE Technologies — Data Analyst & Software / AI Developer"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobDate",
+      "text": "Valladolid, España | Julio 2026 – Actualidad"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Limpieza, estructuración, transformación y prueba de calidad de grandes volúmenes de datos con SQL en Google BigQuery y modelos declarativos Dataform.",
+        "Automatización de procesos ETL, formateo de ficheros, resolución de incidencias y evolución de herramientas internas en Python y Go.",
+        "Diseño, publicación y mantenimiento de cuadros de mando en Looker para el análisis operativo y la toma de decisiones de negocio.",
+        "Desarrollo e integración de utilidades y agentes de IA sobre sistemas corporativos mediante el estándar MCP."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobHeader",
+      "text": "FDS, a DXC Technology Company — Consultor Técnico SAP"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobDate",
+      "text": "España | Febrero 2026 – Junio 2026"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Desarrollo técnico en ABAP, validación funcional y gestión de órdenes de transporte entre entornos (DEV, QAS, PRD) en el módulo de Logística."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobHeader",
+      "text": "Ayuntamiento de Roperuelos del Páramo — Desarrollador de Software"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobDate",
+      "text": "León, España | Junio 2024 – Octubre 2024 y Junio 2023 – Septiembre 2023"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Construcción de aplicaciones web con Spring Boot (Java) y desarrollo de servicios backend y APIs REST en Python para gestión administrativa."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobHeader",
+      "text": "Craftelier — Desarrollador de Software & Bases de Datos"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobDate",
+      "text": "España | Marzo 2024 – Mayo 2024"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Optimización y creación de procedimientos y consultas en Microsoft SQL Server mediante SSMS, junto con desarrollo en .NET / C# sobre Visual Studio y Kotlin."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVHeading",
+      "text": "FORMACIÓN ACADÉMICA E IDIOMAS"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Curso de Especialización en Inteligencia Artificial y Big Data (2024 – 2025): Modelos analíticos y arquitecturas Big Data.",
+        "Técnico Superior en Desarrollo de Aplicaciones Web (DAW) — IES San Andrés (2025 – 2026).",
+        "Técnico Superior en Desarrollo de Aplicaciones Multiplataforma (DAM) — IES San Andrés (2022 – 2024).",
+        "Idiomas: Español (Nativo) · Inglés (Nivel B1 — lectura de documentación técnica y redacción escrita)."
+      ]
+    }
+  ]
+}

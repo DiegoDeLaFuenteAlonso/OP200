@@ -1,0 +1,28 @@
+**DIEGO DE LA FUENTE ALONSO**
+Producto Digital, Datos & Tecnología | Análisis y Validación de Datos · Coordinación IT · Smart Mobility
+Valladolid, España | (+34) 626 68 71 79 | diegodelafuentealonso@gmail.com
+
+26 de noviembre de 2026
+
+Para: Equipo de Selección y Área de Producto y Tecnología (ON) — Telpark
+Asunto: Candidatura a Beca Producto y Tecnología – ON (Valladolid)
+
+Estimado equipo de Selección y de Producto ON de Telpark:
+
+La apuesta de Telpark por conectar la operación urbana en vía pública con soluciones digitales, analítica e innovación convierte al equipo de Producto y Tecnología ON en Valladolid en un entorno especialmente atractivo para continuar creciendo en la intersección entre tecnología, datos y negocio.
+
+Resido actualmente en Valladolid, acabo de finalizar mi ciclo formativo superior en 2026 (Especialización en Inteligencia Artificial y Big Data, CFGS DAW y CFGS DAM) y trabajo en HORSE Technologies como Data Analyst y desarrollador de software e IA. Esta combinación me permite contribuir desde el inicio en tres ejes directos del puesto:
+
+- Seguimiento analítico de pilotos y calidad del dato: Experiencia diaria en HORSE Technologies recogiendo, validando y transformando datos operativos con Python, SQL en Google BigQuery y Dataform para construir cuadros de mando en Looker, complementada con mi especialización en IA y Big Data para analizar resultados en pilotos de cámaras LPR y optimización de rutas.
+- Puente ágil entre producto, operaciones y equipos de IT: Base técnica contrastada en Java Spring Boot, Python REST APIs, .NET/C# y Kotlin, además de experiencia en entorno municipal en el Ayuntamiento de Roperuelos del Páramo y validación de entregas entre entornos DEV, QAS y PRD en FDS (DXC Technology), facilitando la documentación de requisitos y la coordinación con IT y proveedores.
+- Síntesis técnica, propuesta de valor y seguridad de la información: Hábito de documentar flujos técnicos de forma clara, asegurar endpoints y mantener la integridad del dato para transformar capacidades tecnológicas en mejoras comprensibles para negocio y usuarios finales.
+
+Quiero ser totalmente transparente respecto a los requisitos formales: finalicé mis titulaciones tecnológicas superiores en 2026 y mi nivel actual de inglés es B1 con hábito diario de lectura técnica y redacción en entornos IT, por lo que quedo a vuestra disposición para valorar el encaje contractual más adecuado dentro del equipo ON en Valladolid.
+
+Resido en Valladolid con disponibilidad a jornada completa (preaviso estándar de 15 días naturales). Agradezco de antemano vuestra atención y estaré encantado de ampliar cualquier detalle en una entrevista.
+
+Atentamente,
+
+Diego de la Fuente Alonso
+Analista de Datos & Desarrollador de Producto / Software
+(+34) 626 68 71 79 | diegodelafuentealonso@gmail.com

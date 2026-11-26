@@ -1,0 +1,213 @@
+{
+  "page": {
+    "width_mm": 210,
+    "height_mm": 297,
+    "margins_mm": {
+      "top": 20,
+      "bottom": 20,
+      "left": 20,
+      "right": 20
+    }
+  },
+  "styles": [
+    {
+      "name": "CVTitle",
+      "base": "Normal",
+      "font": "Calibri",
+      "size_pt": 20,
+      "bold": true,
+      "color": "003366"
+    },
+    {
+      "name": "CVSubtitle",
+      "base": "Normal",
+      "font": "Calibri",
+      "size_pt": 12,
+      "bold": true,
+      "color": "4A5568"
+    },
+    {
+      "name": "CVContact",
+      "base": "Normal",
+      "font": "Calibri",
+      "size_pt": 10,
+      "color": "718096"
+    },
+    {
+      "name": "CVHeading",
+      "base": "Normal",
+      "font": "Calibri",
+      "size_pt": 13,
+      "bold": true,
+      "color": "003366"
+    },
+    {
+      "name": "CVJobHeader",
+      "base": "Normal",
+      "font": "Calibri",
+      "size_pt": 11,
+      "bold": true,
+      "color": "1A202C"
+    },
+    {
+      "name": "CVJobDate",
+      "base": "Normal",
+      "font": "Calibri",
+      "size_pt": 9.5,
+      "italic": true,
+      "color": "718096"
+    },
+    {
+      "name": "CVBody",
+      "base": "Normal",
+      "font": "Calibri",
+      "size_pt": 10,
+      "color": "2D3748"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "paragraph",
+      "style": "CVTitle",
+      "text": "DIEGO DE LA FUENTE ALONSO"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVSubtitle",
+      "text": "Backend Software Developer | Java, Spring Boot, Microservicios & APIs"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVContact",
+      "text": "Valladolid / Castilla y León, España | (+34) 626 68 71 79 | diegodelafuentealonso@gmail.com | LinkedIn | GitHub"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVHeading",
+      "text": "PERFIL PROFESIONAL"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVBody",
+      "text": "Desarrollador de software backend con experiencia en desarrollo web empresarial utilizando Java con Spring Boot, microservicios y APIs RESTful. Doble titulación técnica en Desarrollo de Aplicaciones Multiplataforma (DAM) y Desarrollo de Aplicaciones Web (DAW) por el IES San Andrés, complementada con Especialización Superior en Inteligencia Artificial y Big Data. Experiencia práctica en proyectos para administraciones públicas y empresas privadas, además de desarrollo de herramientas en Python y Go en HORSE Technologies. Acostumbrado al diseño limpio, optimización de consultas SQL y trabajo en equipo."
+    },
+    {
+      "type": "paragraph",
+      "style": "CVHeading",
+      "text": "COMPETENCIAS TÉCNICAS CLAVE"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Desarrollo Java & Backend: Java (Java 11 / 17 / 21), Spring Boot, Spring Data JPA, Spring MVC, microservicios, seguridad y arquitectura backend.",
+        "APIs RESTful & Integración: Diseño, documentación y despliegue de APIs RESTful, endpoints en Python y Java, integración de sistemas de terceros.",
+        "Bases de Datos & Persistencia: SQL Server, Microsoft SSMS, MySQL/PostgreSQL, diseño relacional, transacciones y procedimientos almacenados.",
+        "Otros Lenguajes & Entornos: Python, Go (Golang), C# (.NET), Kotlin (Android Studio), ABAP / SAP.",
+        "Metodologías: Git / GitHub, Scrum / Agile, pruebas unitarias, patrones de diseño de software."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVHeading",
+      "text": "EXPERIENCIA PROFESIONAL"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobHeader",
+      "text": "HORSE Technologies — Data & Software / AI Developer"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobDate",
+      "text": "Valladolid | Julio 2026 – Actualidad"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Desarrollo de servicios internos y herramientas de software de alto rendimiento utilizando Python y Go.",
+        "Automatización de procesos backend y orquestación de flujos de datos.",
+        "Implementación de integraciones mediante protocolos estandarizados (MCP / APIs).",
+        "Consulta y explotación de datos en entornos cloud de gran escala (BigQuery)."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobHeader",
+      "text": "FDS, a DXC Technology Company — Consultor Técnico SAP"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobDate",
+      "text": "Febrero 2026 – Junio 2026"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Desarrollo de extensiones y programación a medida en ABAP.",
+        "Gestión, trazabilidad y transporte de órdenes entre entornos de desarrollo, calidad y producción.",
+        "Soporte y análisis técnico en procesos vinculados al módulo de Logística de SAP."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobHeader",
+      "text": "Ayuntamiento de Roperuelos del Páramo — Desarrollador de Software Backend"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobDate",
+      "text": "Junio 2024 – Octubre 2024 | Junio 2023 – Septiembre 2023"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Desarrollo de servicios web y plataformas administrativas con Java y el framework Spring Boot.",
+        "Diseño e implementación de APIs RESTful utilizando Python para la gestión y tramitación de datos.",
+        "Diseño de modelos relacionales en bases de datos y optimización de consultas SQL."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobHeader",
+      "text": "Craftelier — Desarrollador de Software"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobDate",
+      "text": "Marzo 2024 – Mayo 2024"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Desarrollo de aplicaciones de escritorio en C# y .NET sobre Visual Studio.",
+        "Consultas avanzadas y optimización en bases de datos SQL Server mediante SSMS.",
+        "Desarrollo móvil en Android utilizando Kotlin."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVHeading",
+      "text": "FORMACIÓN ACADÉMICA"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Curso de Especialización en Inteligencia Artificial y Big Data (2024 – 2025).",
+        "Técnico Superior en Desarrollo de Aplicaciones Web (DAW) — IES San Andrés (2025 – 2026).",
+        "Técnico Superior en Desarrollo de Aplicaciones Multiplataforma (DAM) — IES San Andrés (2022 – 2024)."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVHeading",
+      "text": "IDIOMAS"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Español: Nativo.",
+        "Inglés: Nivel B1 (Capacidad técnica para documentación, lectura y comunicación profesional)."
+      ]
+    }
+  ]
+}

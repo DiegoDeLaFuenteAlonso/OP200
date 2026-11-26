@@ -1,0 +1,129 @@
+{
+  "blocks": [
+    {
+      "type": "paragraph",
+      "style": "CVTitle",
+      "text": "DIEGO DE LA FUENTE ALONSO"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVSubtitle",
+      "text": "Junior Back-End Developer | Python · .NET / C# · Java Spring Boot · APIs RESTful · SQL / NoSQL"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVContact",
+      "text": "Valladolid / Disponibilidad Madrid (Híbrido)  |  (+34) 626 68 71 79  |  diegodelafuentealonso@gmail.com"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVHeading",
+      "text": "PERFIL PROFESIONAL"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVBody",
+      "text": "Desarrollador Back-End y Full-Stack Junior con experiencia profesional en diseño e implementación de APIs RESTful, servicios en Python, Go y Java (Spring Boot), así como desarrollo en ecosistema Microsoft (.NET / C#) y bases de datos SQL y NoSQL. En HORSE Technologies construyo herramientas y automatizaciones backend, mientras que en etapas previas en Ayuntamiento de Roperuelos, Craftelier y FDS DXC he desarrollado APIs REST en Python, portales web y soluciones empresariales .NET/SQL Server. Titulado superior en DAW y DAM con Especialización en IA y Big Data."
+    },
+    {
+      "type": "paragraph",
+      "style": "CVHeading",
+      "text": "COMPETENCIAS TÉCNICAS CLAVE"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Desarrollo Back-End y APIs RESTful: Diseño, implementación y aseguramiento de endpoints REST y servicios escalables en Python, Java (Spring Boot), Go (Golang) y plataforma .NET / C#.",
+        "Bases de Datos SQL y NoSQL: Diseño relacional, procedimientos almacenados y optimización en Microsoft SQL Server (SSMS), Google BigQuery, Dataform y fundamentos de modelado NoSQL.",
+        "Integración Front-End y Control de Código: Base sólida en HTML, CSS y JavaScript (CFGS DAW) para colaborar con Front-End, control de versiones Git, pruebas de calidad y entornos DEV/QAS/PRD.",
+        "Automatización e IA Aplicada: Integración de servicios mediante Model Context Protocol (MCP), pipelines ETL en Python y arquitecturas de IA (Curso de Especialización IA y Big Data)."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVHeading",
+      "text": "EXPERIENCIA PROFESIONAL"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobHeader",
+      "text": "HORSE Technologies — Software / AI Developer & Data Analyst"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobDate",
+      "text": "Valladolid, España | Julio 2026 – Actualidad"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Desarrollo de servicios internos, utilidades y automatizaciones backend en Python y Go para soporte operativo y de datos.",
+        "Implementación de conectores e integraciones entre sistemas mediante APIs y el estándar Model Context Protocol (MCP).",
+        "Explotación y transformación de datos SQL en Google BigQuery y Dataform con pruebas de calidad automatizadas."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobHeader",
+      "text": "FDS, a DXC Technology Company — Consultor Técnico SAP"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobDate",
+      "text": "España | Febrero 2026 – Junio 2026"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Desarrollo técnico a medida en ABAP, validación de entregas y gestión de órdenes de transporte entre entornos (DEV, QAS, PRD)."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobHeader",
+      "text": "Ayuntamiento de Roperuelos del Páramo — Desarrollador de Software"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobDate",
+      "text": "León, España | Junio 2024 – Octubre 2024 y Junio 2023 – Septiembre 2023"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Diseño, implementación, pruebas y aseguramiento de servicios backend y endpoints de APIs REST en Python orientados a gestión administrativa.",
+        "Construcción y mantenimiento evolutivo de plataformas y portales web utilizando el framework Java Spring Boot."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobHeader",
+      "text": "Craftelier — Desarrollador de Software & Bases de Datos"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobDate",
+      "text": "España | Marzo 2024 – Mayo 2024"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Mantenimiento y desarrollo de aplicaciones empresariales en .NET / C# sobre Visual Studio, módulos Android en Kotlin y optimización SQL en SQL Server (SSMS)."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVHeading",
+      "text": "FORMACIÓN ACADÉMICA E IDIOMAS"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Curso de Especialización en Inteligencia Artificial y Big Data (2024 – 2025).",
+        "Técnico Superior en Desarrollo de Aplicaciones Web (DAW) — IES San Andrés (2025 – 2026).",
+        "Técnico Superior en Desarrollo de Aplicaciones Multiplataforma (DAM) — IES San Andrés (2022 – 2024).",
+        "Idiomas: Español (Nativo) · Inglés (Nivel B1 — lectura de documentación técnica y redacción escrita)."
+      ]
+    }
+  ]
+}

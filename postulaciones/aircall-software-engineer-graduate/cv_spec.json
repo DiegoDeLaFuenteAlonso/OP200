@@ -1,0 +1,206 @@
+{
+  "page": {
+    "width_mm": 210,
+    "height_mm": 297,
+    "margins_mm": {
+      "top": 13,
+      "bottom": 13,
+      "left": 16,
+      "right": 16
+    }
+  },
+  "styles": [
+    {
+      "name": "CVTitle",
+      "base": "Normal",
+      "font": "Calibri",
+      "size_pt": 18.5,
+      "bold": true,
+      "color": "111827"
+    },
+    {
+      "name": "CVSubtitle",
+      "base": "Normal",
+      "font": "Calibri",
+      "size_pt": 10.2,
+      "bold": true,
+      "color": "1F2937"
+    },
+    {
+      "name": "CVContact",
+      "base": "Normal",
+      "font": "Calibri",
+      "size_pt": 9.2,
+      "color": "4B5563"
+    },
+    {
+      "name": "CVHeading",
+      "base": "Normal",
+      "font": "Calibri",
+      "size_pt": 11,
+      "bold": true,
+      "color": "111827"
+    },
+    {
+      "name": "CVJobHeader",
+      "base": "Normal",
+      "font": "Calibri",
+      "size_pt": 10,
+      "bold": true,
+      "color": "111827"
+    },
+    {
+      "name": "CVJobDate",
+      "base": "Normal",
+      "font": "Calibri",
+      "size_pt": 9,
+      "italic": true,
+      "color": "4B5563"
+    },
+    {
+      "name": "CVBody",
+      "base": "Normal",
+      "font": "Calibri",
+      "size_pt": 9.3,
+      "color": "1F2937"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "paragraph",
+      "style": "CVTitle",
+      "text": "DIEGO DE LA FUENTE ALONSO"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVSubtitle",
+      "text": "Software Engineer – Graduate | Python, Java, Go, TypeScript/JS, REST APIs, Databases, Cloud & AI/LLM Systems"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVContact",
+      "text": "Spain (Madrid Hybrid-Ready / Relocation Available — EU Citizen) | (+34) 626 68 71 79 | diegodelafuentealonso@gmail.com"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVHeading",
+      "text": "PROFESSIONAL SUMMARY"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVBody",
+      "text": "Recent Higher VET (FP Grado Superior) graduate in Web Application Development (DAW, 2026) and Multi-Platform Application Development (DAM, 2024), complemented by a Specialization in Artificial Intelligence & Big Data (2025). Hands-on engineering background building backend services, REST APIs, cloud data pipelines, and production AI/LLM agent tooling using Python, Go, Java (Spring Boot), and JavaScript/TypeScript. Experienced with relational databases (PostgreSQL, SQL Server, BigQuery), Git workflows, CI/CD release discipline, and production monitoring. Eligible for Aircall's 6-month Professional Practice Contract in Madrid and eager to ship scalable product features across Data Platform, Conversational Intelligence, or Agent Productivity."
+    },
+    {
+      "type": "paragraph",
+      "style": "CVHeading",
+      "text": "TECHNICAL SKILLS"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Programming Languages: Python, Go (Golang), Java, JavaScript / TypeScript, C# (.NET), Kotlin, SQL.",
+        "Backend, APIs & Frontend: REST APIs, Spring Boot, microservices architecture, JSON/GraphQL concepts, Angular, React fundamentals, HTML5, CSS3.",
+        "Databases & Data Platform: PostgreSQL, Microsoft SQL Server (SSMS), MySQL, Google BigQuery, Dataform (declarative SQL pipelines), Python ETL workflows, Looker.",
+        "AI, LLMs & Agent Engineering: LLM integrations (Gemini, Claude, OpenAI), Agent Harnesses, Loop Engineering, Model Context Protocol (MCP), RAG pipelines, NLP & speech-oriented agent workflows.",
+        "Cloud, DevOps & Engineering Practices: Google Cloud Platform (GCP), Docker, Git / GitHub, CI/CD release pipelines (DEV/QAS/PRD), automated testing, logs/metrics monitoring, Agile collaboration."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVHeading",
+      "text": "PROFESSIONAL EXPERIENCE"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobHeader",
+      "text": "HORSE Technologies — Software, Data & AI Developer"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobDate",
+      "text": "Valladolid, Spain | July 2026 – Present"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Engineered backend utilities, internal developer tools, and automated Python ETL pipelines in Python and Go, improving operational data delivery reliability and monitoring across production workflows.",
+        "Built and integrated AI/LLM-powered agent harnesses with deterministic execution loops (loop engineering) and standardized Model Context Protocol (MCP) tool calling over enterprise systems.",
+        "Designed, optimized, and tested cloud data models and analytical dashboards in Google Cloud BigQuery, Dataform, and Looker, ensuring schema quality and fast query performance."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobHeader",
+      "text": "FDS, a DXC Technology Company — SAP Technical Consultant"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobDate",
+      "text": "Spain | February 2026 – June 2026"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Developed custom enterprise backend extensions in ABAP and managed structured validation and release pipelines across DEV, QAS, and PRD environments with zero production regressions."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobHeader",
+      "text": "Ayuntamiento de Roperuelos del Páramo — Backend & Web Software Developer"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobDate",
+      "text": "León, Spain | June 2024 – October 2024 & June 2023 – September 2023"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Built and shipped web portals and backend RESTful APIs using Java (Spring Boot) and Python, backed by normalized relational databases (PostgreSQL and MySQL) and Git version control."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobHeader",
+      "text": "Craftelier — Software Developer"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobDate",
+      "text": "Spain | March 2024 – May 2024"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Maintained enterprise desktop applications in C# / .NET (Visual Studio), optimized SQL Server queries and stored procedures (SSMS), and tested mobile application modules in Kotlin (Android)."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVHeading",
+      "text": "QUALIFYING EDUCATION (COMPLETED WITHIN LAST 3 YEARS)"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Higher Technician in Web Application Development (FP Grado Superior DAW) — IES San Andrés (2025 – 2026) — Full-stack web engineering, JavaScript/TypeScript, backend APIs, SQL databases, Git.",
+        "Specialization Course in Artificial Intelligence & Big Data — (2024 – 2025) — Machine learning, LLMs, distributed data processing, and Big Data architectures.",
+        "Higher Technician in Multi-Platform Application Development (FP Grado Superior DAM) — IES San Andrés (2022 – 2024) — Java, Python, C#, SQL/NoSQL databases, software architecture."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVHeading",
+      "text": "LANGUAGES & ELIGIBILITY"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Spanish: Native | English: Working technical proficiency (reading, technical documentation, code reviews, and written/spoken engineering communication).",
+        "Eligibility & Hybrid Setup: Spanish citizen (full EU work authorization), eligible for Spanish Contrato Formativo en Prácticas, available to work hybrid 3 days/week in Aircall's Madrid office."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,140 @@
+{
+  "blocks": [
+    {
+      "type": "paragraph",
+      "style": "CVTitle",
+      "text": "DIEGO DE LA FUENTE ALONSO"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVSubtitle",
+      "text": "Programador de Aplicaciones Empresariales, 4GL & Bases de Datos SQL | SAP ABAP (4GL) · SQL Avanzado · Java / Python / .NET"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVContact",
+      "text": "España (100% Remoto / Valladolid)  |  (+34) 626 68 71 79  |  diegodelafuentealonso@gmail.com"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVHeading",
+      "text": "PERFIL PROFESIONAL"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVBody",
+      "text": "Desarrollador de aplicaciones empresariales y bases de datos con doble titulación oficial en Informática (DAM y DAW) y Curso de Especialización en Inteligencia Artificial y Big Data. Experiencia profesional programando lógica transaccional y extensiones en entorno 4GL empresarial (SAP ABAP) en FDS, a DXC Technology Company, junto con dominio sólido de SQL avanzado, procedimientos almacenados, procesos batch/ETL y backend en HORSE Technologies, Craftelier y Ayuntamiento de Roperuelos. Rápida adaptación a nuevos lenguajes 4GL trabajando en remoto."
+    },
+    {
+      "type": "paragraph",
+      "style": "CVHeading",
+      "text": "COMPETENCIAS TÉCNICAS (ENTORNOS 4GL, SQL TRANSACCIONAL & DESARROLLO EMPRESARIAL)"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Programación en Lenguajes 4GL & Entornos Corporativos: Experiencia real desarrollando lógica de negocio, informes, validaciones y extensiones a medida en SAP ABAP (lenguaje de 4.ª generación acoplado a bases de datos), con capacidad inmediata para asimilar cualquier entorno 4GL corporativo.",
+        "Bases de Datos Relacionales, SQL Avanzado & Procedimientos Almacenados: Diseño de consultas complejas, vistas, optimización de rendimiento y procedimientos almacenados en Microsoft SQL Server (SSMS), además de modelado declarativo SQL y control de calidad en Google BigQuery y Dataform.",
+        "Procesos Batch, Backend & Ciclo de Despliegue (DEV/QAS/PRD): Automatización de procesos batch/ETL en Python, construcción de aplicaciones y APIs REST en Java (Spring Boot) y Python, aplicaciones empresariales en C# (.NET) y validación de órdenes de transporte entre DEV, QAS y PRD.",
+        "Calidad de Software, Depuración & Trabajo Remoto: Control de versiones con Git, análisis y resolución de incidencias en producción, documentación técnica clara y desarrollo de utilidades internas en Python y Go (además de integración de herramientas IA mediante MCP)."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVHeading",
+      "text": "EXPERIENCIA PROFESIONAL"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobHeader",
+      "text": "HORSE Technologies — Data Analyst & Software / AI Developer"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobDate",
+      "text": "Julio 2026 – Actualidad  |  Valladolid, España"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Modelo, optimizo y valido grandes volúmenes de datos con SQL declarativo en Google BigQuery y Dataform, publicando cuadros de mando e indicadores en Looker.",
+        "Automatizo procesos batch/ETL en Python y desarrollo herramientas internas de software en Python y Go con foco en fiabilidad y eficiencia.",
+        "Diseño e integro soluciones de agentes de IA (agent harnesses, loop engineering y protocolo MCP) conectadas a sistemas internos."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobHeader",
+      "text": "FDS, a DXC Technology Company — Consultor Técnico SAP (Desarrollo ABAP / 4GL)"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobDate",
+      "text": "Febrero 2026 – Junio 2026  |  España"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Desarrollé soluciones a medida y extensiones en SAP ABAP (lenguaje empresarial 4GL), dando soporte técnico y parametrización al módulo de Logística.",
+        "Gestioné, validé y aseguré el despliegue controlado de órdenes de transporte entre los entornos DEV, QAS y PRD."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobHeader",
+      "text": "Ayuntamiento de Roperuelos del Páramo — Desarrollador de Software"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobDate",
+      "text": "Junio 2024 – Octubre 2024  |  Junio 2023 – Septiembre 2023  |  León, España"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Construí aplicaciones y portales web de gestión con Spring Boot (Java) e implementé servicios backend y APIs REST en Python sobre bases de datos relacionales."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobHeader",
+      "text": "Craftelier — Desarrollador de Software"
+    },
+    {
+      "type": "paragraph",
+      "style": "CVJobDate",
+      "text": "Marzo 2024 – Mayo 2024  |  España"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Creé y optimicé procedimientos almacenados y consultas avanzadas en Microsoft SQL Server (SSMS), desarrollé software de escritorio en .NET / C# y módulos Android en Kotlin."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVHeading",
+      "text": "EDUCACIÓN Y TITULACIONES OFICIALES"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Curso de Especialización en Inteligencia Artificial y Big Data (2024 – 2025) — Procesamiento de datos a escala, arquitecturas Big Data y modelos predictivos.",
+        "Técnico Superior en Desarrollo de Aplicaciones Web (DAW) — IES San Andrés (2025 – 2026).",
+        "Técnico Superior en Desarrollo de Aplicaciones Multiplataforma (DAM) — IES San Andrés (2022 – 2024)."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "style": "CVHeading",
+      "text": "IDIOMAS Y DISPONIBILIDAD"
+    },
+    {
+      "type": "bullet_list",
+      "items": [
+        "Español: Nativo  |  Inglés: Nivel B1 (lectura técnica de documentación, manuales de referencia y comunicación escrita).",
+        "Modalidad: 100% Remoto desde España (residencia en Valladolid)  |  Incorporación con preaviso estándar de 15 días naturales."
+      ]
+    }
+  ]
+}
