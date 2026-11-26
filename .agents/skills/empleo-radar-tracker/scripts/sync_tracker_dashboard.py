@@ -253,25 +253,30 @@ def _infer_sweep_ddmm(dash_offers: list[dict]) -> str | None:
 
 
 def update_html_counts_and_offers(html_text: str, dash_offers: list[dict]) -> str:
-    # Default view shows Empleo + Becario (INCLUDE)
-    default_pool = list(dash_offers)
-    becas_total = sum(1 for o in dash_offers if o.get("es_beca"))
-    no_beca_total = sum(1 for o in dash_offers if not o.get("es_beca"))
+    # Default dashboard view: Estado = ACTIVE (non-discarded), Area = Todas, Becario = INCLUDE
+    total_all = len(dash_offers)
+    pending_total = sum(1 for o in dash_offers if o.get("decision", "pendiente") == "pendiente")
+    applied_total = sum(1 for o in dash_offers if o.get("decision") == "solicitado")
+    discarded_total = sum(1 for o in dash_offers if o.get("decision") == "descartado")
 
-    total_default = len(default_pool)
-    datos_count = sum(1 for o in default_pool if o.get("seccion") == "datos")
-    dev_count = sum(1 for o in default_pool if o.get("seccion") == "developer")
-    nuevas_count = sum(1 for o in default_pool if o.get("es_nueva"))
-    cyl_count = sum(1 for o in default_pool if o.get("es_cyl"))
-    valladolid_count = sum(1 for o in default_pool if o.get("es_valladolid"))
-    leon_count = sum(1 for o in default_pool if o.get("es_leon"))
-    madrid_count = sum(1 for o in default_pool if o.get("es_madrid"))
-    remoto_count = sum(1 for o in default_pool if o.get("mod_tag") == "100% Remoto")
-    exp_0 = sum(1 for o in default_pool if o["exp_min"] == 0)
-    max_1 = sum(1 for o in default_pool if o["exp_min"] <= 1)
-    max_2 = sum(1 for o in default_pool if o["exp_min"] <= 2)
-    min_3 = sum(1 for o in default_pool if o["exp_min"] >= 3)
-    kits = sum(1 for o in default_pool if o["estado"] == "preparada_para_postular")
+    active_pool = [o for o in dash_offers if o.get("decision") != "descartado"]
+    total_default = len(active_pool)
+    becas_default = sum(1 for o in active_pool if o.get("es_beca"))
+    no_beca_default = sum(1 for o in active_pool if not o.get("es_beca"))
+
+    datos_count = sum(1 for o in active_pool if o.get("seccion") == "datos")
+    dev_count = sum(1 for o in active_pool if o.get("seccion") == "developer")
+    nuevas_count = sum(1 for o in active_pool if o.get("es_nueva"))
+    cyl_count = sum(1 for o in active_pool if o.get("es_cyl"))
+    valladolid_count = sum(1 for o in active_pool if o.get("es_valladolid"))
+    leon_count = sum(1 for o in active_pool if o.get("es_leon"))
+    madrid_count = sum(1 for o in active_pool if o.get("es_madrid"))
+    remoto_count = sum(1 for o in active_pool if o.get("mod_tag") == "100% Remoto")
+    exp_0 = sum(1 for o in active_pool if o["exp_min"] == 0)
+    max_1 = sum(1 for o in active_pool if o["exp_min"] <= 1)
+    max_2 = sum(1 for o in active_pool if o["exp_min"] <= 2)
+    min_3 = sum(1 for o in active_pool if o["exp_min"] >= 3)
+    kits = sum(1 for o in active_pool if o["estado"] == "preparada_para_postular")
 
     offers_json = (
         json.dumps(dash_offers, ensure_ascii=False, indent=2)
@@ -290,24 +295,37 @@ def update_html_counts_and_offers(html_text: str, dash_offers: list[dict]) -> st
     if sweep_ddmm:
         html_text = re.sub(r"(NUEVAS \()\d{2}/\d{2}(\))", rf"\g<1>{sweep_ddmm}\2", html_text)
         html_text = re.sub(r"(Solo Nuevas \()\d{2}/\d{2}(\))", rf"\g<1>{sweep_ddmm}\2", html_text)
+        html_text = re.sub(r"(Nuevas \()\d{2}/\d{2}(\))", rf"\g<1>{sweep_ddmm}\2", html_text)
 
     replacements = [
+        (r'(id="total-count"[^>]*>)\d+(<)', rf"\g<1>{total_all}\2"),
+        (r'(id="pending-count"[^>]*>)\d+(<)', rf"\g<1>{pending_total}\2"),
+        (r'(id="applied-count"[^>]*>)\d+(<)', rf"\g<1>{applied_total}\2"),
+        (r'(id="discarded-count"[^>]*>)\d+(<)', rf"\g<1>{discarded_total}\2"),
+        (r'(id="visible-count"[^>]*>)\d+(<)', rf"\g<1>{total_default}\2"),
+        (r'(id="catalog-count"[^>]*>)\d+(<)', rf"\g<1>{total_all}\2"),
+        (r'(id="tab-all"[^>]*>[^<]*\()\d+(\)</button>)', rf"\g<1>{total_default}\2"),
         (r'(id="tab-datos"[^>]*>[^<]*\()\d+(\)</button>)', rf"\g<1>{datos_count}\2"),
         (r'(id="tab-developer"[^>]*>[^<]*\()\d+(\)</button>)', rf"\g<1>{dev_count}\2"),
-        (r'(data-beca="INCLUDE"[^>]*>[^<]*\()\d+(\)</button>)', rf"\g<1>{total_default}\2"),
-        (r'(data-beca="EXCLUDE"[^>]*>[^<]*\()\d+(\)</button>)', rf"\g<1>{no_beca_total}\2"),
-        (r'(data-beca="ONLY"[^>]*>[^<]*\()\d+(\)</button>)', rf"\g<1>{becas_total}\2"),
-        (r'(data-loc="ALL"[^>]*>[^<]*\()\d+(\)</button>)', rf"\g<1>{total_default}\2"),
-        (r'(data-loc="100% Remoto"[^>]*>[^<]*\()\d+(\)</button>)', rf"\g<1>{remoto_count}\2"),
-        (r'(data-loc="Valladolid"[^>]*>[^<]*\()\d+(\)</button>)', rf"\g<1>{valladolid_count}\2"),
-        (r'(data-loc="León"[^>]*>[^<]*\()\d+(\)</button>)', rf"\g<1>{leon_count}\2"),
-        (r'(data-loc="Castilla y León"[^>]*>[^<]*\()\d+(\)</button>)', rf"\g<1>{cyl_count}\2"),
-        (r'(data-loc="Híbrido / Madrid"[^>]*>[^<]*\()\d+(\)</button>)', rf"\g<1>{madrid_count}\2"),
-        (r'(data-exp="ALL"[^>]*>[^<]*\()\d+(\)</button>)', rf"\g<1>{total_default}\2"),
-        (r'(data-exp="EXP_0"[^>]*>[^<]*\()\d+(\)</button>)', rf"\g<1>{exp_0}\2"),
-        (r'(data-exp="MAX_1"[^>]*>[^<]*\()\d+(\)</button>)', rf"\g<1>{max_1}\2"),
-        (r'(data-exp="MAX_2"[^>]*>[^<]*\()\d+(\)</button>)', rf"\g<1>{max_2}\2"),
-        (r'(data-exp="MIN_3"[^>]*>[^<]*\()\d+(\)</button>)', rf"\g<1>{min_3}\2"),
+        (r'(data-opt="loc:ALL"[^>]*>[^<]*\()\d+(\)</option>)', rf"\g<1>{total_default}\2"),
+        (r'(data-opt="loc:100% Remoto"[^>]*>[^<]*\()\d+(\)</option>)', rf"\g<1>{remoto_count}\2"),
+        (r'(data-opt="loc:Castilla y León"[^>]*>[^<]*\()\d+(\)</option>)', rf"\g<1>{cyl_count}\2"),
+        (r'(data-opt="loc:Valladolid"[^>]*>[^<]*\()\d+(\)</option>)', rf"\g<1>{valladolid_count}\2"),
+        (r'(data-opt="loc:León"[^>]*>[^<]*\()\d+(\)</option>)', rf"\g<1>{leon_count}\2"),
+        (r'(data-opt="loc:Híbrido / Madrid"[^>]*>[^<]*\()\d+(\)</option>)', rf"\g<1>{madrid_count}\2"),
+        (r'(data-opt="exp:ALL"[^>]*>[^<]*\()\d+(\)</option>)', rf"\g<1>{total_default}\2"),
+        (r'(data-opt="exp:EXP_0"[^>]*>[^<]*\()\d+(\)</option>)', rf"\g<1>{exp_0}\2"),
+        (r'(data-opt="exp:MAX_1"[^>]*>[^<]*\()\d+(\)</option>)', rf"\g<1>{max_1}\2"),
+        (r'(data-opt="exp:MAX_2"[^>]*>[^<]*\()\d+(\)</option>)', rf"\g<1>{max_2}\2"),
+        (r'(data-opt="exp:MIN_3"[^>]*>[^<]*\()\d+(\)</option>)', rf"\g<1>{min_3}\2"),
+        (r'(data-opt="dec:ACTIVE"[^>]*>[^<]*\()\d+(\)</option>)', rf"\g<1>{total_default}\2"),
+        (r'(data-opt="dec:pendiente"[^>]*>[^<]*\()\d+(\)</option>)', rf"\g<1>{pending_total}\2"),
+        (r'(data-opt="dec:solicitado"[^>]*>[^<]*\()\d+(\)</option>)', rf"\g<1>{applied_total}\2"),
+        (r'(data-opt="dec:descartado"[^>]*>[^<]*\()\d+(\)</option>)', rf"\g<1>{discarded_total}\2"),
+        (r'(data-opt="dec:ALL"[^>]*>[^<]*\()\d+(\)</option>)', rf"\g<1>{total_all}\2"),
+        (r'(data-opt="beca:INCLUDE"[^>]*>[^<]*\()\d+(\)</option>)', rf"\g<1>{total_default}\2"),
+        (r'(data-opt="beca:EXCLUDE"[^>]*>[^<]*\()\d+(\)</option>)', rf"\g<1>{no_beca_default}\2"),
+        (r'(data-opt="beca:ONLY"[^>]*>[^<]*\()\d+(\)</option>)', rf"\g<1>{becas_default}\2"),
         (r'(id="new-offers-chip"[^>]*>[^<]*\()\d+(\)</button>)', rf"\g<1>{nuevas_count}\2"),
         (r'(id="kit-only-chip"[^>]*>[^<]*\()\d+(\)</button>)', rf"\g<1>{kits}\2"),
     ]

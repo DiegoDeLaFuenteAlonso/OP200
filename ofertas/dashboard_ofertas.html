@@ -161,8 +161,8 @@
       display: flex;
       flex-direction: column;
       gap: 12px;
-      margin-bottom: 22px;
-      padding: 16px;
+      margin-bottom: 20px;
+      padding: 14px 16px;
       border: 1px solid var(--border);
       background: var(--surface);
       min-inline-size: 0;
@@ -172,9 +172,8 @@
     .search-row {
       display: flex;
       flex-wrap: wrap;
-      justify-content: center;
       gap: 8px;
-      align-items: center;
+      align-items: stretch;
       min-inline-size: 0;
     }
 
@@ -184,15 +183,15 @@
     }
 
     .search-input-wrap {
-      flex: 1 1 220px;
+      flex: 1 1 260px;
       min-inline-size: min(220px, 100%);
-      min-block-size: var(--target-size);
+      min-block-size: 36px;
       position: relative;
       display: flex;
       align-items: center;
       border: 1px solid var(--border-strong);
       background: #000000;
-      padding: 0 10px;
+      padding: 0 8px 0 10px;
     }
 
     .search-input-wrap span.prefix {
@@ -205,18 +204,42 @@
     .search-input {
       width: 100%;
       min-inline-size: 0;
-      min-block-size: var(--target-size);
+      min-block-size: 32px;
       background: transparent;
       border: none;
       color: #ffffff;
       font-family: 'Ubuntu Mono', monospace;
       font-size: 13.5px;
-      padding: 6px 0;
+      padding: 5px 0;
       outline: none;
     }
 
     .search-input::placeholder {
       color: var(--dim);
+    }
+
+    .search-clear-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-inline-size: 24px;
+      min-block-size: 24px;
+      background: transparent;
+      border: none;
+      color: var(--muted);
+      font-family: 'Ubuntu Mono', monospace;
+      font-size: 15px;
+      cursor: pointer;
+      padding: 0 4px;
+      line-height: 1;
+    }
+
+    .search-clear-btn:hover {
+      color: #ffffff;
+    }
+
+    .search-clear-btn[hidden] {
+      display: none;
     }
 
     .visually-hidden:where(:not(:focus-within, :active)) {
@@ -236,18 +259,51 @@
       outline-offset: 2px;
     }
 
+    .primary-selects {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      min-inline-size: 0;
+    }
+
+    .filter-field {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      min-inline-size: 0;
+    }
+
+    .field-label {
+      color: var(--muted);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+      user-select: none;
+    }
+
     .select-box {
-      min-block-size: var(--target-size);
+      width: 100%;
+      min-block-size: 34px;
       min-inline-size: 0;
       max-inline-size: 100%;
       background: #000000;
       color: var(--text);
       border: 1px solid var(--border-strong);
       font-family: 'Ubuntu Mono', monospace;
-      font-size: 12px;
+      font-size: 12.5px;
       padding: 6px 9px;
       cursor: pointer;
       text-overflow: ellipsis;
+      transition: border-color 0.12s ease;
+    }
+
+    .select-box:hover {
+      border-color: #666666;
+    }
+
+    .select-box.is-filtered {
+      border-color: var(--cyan);
+      color: #ffffff;
     }
 
     .select-box:focus-visible, .search-input-wrap:focus-within {
@@ -262,40 +318,34 @@
     .filter-row {
       display: flex;
       flex-wrap: wrap;
-      justify-content: center;
-      gap: 7px;
+      gap: 6px;
       align-items: center;
       min-inline-size: 0;
-    }
-
-    .filter-label {
-      color: var(--muted);
-      font-size: 11.5px;
-      margin-right: 4px;
-      text-transform: uppercase;
     }
 
     .chip {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-block-size: var(--target-size);
+      gap: 5px;
+      min-block-size: 34px;
       min-inline-size: var(--target-size);
       max-inline-size: 100%;
       background: #000000;
       color: var(--muted);
-      border: 1px solid var(--border);
+      border: 1px solid var(--border-strong);
       font-family: 'Ubuntu Mono', monospace;
       font-size: 12px;
-      padding: 4px 10px;
+      padding: 4px 11px;
       cursor: pointer;
       transition: all 0.12s ease;
       user-select: none;
       text-align: center;
+      white-space: nowrap;
     }
 
     .chip:hover {
-      border-color: var(--border-strong);
+      border-color: #777777;
       color: #ffffff;
     }
 
@@ -307,15 +357,15 @@
     }
 
     .chip.new-chip {
-      border-color: var(--amber);
+      border-color: #664b00;
       color: var(--amber);
-      background: #171000;
+      background: #120d00;
       font-weight: 700;
     }
 
     .chip.new-chip:hover {
-      border-color: #ffd24d;
-      background: #291c00;
+      border-color: var(--amber);
+      background: #241900;
       color: #ffffff;
     }
 
@@ -326,27 +376,154 @@
       font-weight: 700;
     }
 
-    .chip.cyl-chip {
-      border-color: #164e5b;
-      color: var(--cyan);
+    .chip.more-btn {
+      color: var(--text);
+      border-color: var(--border-strong);
     }
 
-    .chip.cyl-chip.active {
+    .chip.more-btn.has-active,
+    .chip.more-btn[aria-expanded="true"] {
+      border-color: var(--cyan);
+      color: var(--cyan);
+      background: #04151a;
+    }
+
+    .chip.kit-toggle {
+      width: 100%;
+      border-color: var(--border-strong);
+      color: var(--text);
+    }
+
+    .chip.kit-toggle.active {
       border-color: var(--cyan);
       background: var(--cyan);
       color: #000000;
       font-weight: 700;
     }
 
-    .chip.exp-chip.active {
-      border-color: var(--green);
-      background: var(--green);
-      color: #000000;
+    .chip.skill-chip {
+      min-block-size: 28px;
+      padding: 3px 9px;
+      font-size: 11.5px;
+      border-color: var(--border);
+    }
+
+    .chip.skill-chip.is-zero:not(.active) {
+      opacity: 0.42;
     }
 
     .chip.skill-chip.active {
       border-color: var(--cyan);
       background: var(--cyan);
+      color: #000000;
+      font-weight: 700;
+    }
+
+    .more-filters-drawer {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      padding-top: 12px;
+      border-top: 1px dashed var(--border-strong);
+    }
+
+    .more-filters-drawer[hidden] {
+      display: none;
+    }
+
+    .more-filters-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      align-items: end;
+      min-inline-size: 0;
+    }
+
+    .stack-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      min-inline-size: 0;
+    }
+
+    .active-filters-bar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      padding-top: 10px;
+      border-top: 1px solid #181818;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .active-filters-left {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px;
+      min-inline-size: 0;
+    }
+
+    .results-summary strong {
+      color: #ffffff;
+    }
+
+    .active-pills {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .active-pills[hidden] {
+      display: none;
+    }
+
+    .active-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      min-block-size: 26px;
+      background: #07191f;
+      color: var(--cyan);
+      border: 1px solid #1a5868;
+      font-family: 'Ubuntu Mono', monospace;
+      font-size: 11.5px;
+      padding: 2px 8px;
+      cursor: pointer;
+      transition: all 0.12s ease;
+    }
+
+    .active-pill:hover {
+      border-color: var(--cyan);
+      background: var(--cyan);
+      color: #000000;
+      font-weight: 700;
+    }
+
+    .active-pill.pill-amber {
+      background: #1a1200;
+      color: var(--amber);
+      border-color: #664b00;
+    }
+
+    .active-pill.pill-amber:hover {
+      border-color: var(--amber);
+      background: var(--amber);
+      color: #000000;
+    }
+
+    .active-pill.pill-purple {
+      background: #140924;
+      color: #d8b4fe;
+      border-color: #4c2378;
+    }
+
+    .active-pill.pill-purple:hover {
+      border-color: #a855f7;
+      background: #a855f7;
       color: #000000;
     }
 
@@ -354,20 +531,46 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-block-size: var(--target-size);
+      min-block-size: 28px;
       min-inline-size: var(--target-size);
       background: transparent;
       color: var(--muted);
       border: 1px dashed var(--border-strong);
       font-family: 'Ubuntu Mono', monospace;
-      font-size: 12px;
-      padding: 4px 10px;
+      font-size: 11.5px;
+      padding: 3px 10px;
       cursor: pointer;
+      white-space: nowrap;
     }
 
     .reset-btn:hover {
       color: #ffffff;
       border-color: #ffffff;
+    }
+
+    .reset-btn[hidden] {
+      display: none;
+    }
+
+    .empty-action-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 12px;
+      min-block-size: 32px;
+      padding: 4px 12px;
+      background: #000000;
+      color: var(--cyan);
+      border: 1px solid var(--cyan);
+      font-family: 'Ubuntu Mono', monospace;
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .empty-action-btn:hover {
+      background: var(--cyan);
+      color: #000000;
     }
 
     /* Cards list */
@@ -778,6 +981,16 @@
       background: #070707;
       color: #ffffff;
     }
+    #tab-all[aria-selected="true"] {
+      color: #ffffff;
+      border-color: #888888;
+    }
+    #tab-all[aria-selected="true"]::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0;
+      border-block-end: 3px solid #ffffff;
+    }
     #tab-datos[aria-selected="true"] {
       color: var(--cyan);
       border-color: var(--cyan);
@@ -811,6 +1024,9 @@
       min-inline-size: 0;
       max-inline-size: 100%;
     }
+    .area-panel-inner.area-all {
+      border-left: 2px solid #888888;
+    }
     .area-panel-inner.area-datos {
       border-left: 2px solid var(--cyan);
     }
@@ -834,6 +1050,9 @@
       letter-spacing: 0.4px;
       overflow-wrap: anywhere;
     }
+    .area-title.all-title {
+      color: #ffffff;
+    }
     .area-title.datos-title {
       color: var(--cyan);
     }
@@ -846,49 +1065,22 @@
       margin-top: 3px;
       overflow-wrap: anywhere;
     }
-    .filter-sep {
-      color: #333333;
-      margin: 0 2px;
-      user-select: none;
-    }
-    .becario-row {
-      padding: 8px 10px;
-      border: 1px solid #2b1847;
-      background: #090510;
-    }
-    .chip.beca-chip {
-      border-color: #3b1d5e;
-      color: #c4b5fd;
-    }
-    .chip.beca-chip.active {
-      border-color: #a855f7;
-      background: #a855f7;
-      color: #000000;
-      font-weight: 700;
-    }
     .badge.beca-badge {
       border-color: #a855f7;
       color: #d8b4fe;
       background: #1a0b2e;
     }
-    .stack-drawer {
-      padding-top: 8px;
-      border-top: 1px dashed #1f1f1f;
-    }
-    .stack-drawer[hidden] {
-      display: none;
-    }
 
-    @media (max-width: 560px) {
+    @media (max-width: 640px) {
       .controls {
         padding: 12px;
       }
-      .search-row .select-box {
-        flex: 1 1 100%;
-        inline-size: 100%;
+      .primary-selects,
+      .more-filters-grid {
+        grid-template-columns: 1fr;
       }
-      .filter-sep {
-        display: none;
+      .search-row .chip {
+        flex: 1 1 auto;
       }
       .offer-card, .area-panel-inner {
         padding: 13px 12px;
@@ -906,18 +1098,14 @@
     <div class="container">
       <header class="header">
         <div class="title-block">
-          <h1><span class="prompt">diego@empleo:~$</span> ./tracker_ofertas --tabs=datos,developer</h1>
+          <h1><span class="prompt">diego@empleo:~$</span> ./tracker_ofertas</h1>
           <div class="subtitle">Datos, BI &amp; IA (BigQuery / Looker / Dataform / SQL / ML) · Developer &amp; Backend (Python / Go / Java / .NET) · CyL / Madrid / Remoto</div>
         </div>
         <div class="stats-bar">
-          <span>en pestaña: <strong class="cyan" id="visible-count">0</strong> (filtradas: <strong id="filtered-total-count">0</strong> / <span id="total-count">0</span>)</span>
-          <span>datos: <strong class="cyan" id="datos-count">0</strong></span>
-          <span>developer: <strong class="green" id="dev-count">0</strong></span>
-          <span>becario/prácticas: <strong class="purple" id="becas-count">0</strong></span>
-          <span>0–1 año: <strong class="green" id="exp01-count">0</strong></span>
+          <span>total: <strong id="total-count">151</strong></span>
+          <span>pendientes [ ]: <strong class="amber" id="pending-count">151</strong></span>
           <span>solicitadas [&check;]: <strong class="green" id="applied-count">0</strong></span>
           <span>descartadas [&times;]: <strong class="red" id="discarded-count">0</strong></span>
-          <span>pendientes [ ]: <strong class="amber" id="pending-count">0</strong></span>
         </div>
         <div class="sync-bar">
           <span id="sync-status" class="sync-status" role="status" aria-live="polite">&#10003; Guardado automático activo (navegador)</span>
@@ -931,79 +1119,119 @@
             <div class="search-input-wrap">
               <span class="prefix" aria-hidden="true">/</span>
               <label class="visually-hidden" for="search-input">Buscar ofertas por empresa, rol, ubicación o tecnología</label>
-              <input type="text" id="search-input" class="search-input" placeholder="Buscar empresa, puesto, ciudad (Valladolid, León, Madrid...) o tecnología..." />
+              <input type="text" id="search-input" class="search-input" placeholder="Buscar empresa, puesto, ciudad o tecnología..." />
+              <button type="button" class="search-clear-btn" id="search-clear-btn" aria-label="Borrar búsqueda" hidden>&times;</button>
             </div>
-            <label class="visually-hidden" for="decision-select">Filtrar por estado de postulación</label>
-            <select id="decision-select" class="select-box">
-              <option value="ALL">Estado: Todas</option>
-              <option value="ACTIVE">Pendientes + Solicitadas</option>
-              <option value="pendiente">Solo Pendientes [ ]</option>
-              <option value="solicitado">Solo Solicitadas [&check;]</option>
-              <option value="descartado">Solo Descartadas [&times;]</option>
-            </select>
-            <label class="visually-hidden" for="sort-select">Ordenar ofertas</label>
-            <select id="sort-select" class="select-box">
-              <option value="exp_asc">Orden: Nuevas 1º + Menor Exp. + Match %</option>
-              <option value="match_desc">Orden: Mayor Match %</option>
-              <option value="pending_first">Orden: Pendientes [ ] primero</option>
-              <option value="applied_first">Orden: Solicitadas [&check;] primero</option>
-              <option value="company_asc">Orden: Empresa (A-Z)</option>
-            </select>
-            <button type="button" class="reset-btn" id="reset-btn">[limpiar filtros]</button>
+            <button type="button" class="chip new-chip" id="new-offers-chip" aria-pressed="false">🔥 Nuevas (26/11) (112)</button>
+            <button type="button" class="chip more-btn" id="toggle-more-filters-btn" aria-expanded="false" aria-controls="more-filters-drawer">Más filtros &#9662;</button>
           </div>
 
-          <div class="filter-row becario-row" id="becario-filter-row" role="group" aria-labelledby="becario-filter-label">
-            <span class="filter-label" id="becario-filter-label">🎓 Becario / Prácticas:</span>
-            <button type="button" class="chip beca-chip active" data-beca="INCLUDE" aria-pressed="true">Mostrar todo: Empleo + Becario (84)</button>
-            <button type="button" class="chip beca-chip" data-beca="EXCLUDE" aria-pressed="false">🚫 No mostrar becario (Solo empleo) (77)</button>
-            <button type="button" class="chip beca-chip" data-beca="ONLY" aria-pressed="false">🎓 Solo becario / prácticas (7)</button>
+          <div class="primary-selects">
+            <div class="filter-field">
+              <label class="field-label" for="loc-select">Zona</label>
+              <select id="loc-select" class="select-box">
+                <option value="ALL" data-opt="loc:ALL">Todas (151)</option>
+                <option value="100% Remoto" data-opt="loc:100% Remoto">100% Remoto España (99)</option>
+                <option value="Castilla y León" data-opt="loc:Castilla y León">Castilla y León (18)</option>
+                <option value="Valladolid" data-opt="loc:Valladolid">Valladolid (12)</option>
+                <option value="León" data-opt="loc:León">León (9)</option>
+                <option value="Híbrido / Madrid" data-opt="loc:Híbrido / Madrid">Madrid ≤1 día/sem (38)</option>
+              </select>
+            </div>
+            <div class="filter-field">
+              <label class="field-label" for="exp-select">Experiencia</label>
+              <select id="exp-select" class="select-box">
+                <option value="ALL" data-opt="exp:ALL">Cualquiera (151)</option>
+                <option value="EXP_0" data-opt="exp:EXP_0">Sin experiencia (0 años) (48)</option>
+                <option value="MAX_1" data-opt="exp:MAX_1">Hasta 1 año (102)</option>
+                <option value="MAX_2" data-opt="exp:MAX_2">Hasta 2 años (151)</option>
+              </select>
+            </div>
+            <div class="filter-field">
+              <label class="field-label" for="decision-select">Estado</label>
+              <select id="decision-select" class="select-box">
+                <option value="ACTIVE" data-opt="dec:ACTIVE" selected>Activas (sin descartadas) (151)</option>
+                <option value="pendiente" data-opt="dec:pendiente">Solo pendientes [ ] (151)</option>
+                <option value="solicitado" data-opt="dec:solicitado">Solo solicitadas [&check;] (0)</option>
+                <option value="descartado" data-opt="dec:descartado">Solo descartadas [&times;] (0)</option>
+                <option value="ALL" data-opt="dec:ALL">Todas (151)</option>
+              </select>
+            </div>
           </div>
 
-          <div class="filter-row" id="primary-filters" role="group" aria-label="Filtrar por zona y etiquetas">
-            <span class="filter-label">Zona:</span>
-            <button type="button" class="chip loc-chip active" data-loc="ALL" aria-pressed="true">Todas (84)</button>
-            <button type="button" class="chip loc-chip" data-loc="100% Remoto" aria-pressed="false">🏠 Remoto España (72)</button>
-            <button type="button" class="chip loc-chip cyl-chip" data-loc="Valladolid" aria-pressed="false">📍 Valladolid (8)</button>
-            <button type="button" class="chip loc-chip cyl-chip" data-loc="León" aria-pressed="false">🦁 León (5)</button>
-            <button type="button" class="chip loc-chip" data-loc="Híbrido / Madrid" aria-pressed="false">🚄 Madrid ≤1d/sem (1)</button>
-            <span class="filter-sep" aria-hidden="true">|</span>
-            <button type="button" class="chip new-chip" id="new-offers-chip" aria-pressed="false">🔥 Solo Nuevas (26/11) (40)</button>
-            <button type="button" class="chip" id="kit-only-chip" aria-pressed="false">★ Kit ATS (20)</button>
-            <button type="button" class="reset-btn" id="toggle-stack-btn" aria-expanded="false" aria-controls="stack-drawer">[+ stack]</button>
+          <div class="more-filters-drawer" id="more-filters-drawer" hidden>
+            <div class="more-filters-grid">
+              <div class="filter-field">
+                <label class="field-label" for="beca-select">Becario / Prácticas</label>
+                <select id="beca-select" class="select-box">
+                  <option value="INCLUDE" data-opt="beca:INCLUDE">Empleo + Becario (151)</option>
+                  <option value="EXCLUDE" data-opt="beca:EXCLUDE">Solo empleo (sin becario) (140)</option>
+                  <option value="ONLY" data-opt="beca:ONLY">Solo becario / prácticas (11)</option>
+                </select>
+              </div>
+              <div class="filter-field">
+                <label class="field-label" for="sort-select">Orden</label>
+                <select id="sort-select" class="select-box">
+                  <option value="exp_asc">Nuevas 1º + Menor Exp. + Match %</option>
+                  <option value="match_desc">Mayor Match %</option>
+                  <option value="pending_first">Pendientes [ ] primero</option>
+                  <option value="applied_first">Solicitadas [&check;] primero</option>
+                  <option value="company_asc">Empresa (A-Z)</option>
+                </select>
+              </div>
+              <div class="filter-field">
+                <span class="field-label" id="kit-filter-label">Paquete ATS</span>
+                <button type="button" class="chip kit-toggle" id="kit-only-chip" aria-pressed="false" aria-describedby="kit-filter-label">★ Solo con Kit ATS (21)</button>
+              </div>
+            </div>
+
+            <div class="stack-group" role="group" aria-labelledby="stack-filter-label">
+              <span class="field-label" id="stack-filter-label">Stack / Tecnología</span>
+              <div class="filter-row" id="stack-drawer">
+                <button type="button" class="chip skill-chip" data-skill="MCP" aria-pressed="false">MCP</button>
+                <button type="button" class="chip skill-chip" data-skill="BigQuery" aria-pressed="false">BigQuery / GCP</button>
+                <button type="button" class="chip skill-chip" data-skill="Looker" aria-pressed="false">Looker</button>
+                <button type="button" class="chip skill-chip" data-skill="Dataform" aria-pressed="false">Dataform / dbt</button>
+                <button type="button" class="chip skill-chip" data-skill="LangGraph" aria-pressed="false">LangGraph / Agentes</button>
+                <button type="button" class="chip skill-chip" data-skill="Claude" aria-pressed="false">Claude</button>
+                <button type="button" class="chip skill-chip" data-skill="Python" aria-pressed="false">Python</button>
+                <button type="button" class="chip skill-chip" data-skill="FastAPI" aria-pressed="false">FastAPI</button>
+                <button type="button" class="chip skill-chip" data-skill="Go" aria-pressed="false">Go / Golang</button>
+                <button type="button" class="chip skill-chip" data-skill="Spring Boot" aria-pressed="false">Java / Spring Boot</button>
+                <button type="button" class="chip skill-chip" data-skill=".NET" aria-pressed="false">C# / .NET</button>
+                <button type="button" class="chip skill-chip" data-skill="SQL" aria-pressed="false">SQL</button>
+              </div>
+            </div>
           </div>
 
-          <div class="filter-row" id="exp-beca-filters" role="group" aria-label="Filtrar por experiencia mínima">
-            <span class="filter-label">Exp:</span>
-            <button type="button" class="chip exp-chip active" data-exp="ALL" aria-pressed="true">Todas (84)</button>
-            <button type="button" class="chip exp-chip" data-exp="EXP_0" aria-pressed="false">🌱 Sin exp. / 0 años (20)</button>
-            <button type="button" class="chip exp-chip" data-exp="MAX_1" aria-pressed="false">★ 0–1 año (50)</button>
-            <button type="button" class="chip exp-chip" data-exp="MAX_2" aria-pressed="false">Hasta 2 años (84)</button>
-          </div>
-
-          <div class="filter-row stack-drawer" id="stack-drawer" hidden>
-            <span class="filter-label">Stack:</span>
-            <button type="button" class="chip skill-chip" data-skill="MCP" aria-pressed="false">MCP</button>
-            <button type="button" class="chip skill-chip" data-skill="BigQuery" aria-pressed="false">BigQuery / GCP</button>
-            <button type="button" class="chip skill-chip" data-skill="Looker" aria-pressed="false">Looker</button>
-            <button type="button" class="chip skill-chip" data-skill="Dataform" aria-pressed="false">Dataform / dbt</button>
-            <button type="button" class="chip skill-chip" data-skill="LangGraph" aria-pressed="false">LangGraph / Agentes</button>
-            <button type="button" class="chip skill-chip" data-skill="Claude" aria-pressed="false">Claude</button>
-            <button type="button" class="chip skill-chip" data-skill="Python" aria-pressed="false">Python</button>
-            <button type="button" class="chip skill-chip" data-skill="FastAPI" aria-pressed="false">FastAPI</button>
-            <button type="button" class="chip skill-chip" data-skill="Go" aria-pressed="false">Go / Golang</button>
-            <button type="button" class="chip skill-chip" data-skill="Spring Boot" aria-pressed="false">Java / Spring Boot</button>
-            <button type="button" class="chip skill-chip" data-skill=".NET" aria-pressed="false">C# / .NET</button>
-            <button type="button" class="chip skill-chip" data-skill="SQL" aria-pressed="false">SQL</button>
+          <div class="active-filters-bar">
+            <div class="active-filters-left">
+              <span class="results-summary">Mostrando <strong id="visible-count">151</strong> de <span id="catalog-count">151</span> ofertas</span>
+              <div class="active-pills" id="active-pills" aria-label="Filtros activos" hidden></div>
+            </div>
+            <button type="button" class="reset-btn" id="reset-btn" hidden>[limpiar filtros]</button>
           </div>
         </search>
 
         <div class="tabs-wrapper">
           <div class="area-tablist" id="area-tablist" role="tablist" aria-label="Categoría principal de ofertas">
-            <button type="button" class="area-tab" id="tab-datos" role="tab" data-tab="datos" aria-selected="true" tabindex="0">📊 Datos, BI &amp; IA (36)</button>
-            <button type="button" class="area-tab" id="tab-developer" role="tab" data-tab="developer" aria-selected="false" tabindex="-1">💻 Developer, Backend &amp; Software (48)</button>
+            <button type="button" class="area-tab" id="tab-all" role="tab" data-tab="all" aria-selected="true" tabindex="0">📋 Todas (151)</button>
+            <button type="button" class="area-tab" id="tab-datos" role="tab" data-tab="datos" aria-selected="false" tabindex="-1">📊 Datos, BI &amp; IA (67)</button>
+            <button type="button" class="area-tab" id="tab-developer" role="tab" data-tab="developer" aria-selected="false" tabindex="-1">💻 Developer &amp; Backend (84)</button>
           </div>
           <div id="tabs-stage">
-            <div role="tabpanel" id="panel-datos" aria-labelledby="tab-datos">
+            <div role="tabpanel" id="panel-all" aria-labelledby="tab-all">
+              <section class="area-panel-inner area-all" aria-labelledby="heading-all">
+                <div class="area-header">
+                  <div>
+                    <h2 class="area-title all-title" id="heading-all">📋 TODAS LAS OFERTAS (<span id="all-section-count">0</span>)</h2>
+                    <div class="area-subtitle">Vista unificada de Datos, BI &amp; IA y Developer, Backend &amp; Software</div>
+                  </div>
+                </div>
+                <div class="offers-grid" id="all-grid"></div>
+              </section>
+            </div>
+            <div role="tabpanel" id="panel-datos" aria-labelledby="tab-datos" hidden="until-found">
               <section class="area-panel-inner area-datos" aria-labelledby="heading-datos">
                 <div class="area-header">
                   <div>
@@ -1035,6 +1263,85 @@
     const STORAGE_KEY_DECISIONS = 'diego_empleo_decisions_v2';
     const LEGACY_CHECK_KEY = 'diego_empleo_checked_ids_v1';
     const OFFERS = [
+  {
+    "id": "nttdata-junior-agentic-ai-engineer-mcp-harness",
+    "empresa": "NTT DATA España",
+    "rol": "Junior Agentic AI Engineer (Python, MCP, A2A, RAG, Harness Engineering & SDD) – Híbrido España (Sedes Valladolid / León / Madrid)",
+    "categoria": "IA & Agentic Engineering",
+    "macro_cat": "IA & Agentes",
+    "seccion": "developer",
+    "es_beca": false,
+    "es_nueva": true,
+    "fecha_barrido": "2026-11-26",
+    "es_cyl": true,
+    "es_valladolid": true,
+    "es_leon": true,
+    "es_madrid": true,
+    "modalidad": "Híbrido (España · Sedes NTT DATA en Valladolid, León y Madrid · Confirmar adscripción)",
+    "mod_tag": "Castilla y León / Madrid",
+    "ubicacion": "España (Valladolid / León / Madrid · Híbrido)",
+    "salario": "Contrato indefinido desde día 1 + Plan de carrera + Beneficios NTT DATA",
+    "stack": [
+      "Python",
+      "AI Agents",
+      "MCP",
+      "A2A",
+      "RAG",
+      "Agent Harness Engineering",
+      "Spec-Driven Dev (SDD)",
+      "APIs REST",
+      "Agent Evals"
+    ],
+    "fecha": "Publicada el 18/11/2026 (Activa en LinkedIn)",
+    "estado": "descubierta",
+    "decision": "pendiente",
+    "match": 98,
+    "exp_min": 0,
+    "exp_rango": "0 años (Junior · Contrato indefinido día 1)",
+    "exp_detalle": "0 años de experiencia mínima; acepta explícitamente FP Superior ('ASIR o Grado'), sin requisito bloqueante de inglés B2/C1. Pide literalmente Python, LLMs, Agentes IA, MCP, A2A, RAG, evaluación de agentes, Harness Engineering y SDD.",
+    "url": "https://www.linkedin.com/jobs/view/4491863719",
+    "notas": "UNICORNIO 98% — Encaje casi 1:1 con tu experiencia en HORSE (Agent Harness, Loop Engineering, MCP, Python, agentes IA), 0 años requeridos, indefinido día 1, 100% en español y NTT DATA tiene oficinas en Valladolid, León y Madrid (consultar en RRHH adscripción a sede local o teletrabajo)."
+  },
+  {
+    "id": "taptap-digital-ai-automation-engineer-entry-level-mcp-madrid",
+    "empresa": "Taptap Digital",
+    "rol": "AI & Automation Engineer – Entry Level (Multi-Agent, MCP, Harness, RAG, Claude & Python/TS) – Híbrido Madrid",
+    "categoria": "IA & Agentic Engineering",
+    "macro_cat": "IA & Agentes",
+    "seccion": "developer",
+    "es_beca": false,
+    "es_nueva": true,
+    "fecha_barrido": "2026-11-26",
+    "es_cyl": false,
+    "es_valladolid": false,
+    "es_leon": false,
+    "es_madrid": true,
+    "modalidad": "Híbrido (Madrid · Confirmado explícitamente en la oferta)",
+    "mod_tag": "Híbrido / Madrid",
+    "ubicacion": "Madrid (Híbrido)",
+    "salario": "Competitivo (Contrato indefinido)",
+    "stack": [
+      "Multi-Agent Systems",
+      "MCP Servers & Tools",
+      "Agent Harness / Orchestration",
+      "RAG",
+      "Claude / Claude Code",
+      "TypeScript / JS",
+      "Python",
+      "PostgreSQL",
+      "APIs REST",
+      "n8n"
+    ],
+    "fecha": "Publicada el 24/11/2026 (Activa en LinkedIn)",
+    "estado": "descubierta",
+    "decision": "pendiente",
+    "match": 98,
+    "exp_min": 0,
+    "exp_rango": "0 años (Entry Level · FP aceptada · Inglés B1 explícito)",
+    "exp_detalle": "Declara literalmente: 'Not asking for years of production experience', acepta explícitamente FP en desarrollo ('FP in development or similar') y declara literalmente 'English (B1 is enough)' para leer docs/escribir código.",
+    "url": "https://www.linkedin.com/jobs/view/4493042349",
+    "notas": "UNICORNIO 98% (24/11) — Escrita prácticamente para tu perfil: 0 años, FP explícitamente aceptada, declara textualmente 'B1 is enough' (cero barrera de idioma) y trabaja en multi-agent platforms, MCP servers, RAG y agent harness/orchestration layer."
+  },
   {
     "id": "seedtag-junior-data-scientist-python-bigquery-dbt-mcp-remoto",
     "empresa": "Seedtag",
@@ -1073,6 +1380,223 @@
     "notas": "MATCH TOP #1 DEL BARRIDO: 100% remoto en España (0-2 años contando prácticas/proyectos) y stack prácticamente clonado de tu experiencia en HORSE: Python, SQL, BigQuery, dbt (Dataform), agentes LLM, LangGraph, MCP y Claude SDK. Único punto a preparar: entrevistas en inglés (tu nivel actual B1)."
   },
   {
+    "id": "krell-consulting-agentic-software-engineer-aws-mcp-madrid",
+    "empresa": "Krell Consulting",
+    "rol": "Agentic Software Engineer (Python/TS, AWS, APIs & MCP) – Híbrido Madrid",
+    "categoria": "IA & Agentic Engineering",
+    "macro_cat": "IA & Agentes",
+    "seccion": "developer",
+    "es_beca": false,
+    "es_nueva": true,
+    "fecha_barrido": "2026-11-26",
+    "es_cyl": false,
+    "es_valladolid": false,
+    "es_leon": false,
+    "es_madrid": true,
+    "modalidad": "Híbrido (Madrid)",
+    "mod_tag": "Híbrido / Madrid",
+    "ubicacion": "Madrid (Híbrido)",
+    "salario": "Competitivo (Contrato indefinido)",
+    "stack": [
+      "Python",
+      "TypeScript",
+      "AWS",
+      "MCP",
+      "APIs REST",
+      "Agentes de Código",
+      "Evaluaciones IA"
+    ],
+    "fecha": "Refrescada hoy 26/11/2026 (Activa en Viterbit Krell)",
+    "estado": "descubierta",
+    "decision": "pendiente",
+    "match": 95,
+    "exp_min": 0,
+    "exp_rango": "0-2 años ('Más capacidad de aprender que años de experiencia')",
+    "exp_detalle": "Declara literalmente: 'Valoramos más la capacidad de aprender y la curiosidad técnica que los años de experiencia'. Python/TS + AWS + APIs y MCP + agentes de código/evaluaciones, sin inglés alto.",
+    "url": "https://krell-consulting.viterbit.site/agentic-software-engineer-aws-wXYmcqXMAFm8/",
+    "notas": "JOYA IA/MCP REFRESCADA HOY (26/11): Híbrido Madrid, 100% en español, sin barrera de años y pide exactamente MCP + agentes de código + Python."
+  },
+  {
+    "id": "deloitte-desarrollador-junior-sap-abap",
+    "empresa": "Deloitte",
+    "rol": "Desarrollador/a Junior SAP ABAP – Delivery Center Madrid",
+    "categoria": "Enterprise & Backend Development (SAP ABAP)",
+    "macro_cat": "Backend Dev",
+    "seccion": "developer",
+    "es_beca": false,
+    "es_nueva": true,
+    "fecha_barrido": "2026-11-26",
+    "es_cyl": false,
+    "es_valladolid": false,
+    "es_leon": false,
+    "es_madrid": true,
+    "modalidad": "Híbrido (Flexible)",
+    "mod_tag": "Híbrido / Madrid",
+    "ubicacion": "Madrid",
+    "salario": "A convenir",
+    "stack": [
+      "SAP ABAP",
+      "SQL",
+      "POO (Java/C#/Python)",
+      "SAP"
+    ],
+    "fecha": "Publicada el 06/11/2026 (Activa en LinkedIn)",
+    "estado": "descubierta",
+    "decision": "pendiente",
+    "match": 95,
+    "exp_min": 0,
+    "exp_rango": "0 años (FP Superior / Junior)",
+    "exp_detalle": "Acepta explícitamente FP Grado Superior en Informática; conocimientos básicos de programación y SAP valorable (no imprescindible)",
+    "url": "https://www.linkedin.com/jobs/view/4486234084",
+    "notas": "REACTIVADA 26/11 (preferencia Híbrido Madrid): Abierta en LinkedIn, 0 años, acepta FP Superior + inglés técnico. | [Archivada 26/11: Madrid sin confirmación de ≤1 día/semana en oficina] Encaje directo: acepta explícitamente FP Superior, pide inglés solo técnico para documentación y Diego ya tiene experiencia práctica en SAP ABAP (FDS / DXC Technology) además de Java/C#/Python/SQL."
+  },
+  {
+    "id": "galadrim-desarrollador-ia-junior-agentes-llm-fullstack-madrid",
+    "empresa": "Galadrim",
+    "rol": "Desarrollador/a de Soluciones IA Junior (0+ años · LLMs, Agentes, Cursor/Claude Code & Full-Stack)",
+    "categoria": "IA & Backend Development",
+    "macro_cat": "IA & Agentes",
+    "seccion": "developer",
+    "es_beca": false,
+    "es_nueva": true,
+    "fecha_barrido": "2026-11-26",
+    "es_cyl": false,
+    "es_valladolid": false,
+    "es_leon": false,
+    "es_madrid": false,
+    "modalidad": "100% Remoto (Madrid / España)",
+    "mod_tag": "100% Remoto",
+    "ubicacion": "Madrid",
+    "salario": "30.000 € – 35.000 € Bruto/año",
+    "stack": [
+      "LLMs & Agentes IA",
+      "Cursor / Claude Code",
+      "Python / Full-Stack",
+      "Interfaces Web",
+      "APIs & Producto"
+    ],
+    "fecha": "Publicada el 10/11/2026 (Activa en LinkedIn)",
+    "estado": "preparada_para_postular",
+    "decision": "pendiente",
+    "match": 95,
+    "exp_min": 0,
+    "exp_rango": "0 años (Explícito '0+ años de experiencia')",
+    "exp_detalle": "Explícito en oferta: 'Tienes 0+ años de experiencia. (Sí, has leído bien ¡0 años!)'. Busca dominio real de LLMs, agentes y desarrollo asistido con Cursor/Claude Code + Full-Stack.",
+    "url": "https://www.linkedin.com/jobs/view/4489483109",
+    "notas": "REACTIVADA 26/11 (preferencia Híbrido Madrid): Abierta en LinkedIn, 0+ años, 100% remoto hasta sede H2 2026 luego 4d/1d. Nota: entorno inglés fluido. | [Archivada 26/11: híbrido en Madrid 4 días oficina / 1 remoto desde H2 2026, incumple ≤1 día/semana] KIT ATS LISTO en postulaciones/galadrim-desarrollador-ia-junior/ (10/11/2026 · Madrid · 0+ años · 30k–35k € + Mac/Claude Code Max/Cursor): LLMs, agentes, desarrollo asistido con Cursor/Claude Code y Full-Stack. Encaje 1:1 con tu Especialización IA + Agent Harness/MCP en HORSE + DAW."
+  },
+  {
+    "id": "next-digital-next-academy-practicas-data-software-remoto",
+    "empresa": "Next Digital (WE ARE NEXT)",
+    "rol": "Next Academy – Programa de Prácticas Remuneradas (Data Engineering & Software Dev) – 100% Remoto",
+    "categoria": "Becas & Prácticas / Data & Software",
+    "macro_cat": "Data & Analytics",
+    "seccion": "datos",
+    "es_beca": true,
+    "es_nueva": true,
+    "fecha_barrido": "2026-11-26",
+    "es_cyl": false,
+    "es_valladolid": false,
+    "es_leon": false,
+    "es_madrid": false,
+    "modalidad": "100% Remoto (España · 3-4 meses · Jornada completa flexible)",
+    "mod_tag": "100% Remoto",
+    "ubicacion": "España (100% Remoto)",
+    "salario": "1.000 €/mes (Prácticas remuneradas + Posibilidad real de incorporación)",
+    "stack": [
+      "Python",
+      "SQL",
+      "Data Engineering",
+      "Software Development",
+      "APIs REST",
+      "Docker",
+      "Cloud / DevOps",
+      "Git"
+    ],
+    "fecha": "Activa verificada en portal oficial Next Digital (Nov 2026)",
+    "estado": "descubierta",
+    "decision": "pendiente",
+    "match": 95,
+    "exp_min": 0,
+    "exp_rango": "0 años (Beca / Prácticas · Recién titulados y DAM/DAW)",
+    "exp_detalle": "Principal vía de incorporación de talento junior de Next Digital: 3-4 meses remunerados (1.000 €/mes) rotando en Data Engineering y Software Development. Menciona explícitamente 'recién titulados' y 'DAM, DAW u otras formaciones técnicas'.",
+    "url": "https://empleo.nextdigital.es/jobs/7797345-next-academy",
+    "notas": "BECA TOP 100% REMOTA: 1.000 €/mes en remoto desde cualquier punto de España, mención explícita a perfiles DAM/DAW y recién titulados, 100% en español y orientada a incorporación en plantilla (donde luego dispondrías de 100% remoto real y 1.000 €/año para inglés y certificaciones)."
+  },
+  {
+    "id": "babel-consultor-tecnologico-junior-dev-datos-remoto",
+    "empresa": "Babel",
+    "rol": "Consultor/a Tecnológico/a Junior (Java, Python, SQL, Datos & QA) – 100% Full Remote España",
+    "categoria": "Backend / Full-Stack Dev",
+    "macro_cat": "Backend Dev",
+    "seccion": "developer",
+    "es_beca": false,
+    "es_nueva": true,
+    "fecha_barrido": "2026-11-26",
+    "es_cyl": false,
+    "es_valladolid": false,
+    "es_leon": false,
+    "es_madrid": false,
+    "modalidad": "100% Full Remote (España · Confirmado en Workday)",
+    "mod_tag": "100% Remoto",
+    "ubicacion": "España (100% Remoto)",
+    "salario": "Indefinido + Plan de carrera Babel",
+    "stack": [
+      "Java",
+      "Python",
+      "SQL",
+      "JavaScript",
+      "HTML/CSS",
+      "Datos",
+      "Testing / QA"
+    ],
+    "fecha": "Publicada el 24/11/2026 (Activa en Workday Babel)",
+    "estado": "descubierta",
+    "decision": "pendiente",
+    "match": 94,
+    "exp_min": 0,
+    "exp_rango": "0-1 años (Junior explícito)",
+    "exp_detalle": "Puesto Junior (0-1 años) 100% Full Remote en Workday para perfiles con base en Java, Python, SQL, desarrollo web y datos, sin grado ni inglés C1 obligatorios.",
+    "url": "https://babelgroup.wd103.myworkdayjobs.com/REC_External_Career_Site/job/MADRID/Consultor-a-Tecnolgico-a-Junior---Desarrollo--QA-y-Sistemas_JR109875",
+    "notas": "MUY RECIENTE (24/11) Y 100% REMOTA EN ESPAÑOL: Encaje total con tu stack polivalente (Java, Python, SQL, web DAW/DAM y datos) sin barrera de inglés."
+  },
+  {
+    "id": "renault-data-analyst-iln-looker-ia-valladolid",
+    "empresa": "Renault Group",
+    "rol": "Data Analyst – ILN, Plataforma Importación & PPA's (Looker, Power BI & IA) – Valladolid",
+    "categoria": "Data Analytics & BI",
+    "macro_cat": "Data & Analytics",
+    "seccion": "datos",
+    "es_beca": false,
+    "es_nueva": true,
+    "fecha_barrido": "2026-11-26",
+    "es_cyl": true,
+    "es_valladolid": true,
+    "es_leon": false,
+    "es_madrid": false,
+    "modalidad": "Híbrido / Presencial (Valladolid)",
+    "mod_tag": "Castilla y León",
+    "ubicacion": "Valladolid (Castilla y León)",
+    "salario": "Convenio Renault Group",
+    "stack": [
+      "Looker",
+      "Power BI",
+      "Spotfire",
+      "SQL / Extracción de Datos",
+      "Power Apps / Automate",
+      "IA aplicada"
+    ],
+    "fecha": "Publicada hoy 26/11/2026 (Activa en Workday Renault)",
+    "estado": "descubierta",
+    "decision": "pendiente",
+    "match": 94,
+    "exp_min": 0,
+    "exp_rango": "0-1 años (Sin mínimo de años ni exigencia de matrícula)",
+    "exp_detalle": "Publicada hoy en Valladolid sin mínimo de años ni requisito de ser estudiante activo en el texto. Cita explícitamente Looker + Power BI + iniciativas IA.",
+    "url": "https://alliancewd.wd3.myworkdayjobs.com/renault-group-careers/job/Valladolid/Data-Analyst---ILN--Plataforma-Importacin---PPA-s_JOBREQ_50288053",
+    "notas": "PUBLICADA HOY EN VALLADOLID CON LOOKER EXPLÍCITO: Encaje brutal con tu trabajo actual en HORSE Valladolid (ecosistema Renault). Verificar en el formulario de Workday si exige algún convenio y valorar movilidad interna/grupo."
+  },
+  {
     "id": "izertis-programa-talento-junior-futurewave-beca-practicas",
     "empresa": "Izertis",
     "rol": "Programa de Talento Junior – FutureWave (Data & Intelligence, Software & Hyperautomation)",
@@ -1106,6 +1630,149 @@
     "exp_detalle": "Explícito '¿Buscando tu primer reto profesional después de acabar tus estudios? ¿Quieres hacer prácticas?'. Abierto a graduados y perfiles en prácticas sin experiencia previa.",
     "url": "https://jobs.izertis.com/jobs/programa-de-talento-junior-futurewave-bc436a60-3b7d-4719-9ca1-bc87ba63c94d",
     "notas": "MATCH 94% — Paquete ATS completo generado en postulaciones/izertis-programa-talento-junior-futurewave/ (CV en PDF y .docx de 1 pág justificados + Carta en PDF de 1 pág sin negritas + respuestas exactas al formulario Bizneo de Izertis: tecnología preferida y qué quieres ser de mayor)."
+  },
+  {
+    "id": "bizneo-hr-elixir-software-engineer-junior-remoto",
+    "empresa": "Bizneo HR",
+    "rol": "Elixir Software Engineer Junior (Formación desde cero · 35h/sem · 25k–35k €) – 100% Remoto",
+    "categoria": "Backend Development",
+    "macro_cat": "Backend Dev",
+    "seccion": "developer",
+    "es_beca": false,
+    "es_nueva": true,
+    "fecha_barrido": "2026-11-26",
+    "es_cyl": false,
+    "es_valladolid": false,
+    "es_leon": false,
+    "es_madrid": false,
+    "modalidad": "100% Teletrabajo (España · 35h/semana · Horario habitual 8:00-15:00)",
+    "mod_tag": "100% Remoto",
+    "ubicacion": "España (100% Remoto)",
+    "salario": "25.000 € - 35.000 € brutos/año (35h/semana)",
+    "stack": [
+      "APIs REST",
+      "MVC",
+      "Backend (cualquier lenguaje)",
+      "Elixir / Phoenix (formación interna)",
+      "SQL",
+      "Git"
+    ],
+    "fecha": "Publicada el 20/11/2026 (Activa en LinkedIn)",
+    "estado": "descubierta",
+    "decision": "pendiente",
+    "match": 93,
+    "exp_min": 0,
+    "exp_rango": "0 años (Sin experiencia requerida · Formación interna)",
+    "exp_detalle": "Declara literalmente 'no importa si no tienes experiencia profesional'; forman desde cero en Elixir/Phoenix a perfiles con base en MVC, APIs REST y varios lenguajes (Java, Python, Go, C#). 100% español.",
+    "url": "https://www.linkedin.com/jobs/view/4492597138",
+    "notas": "CONDICIONES EXTRAORDINARIAS: 100% remoto España, jornada de 35h/semana (8-15h), 25k-35k € para 0 años, 100% en español y valoran haber tocado múltiples lenguajes."
+  },
+  {
+    "id": "grupo-gestyde-python-django-ai-first-madrid",
+    "empresa": "Grupo Gestyde",
+    "rol": "Desarrollador/a Python-Django AI-First (LLMs/RAG & .NET valorado · Viernes tardes libres) – Híbrido Madrid",
+    "categoria": "Backend Development & IA",
+    "macro_cat": "IA & Agentes",
+    "seccion": "developer",
+    "es_beca": false,
+    "es_nueva": true,
+    "fecha_barrido": "2026-11-26",
+    "es_cyl": false,
+    "es_valladolid": false,
+    "es_leon": false,
+    "es_madrid": true,
+    "modalidad": "Híbrido (Madrid · Viernes tardes libres todo el año)",
+    "mod_tag": "Híbrido / Madrid",
+    "ubicacion": "Madrid (Híbrido)",
+    "salario": "Indefinido según valía",
+    "stack": [
+      "Python",
+      "Django",
+      "APIs REST",
+      "LLMs / RAG (valorable)",
+      ".NET (suma puntos)",
+      "AWS",
+      "Docker"
+    ],
+    "fecha": "Publicada el 20/11/2026 (Activa en LinkedIn)",
+    "estado": "descubierta",
+    "decision": "pendiente",
+    "match": 93,
+    "exp_min": 0,
+    "exp_rango": "0 años (Sin experiencia · Sin bloqueo universitario)",
+    "exp_detalle": "0 años de experiencia, 100% español, programación diaria con IA (AI-First), valora LLMs/RAG y cita explícitamente '.NET suma puntos'.",
+    "url": "https://www.linkedin.com/jobs/view/4492923237",
+    "notas": "ENCAJE DIRECTO EN ESPAÑOL (20/11): Combina tu Python + IA/LLMs de HORSE y tu .NET de Craftelier, 0 años, sin barrera de inglés y viernes tardes libres todo el año."
+  },
+  {
+    "id": "santander-sasa-analista-junior-datos-sql-powerbi-madrid",
+    "empresa": "Santander Assurance Solutions (SASA)",
+    "rol": "Analista Junior de Datos (SQL, Power BI, Calidad del Dato & Python/Databricks)",
+    "categoria": "Data Analytics & BI",
+    "macro_cat": "Data & Analytics",
+    "seccion": "datos",
+    "es_beca": false,
+    "es_nueva": true,
+    "fecha_barrido": "2026-11-26",
+    "es_cyl": false,
+    "es_valladolid": false,
+    "es_leon": false,
+    "es_madrid": true,
+    "modalidad": "Presencial / Híbrido (Madrid)",
+    "mod_tag": "Híbrido / Madrid",
+    "ubicacion": "Madrid",
+    "salario": "A convenir (Junior Data Hub Grupo Santander)",
+    "stack": [
+      "SQL",
+      "Power BI",
+      "Excel Avanzado",
+      "Python (Valorable)",
+      "Databricks & ETL (Valorable)"
+    ],
+    "fecha": "Publicada el 11/11/2026 (Activa en LinkedIn)",
+    "estado": "preparada_para_postular",
+    "decision": "pendiente",
+    "match": 93,
+    "exp_min": 0,
+    "exp_rango": "0-1 años (Analista Junior — Sin exp. mínima)",
+    "exp_detalle": "0–1 año — Posición Junior en el Data Hub de SASA sin barrera mínima de años ni requisito de inglés alto; prioriza base sólida en SQL, Power BI y modelado.",
+    "url": "https://www.linkedin.com/jobs/view/4488203566",
+    "notas": "REACTIVADA 26/11 (preferencia Híbrido Madrid): Abierta en LinkedIn, SQL + Power BI + calidad del dato (confirmar días de teletrabajo en entrevista). | [Archivada 26/11: Madrid sin confirmación de ≤1 día/semana en oficina] KIT ATS LISTO en postulaciones/santander-sasa-analista-junior-datos/ (11/11/2026 · Madrid · Santander SASA): Extracción, transformación y análisis con SQL, construcción de cuadros de mando en Power BI y conciliación/calidad de datos, valorando Python, Databricks y ETL. Sin barrera de inglés alto; encaje muy directo con tu base SQL/Looker/BigQuery/Dataform en HORSE."
+  },
+  {
+    "id": "logicalis-beca-ingeniero-cloud-dam-madrid",
+    "empresa": "Logicalis Spain",
+    "rol": "Beca – Ingeniero/a Cloud (Acepta titulados CFGS DAM, Scripting Python, Git, CI/CD, Azure & AWS)",
+    "categoria": "Becas & Prácticas / Cloud & DevOps",
+    "macro_cat": "Backend Dev",
+    "seccion": "developer",
+    "es_beca": true,
+    "es_nueva": true,
+    "fecha_barrido": "2026-11-26",
+    "es_cyl": false,
+    "es_valladolid": false,
+    "es_leon": false,
+    "es_madrid": true,
+    "modalidad": "Híbrido (Madrid — Oficinas Logicalis Spain)",
+    "mod_tag": "Híbrido / Madrid",
+    "ubicacion": "Madrid (Híbrido)",
+    "salario": "",
+    "stack": [
+      "CFGS DAM / ASIR (Titulados)",
+      "Scripting & Python",
+      "Git & CI/CD",
+      "Azure & AWS",
+      "Docker / Terraform"
+    ],
+    "fecha": "Publicada el 06/11/2026 (Activa en Teamtailor)",
+    "estado": "descubierta",
+    "decision": "pendiente",
+    "match": 93,
+    "exp_min": 0,
+    "exp_rango": "0-1 años (Beca / Prácticas)",
+    "exp_detalle": "0 años — Sin experiencia previa (Acepta explícitamente titulados/as en CFGS DAM o ASIR)",
+    "url": "https://careers.es.logicalis.com/jobs/8678446-beca-ingeniero-a-cloud",
+    "notas": "REACTIVADA 26/11 (preferencia Híbrido Madrid): Abierta en Teamtailor oficial, acepta explícitamente titulados CFGS DAM + inglés técnico. | [Archivada 26/11: Madrid sin confirmación de ≤1 día/semana en oficina] BARRIDO 16/11/2026: Publicada el 06/11/2026. No exige experiencia previa en cloud y acepta explícitamente titulados en CFGS DAM con conocimientos de scripting, Git y Docker."
   },
   {
     "id": "exceltic-practicas-desarrollador-software-java-python-valladolid",
@@ -1142,6 +1809,184 @@
     "notas": "Beca remunerada en Valladolid con tus dos lenguajes fuertes (Java y Python) y contratación tras las prácticas. Nota: comprobar elegibilidad de convenio si no estás matriculado actualmente."
   },
   {
+    "id": "merkle-espana-data-engineer-junior-cfgs-madrid",
+    "empresa": "Merkle España (dentsu)",
+    "rol": "Data Engineer Junior (Python, SQL, ETL, Cloud & Docker + Formación Inicial) – Híbrido Madrid",
+    "categoria": "Data Engineering",
+    "macro_cat": "Data & Analytics",
+    "seccion": "datos",
+    "es_beca": false,
+    "es_nueva": true,
+    "fecha_barrido": "2026-11-26",
+    "es_cyl": false,
+    "es_valladolid": false,
+    "es_leon": false,
+    "es_madrid": true,
+    "modalidad": "Híbrido (Madrid · 3 meses horario de verano)",
+    "mod_tag": "Híbrido / Madrid",
+    "ubicacion": "Madrid (Híbrido)",
+    "salario": "Indefinido + Seguro médico + Formación pagada",
+    "stack": [
+      "Python",
+      "SQL",
+      "ETL",
+      "GCP / Azure / AWS",
+      "APIs REST",
+      "Docker",
+      "Linux",
+      "Git"
+    ],
+    "fecha": "Publicada el 24/11/2026 (Activa en LinkedIn)",
+    "estado": "descubierta",
+    "decision": "pendiente",
+    "match": 92,
+    "exp_min": 0,
+    "exp_rango": "0-1 años (Junior · Formación inicial incluida · CFGS explícito)",
+    "exp_detalle": "Acepta explícitamente CFGS en Informática (DAM/DAW), ofrece formación inicial pagada ('te daremos formación inicial'), stack Python + SQL + Cloud + Docker/Linux/Git. 100% español.",
+    "url": "https://www.linkedin.com/jobs/view/4489273697",
+    "notas": "GRAN OPORTUNIDAD JUNIOR DATA (24/11): CFGS explícito, formación inicial, 100% en español y 3 meses de horario de verano."
+  },
+  {
+    "id": "menhir-ai-junior-ai-engineer-agentes-python-madrid",
+    "empresa": "Menhir AI (Menhir Technologies)",
+    "rol": "Junior AI Engineer (Agentes Conversacionales, Python, APIs REST, CI/CD & Observabilidad)",
+    "categoria": "IA & Backend Development",
+    "macro_cat": "IA & Agentes",
+    "seccion": "developer",
+    "es_beca": false,
+    "es_nueva": true,
+    "fecha_barrido": "2026-11-26",
+    "es_cyl": false,
+    "es_valladolid": false,
+    "es_leon": false,
+    "es_madrid": true,
+    "modalidad": "Híbrido / Presencial (Pozuelo de Alarcón, Madrid)",
+    "mod_tag": "Híbrido / Madrid",
+    "ubicacion": "Madrid (Pozuelo de Alarcón)",
+    "salario": "A convenir (Plan de mentoría Senior + crecimiento)",
+    "stack": [
+      "Python",
+      "Agentes IA & Guardrails",
+      "APIs REST",
+      "Observabilidad & Evals",
+      "Git / GitHub Actions"
+    ],
+    "fecha": "Publicada el 05/11/2026 (Activa en LinkedIn)",
+    "estado": "descubierta",
+    "decision": "pendiente",
+    "match": 92,
+    "exp_min": 0,
+    "exp_rango": "0-1 años (Junior AI Engineer con mentoría)",
+    "exp_detalle": "Junior AI Engineer sin mínimo de años bloqueante; busca buena base de Python, APIs REST, evaluación/observabilidad de agentes y Git/CI-CD (requiere inglés avanzado).",
+    "url": "https://www.linkedin.com/jobs/view/4485867586",
+    "notas": "REACTIVADA 26/11 (preferencia Híbrido Madrid): Abierta en LinkedIn, Híbrido Pozuelo, agentes conversacionales + Python + evals. | [Archivada 26/11: Madrid sin confirmación de ≤1 día/semana en oficina] NUEVA (05/11/2026 · Pozuelo, Madrid): Ciclo completo de agentes de IA en producción (tests offline/online, guardrails, observabilidad, Python y APIs REST). Encaja directamente con tu experiencia diseñando Agent Harnesses y automatizaciones en HORSE."
+  },
+  {
+    "id": "renault-beca-agentic-supply-chain-valladolid",
+    "empresa": "Renault Group",
+    "rol": "Beca Agentic Supply Chain (IA & Agentes Digitales) – Valladolid",
+    "categoria": "Becas & Prácticas / IA & Agentes",
+    "macro_cat": "IA & Agentes",
+    "seccion": "datos",
+    "es_beca": true,
+    "es_nueva": true,
+    "fecha_barrido": "2026-11-26",
+    "es_cyl": true,
+    "es_valladolid": true,
+    "es_leon": false,
+    "es_madrid": false,
+    "modalidad": "Híbrido / Presencial (Valladolid)",
+    "mod_tag": "Castilla y León",
+    "ubicacion": "Valladolid (Castilla y León)",
+    "salario": "Beca remunerada Renault Group",
+    "stack": [
+      "Agentes IA",
+      "IA Híbrida",
+      "Flujos y Reglas de Decisión",
+      "Integración de Datos",
+      "Prototipado IA"
+    ],
+    "fecha": "Publicada hoy 26/11/2026 (Activa en Workday Renault)",
+    "estado": "descubierta",
+    "decision": "pendiente",
+    "match": 91,
+    "exp_min": 0,
+    "exp_rango": "0 años (Beca / Graduate)",
+    "exp_detalle": "Orientada a Graduate/Beca en Valladolid para prototipar agentes digitales e IA en Supply Chain Iberia; no exige ser estudiante activo en el texto, pero conviene confirmar en Workday si acepta FP + Especialización IA.",
+    "url": "https://alliancewd.wd3.myworkdayjobs.com/renault-group-careers/job/Valladolid/Beca-Agentic-Supply-Chain_JOBREQ_50281647",
+    "notas": "Publicada hoy 26/11 en Valladolid en temática exactamente de Agentes IA. Confirmar elegibilidad de convenio/titulación al abrir la solicitud."
+  },
+  {
+    "id": "rdt-junior-developer-power-platform-sql-fp-madrid",
+    "empresa": "RDT",
+    "rol": "Junior Digital Transformation Developer (Power Platform, SQL, APIs & Fabric · FP DAM/DAW) – Híbrido Madrid",
+    "categoria": "Automation & Low-Code Development",
+    "macro_cat": "Backend Dev",
+    "seccion": "datos",
+    "es_beca": false,
+    "es_nueva": true,
+    "fecha_barrido": "2026-11-26",
+    "es_cyl": false,
+    "es_valladolid": false,
+    "es_leon": false,
+    "es_madrid": true,
+    "modalidad": "Híbrido (Madrid Las Tablas · Horario flexible)",
+    "mod_tag": "Híbrido / Madrid",
+    "ubicacion": "Madrid (Híbrido)",
+    "salario": "Contrato indefinido",
+    "stack": [
+      "SQL",
+      "APIs REST / JSON",
+      "Power BI",
+      "Power Platform",
+      "Microsoft Fabric"
+    ],
+    "fecha": "Publicada el 25/11/2026 (Activa en LinkedIn)",
+    "estado": "descubierta",
+    "decision": "pendiente",
+    "match": 91,
+    "exp_min": 0,
+    "exp_rango": "<1 año (Pide literalmente FP DAM o DAW)",
+    "exp_detalle": "Pide literalmente FPII DAM o DAW con menos de 1 año de experiencia, SQL, APIs, JSON, Power Platform/Power BI y Microsoft Fabric. 100% español.",
+    "url": "https://www.linkedin.com/jobs/view/4494932092",
+    "notas": "Publicada ayer 25/11, pide textualmente DAM/DAW con <1 año y 100% en español (nota: Altare 4492429646 parece alternativa de otra consultora para perfil similar)."
+  },
+  {
+    "id": "zenova-analytics-engineer-junior",
+    "empresa": "Zenova",
+    "rol": "Analytics Engineer Junior (SQL, dbt/Dataform, Python & IA)",
+    "categoria": "Data & Analytics Engineering",
+    "macro_cat": "Data & Analytics",
+    "seccion": "datos",
+    "es_beca": false,
+    "es_nueva": true,
+    "fecha_barrido": "2026-11-26",
+    "es_cyl": false,
+    "es_valladolid": false,
+    "es_leon": false,
+    "es_madrid": true,
+    "modalidad": "Híbrido (3d Madrid + remoto períodos)",
+    "mod_tag": "Híbrido / Madrid",
+    "ubicacion": "Madrid (Cuzco)",
+    "salario": "A convenir",
+    "stack": [
+      "SQL",
+      "dbt (equiv. Dataform)",
+      "Python",
+      "Git",
+      "LLMs / IA aplicada"
+    ],
+    "fecha": "Republicada el 23/11/2026 (Activa en LinkedIn)",
+    "estado": "descubierta",
+    "decision": "pendiente",
+    "match": 91,
+    "exp_min": 0,
+    "exp_rango": "0-1 años (Junior)",
+    "exp_detalle": "Perfil junior de modelado analítico con SQL, Python, dbt y uso de LLMs/APIs IA ('no dejes de aplicar por no cumplir el 100%')",
+    "url": "https://www.linkedin.com/jobs/view/4492605605",
+    "notas": "REACTIVADA 26/11 (repost oficial 23/11, Híbrido Madrid Cuzco 3d/sem + verano/Navidad 100% remoto): SQL avanzado, dbt (=Dataform), Python y LLMs/RAG. Nota: inglés fluido. | [Archivada 26/11: híbrido en Madrid > 1 día/semana en oficina] Rol casi calcado a la experiencia real en HORSE (modelado por capas en SQL con equivalencia directa Dataform <-> dbt, Python y LLMs). Gaps honestos: solicitan inglés fluido y experiencia en dbt."
+  },
+  {
     "id": "metrica-programador-4gl-sin-experiencia-remoto",
     "empresa": "Métrica España",
     "rol": "Programador/a 4GL (Sin Experiencia) – 100% Remoto",
@@ -1173,6 +2018,41 @@
     "exp_detalle": "Explícito 'Sin experiencia' en Métrica España para programación 4GL en equipo Santander 100% remoto.",
     "url": "https://empleo.metrica-global.com/programador-4gl-2qkJYvF0yRmg",
     "notas": "MATCH 91% — Paquete ATS completo generado en postulaciones/metrica-programador-4gl-sin-experiencia-remoto/ (CV en PDF y .docx de 1 pág justificados optimizados para el parser IA de Viterbit + Carta en PDF de 1 pág sin negritas + guía de formulario /apply/ y entrevista para Squad Santander)."
+  },
+  {
+    "id": "gmv-ingeniero-software-frontend-angular-react-madrid",
+    "empresa": "GMV",
+    "rol": "Ingeniero/a de Software Frontend – Sector Espacial SSA (Angular, React & TypeScript)",
+    "categoria": "Full-Stack / Frontend Development",
+    "macro_cat": "Backend Dev",
+    "seccion": "developer",
+    "es_beca": false,
+    "es_nueva": true,
+    "fecha_barrido": "2026-11-26",
+    "es_cyl": false,
+    "es_valladolid": false,
+    "es_leon": false,
+    "es_madrid": true,
+    "modalidad": "Híbrido (Madrid)",
+    "mod_tag": "Híbrido / Madrid",
+    "ubicacion": "Madrid",
+    "salario": "Competitivo + Beneficios GMV (8 sem/año teletrabajo libre)",
+    "stack": [
+      "Angular",
+      "React",
+      "TypeScript",
+      "JavaScript",
+      "HTML5 & CSS3"
+    ],
+    "fecha": "Publicada el 04/11/2026 (Activa en Tecnoempleo)",
+    "estado": "descubierta",
+    "decision": "pendiente",
+    "match": 90,
+    "exp_min": 0,
+    "exp_rango": "0 años (Sin Experiencia — Indefinido)",
+    "exp_detalle": "Filtro oficial Tecnoempleo: Experiencia 'Sin Experiencia', contrato indefinido a jornada completa en GMV Espacio.",
+    "url": "https://www.tecnoempleo.com/ingeniero-software-frontend-angular-gmv/react-html5/rf-3b90185de20793751544",
+    "notas": "REACTIVADA 26/11 (preferencia Híbrido Madrid): Activa en Tecnoempleo, Híbrido Madrid, 0 años. | [Archivada 26/11: Madrid sin confirmación de ≤1 día/semana en oficina] NUEVA (04/11/2026 · Madrid Híbrido · Sin Experiencia · GMV): Contrato indefinido en proyectos espaciales desarrollando interfaces HMI web con Angular/React/TypeScript. Encaje directo con tu titulación CFGS DAW y proyectos full-stack."
   },
   {
     "id": "logicalis-practicas-devops-automation-cloud-remoto",
@@ -1280,6 +2160,146 @@
     "notas": "0 años de experiencia exigidos y menciona explícitamente DAM y DAW entre las titulaciones valoradas."
   },
   {
+    "id": "neotalent-conclusion-desarrollador-java-remoto",
+    "empresa": "Neotalent Conclusion",
+    "rol": "Desarrollador/a Java (APIs REST/SOAP, AWS & GitHub) – 100% Remoto España",
+    "categoria": "Backend Development",
+    "macro_cat": "Backend Dev",
+    "seccion": "developer",
+    "es_beca": false,
+    "es_nueva": true,
+    "fecha_barrido": "2026-11-26",
+    "es_cyl": false,
+    "es_valladolid": false,
+    "es_leon": false,
+    "es_madrid": false,
+    "modalidad": "100% Remoto (España · Oficina ref. Oviedo)",
+    "mod_tag": "100% Remoto",
+    "ubicacion": "España (100% Remoto)",
+    "salario": "Indefinido según experiencia",
+    "stack": [
+      "Java",
+      "APIs REST / SOAP",
+      "AWS",
+      "GitHub",
+      "Calidad de Código"
+    ],
+    "fecha": "Publicada hoy 26/11/2026 (Activa en LinkedIn)",
+    "estado": "descubierta",
+    "decision": "pendiente",
+    "match": 86,
+    "exp_min": 0,
+    "exp_rango": "0-5 años (Abierta a Junior)",
+    "exp_detalle": "Rango amplio hasta 5 años, español obligatorio sin exigencia B2/C1. Menciona grado universitario (defender con DAM + DAW + Java Spring Boot real en Ayto. Roperuelos).",
+    "url": "https://www.linkedin.com/jobs/view/4494657621",
+    "notas": "Publicada hoy 26/11, 100% remota España y 100% en español."
+  },
+  {
+    "id": "tecnicas-reunidas-ingeniero-datos-databricks-ia-madrid",
+    "empresa": "Técnicas Reunidas",
+    "rol": "Ingeniero/a de Datos (Big Data, Azure Databricks & IA ChatGPT/Claude) – Híbrido Madrid (2d Remoto)",
+    "categoria": "Data Engineering",
+    "macro_cat": "Data & Analytics",
+    "seccion": "datos",
+    "es_beca": false,
+    "es_nueva": true,
+    "fecha_barrido": "2026-11-26",
+    "es_cyl": false,
+    "es_valladolid": false,
+    "es_leon": false,
+    "es_madrid": true,
+    "modalidad": "Híbrido (Madrid · 2 días teletrabajo/semana + verano intensivo)",
+    "mod_tag": "Híbrido / Madrid",
+    "ubicacion": "Madrid (Híbrido · 2d remoto)",
+    "salario": "Contrato indefinido",
+    "stack": [
+      "Azure Databricks",
+      "Big Data / Data Lake",
+      "ETL / Pipelines",
+      "Python / SQL",
+      "ChatGPT / Claude"
+    ],
+    "fecha": "Publicada el 25/11/2026 (Activa en LinkedIn)",
+    "estado": "descubierta",
+    "decision": "pendiente",
+    "match": 86,
+    "exp_min": 0,
+    "exp_rango": "0 años (Sin experiencia en LinkedIn · 100% Español)",
+    "exp_detalle": "Marcada 'Sin experiencia' en LinkedIn y sin requisito de inglés C1 (a diferencia del programa Graduate). Menciona titulación universitaria preferentemente.",
+    "url": "https://www.linkedin.com/jobs/view/4494669106",
+    "notas": "Publicada ayer 25/11, Híbrido Madrid (2d/sem teletrabajo + verano intensivo) y 100% en español."
+  },
+  {
+    "id": "santander-sasa-beca-datahub-sql-powerbi-python-madrid",
+    "empresa": "Santander Assurance Solutions (SASA)",
+    "rol": "Beca en DataHub (SQL, ETL, Power BI & Python · Recién titulados) – Madrid",
+    "categoria": "Becas & Prácticas / Data Engineering",
+    "macro_cat": "Data & Analytics",
+    "seccion": "datos",
+    "es_beca": true,
+    "es_nueva": true,
+    "fecha_barrido": "2026-11-26",
+    "es_cyl": false,
+    "es_valladolid": false,
+    "es_leon": false,
+    "es_madrid": true,
+    "modalidad": "Híbrido / Madrid (Confirmar % teletrabajo)",
+    "mod_tag": "Híbrido / Madrid",
+    "ubicacion": "Madrid (Confirmar híbrido)",
+    "salario": "Beca remunerada Grupo Santander",
+    "stack": [
+      "SQL",
+      "ETL",
+      "Power BI",
+      "Power Query",
+      "Python"
+    ],
+    "fecha": "Publicada el 19/11/2026 (Activa en LinkedIn)",
+    "estado": "descubierta",
+    "decision": "pendiente",
+    "match": 86,
+    "exp_min": 0,
+    "exp_rango": "0 años (Beca · Acepta recién titulados)",
+    "exp_detalle": "Acepta recién titulados, SQL + ETL + Power BI + Power Query + Python, sin requisito de inglés alto. Nota: menciona titulaciones universitarias/relacionadas y confirmar híbrido.",
+    "url": "https://www.linkedin.com/jobs/view/4489740121",
+    "notas": "Beca reciente (19/11) en Santander SASA en español; complemento perfecto al Kit ATS que ya tienes para SASA Analista Junior."
+  },
+  {
+    "id": "cds-hpe-junior-applications-engineer-analytics-madrid",
+    "empresa": "CDS, an HPE company",
+    "rol": "Junior Applications Engineer – Analytics (Python, Power BI & Automatización)",
+    "categoria": "Data Analytics & BI",
+    "macro_cat": "Data & Analytics",
+    "seccion": "datos",
+    "es_beca": false,
+    "es_nueva": true,
+    "fecha_barrido": "2026-11-26",
+    "es_cyl": false,
+    "es_valladolid": false,
+    "es_leon": false,
+    "es_madrid": true,
+    "modalidad": "Híbrido / Presencial (Madrid)",
+    "mod_tag": "Híbrido / Madrid",
+    "ubicacion": "Madrid",
+    "salario": "A convenir",
+    "stack": [
+      "Python",
+      "Power BI",
+      "Excel Avanzado",
+      "Automatización de Procesos",
+      "Calidad del Dato"
+    ],
+    "fecha": "Publicada el 10/11/2026 (Activa en LinkedIn)",
+    "estado": "descubierta",
+    "decision": "pendiente",
+    "match": 86,
+    "exp_min": 0,
+    "exp_rango": "0-1 años (Junior — Sin exp. mínima fija)",
+    "exp_detalle": "Junior Application Engineer enfocado a datos y automatización con Python y Power BI sin años mínimos requeridos; exige nivel alto de inglés.",
+    "url": "https://www.linkedin.com/jobs/view/4487464801",
+    "notas": "REACTIVADA 26/11 (preferencia Híbrido Madrid): Activa en LinkedIn, Python + Power BI + automatización (confirmar % teletrabajo; JD en inglés). | [Archivada 26/11: Madrid sin confirmación de ≤1 día/semana en oficina] NUEVA (10/11/2026 · Madrid · Filial HPE): Rol híbrido entre análisis de datos, scripts en Python, Power BI y automatización de procesos de negocio. Muy cercano a tus automatizaciones y dashboards actuales, con el inglés alto como punto a preparar."
+  },
+  {
     "id": "renault-beca-ingenieria-transformacion-digital-valladolid",
     "empresa": "Renault Group",
     "rol": "Becario/a de Ingeniería y Transformación Digital (Automatización & Análisis de Datos)",
@@ -1310,8 +2330,42 @@
     "exp_min": 0,
     "exp_rango": "0 años (Beca / Prácticas)",
     "exp_detalle": "Prácticas en Valladolid en herramientas digitales, automatización y análisis de datos; requiere condición de estudiante de Ingeniería / Ciencia de Datos o similar para convenio.",
-    "url": "https://www.linkedin.com/jobs/view/4480479677",
+    "url": "https://alliancewd.wd3.myworkdayjobs.com/renault-group-careers/job/Valladolid/Becario-a-de-Ingeniera-y-Transformacin-Digital_JOBREQ_50276054",
     "notas": "Beca en Valladolid en entorno industrial avanzado (Renault Group) aplicando automatización y análisis de datos. Verificar compatibilidad de convenio académico."
+  },
+  {
+    "id": "pwc-computer-engineer-ia-python-0-anios-madrid",
+    "empresa": "PwC España",
+    "rol": "Assurance | Computer Engineer – IA Engineer con Python (0 años · Inglés técnico) – Madrid",
+    "categoria": "IA & Agentes / Backend Python",
+    "macro_cat": "IA & Agentes",
+    "seccion": "developer",
+    "es_beca": false,
+    "es_nueva": true,
+    "fecha_barrido": "2026-11-26",
+    "es_cyl": false,
+    "es_valladolid": false,
+    "es_leon": false,
+    "es_madrid": true,
+    "modalidad": "Híbrido / Madrid (Confirmar días de teletrabajo)",
+    "mod_tag": "Híbrido / Madrid",
+    "ubicacion": "Madrid (Híbrido a confirmar)",
+    "salario": "Contrato indefinido PwC",
+    "stack": [
+      "Python",
+      "IA / Automatización",
+      "SQL",
+      "APIs"
+    ],
+    "fecha": "Publicada el 21/11/2026 (Activa en LinkedIn)",
+    "estado": "descubierta",
+    "decision": "pendiente",
+    "match": 85,
+    "exp_min": 0,
+    "exp_rango": "0 años (Entry Level · Inglés solo lectura técnica)",
+    "exp_detalle": "0 años, Python + IA + SQL + APIs y declara literalmente 'inglés que permita documentación técnica' (100% compatible con B1). Caveat: pide grado técnico y confirmar días híbrido.",
+    "url": "https://www.linkedin.com/jobs/view/4492877771",
+    "notas": "Reciente (21/11), 0 años y sin barrera de inglés oral (solo documentación técnica)."
   },
   {
     "id": "telpark-beca-producto-tecnologia-on-valladolid",
@@ -1348,6 +2402,187 @@
     "notas": "MATCH 85% — Paquete ATS completo generado en postulaciones/telpark-beca-producto-tecnologia-on-valladolid/ (CV en PDF y .docx de 1 pág justificados + Carta en PDF de 1 pág sin negritas + respuestas para LinkedIn/Workday). Nota honesta: beca de 800 €/mes en Valladolid que pide convenio de estudiante de Ingeniería e inglés B2."
   },
   {
+    "id": "nttdata-profesionales-openshift-junior-madrid",
+    "empresa": "NTT DATA España",
+    "rol": "Profesionales OpenShift Junior (Linux, Docker, Kubernetes & Scripting) – Híbrido Madrid",
+    "categoria": "DevOps & Cloud",
+    "macro_cat": "Backend Dev",
+    "seccion": "developer",
+    "es_beca": false,
+    "es_nueva": true,
+    "fecha_barrido": "2026-11-26",
+    "es_cyl": false,
+    "es_valladolid": false,
+    "es_leon": false,
+    "es_madrid": true,
+    "modalidad": "Híbrido (Madrid · Contrato indefinido día 1)",
+    "mod_tag": "Híbrido / Madrid",
+    "ubicacion": "Madrid (Híbrido)",
+    "salario": "Indefinido desde día 1",
+    "stack": [
+      "OpenShift / Kubernetes",
+      "Docker",
+      "Linux",
+      "YAML",
+      "Git",
+      "Scripting"
+    ],
+    "fecha": "Publicada el 17/11/2026 (Activa en LinkedIn)",
+    "estado": "descubierta",
+    "decision": "pendiente",
+    "match": 84,
+    "exp_min": 0,
+    "exp_rango": "0-1 años (Junior · Sin mínimo de años)",
+    "exp_detalle": "Contrato indefinido día 1 para perfil Junior en Linux, Docker/K8s/OpenShift, YAML, Git y scripting. Sin mínimo de años ni inglés alto.",
+    "url": "https://www.linkedin.com/jobs/view/4491118472",
+    "notas": "Entrada Junior con contrato indefinido en NTT DATA 100% en español."
+  },
+  {
+    "id": "fortra-associate-software-engineer-java-spring-remoto",
+    "empresa": "Fortra",
+    "rol": "Associate Software Engineer – Power (Java, Spring, React, AWS & Docker) – 100% Remoto España",
+    "categoria": "Full-Stack / Backend Development",
+    "macro_cat": "Backend Dev",
+    "seccion": "developer",
+    "es_beca": false,
+    "es_nueva": true,
+    "fecha_barrido": "2026-11-26",
+    "es_cyl": false,
+    "es_valladolid": false,
+    "es_leon": false,
+    "es_madrid": false,
+    "modalidad": "100% Remoto (España)",
+    "mod_tag": "100% Remoto",
+    "ubicacion": "España (100% Remoto)",
+    "salario": "Competitivo internacional (Associate)",
+    "stack": [
+      "Java",
+      "Spring",
+      "React",
+      "Tomcat",
+      "AWS",
+      "Docker"
+    ],
+    "fecha": "Publicada el 23/11/2026 (Activa en LinkedIn)",
+    "estado": "descubierta",
+    "decision": "pendiente",
+    "match": 83,
+    "exp_min": 0,
+    "exp_rango": "0-1 años (Associate / Entry-Level)",
+    "exp_detalle": "Puesto Associate (0-1 años) en Java/Spring + React + AWS/Docker, 100% remoto desde España. Nota honesta: ficha y comunicación en inglés.",
+    "url": "https://www.linkedin.com/jobs/view/4494037178",
+    "notas": "Reciente (23/11), entry-level 100% remoto España con Java/Spring/Docker. Caveat honesto: entorno en inglés (tú tienes B1)."
+  },
+  {
+    "id": "voxel-3d-ingeniero-ia-python-valladolid",
+    "empresa": "Voxel 3D",
+    "rol": "Ingeniero/a de Inteligencia Artificial (Python, Deep Learning 3D, Docker & AWS) – Valladolid",
+    "categoria": "IA & MLOps Engineering",
+    "macro_cat": "IA & Agentes",
+    "seccion": "developer",
+    "es_beca": false,
+    "es_nueva": true,
+    "fecha_barrido": "2026-11-26",
+    "es_cyl": true,
+    "es_valladolid": true,
+    "es_leon": false,
+    "es_madrid": false,
+    "modalidad": "Presencial / Híbrido (Valladolid)",
+    "mod_tag": "Castilla y León",
+    "ubicacion": "Valladolid (Castilla y León)",
+    "salario": "Según perfil (Contrato indefinido)",
+    "stack": [
+      "Python",
+      "PyTorch",
+      "Deep Learning / 3D LiDAR",
+      "Linux",
+      "Docker",
+      "Git",
+      "AWS",
+      "MLOps"
+    ],
+    "fecha": "Publicada hoy 26/11/2026 (Activa en LinkedIn)",
+    "estado": "descubierta",
+    "decision": "pendiente",
+    "match": 83,
+    "exp_min": 0,
+    "exp_rango": "0 años (Sin experiencia · Valora proyectos GitHub)",
+    "exp_detalle": "Marcada 'Sin experiencia' en LinkedIn, 100% en español, valora portfolio en GitHub. Caveat: foco técnico en visión 3D/LiDAR (frente a tu foco en agentes IA/datos).",
+    "url": "https://www.linkedin.com/jobs/view/4495298962",
+    "notas": "Publicada hoy 26/11 en Valladolid, 0 años, 100% en español y abierta a perfiles con Especialización en IA & Big Data + Python/Docker."
+  },
+  {
+    "id": "miratech-data-engineer-trainee-forever-remote",
+    "empresa": "Miratech",
+    "rol": "Data Engineer Trainee (SQL Server, ETL, PySpark & Databricks) – 100% ForeverRemote España",
+    "categoria": "Data Engineering",
+    "macro_cat": "Data & Analytics",
+    "seccion": "datos",
+    "es_beca": false,
+    "es_nueva": true,
+    "fecha_barrido": "2026-11-26",
+    "es_cyl": false,
+    "es_valladolid": false,
+    "es_leon": false,
+    "es_madrid": false,
+    "modalidad": "100% Remoto (España · Cultura ForeverRemote)",
+    "mod_tag": "100% Remoto",
+    "ubicacion": "España (100% Remoto)",
+    "salario": "Competitivo (Trainee internacional)",
+    "stack": [
+      "SQL Server",
+      "ETL",
+      "PySpark",
+      "Azure Databricks",
+      "Azure Data Factory"
+    ],
+    "fecha": "Publicada el 24/11/2026 (Activa en LinkedIn)",
+    "estado": "descubierta",
+    "decision": "pendiente",
+    "match": 82,
+    "exp_min": 0,
+    "exp_rango": "0-1 años (Trainee)",
+    "exp_detalle": "Trainee 100% remoto ('ForeverRemote') con SQL Server, ETL, Databricks y ADF. Caveats honestos: pide Bachelor's degree y buena comunicación en inglés.",
+    "url": "https://www.linkedin.com/jobs/view/4493017963",
+    "notas": "Muy reciente (24/11) y 100% remoto garantizado (ForeverRemote). Caveat: inglés hablado + título universitario preferido."
+  },
+  {
+    "id": "canonical-graduate-software-engineer-ubuntu-2026-remoto",
+    "empresa": "Canonical (Ubuntu)",
+    "rol": "Graduate Software Engineer, Open Source and Linux (Python / Go / Linux) – 100% Remoto EMEA",
+    "categoria": "Backend Python / Go",
+    "macro_cat": "Backend Dev",
+    "seccion": "developer",
+    "es_beca": false,
+    "es_nueva": true,
+    "fecha_barrido": "2026-11-26",
+    "es_cyl": false,
+    "es_valladolid": false,
+    "es_leon": false,
+    "es_madrid": false,
+    "modalidad": "100% Remoto (EMEA / Global · Home based)",
+    "mod_tag": "100% Remoto",
+    "ubicacion": "España / EMEA (100% Remoto)",
+    "salario": "Competitivo internacional (Graduate)",
+    "stack": [
+      "Python",
+      "Go (Golang)",
+      "Linux / Ubuntu",
+      "Bash",
+      "Docker / Containers",
+      "Open Source"
+    ],
+    "fecha": "Publicada el 16/11/2026 (Activa en Greenhouse)",
+    "estado": "descubierta",
+    "decision": "pendiente",
+    "match": 81,
+    "exp_min": 0,
+    "exp_rango": "0 años (Graduate 2026/2027)",
+    "exp_detalle": "Programa específico para recién titulados 2026/2027 (0 años de experiencia previa requerida), trabajando en equipos EMEA remotos con Python, Go, Linux y Bash.",
+    "url": "https://job-boards.greenhouse.io/canonical/jobs/8379825",
+    "notas": "Vacante específica Graduate 2026/2027 publicada el 16/11 (0 años exigidos, alineada con tus lenguajes Python y Go). Nota honesta: proceso muy selectivo en inglés (tu nivel es B1) que habitualmente pide expediente universitario STEM destacado; merece la pena intentarlo defendiendo tu triple titulación FP (DAM+DAW+IA/Big Data) y código en producción."
+  },
+  {
     "id": "chemo-insud-tecnico-automatizacion-ebr-practicas-leon",
     "empresa": "Chemo (Insud Pharma)",
     "rol": "Técnico/a de Automatización EBR – Contrato en Prácticas – León",
@@ -1380,6 +2615,43 @@
     "exp_detalle": "Contrato en prácticas en León ('Valorable al menos 1 año en funciones similares'); enfocado a automatización EBR/PLC/HMI/SCADA en planta.",
     "url": "https://www.linkedin.com/jobs/view/4476671019",
     "notas": "Contrato laboral en prácticas en León dentro de Insud Pharma. Más orientado a automatización industrial EBR/PLC/HMI que a software puro, pero viable en León como perfil técnico sin barrera de años."
+  },
+  {
+    "id": "ad4-octogono-ai-native-software-engineer-mcp-remoto",
+    "empresa": "AD4 Octógono",
+    "rol": "AI-Native Software Engineer (Python, TypeScript, LLMs, RAG & MCP) – 100% Remoto España",
+    "categoria": "IA & Agentic Engineering",
+    "macro_cat": "IA & Agentes",
+    "seccion": "developer",
+    "es_beca": false,
+    "es_nueva": true,
+    "fecha_barrido": "2026-11-26",
+    "es_cyl": false,
+    "es_valladolid": false,
+    "es_leon": false,
+    "es_madrid": false,
+    "modalidad": "100% Remoto (España)",
+    "mod_tag": "100% Remoto",
+    "ubicacion": "España (100% Remoto)",
+    "salario": "30.000 € - 45.000 € brutos/año",
+    "stack": [
+      "Python",
+      "TypeScript",
+      "LLMs",
+      "RAG",
+      "AI Agents",
+      "MCP",
+      "APIs REST"
+    ],
+    "fecha": "Refrescada hoy 26/11/2026 (Activa en Viterbit oficial)",
+    "estado": "descubierta",
+    "decision": "pendiente",
+    "match": 96,
+    "exp_min": 1,
+    "exp_rango": "0-2 años (Sin mínimo rígido de años)",
+    "exp_detalle": "Vacante distinta de la versión +3 años: sin mínimo numérico rígido, pide Python/TS, APIs, LLMs/RAG/AI Agents y valora MCP y tooling de agentes. Sin grado ni inglés C1.",
+    "url": "https://ad4octogono.viterbit.site/ai-native-software-engineer-python-typescript-llm-remoto-v488ILVJjFyb/",
+    "notas": "JOYA 100% REMOTA (30k-45k €): 100% en español, sin barrera de años ni título universitario, y alineada con tu trabajo en agentes IA, Python y MCP."
   },
   {
     "id": "xeridia-software-engineer-leon-valladolid-ia-mcp",
@@ -1419,6 +2691,117 @@
     "notas": "KIT ATS LISTO en postulaciones/xeridia-software-engineer/ — ENCAJE EXCEPCIONAL EN LEÓN Y VALLADOLID: Sede en León y oficina en Valladolid con híbrido flexible. Pide literalmente Java + C# + JS + SQL + SDD + IA agéntica con Claude Skills y MCPs, exactamente tu trabajo diario en HORSE + DAM/DAW + Craftelier."
   },
   {
+    "id": "sotec-programador-python-junior-automatizacion-aws-remoto",
+    "empresa": "SOTEC Consulting (Grupo ASTEK)",
+    "rol": "Programador/a Python Junior – Automatización, APIs REST, SQL & AWS (LLMs/Agentes valorados) – 100% Remoto",
+    "categoria": "Backend Python / Datos",
+    "macro_cat": "Backend Dev",
+    "seccion": "developer",
+    "es_beca": false,
+    "es_nueva": true,
+    "fecha_barrido": "2026-11-26",
+    "es_cyl": false,
+    "es_valladolid": false,
+    "es_leon": false,
+    "es_madrid": false,
+    "modalidad": "100% Remoto (España · Contrato indefinido)",
+    "mod_tag": "100% Remoto",
+    "ubicacion": "España (100% Remoto)",
+    "salario": "Según perfil (Contrato indefinido)",
+    "stack": [
+      "Python",
+      "Automatización / Scripts",
+      "APIs REST",
+      "JSON",
+      "SQL",
+      "AWS",
+      "Linux",
+      "Git",
+      "LLMs / Agentes IA (valorable)"
+    ],
+    "fecha": "Publicada hoy 26/11/2026 (Activa en LinkedIn)",
+    "estado": "descubierta",
+    "decision": "pendiente",
+    "match": 95,
+    "exp_min": 1,
+    "exp_rango": "1-2 años (Python Junior)",
+    "exp_detalle": "Pide 1-2 años con Python (automatización, scripts, APIs REST, JSON, SQL, Linux, Git) y valora experiencia con LLMs y agentes de IA. Sin requisito de grado universitario ni inglés alto.",
+    "url": "https://www.linkedin.com/jobs/view/4493810711",
+    "notas": "JOYA 100% REMOTA PUBLICADA HOY (26/11): Prioridad #1 en modalidad, 100% en español, 1-2 años con Python/APIs/SQL y plus directo por LLMs y agentes IA."
+  },
+  {
+    "id": "idealista-analytics-engineer-sql-python-dbt-remoto",
+    "empresa": "idealista (idealista/data)",
+    "rol": "Analytics Engineer (SQL, Python, ELT, dbt & Airflow) – 100% Full Remote España",
+    "categoria": "Data & Analytics Engineering",
+    "macro_cat": "Data & Analytics",
+    "seccion": "datos",
+    "es_beca": false,
+    "es_nueva": true,
+    "fecha_barrido": "2026-11-26",
+    "es_cyl": false,
+    "es_valladolid": false,
+    "es_leon": false,
+    "es_madrid": false,
+    "modalidad": "100% Full Remote (España · Onboarding y ≥1 reunión trimestral Madrid)",
+    "mod_tag": "100% Remoto",
+    "ubicacion": "España (100% Remoto)",
+    "salario": "Competitivo (Empresa producto líder en España)",
+    "stack": [
+      "SQL",
+      "Python",
+      "ELT",
+      "dbt (Dataform equiv.)",
+      "Apache Airflow",
+      "ClickHouse",
+      "Data Quality"
+    ],
+    "fecha": "Refrescada el 24/11/2026 (Activa en Teamtailor oficial idealista)",
+    "estado": "descubierta",
+    "decision": "pendiente",
+    "match": 95,
+    "exp_min": 1,
+    "exp_rango": "0-2 años (Sin mínimo rígido de años)",
+    "exp_detalle": "Sin años mínimos hardcodeados ni barrera de inglés alto; pide SQL optimizado, Python, pipelines ELT y dbt (equivalente directo de Dataform + BigQuery en HORSE).",
+    "url": "https://careers.idealista.com/jobs/8376270-analytics-engineer",
+    "notas": "TOP 100% REMOTO EN ESPAÑOL EN EMPRESA DE PRODUCTO: URL oficial en Teamtailor de idealista. Defiende tu trabajo en HORSE (Dataform <-> dbt, BigQuery, SQL optimizado, Python ETL)."
+  },
+  {
+    "id": "gmv-data-engineer-cybersecurity-gcp-sql-madrid",
+    "empresa": "GMV",
+    "rol": "Data Engineer for Cybersecurity & Fraud Prevention (Google Cloud Platform, SQL, Batch/Streaming & Airflow)",
+    "categoria": "Data Engineering (GCP)",
+    "macro_cat": "Data & Analytics",
+    "seccion": "datos",
+    "es_beca": false,
+    "es_nueva": true,
+    "fecha_barrido": "2026-11-26",
+    "es_cyl": false,
+    "es_valladolid": false,
+    "es_leon": false,
+    "es_madrid": true,
+    "modalidad": "Híbrido (Madrid)",
+    "mod_tag": "Híbrido / Madrid",
+    "ubicacion": "Madrid",
+    "salario": "",
+    "stack": [
+      "Google Cloud Platform (GCP)",
+      "SQL",
+      "Procesos Batch & Streaming",
+      "Airflow",
+      "Data & Analytics"
+    ],
+    "fecha": "Publicada / Actualizada ayer (03-04/11/2026 en Tecnoempleo — Solo 16 inscritos)",
+    "estado": "descubierta",
+    "decision": "pendiente",
+    "match": 95,
+    "exp_min": 1,
+    "exp_rango": "0-1 años (Junior / Sin exp.)",
+    "exp_detalle": "1 año de experiencia (Formación e interés por ingeniería de datos, GCP y SQL)",
+    "url": "https://www.tecnoempleo.com/data-engineer-for-cybersecurity-gmv/google-cloud-platform-sql/rf-9ca41ea2b22b33ca4b4e",
+    "notas": "REACTIVADA 26/11 (preferencia Híbrido Madrid): Activa en Tecnoempleo, Híbrido Madrid, GCP + SQL, 1 año. | [Archivada 26/11: Madrid sin confirmación de ≤1 día/semana en oficina] PUBLICADA AYER: Pide solo 1 año de experiencia, GCP, SQL y procesos de datos Batch/Streaming en Madrid (híbrido). Solo tiene 16 inscritos."
+  },
+  {
     "id": "quental-ingeniero-datos-junior-python-pyspark-remoto",
     "empresa": "Quental",
     "rol": "Ingeniero/a de Datos Junior (Python, PySpark & SQL) – 100% Remoto",
@@ -1451,6 +2834,78 @@
     "exp_detalle": "Perfil Junior explícito en Business Analytics / Big Data con 1–2 años de experiencia en Python y PySpark (valorable SQL).",
     "url": "https://www.tecnoempleo.com/ingeniero-datos-python-pyspark-quental/python/rf-58b31f5382769324b444",
     "notas": "MATCH 95% — Paquete ATS completo generado en postulaciones/quental-ingeniero-datos-junior-python-pyspark-remoto/ (CV en PDF y .docx de 1 pág justificados + Carta en PDF de 1 pág sin negritas + doble vía de postulación: formulario directo en quental.com/ofertas-de-empleo/pyspark-python-ingeniero-de-datos/ sin la cola de 833 CVs y Tecnoempleo)."
+  },
+  {
+    "id": "babel-ingeniero-sistemas-agenticos-python-mcp-madrid",
+    "empresa": "Babel",
+    "rol": "Ingeniero/a de Sistemas Agénticos / AI Agent Engineer (Python, FastAPI, LangGraph & MCP) – Híbrido Madrid",
+    "categoria": "IA & Agentic Engineering",
+    "macro_cat": "IA & Agentes",
+    "seccion": "developer",
+    "es_beca": false,
+    "es_nueva": true,
+    "fecha_barrido": "2026-11-26",
+    "es_cyl": false,
+    "es_valladolid": false,
+    "es_leon": false,
+    "es_madrid": true,
+    "modalidad": "Híbrido (Madrid · Flexibilidad/teletrabajo — confirmar días)",
+    "mod_tag": "Híbrido / Madrid",
+    "ubicacion": "Madrid (Híbrido)",
+    "salario": "Competitivo (Contrato indefinido)",
+    "stack": [
+      "Python",
+      "FastAPI",
+      "MCP Servers & Clients",
+      "LangGraph / Agents SDK",
+      "RAG",
+      "Docker"
+    ],
+    "fecha": "Publicada el 19/11/2026 (Activa en Workday Babel)",
+    "estado": "descubierta",
+    "decision": "pendiente",
+    "match": 94,
+    "exp_min": 1,
+    "exp_rango": "1+ año (Sistemas LLM en producción)",
+    "exp_detalle": "Solo exige ≥1 año en sistemas LLM en producción: Python, FastAPI, Docker, RAG, LangGraph/Agents SDK y MCP servers/clients (tools, resources, prompts). Sin inglés C1 ni grado.",
+    "url": "https://babelgroup.wd103.myworkdayjobs.com/REC_External_Career_Site/job/MADRID/Ingeniero-a-de-Sistemas-Agnticos--AI-Agent-Engineer---Python-_JR109676",
+    "notas": "ENCAJE EXCEPCIONAL EN MADRID HÍBRIDO: 100% español, solo ≥1 año y pide literalmente MCP servers & clients (tools, resources, prompts) + Python/FastAPI."
+  },
+  {
+    "id": "valsoft-tinnova-agentic-software-developer-remoto-spain",
+    "empresa": "Valsoft Corporation (T-Innova)",
+    "rol": "Agentic Software Developer (Claude Code, MCP, .NET & SQL Server) – 100% Remoto España",
+    "categoria": "IA & Agentic Engineering",
+    "macro_cat": "IA & Agentes",
+    "seccion": "developer",
+    "es_beca": false,
+    "es_nueva": true,
+    "fecha_barrido": "2026-11-26",
+    "es_cyl": false,
+    "es_valladolid": false,
+    "es_leon": false,
+    "es_madrid": false,
+    "modalidad": "100% Remoto (España / CET · Viajes puntuales a Castelldefels)",
+    "mod_tag": "100% Remoto",
+    "ubicacion": "España (100% Remoto)",
+    "salario": "Competitivo (Contrato en España)",
+    "stack": [
+      "AI Coding Agents (Claude Code / Cursor)",
+      "MCP Servers / LLM Agents",
+      ".NET / C#",
+      "SQL Server",
+      "APIs REST",
+      "Testing Automatizado"
+    ],
+    "fecha": "Activa verificada en Workable (29/10/2026 · Abierta Nov 2026)",
+    "estado": "descubierta",
+    "decision": "pendiente",
+    "match": 94,
+    "exp_min": 1,
+    "exp_rango": "0-2 años (Early Career · Graduado o autodidacta con proyectos sólidos)",
+    "exp_detalle": "Explícitamente abierta a perfiles early-career: pide 3 años o 'a strong graduate or self-taught profile with substantial projects behind it', trabajando con agentes de código (Claude Code/Cursor), MCP servers, .NET y SQL Server.",
+    "url": "https://apply.workable.com/valsoft-corp/j/FD0F2DB431/",
+    "notas": "ENCAJE EXCEPCIONAL (94%): Combina exactamente tus dos perfiles reales: Agentic Engineering (Claude Code, MCP, agentes LLM) de HORSE + .NET/C# y SQL Server de Craftelier. 100% remoto desde España (equipo/clientes españoles, español muy valorado). Nota honesta: pide inglés fluido para colaboración internacional con el grupo Valsoft (tú tienes B1)."
   },
   {
     "id": "logicalis-desarrollador-python-automatizacion-fastapi-remoto",
@@ -1488,6 +2943,613 @@
     "notas": "KIT ATS LISTO en postulaciones/logicalis-desarrollador-python-automatizacion/ — 100% remoto en España con banda 28k–35k € en 14 pagas, viernes/verano intensivo y seguro médico. Encaje directo con tus automatizaciones, scripts y APIs REST en Python en HORSE y Roperuelos."
   },
   {
+    "id": "krell-consulting-data-engineer-dbt-azure-remoto-leon",
+    "empresa": "Krell Consulting",
+    "rol": "Data Engineer – dbt & Azure (Modelado de Datos & SQL) – 100% Remoto explícito desde León",
+    "categoria": "Data & Analytics Engineering",
+    "macro_cat": "Data & Analytics",
+    "seccion": "datos",
+    "es_beca": false,
+    "es_nueva": true,
+    "fecha_barrido": "2026-11-26",
+    "es_cyl": true,
+    "es_valladolid": false,
+    "es_leon": true,
+    "es_madrid": false,
+    "modalidad": "100% Remoto (Explícito desde León / España · Indefinido)",
+    "mod_tag": "100% Remoto",
+    "ubicacion": "León / España (100% Remoto)",
+    "salario": "Hasta 25.000 € brutos/año (Contrato indefinido)",
+    "stack": [
+      "dbt (Dataform equiv.)",
+      "SQL",
+      "Azure",
+      "ETL/ELT",
+      "Modelado de Datos"
+    ],
+    "fecha": "Refrescada el 25/11/2026 (Activa en Viterbit Krell)",
+    "estado": "descubierta",
+    "decision": "pendiente",
+    "match": 93,
+    "exp_min": 1,
+    "exp_rango": "1-2 años (Banda junior hasta 25k €)",
+    "exp_detalle": "Indica 2-3 años orientativos con banda salarial junior (hasta 25k €), sin requisito de grado ni inglés alto. Equivalencia directa Dataform <-> dbt + SQL + Cloud.",
+    "url": "https://krell-consulting.viterbit.site/engineer-dbt-azure-remoto-wRurK9wEPHOm/",
+    "notas": "JOYA EN LEÓN + 100% REMOTO (refrescada ayer 25/11): Indica explícitamente remoto desde León, 100% en español y mismo paradigma SQL/ELT de Dataform en HORSE."
+  },
+  {
+    "id": "baoss-data-engineer-dbt-cloud-remoto-leon",
+    "empresa": "Baoss",
+    "rol": "Data Engineer DBT (Modelado de Datos & Cloud Azure/AWS) – 100% Remoto (Residencia León / CyL)",
+    "categoria": "Data & Analytics Engineering",
+    "macro_cat": "Data & Analytics",
+    "seccion": "datos",
+    "es_beca": false,
+    "es_nueva": true,
+    "fecha_barrido": "2026-11-26",
+    "es_cyl": true,
+    "es_valladolid": false,
+    "es_leon": true,
+    "es_madrid": false,
+    "modalidad": "100% Remoto (Residencia obligatoria: León / Salamanca / CyL / Andalucía / Canarias)",
+    "mod_tag": "100% Remoto",
+    "ubicacion": "León / España (100% Remoto)",
+    "salario": "24.000 € - 30.000 € brutos/año",
+    "stack": [
+      "dbt (Dataform equiv.)",
+      "SQL",
+      "Modelado de Datos",
+      "ETL/ELT",
+      "Azure / AWS",
+      "Data Quality"
+    ],
+    "fecha": "Publicada hoy 26/11/2026 (Activa en Tecnoempleo)",
+    "estado": "descubierta",
+    "decision": "pendiente",
+    "match": 93,
+    "exp_min": 1,
+    "exp_rango": "0-2 años (FP Grado Superior · Sin mínimo rígido)",
+    "exp_detalle": "Exige explícitamente Ciclo Formativo de Grado Superior (encaje directo con DAM/DAW + IA/Big Data) y banda salarial junior/early-mid (24k-30k €), sin mínimo rígido de años. Pide modelado de datos, pipelines dbt (equivalente directo de Dataform + BigQuery en HORSE) y cloud.",
+    "url": "https://www.tecnoempleo.com/data-engineer-dbt-baoss/azure-aws/rf-a7b61e33e23c03438d4e",
+    "notas": "JOYA RECIÉN PUBLICADA HOY (26/11): Teletrabajo 100% con requisito geográfico que incluye literalmente León (junto a Salamanca y otras provincias), acepta FP Grado Superior y se centra en modelado SQL/dbt (equivalencia arquitectónica directa con tu trabajo diario en Dataform + BigQuery en HORSE). 100% en español."
+  },
+  {
+    "id": "pkf-attest-fullstack-dotnet-python-madrid",
+    "empresa": "PKF Attest",
+    "rol": "Desarrollador/a Web Full Stack (.NET Core 6+, SQL Server & Python valorado) – Híbrido Madrid (Sede Valladolid)",
+    "categoria": "Backend .NET & IA",
+    "macro_cat": "IA & Agentes",
+    "seccion": "developer",
+    "es_beca": false,
+    "es_nueva": true,
+    "fecha_barrido": "2026-11-26",
+    "es_cyl": true,
+    "es_valladolid": true,
+    "es_leon": false,
+    "es_madrid": true,
+    "modalidad": "Híbrido (Madrid · Confirmado en texto · Verano intensivo · Sede también en Valladolid)",
+    "mod_tag": "Castilla y León / Madrid",
+    "ubicacion": "Madrid (Híbrido · Consultar sede Valladolid)",
+    "salario": "Indefinido según experiencia",
+    "stack": [
+      ".NET Core 6+",
+      "C#",
+      "Entity Framework",
+      "SQL Server / PostgreSQL",
+      "React / JS / TS",
+      "Python (muy valorado)",
+      "Git"
+    ],
+    "fecha": "Publicada hoy 26/11/2026 (Activa en LinkedIn)",
+    "estado": "descubierta",
+    "decision": "pendiente",
+    "match": 92,
+    "exp_min": 1,
+    "exp_rango": "1+ año (FP aceptada explícitamente)",
+    "exp_detalle": "Acepta explícitamente 'Grado, FP o equivalente', ≥1 año .NET Core/SQL Server y destaca que Python suma especialmente. 100% español.",
+    "url": "https://www.linkedin.com/jobs/view/4495288596",
+    "notas": "PUBLICADA HOY (26/11): Híbrido confirmado, FP explícita, 100% español y PKF Attest tiene sede en Valladolid (vale la pena consultar adscripción local en entrevista)."
+  },
+  {
+    "id": "ferrovial-construction-analista-datos-jr",
+    "empresa": "Ferrovial Construction",
+    "rol": "Analista de Datos Junior (Power BI, Power Platform & SQL)",
+    "categoria": "Data Analytics & BI",
+    "macro_cat": "Data & Analytics",
+    "seccion": "datos",
+    "es_beca": false,
+    "es_nueva": true,
+    "fecha_barrido": "2026-11-26",
+    "es_cyl": false,
+    "es_valladolid": false,
+    "es_leon": false,
+    "es_madrid": true,
+    "modalidad": "Híbrido / Presencial",
+    "mod_tag": "Híbrido / Madrid",
+    "ubicacion": "Madrid",
+    "salario": "A convenir",
+    "stack": [
+      "Power BI",
+      "SQL",
+      "Power Query",
+      "Power Platform",
+      "Azure / Python"
+    ],
+    "fecha": "Publicada el 17/11/2026 (Hoy · Activa en LinkedIn)",
+    "estado": "descubierta",
+    "decision": "pendiente",
+    "match": 92,
+    "exp_min": 1,
+    "exp_rango": "1 año (acepta prácticas/proyectos)",
+    "exp_detalle": "Acepta explícitamente FP Superior DAM/DAW/ASIR e inglés técnico suficiente; 1-3 años considerando prácticas o proyectos de datos",
+    "url": "https://www.linkedin.com/jobs/view/4490423440",
+    "notas": "REACTIVADA 26/11 (preferencia Híbrido Madrid): Activa en LinkedIn, acepta DAM/DAW + inglés técnico (confirmar % teletrabajo; no duplicar con Universia). | [Archivada 26/11: Madrid sin confirmación de ≤1 día/semana en oficina] Publicada hoy mismo y menciona explícitamente DAM y DAW + inglés técnico suficiente. Gran match con SQL, Power BI/BI en HORSE, Python y Copilot; menor exposición previa a Power Apps/Automate compensable."
+  },
+  {
+    "id": "next-digital-ai-engineer-llm-rag-agentes-remoto",
+    "empresa": "Next Digital (WE ARE NEXT)",
+    "rol": "AI Engineer / GenAI Engineer (LLMs, RAG, Agentes IA, Python & SQL) – 100% Remoto Real",
+    "categoria": "IA & Agentes / Data",
+    "macro_cat": "IA & Agentes",
+    "seccion": "datos",
+    "es_beca": false,
+    "es_nueva": true,
+    "fecha_barrido": "2026-11-26",
+    "es_cyl": false,
+    "es_valladolid": false,
+    "es_leon": false,
+    "es_madrid": false,
+    "modalidad": "100% Remoto real (España · Jornada intensiva julio y reducida agosto)",
+    "mod_tag": "100% Remoto",
+    "ubicacion": "España (100% Remoto real)",
+    "salario": "Competitivo + 1.000 €/año formación/inglés + 20 €/mes teletrabajo + Semana extra Navidad + Seguro/Wellhub",
+    "stack": [
+      "Python",
+      "SQL",
+      "LLMs / IA Generativa",
+      "Agentes IA",
+      "RAG",
+      "APIs REST",
+      "Vector DBs",
+      "Cloud (GCP/AWS/Azure)",
+      "dbt / Airflow"
+    ],
+    "fecha": "Refrescada el 23/11/2026 (Activa en portal oficial Next Digital)",
+    "estado": "descubierta",
+    "decision": "pendiente",
+    "match": 92,
+    "exp_min": 1,
+    "exp_rango": "0-2 años (Sin mínimo rígido de años)",
+    "exp_detalle": "No exige mínimo numérico de años; pide experiencia práctica construyendo soluciones con LLMs/IA Generativa, buen nivel de Python, SQL y APIs REST, y valora Airflow/dbt y arquitecturas RAG o agentes IA.",
+    "url": "https://empleo.nextdigital.es/jobs/7804138-ai-engineer",
+    "notas": "OPORTUNIDAD TOP EN ESPAÑA: 100% remoto real ('no híbrido encubierto'), en español (sin barrera de inglés C1), sin mínimo rígido de años y con 1.000 €/año de bolsa para clases de inglés y certificaciones. Encaja de lleno con tu experiencia en agentes IA, Python, SQL y Dataform/dbt."
+  },
+  {
+    "id": "excelia-junior-backend-developer-python-fastapi-dotnet-madrid",
+    "empresa": "Excelia",
+    "rol": "Junior Back-End Developer (Python/FastAPI, .NET Web API, Node.js & SQL/NoSQL)",
+    "categoria": "Backend Development",
+    "macro_cat": "Backend Dev",
+    "seccion": "developer",
+    "es_beca": false,
+    "es_nueva": true,
+    "fecha_barrido": "2026-11-26",
+    "es_cyl": false,
+    "es_valladolid": false,
+    "es_leon": false,
+    "es_madrid": true,
+    "modalidad": "Híbrido (Madrid — Pozuelo de Alarcón)",
+    "mod_tag": "Híbrido / Madrid",
+    "ubicacion": "Madrid (Pozuelo de Alarcón)",
+    "salario": "A convenir (Contrato estable + Retribución flexible)",
+    "stack": [
+      "Python / FastAPI",
+      ".NET Web API (C#)",
+      "Node.js / Express",
+      "APIs RESTful & SQL/NoSQL",
+      "Git & HTML/CSS/JS"
+    ],
+    "fecha": "Publicada el 06/11/2026 (Activa en LinkedIn)",
+    "estado": "preparada_para_postular",
+    "decision": "pendiente",
+    "match": 91,
+    "exp_min": 1,
+    "exp_rango": "1 año (Junior · Pide 1-2 años)",
+    "exp_detalle": "Junior Back-End Developer con 1–2 años en Node.js, Python/FastAPI o .NET Web API + conocimientos básicos front-end; suma tu experiencia Python en HORSE/Roperuelos y .NET/C# en Craftelier.",
+    "url": "https://www.linkedin.com/jobs/view/4486278015",
+    "notas": "REACTIVADA 26/11 (preferencia Híbrido Madrid): Abierta en LinkedIn, Python/FastAPI + .NET + SQL, 1-2 años, 100% español. | [Archivada 26/11: Madrid sin confirmación de ≤1 día/semana en oficina] KIT ATS LISTO en postulaciones/excelia-junior-backend-developer/ (06/11/2026 · Madrid Híbrido · Excelia): Combina tus dos pilares backend reales (APIs REST Python en Roperuelos/HORSE + .NET/C# y SQL Server en Craftelier), SQL/NoSQL, Git y base Front-End de DAW."
+  },
+  {
+    "id": "ferrovial-analista-datos-junior-fp-sql-python-madrid",
+    "empresa": "Ferrovial",
+    "rol": "Analista de Datos Junior – Power Platform, SQL & Python (FP DAM/DAW · Inglés técnico) – Madrid",
+    "categoria": "Data Analytics & BI",
+    "macro_cat": "Data & Analytics",
+    "seccion": "datos",
+    "es_beca": false,
+    "es_nueva": true,
+    "fecha_barrido": "2026-11-26",
+    "es_cyl": false,
+    "es_valladolid": false,
+    "es_leon": false,
+    "es_madrid": true,
+    "modalidad": "Híbrido / Madrid (Confirmar días de teletrabajo en entrevista)",
+    "mod_tag": "Híbrido / Madrid",
+    "ubicacion": "Madrid (Híbrido a confirmar)",
+    "salario": "Convenio Ferrovial",
+    "stack": [
+      "SQL",
+      "Power BI",
+      "Power Automate / Apps",
+      "Python (valorable)",
+      "Análisis de Datos"
+    ],
+    "fecha": "Publicada el 18/11/2026 (Activa en LinkedIn)",
+    "estado": "descubierta",
+    "decision": "pendiente",
+    "match": 90,
+    "exp_min": 1,
+    "exp_rango": "1-3 años (Cuentan prácticas/proyectos · FP DAM/DAW explícita)",
+    "exp_detalle": "Acepta explícitamente FP Superior DAM, DAW o ASIR, cuenta prácticas/proyectos, SQL + Power BI + valora Python y exige solo 'inglés técnico suficiente para documentación' (B1 OK). Distinta de 4490423440.",
+    "url": "https://www.linkedin.com/jobs/view/4491825717",
+    "notas": "Acepta explícitamente DAM/DAW e inglés solo técnico (B1 compatible). Confirmar porcentaje de teletrabajo en RRHH."
+  },
+  {
+    "id": "caixabank-tech-ai-product-engineer-java-claude-code-madrid",
+    "empresa": "CaixaBank Tech",
+    "rol": "AI Product Engineer (Java 21, Spring Boot, APIs REST & Claude Code / SDD) – Híbrido Madrid (60% Remoto)",
+    "categoria": "Backend & AI-Assisted Development",
+    "macro_cat": "IA & Agentes",
+    "seccion": "developer",
+    "es_beca": false,
+    "es_nueva": true,
+    "fecha_barrido": "2026-11-26",
+    "es_cyl": false,
+    "es_valladolid": false,
+    "es_leon": false,
+    "es_madrid": true,
+    "modalidad": "Híbrido (Madrid · Hasta 60% teletrabajo)",
+    "mod_tag": "Híbrido / Madrid",
+    "ubicacion": "Madrid (Híbrido · 60% Remoto)",
+    "salario": "Competitivo (CaixaBank Tech)",
+    "stack": [
+      "Java 21",
+      "Spring Boot",
+      "APIs REST",
+      "Claude Code / AI Agents",
+      "Spec-Driven Dev (SDD)"
+    ],
+    "fecha": "Publicada el 23/11/2026 (Activa en LinkedIn)",
+    "estado": "descubierta",
+    "decision": "pendiente",
+    "match": 90,
+    "exp_min": 1,
+    "exp_rango": "0-2 años (Sin mínimo numérico de años)",
+    "exp_detalle": "Sin mínimo numérico rígido ni C1 inglés obligatorio; combina Java 21 + Spring Boot + APIs REST con desarrollo AI-first delegando en agentes (Claude Code / Spec-Driven Dev).",
+    "url": "https://www.linkedin.com/jobs/view/4494008799",
+    "notas": "MUY RECIENTE (23/11) CON HASTA 60% REMOTO: Combina tu Java Spring Boot + desarrollo agéntico con Claude Code/SDD en una de las mayores tech españolas."
+  },
+  {
+    "id": "insud-pharma-data-analyst-junior",
+    "empresa": "Insud Pharma",
+    "rol": "Data Analyst Junior (Python, SQL & Automatización IA)",
+    "categoria": "Data Analytics & IA",
+    "macro_cat": "Data & Analytics",
+    "seccion": "datos",
+    "es_beca": false,
+    "es_nueva": true,
+    "fecha_barrido": "2026-11-26",
+    "es_cyl": false,
+    "es_valladolid": false,
+    "es_leon": false,
+    "es_madrid": true,
+    "modalidad": "Híbrido / Presencial",
+    "mod_tag": "Híbrido / Madrid",
+    "ubicacion": "Madrid (Madrid / Alcalá / Azuqueca)",
+    "salario": "A convenir",
+    "stack": [
+      "Python",
+      "SQL",
+      "IA Aplicada",
+      "ETL / Git / Power BI",
+      "Docker"
+    ],
+    "fecha": "Publicada el 16/11/2026 (Activa en LinkedIn)",
+    "estado": "descubierta",
+    "decision": "pendiente",
+    "match": 90,
+    "exp_min": 1,
+    "exp_rango": "1 año (1-2 años datos/programación)",
+    "exp_detalle": "Entre 1 y 2 años en datos, programación o automatización; valora especialización en IA/Data sin exigir grado universitario",
+    "url": "https://www.linkedin.com/jobs/view/4489730941",
+    "notas": "REACTIVADA 26/11 (preferencia Híbrido Madrid): Activa en LinkedIn, Python + SQL + IA, 1-2 años (confirmar % teletrabajo). | [Archivada 26/11: Madrid sin confirmación de ≤1 día/semana en oficina] Stack exacto: Python, SQL, ETL, Git y evaluación crítica de código/salidas generadas por IA; valora especialización en IA/Data Analytics. Gap menor: trabajo bilingüe español-inglés (B1) y 1-2 años."
+  },
+  {
+    "id": "dxc-desarrollador-dotnet-integracion-datos-espana",
+    "empresa": "DXC Technology",
+    "rol": "Desarrollador/a .NET e Integración de Datos (C#/.NET 8, SQL, ETL & Python/Power BI) – España (Confirmar % Remoto)",
+    "categoria": "Backend .NET & IA",
+    "macro_cat": "IA & Agentes",
+    "seccion": "developer",
+    "es_beca": false,
+    "es_nueva": true,
+    "fecha_barrido": "2026-11-26",
+    "es_cyl": false,
+    "es_valladolid": false,
+    "es_leon": false,
+    "es_madrid": false,
+    "modalidad": "España (ESP - ANY CITY · Confirmar % teletrabajo en entrevista)",
+    "mod_tag": "100% Remoto",
+    "ubicacion": "España (Confirmar remoto / sede)",
+    "salario": "Indefinido DXC",
+    "stack": [
+      "C#",
+      ".NET 8 / .NET Framework",
+      "SQL / MySQL",
+      "ETL",
+      "APIs REST/SOAP",
+      "Azure DevOps",
+      "Python / Power BI (deseable)"
+    ],
+    "fecha": "Publicada el 23/11/2026 (Activa en Workday DXC)",
+    "estado": "descubierta",
+    "decision": "pendiente",
+    "match": 89,
+    "exp_min": 1,
+    "exp_rango": "0-2 años (FP Superior explícita · Sin años bloqueantes)",
+    "exp_detalle": "Acepta explícitamente FP Superior Informática (DAM/DAW), C#/.NET + SQL/ETL + APIs + valora Python/Power BI; inglés técnico (orientativo B2). Nota: Workday indica RemoteType=None (confirmar remoto real y reincorporación ex-FDS).",
+    "url": "https://dxctechnology.wd1.myworkdayjobs.com/DXCJobs/job/ESP---ANY-CITY/Desarrollador-a-NET-e-Integracin-de-Datos_51595068",
+    "notas": "Ex-empleador (FDS/DXC), FP Superior explícita y encaje directo .NET/SQL/ETL. Confirmar política de teletrabajo real antes de avanzar."
+  },
+  {
+    "id": "fever-junior-people-ops-data-analyst",
+    "empresa": "Fever",
+    "rol": "Junior People Operations Data Analyst (BigQuery, Dataform & Looker)",
+    "categoria": "Data & Analytics Engineering",
+    "macro_cat": "Data & Analytics",
+    "seccion": "datos",
+    "es_beca": false,
+    "es_nueva": true,
+    "fecha_barrido": "2026-11-26",
+    "es_cyl": false,
+    "es_valladolid": false,
+    "es_leon": false,
+    "es_madrid": true,
+    "modalidad": "Híbrido",
+    "mod_tag": "Híbrido / Madrid",
+    "ubicacion": "Madrid",
+    "salario": "Competitivo + beneficios",
+    "stack": [
+      "Google BigQuery",
+      "Dataform",
+      "Looker",
+      "SQL",
+      "LLMs / AI Workflows"
+    ],
+    "fecha": "Actualizada hoy 26/11/2026 (Activa en Greenhouse EU)",
+    "estado": "descubierta",
+    "decision": "pendiente",
+    "match": 89,
+    "exp_min": 1,
+    "exp_rango": "1 año (1-2 años analytics)",
+    "exp_detalle": "Stack exacto BigQuery + Dataform + Looker + LLMs; pide 1-2 años de experiencia y grado universitario + inglés fluido",
+    "url": "https://job-boards.eu.greenhouse.io/feverup/jobs/5037097101",
+    "notas": "REACTIVADA 26/11 (preferencia Híbrido Madrid): Stack 100% calcado a HORSE (BigQuery + Dataform + Looker + LLMs) en Greenhouse oficial. Nota: inglés fluido. | [Archivada 26/11: Madrid sin confirmación de ≤1 día/semana en oficina] Coincidencia técnica 100% con el stack diario de HORSE Technologies (BigQuery + Dataform + Looker + desarrollo asistido por LLMs). Gaps honestos a valorar: pide inglés fluido (ofrecen clases) y Grado universitario."
+  },
+  {
+    "id": "panel-junior-credit-risk-reporting-sql-remoto",
+    "empresa": "PANEL Sistemas Informáticos",
+    "rol": "Desarrollador/a Junior Credit Risk Reporting (SQL, BBDD & Calidad del Dato) – 100% Remoto",
+    "categoria": "Data Analytics & SQL Operations",
+    "macro_cat": "Data & Analytics",
+    "seccion": "datos",
+    "es_beca": false,
+    "es_nueva": true,
+    "fecha_barrido": "2026-11-26",
+    "es_cyl": false,
+    "es_valladolid": false,
+    "es_leon": false,
+    "es_madrid": false,
+    "modalidad": "100% Remoto (España · Contrato indefinido)",
+    "mod_tag": "100% Remoto",
+    "ubicacion": "España (100% Remoto)",
+    "salario": "Hasta 25.000 € brutos/año (Indefinido)",
+    "stack": [
+      "SQL",
+      "Bases de Datos",
+      "Procesamiento de Datos",
+      "Data Quality",
+      "Reporting",
+      "Testing"
+    ],
+    "fecha": "Publicada hoy 26/11/2026 (Activa en Tecnoempleo)",
+    "estado": "descubierta",
+    "decision": "pendiente",
+    "match": 89,
+    "exp_min": 1,
+    "exp_rango": "1 año (Perfil Junior)",
+    "exp_detalle": "Exige explícitamente al menos 1 año de experiencia con SQL, bases de datos, análisis de requisitos, testing y resolución de incidencias en datos (sector financiero).",
+    "url": "https://www.tecnoempleo.com/junior-credit-risk-reporting-panel-sistemas-inform/sql/rf-0d0c1e4182e963dff34c",
+    "notas": "Publicada hoy 26/11 con contrato indefinido y 100% remoto desde España (en la ficha figura Madrid por sede, pero el cuerpo especifica literalmente 'Ubicación: España · Modalidad: Remota · Trabajo 100% remoto desde España'). Sin requisito de inglés C1 y encaje directo con SQL/BBDD/calidad del dato."
+  },
+  {
+    "id": "prodware-ai-engineer-agentic-mcp-claude-remoto-madrid",
+    "empresa": "Prodware España",
+    "rol": "AI Engineer (Agentic AI, Skills, Tools, Plugins, Claude/GPT & Python) – Remoto / Híbrido Madrid",
+    "categoria": "IA & Agentic Engineering",
+    "macro_cat": "IA & Agentes",
+    "seccion": "developer",
+    "es_beca": false,
+    "es_nueva": true,
+    "fecha_barrido": "2026-11-26",
+    "es_cyl": false,
+    "es_valladolid": false,
+    "es_leon": false,
+    "es_madrid": false,
+    "modalidad": "100% Remoto (España) o Híbrido Madrid (Viernes y verano intensivos)",
+    "mod_tag": "100% Remoto",
+    "ubicacion": "España (Remoto / Híbrido Madrid)",
+    "salario": "Competitivo (Contrato indefinido)",
+    "stack": [
+      "Agentic AI",
+      "Agent Skills & Tools",
+      "Plugins / MCP",
+      "Claude / GPT",
+      "Python",
+      "RAG",
+      "APIs REST"
+    ],
+    "fecha": "Publicada el 24/11/2026 (Activa en LinkedIn)",
+    "estado": "descubierta",
+    "decision": "pendiente",
+    "match": 88,
+    "exp_min": 1,
+    "exp_rango": "0-2 años (Sin mínimo rígido de años)",
+    "exp_detalle": "Sin mínimo numérico de años; pide agentes, skills, tools, plugins, Claude/GPT, Python y RAG. Nota honesta: pide nivel de inglés profesional.",
+    "url": "https://www.linkedin.com/jobs/view/4479045048",
+    "notas": "Muy reciente (24/11) con posibilidad de 100% remoto y stack prácticamente calcado a tu trabajo en HORSE (agentes, skills, tools, Claude, Python). Caveat honesto: pide inglés profesional frente a tu B1."
+  },
+  {
+    "id": "serem-data-engineer-databricks-aws-remoto-madrid-puntual",
+    "empresa": "SEREM",
+    "rol": "Data Engineer (Databricks, AWS & Arquitectura Medallion) – Remoto con 1–2 visitas/mes Madrid",
+    "categoria": "Data Engineering",
+    "macro_cat": "Data & Analytics",
+    "seccion": "datos",
+    "es_beca": false,
+    "es_nueva": true,
+    "fecha_barrido": "2026-11-26",
+    "es_cyl": false,
+    "es_valladolid": false,
+    "es_leon": false,
+    "es_madrid": false,
+    "modalidad": "Híbrido casi 100% Remoto (Solo 1-2 visitas/mes en Madrid)",
+    "mod_tag": "100% Remoto",
+    "ubicacion": "Madrid (1-2 visitas/mes · Resto remoto)",
+    "salario": "Según experiencia (Indefinido)",
+    "stack": [
+      "Databricks",
+      "AWS",
+      "ETL / ELT",
+      "Arquitectura Medallion",
+      "SQL",
+      "Modelos Analíticos BI"
+    ],
+    "fecha": "Publicada el 24/11/2026 (Activa en LinkedIn)",
+    "estado": "descubierta",
+    "decision": "pendiente",
+    "match": 88,
+    "exp_min": 1,
+    "exp_rango": "1-2 años (Sin mínimo numérico rígido)",
+    "exp_detalle": "Sin años mínimos hardcodeados, 100% español, pipelines ETL/ELT y modelos BI. Solo pide 1-2 visitas presenciales al mes en Madrid.",
+    "url": "https://www.linkedin.com/jobs/view/4493021627",
+    "notas": "Prácticamente 100% remoto (solo 1-2 días al mes en Madrid), publicada hace 2 días y 100% en español."
+  },
+  {
+    "id": "excelia-junior-data-analyst-databricks",
+    "empresa": "Excelia",
+    "rol": "Junior Data Analyst (PySpark, Databricks, Power BI & SQL)",
+    "categoria": "Data Analytics & BI",
+    "macro_cat": "Data & Analytics",
+    "seccion": "datos",
+    "es_beca": false,
+    "es_nueva": true,
+    "fecha_barrido": "2026-11-26",
+    "es_cyl": false,
+    "es_valladolid": false,
+    "es_leon": false,
+    "es_madrid": true,
+    "modalidad": "Presencial / Híbrido",
+    "mod_tag": "Híbrido / Madrid",
+    "ubicacion": "Pozuelo de Alarcón, Madrid",
+    "salario": "A convenir (Indefinido)",
+    "stack": [
+      "SQL",
+      "Power BI",
+      "PySpark",
+      "Databricks",
+      "Python / Azure"
+    ],
+    "fecha": "Publicada el 29/10/2026 (Activa en LinkedIn)",
+    "estado": "descubierta",
+    "decision": "pendiente",
+    "match": 88,
+    "exp_min": 1,
+    "exp_rango": "1 año (1-2 años Data Analytics)",
+    "exp_detalle": "1-2 años en Data Analytics/Engineering, formación en Informática/Data sin exigir grado ni inglés alto; contrato indefinido",
+    "url": "https://www.linkedin.com/jobs/view/4474474181",
+    "notas": "REACTIVADA 26/11 (preferencia Híbrido Madrid): Activa en LinkedIn, Pozuelo, PySpark + Databricks + Power BI + SQL, 1-2 años (confirmar % teletrabajo). | [Archivada 26/11: Madrid sin confirmación de ≤1 día/semana en oficina] Base sólida en SQL, Python, BI (equivalencia Looker <-> Power BI) y formación en Big Data; gap honesto: poca práctica productiva previa en PySpark/Databricks."
+  },
+  {
+    "id": "ayesa-digital-data-specialist-python-sql-madrid",
+    "empresa": "Ayesa Digital",
+    "rol": "Data Specialist (Python, SQL avanzado, Pandas & ETL) – Híbrido Madrid",
+    "categoria": "Data & Analytics",
+    "macro_cat": "Data & Analytics",
+    "seccion": "datos",
+    "es_beca": false,
+    "es_nueva": true,
+    "fecha_barrido": "2026-11-26",
+    "es_cyl": false,
+    "es_valladolid": false,
+    "es_leon": false,
+    "es_madrid": true,
+    "modalidad": "Híbrido (Madrid · Confirmado)",
+    "mod_tag": "Híbrido / Madrid",
+    "ubicacion": "Madrid (Híbrido)",
+    "salario": "Indefinido según perfil",
+    "stack": [
+      "Python",
+      "SQL avanzado",
+      "Pandas / NumPy",
+      "ETL"
+    ],
+    "fecha": "Activa verificada hoy 26/11/2026 (LinkedIn · 05/11)",
+    "estado": "descubierta",
+    "decision": "pendiente",
+    "match": 87,
+    "exp_min": 1,
+    "exp_rango": "0-2 años (Sin mínimo numérico ni grado obligatorio)",
+    "exp_detalle": "Sin mínimo numérico de años, sin grado obligatorio ni inglés alto; stack directo Python + SQL avanzado + Pandas/NumPy + ETL.",
+    "url": "https://www.linkedin.com/jobs/view/4485066537",
+    "notas": "Híbrido Madrid confirmado, 100% español y stack muy directo con tu experiencia en HORSE."
+  },
+  {
+    "id": "tecnicas-reunidas-junior-developer-power-bi-sql-madrid",
+    "empresa": "Técnicas Reunidas",
+    "rol": "Junior Developer – Power BI, SQL, DAX & Microsoft Fabric/Python",
+    "categoria": "Data Analytics & BI",
+    "macro_cat": "Data & Analytics",
+    "seccion": "datos",
+    "es_beca": false,
+    "es_nueva": true,
+    "fecha_barrido": "2026-11-26",
+    "es_cyl": false,
+    "es_valladolid": false,
+    "es_leon": false,
+    "es_madrid": true,
+    "modalidad": "Híbrido (Madrid — 2 días teletrabajo/semana)",
+    "mod_tag": "Híbrido / Madrid",
+    "ubicacion": "Madrid",
+    "salario": "A convenir (Híbrido + Flexibilidad)",
+    "stack": [
+      "Power BI",
+      "SQL",
+      "DAX & Power Query",
+      "Python (Valorable)",
+      "Microsoft Fabric (Valorable)"
+    ],
+    "fecha": "Publicada el 13/11/2026 (Activa en LinkedIn)",
+    "estado": "descubierta",
+    "decision": "pendiente",
+    "match": 87,
+    "exp_min": 1,
+    "exp_rango": "0-1 años (LinkedIn: Sin exp. / Cuerpo: 1-2 años)",
+    "exp_detalle": "Nivel LinkedIn 'Sin experiencia' aunque el texto pide 1-2 años en Power BI y nivel B2 de inglés; perfil compensable con dashboards Looker/BI y modelado SQL en HORSE.",
+    "url": "https://www.linkedin.com/jobs/view/4490597078",
+    "notas": "REACTIVADA 26/11 (preferencia Híbrido Madrid): Abierta en LinkedIn, 2 días teletrabajo/sem, Power BI + SQL + Python/Fabric. | [Archivada 26/11: híbrido en Madrid > 1 día/semana en oficina] NUEVA (13/11/2026 · Madrid Híbrido 2 días remoto): Reporting BI, transformación SQL/Power Query y modelado, valorando Python y Fabric. Tu experiencia diaria en Looker + SQL (BigQuery) en HORSE es transferencia directa a Power BI; ojo al requisito de inglés B2."
+  },
+  {
     "id": "canonical-python-engineer-commercial-systems-remoto",
     "empresa": "Canonical (Ubuntu)",
     "rol": "Python Software Engineer – Commercial Systems (Integrations & Data Mesh) – 100% Remoto",
@@ -1520,6 +3582,42 @@
     "exp_detalle": "Sin mínimo rígido de años; automatización de onboarding de fuentes de datos al data mesh e integraciones en Python en zona horaria EMEA.",
     "url": "https://job-boards.greenhouse.io/canonical/jobs/6401160",
     "notas": "100% remoto EMEA centrado en Python e integraciones de datos hacia data mesh (muy cercano a tus ETL/APIs en Python). Requiere inglés fluido para equipo distribuido."
+  },
+  {
+    "id": "knowmad-mood-data-engineer-microsoft-fabric-remoto",
+    "empresa": "knowmad mood",
+    "rol": "Data Engineer (Microsoft Fabric, PySpark, SQL & Medallion) – 100% Remoto España",
+    "categoria": "Data Engineering",
+    "macro_cat": "Data & Analytics",
+    "seccion": "datos",
+    "es_beca": false,
+    "es_nueva": true,
+    "fecha_barrido": "2026-11-26",
+    "es_cyl": false,
+    "es_valladolid": false,
+    "es_leon": false,
+    "es_madrid": false,
+    "modalidad": "100% Remoto (España · Viernes y verano intensivos)",
+    "mod_tag": "100% Remoto",
+    "ubicacion": "España (100% Remoto)",
+    "salario": "Indefinido + Formación y certificaciones",
+    "stack": [
+      "Microsoft Fabric",
+      "PySpark",
+      "SQL",
+      "ETL/ELT",
+      "Arquitectura Medallion",
+      "Modelado Dimensional"
+    ],
+    "fecha": "Publicada hoy 26/11/2026 (Activa en Teamtailor knowmad mood)",
+    "estado": "descubierta",
+    "decision": "pendiente",
+    "match": 86,
+    "exp_min": 1,
+    "exp_rango": "0-2 años (Sin mínimo rígido de años)",
+    "exp_detalle": "Sin años mínimos hardcodeados, 100% español. Pide experiencia práctica en Microsoft Fabric/PySpark y modelado ETL/Medallion (defender equivalencia BigQuery/Dataform + Python ETL).",
+    "url": "https://knowmadmood.teamtailor.com/jobs/8797856-data-engineer-microsoft-fabric",
+    "notas": "Publicada hoy 26/11, 100% remota con viernes y verano intensivos y sin barrera de inglés."
   },
   {
     "id": "canonical-golang-engineer-commercial-systems-remoto",
@@ -1588,6 +3686,78 @@
     "exp_detalle": "Pide 1–2 años en SAP ABAP (S/4HANA, OData, CDS) y acepta Ciclo Formativo Grado Superior; 100% remoto desde España con horario 07:30–15:30 sin guardias.",
     "url": "https://empleo.metrica-global.com/analista-programador-sap-abap-100-remoto-IMN800K9qElS",
     "notas": "100% remoto desde España con horario intensivo todo el año (7:30–15:30), acepta FP Grado Superior y conecta con tu etapa SAP ABAP en FDS (DXC)."
+  },
+  {
+    "id": "knowmad-mood-java-backend-spring-boot-microservicios-remoto",
+    "empresa": "knowmad mood",
+    "rol": "Java Backend Developer (Java 17+, Spring Boot, Microservicios & APIs REST) – 100% Remoto",
+    "categoria": "Backend Development",
+    "macro_cat": "Backend Dev",
+    "seccion": "developer",
+    "es_beca": false,
+    "es_nueva": true,
+    "fecha_barrido": "2026-11-26",
+    "es_cyl": false,
+    "es_valladolid": false,
+    "es_leon": false,
+    "es_madrid": false,
+    "modalidad": "100% Remoto (España · Viernes y verano intensivo 8-15h)",
+    "mod_tag": "100% Remoto",
+    "ubicacion": "España (100% Remoto)",
+    "salario": "Indefinido según experiencia",
+    "stack": [
+      "Java 17+",
+      "Spring Boot",
+      "Spring Security",
+      "Microservicios",
+      "APIs REST",
+      "JUnit / Mockito",
+      "SonarQube"
+    ],
+    "fecha": "Publicada el 23/11/2026 (Activa en Teamtailor knowmad mood)",
+    "estado": "descubierta",
+    "decision": "pendiente",
+    "match": 85,
+    "exp_min": 1,
+    "exp_rango": "1-2 años (Sin mínimo numérico rígido)",
+    "exp_detalle": "No fija mínimo numérico de años; pide experiencia con Java 17+, Spring Boot, APIs REST y testing unitario. 100% español.",
+    "url": "https://knowmadmood.teamtailor.com/jobs/8784198-java-backend-developer-spring-boot-microservicios-remoto",
+    "notas": "Reciente (23/11), 100% remota con viernes y verano intensivos y sin barrera de inglés."
+  },
+  {
+    "id": "gmv-ingeniero-software-galileo-java-docker-madrid",
+    "empresa": "GMV",
+    "rol": "Ingeniero/a de Software en Galileo SCCF (Java, C++, Maven, Docker & Kubernetes)",
+    "categoria": "Backend Development",
+    "macro_cat": "Backend Dev",
+    "seccion": "developer",
+    "es_beca": false,
+    "es_nueva": true,
+    "fecha_barrido": "2026-11-26",
+    "es_cyl": false,
+    "es_valladolid": false,
+    "es_leon": false,
+    "es_madrid": true,
+    "modalidad": "Híbrido (Madrid)",
+    "mod_tag": "Híbrido / Madrid",
+    "ubicacion": "Madrid",
+    "salario": "Competitivo + 8 sem/año teletrabajo libre",
+    "stack": [
+      "Java",
+      "C++",
+      "Maven",
+      "Docker",
+      "Kubernetes"
+    ],
+    "fecha": "Publicada el 30/10/2026 (Activa en Tecnoempleo)",
+    "estado": "descubierta",
+    "decision": "pendiente",
+    "match": 85,
+    "exp_min": 1,
+    "exp_rango": "1 año (Al menos 1 año)",
+    "exp_detalle": "Pide al menos 1 año en Java/C++ y graduados en Ing. Software o afines (valorando Eclipse RCP, Maven, Docker y Kubernetes).",
+    "url": "https://www.tecnoempleo.com/ingeniero-software-en-galileo-sccf-gmv/c-java/rf-4eec1439e2ea13d4584d",
+    "notas": "REACTIVADA 26/11 (preferencia Híbrido Madrid): Activa en Tecnoempleo, Híbrido Madrid, Java/C++, 1 año. | [Archivada 26/11: Madrid sin confirmación de ≤1 día/semana en oficina] Tecnoempleo (30/10/2026 · Madrid Híbrido · 1 año exp): Desarrollo de software Java/C++ en centro de control espacial Galileo; aporta tu base sólida en Java (DAM + Roperuelos)."
   },
   {
     "id": "hp-scds-firmware-foundations-engineer-linux-apis-ai-leon",
@@ -1691,6 +3861,75 @@
     "exp_detalle": "Badge oficial Tecnoempleo: 1 año experiencia, FP2/Grado Superior aceptado, proyecto estable Banco Santander 100% remoto (pide inglés B2-C1).",
     "url": "https://www.tecnoempleo.com/devops-engineer-panel-sistemas-informaticos/linux-docker/rf-ca371855d2694356244f",
     "notas": "Actualizada hoy (26/11), 1 año de experiencia y 100% remoto en España aceptando FP Grado Superior. Gap honesto: pide inglés B2-C1."
+  },
+  {
+    "id": "idealista-android-product-engineer-kotlin-ia-remoto",
+    "empresa": "idealista",
+    "rol": "Android Product Engineer (Kotlin & Desarrollo Asistido con IA) – 100% Remote Friendly España",
+    "categoria": "Backend / Full-Stack Dev",
+    "macro_cat": "Backend Dev",
+    "seccion": "developer",
+    "es_beca": false,
+    "es_nueva": true,
+    "fecha_barrido": "2026-11-26",
+    "es_cyl": false,
+    "es_valladolid": false,
+    "es_leon": false,
+    "es_madrid": false,
+    "modalidad": "100% Remote Friendly (España · Oficinas Madrid opcionales)",
+    "mod_tag": "100% Remoto",
+    "ubicacion": "España (100% Remoto)",
+    "salario": "Competitivo (Producto idealista)",
+    "stack": [
+      "Kotlin",
+      "Android",
+      "IA aplicada al desarrollo",
+      "Backend / Data Analytics (plus)"
+    ],
+    "fecha": "Refrescada el 24/11/2026 (Activa en Teamtailor oficial idealista)",
+    "estado": "descubierta",
+    "decision": "pendiente",
+    "match": 82,
+    "exp_min": 1,
+    "exp_rango": "1-2 años (Sin mínimo numérico rígido)",
+    "exp_detalle": "Sin mínimo rígido de años, 100% español. Valora uso diario de IA para programar e interés en backend/data. Nota honesta: espera Kotlin como lenguaje principal (Diego tiene 3 meses en Craftelier + DAM).",
+    "url": "https://careers.idealista.com/jobs/8103848-android-product-engineer",
+    "notas": "Empresa producto 100% en español y Remote Friendly; opción alternativa aprovechando DAM + Kotlin en Craftelier + uso intensivo de IA."
+  },
+  {
+    "id": "kirey-programador-dotnet-csharp-apis-madrid",
+    "empresa": "Kirey España",
+    "rol": "Programador/a .NET, C# & APIs REST (34k–38k €) – Híbrido Madrid (2d Remoto)",
+    "categoria": "Backend .NET & IA",
+    "macro_cat": "IA & Agentes",
+    "seccion": "developer",
+    "es_beca": false,
+    "es_nueva": true,
+    "fecha_barrido": "2026-11-26",
+    "es_cyl": false,
+    "es_valladolid": false,
+    "es_leon": false,
+    "es_madrid": true,
+    "modalidad": "Híbrido (Madrid Chamberí · 2 días teletrabajo / 3 oficina)",
+    "mod_tag": "Híbrido / Madrid",
+    "ubicacion": "Madrid (Híbrido · 2d remoto)",
+    "salario": "34.000 € - 38.000 € brutos/año",
+    "stack": [
+      "C#",
+      ".NET Core / .NET Framework",
+      "APIs REST / SOAP",
+      "Oracle PL/SQL",
+      "ASP clásico"
+    ],
+    "fecha": "Publicada hoy 26/11/2026 (Activa en LinkedIn)",
+    "estado": "descubierta",
+    "decision": "pendiente",
+    "match": 81,
+    "exp_min": 1,
+    "exp_rango": "1-2 años (Sin mínimo rígido · 100% Español)",
+    "exp_detalle": "Sin mínimo numérico de años, 100% español, banda 34k-38k €. Caveat: incluye mantenimiento de ASP clásico y Oracle PL/SQL junto a C#/.NET Core.",
+    "url": "https://www.linkedin.com/jobs/view/4493822269",
+    "notas": "Publicada hoy 26/11 con salario alto (34-38k €) y 100% en español."
   },
   {
     "id": "quental-programador-junior-sas-r-datos-remoto",
@@ -1903,6 +4142,42 @@
     "notas": "Combina tu experiencia real en Java + Spring Boot (Roperuelos + DAM/DAW) con tu dominio actual de Google Cloud Platform (HORSE) en 100% remoto."
   },
   {
+    "id": "next-digital-data-engineer-python-sql-etl-remoto",
+    "empresa": "Next Digital (WE ARE NEXT)",
+    "rol": "Data Engineer (Python, SQL, ETL/ELT, Cloud & dbt/Airflow) – 100% Remoto Real",
+    "categoria": "Data Engineering",
+    "macro_cat": "Data & Analytics",
+    "seccion": "datos",
+    "es_beca": false,
+    "es_nueva": true,
+    "fecha_barrido": "2026-11-26",
+    "es_cyl": false,
+    "es_valladolid": false,
+    "es_leon": false,
+    "es_madrid": false,
+    "modalidad": "100% Remoto real (España · Jornada intensiva julio y reducida agosto)",
+    "mod_tag": "100% Remoto",
+    "ubicacion": "España (100% Remoto real)",
+    "salario": "Competitivo + 1.000 €/año formación/inglés + 20 €/mes teletrabajo + Semana extra Navidad",
+    "stack": [
+      "Python",
+      "SQL",
+      "ETL / ELT",
+      "Data Warehouse",
+      "Cloud (AWS/Azure/GCP)",
+      "dbt / Airflow / Spark"
+    ],
+    "fecha": "Evergreen refrescada el 25/11/2026 (Activa en Next Digital ATS)",
+    "estado": "descubierta",
+    "decision": "pendiente",
+    "match": 90,
+    "exp_min": 2,
+    "exp_rango": "1,5+ años (Filtro explícito de experiencia profesional en producción)",
+    "exp_detalle": "Pide al menos 1,5 años de experiencia profesional en ingeniería de datos con Python y SQL en producción (Cloud + dbt/Airflow/Spark, 'no necesitas dominar todas'). 100% español.",
+    "url": "https://empleo.nextdigital.es/jobs/7426106-data-engineer",
+    "notas": "100% remoto real en español con 1.000 €/año para inglés/certificaciones. Nota honesta: avisa filtro estricto de ≥1,5 años en Data Engineering en producción (tú sumas ~22 meses totales en tech/datos)."
+  },
+  {
     "id": "devoteam-ai-engineer-mid-agentes-rag-python-azure-remoto",
     "empresa": "Devoteam",
     "rol": "AI Engineer Mid-Level (Python, Agentes IA, RAG & Azure OpenAI) – 100% Remoto",
@@ -1938,6 +4213,41 @@
     "notas": "100% remoto desde España en español, enfocado en desarrollo de agentes IA, evaluación con baterías de pruebas y RAG con Python (equivalente directo a tu Agent Harness/MCP en HORSE)."
   },
   {
+    "id": "grupo-digital-aplicaciones-python-js-madrid",
+    "empresa": "Grupo Digital",
+    "rol": "Desarrollador/a Aplicaciones Python y JavaScript (Automatización & Cuadros de Mando) – Madrid Híbrido",
+    "categoria": "Backend / Automation",
+    "macro_cat": "Backend Dev",
+    "seccion": "developer",
+    "es_beca": false,
+    "es_nueva": true,
+    "fecha_barrido": "2026-11-26",
+    "es_cyl": false,
+    "es_valladolid": false,
+    "es_leon": false,
+    "es_madrid": true,
+    "modalidad": "Híbrido (Torrejón de Ardoz, Madrid — 40% teletrabajo)",
+    "mod_tag": "Híbrido / Madrid",
+    "ubicacion": "Madrid (Híbrido)",
+    "salario": "23.000 € – 25.000 € Bruto/año",
+    "stack": [
+      "Python",
+      "JavaScript",
+      "Automatización de Procesos",
+      "Cuadros de Mando",
+      "FP DAM / DAW"
+    ],
+    "fecha": "Publicada el 13/11/2026 (Activa en Tecnoempleo)",
+    "estado": "descubierta",
+    "decision": "pendiente",
+    "match": 89,
+    "exp_min": 2,
+    "exp_rango": "Hasta 2 años (Junior-Mid)",
+    "exp_detalle": "Al menos 2 años · Acepta FP en Desarrollo de Aplicaciones (DAM/DAW)",
+    "url": "https://www.tecnoempleo.com/desarrollador-aplicaciones-python-javascript-grupo/python/rf-4019110ac28f6362e342",
+    "notas": "REACTIVADA 26/11 (preferencia Híbrido Madrid): Activa en Tecnoempleo, Híbrido Torrejón 40% remoto, Python/JS, 2 años, B2 (no duplicar con Arelance cliente final). | [Archivada 26/11: híbrido en Madrid > 1 día/semana en oficina] BARRIDO 16/11/2026: Publicada el 13/11/2026. Contrato indefinido para automatizar procesos, integrar herramientas y generar cuadros de mando en Python y JavaScript."
+  },
+  {
     "id": "grupo-ns-consultores-dbt-sql-snowflake-remoto",
     "empresa": "Grupo NS",
     "rol": "Consultor/a de Datos DBT & SQL (Snowflake) – 100% Remoto",
@@ -1969,6 +4279,42 @@
     "exp_detalle": "Pide 2 años con SQL y dbt (acepta explícitamente FP2 / Grado Superior sin requisito de inglés alto).",
     "url": "https://www.tecnoempleo.com/consultores-dbt-grupo-ns/sql-snowflake/rf-a7371419c218b3572642",
     "notas": "100% remoto sin barrera de titulación ni idioma: acepta FP Grado Superior y se centra en SQL + dbt (equivalencia arquitectónica 1:1 con tu experiencia diaria en Dataform + BigQuery)."
+  },
+  {
+    "id": "drasanvi-ia-specialist-agentes-python-sql-sap-leon",
+    "empresa": "Drasanvi (Grupo Olyos)",
+    "rol": "IA Specialist (Agentes IA, Claude, Python, SQL, SAP & BI) – León",
+    "categoria": "IA & Agentes / Data",
+    "macro_cat": "IA & Agentes",
+    "seccion": "datos",
+    "es_beca": false,
+    "es_nueva": true,
+    "fecha_barrido": "2026-11-26",
+    "es_cyl": true,
+    "es_valladolid": false,
+    "es_leon": true,
+    "es_madrid": false,
+    "modalidad": "Presencial / Híbrido (León)",
+    "mod_tag": "Castilla y León",
+    "ubicacion": "León (Castilla y León)",
+    "salario": "Competitivo (Empresa líder en León)",
+    "stack": [
+      "Agentes IA / Claude / Copilot",
+      "Python",
+      "SQL",
+      "Power Automate",
+      "SAP B1 / S4HANA",
+      "Dashboards KPIs"
+    ],
+    "fecha": "Activa verificada hoy 26/11/2026 (LinkedIn · Publicada 28/10)",
+    "estado": "descubierta",
+    "decision": "pendiente",
+    "match": 88,
+    "exp_min": 2,
+    "exp_rango": "2-4 años (Stretch ligero · Stack 100% calcado en León)",
+    "exp_detalle": "Stretch ligero por pedir 2-4 años y citar grado, pero coincide 100% en stack real (Claude + agentes + Python + SQL + SAP + BI) y solo pide inglés para documentación técnica (B1 OK).",
+    "url": "https://www.linkedin.com/jobs/view/4482511837",
+    "notas": "EN LEÓN Y CON TU STACK EXACTO (Claude, agentes IA, Python, SQL, SAP de FDS/DXC y BI de HORSE) sin barrera de inglés hablado."
   },
   {
     "id": "arelance-data-scientist-databricks-python-sql-remoto",
@@ -2110,6 +4456,80 @@
     "notas": "Proyecto estable 100% remoto en ingeniería y procesamiento de datos con Python, SQL y Databricks."
   },
   {
+    "id": "next-digital-software-engineer-java-spring-boot-remoto",
+    "empresa": "Next Digital (WE ARE NEXT)",
+    "rol": "Software Engineer (Java, Spring Boot, APIs REST & Frontend) – 100% Remoto Real",
+    "categoria": "Full-Stack / Backend Development",
+    "macro_cat": "Backend Dev",
+    "seccion": "developer",
+    "es_beca": false,
+    "es_nueva": true,
+    "fecha_barrido": "2026-11-26",
+    "es_cyl": false,
+    "es_valladolid": false,
+    "es_leon": false,
+    "es_madrid": false,
+    "modalidad": "100% Remoto real (España · Jornada intensiva julio y reducida agosto)",
+    "mod_tag": "100% Remoto",
+    "ubicacion": "España (100% Remoto real)",
+    "salario": "Competitivo + 1.000 €/año formación/inglés + 20 €/mes teletrabajo + Semana extra Navidad",
+    "stack": [
+      "Java",
+      "Spring Boot",
+      "APIs REST",
+      "Angular / React / Vue",
+      "Git",
+      "Docker / CI-CD"
+    ],
+    "fecha": "Activa verificada en Next Digital ATS (Nov 2026)",
+    "estado": "descubierta",
+    "decision": "pendiente",
+    "match": 86,
+    "exp_min": 2,
+    "exp_rango": "1,5+ años (Experiencia profesional desarrollo software)",
+    "exp_detalle": "Pide al menos 1,5 años de experiencia profesional en desarrollo con Java/Spring Boot, APIs REST y nociones de frontend (Angular/React/Vue). 100% español.",
+    "url": "https://empleo.nextdigital.es/jobs/7413049-software-engineer",
+    "notas": "100% remoto real en español con excelentes condiciones; defender experiencia Java Spring Boot (Roperuelos) + base DAW/full-stack."
+  },
+  {
+    "id": "ust-platform-engineer-devsecops-ai-agents-mcp-remoto",
+    "empresa": "UST",
+    "rol": "Platform Engineer – DevSecOps & AI Agents (MCP Servers, Skills, Python/C#) – 100% Remoto",
+    "categoria": "IA & Agentic Engineering",
+    "macro_cat": "IA & Agentes",
+    "seccion": "developer",
+    "es_beca": false,
+    "es_nueva": true,
+    "fecha_barrido": "2026-11-26",
+    "es_cyl": false,
+    "es_valladolid": false,
+    "es_leon": false,
+    "es_madrid": false,
+    "modalidad": "100% Remoto (España · Horario flexible y verano intensivo)",
+    "mod_tag": "100% Remoto",
+    "ubicacion": "España (100% Remoto)",
+    "salario": "45.000 € - 55.000 € brutos/año + Seguro médico + Clases de inglés online",
+    "stack": [
+      "AI Agents",
+      "MCP Servers",
+      "Agent Skills",
+      "Python",
+      "C#",
+      "CI/CD (GitHub Actions)",
+      "TDD / Testing",
+      "Docker"
+    ],
+    "fecha": "Publicada hoy 26/11/2026 (Activa en Tecnoempleo)",
+    "estado": "descubierta",
+    "decision": "pendiente",
+    "match": 86,
+    "exp_min": 2,
+    "exp_rango": "2-3 años (Colaboración con Seniors · Agentic Engineering)",
+    "exp_detalle": "Pide ~2-3 años de experiencia práctica en ingeniería software/CI-CD/testing y construir/mejorar agentes IA junto a ingenieros senior ('Build and improve agents alongside senior engineers', MCP servers, skills, guardrails, Python/C#).",
+    "url": "https://www.tecnoempleo.com/platform-engineer-devsecops-ust/ci-cd-tdd/rf-e19f171612ac33810244",
+    "notas": "OFERTA DE ALTO IMPACTO PUBLICADA HOY (26/11): Pide exactamente MCP servers, Agent Skills, Claude/Copilot, seguridad de agentes (prompt injection, blast radius, audit trail), Python y C#, con banda 45k-55k € y 100% remoto España. Nota honesta: stretch por pedir ~2-3 años e inglés profesional diario con equipo/cliente UK (ofrece clases de inglés online en retribución flexible)."
+  },
+  {
     "id": "baoss-data-engineer-databricks-aws-medallion-remoto",
     "empresa": "Baoss",
     "rol": "Data Engineer (Databricks, AWS, Medallion ETL/ELT & Calidad del Dato) – 100% Remoto",
@@ -2180,6 +4600,117 @@
     "notas": "Contrato indefinido 100% remoto en desarrollo backend Java y arquitecturas orientadas a eventos."
   },
   {
+    "id": "gmv-ingeniero-software-ciberseguridad-python-js-madrid",
+    "empresa": "GMV",
+    "rol": "Ingeniero/a de Software – Ciberseguridad (Python, JS, FastAPI, SQL & 8 sem/año remoto) – Híbrido Madrid",
+    "categoria": "Backend / Full-Stack Dev",
+    "macro_cat": "Backend Dev",
+    "seccion": "developer",
+    "es_beca": false,
+    "es_nueva": true,
+    "fecha_barrido": "2026-11-26",
+    "es_cyl": false,
+    "es_valladolid": false,
+    "es_leon": false,
+    "es_madrid": true,
+    "modalidad": "Híbrido (Madrid · +8 semanas/año remoto anywhere · Viernes/verano intensivo)",
+    "mod_tag": "Híbrido / Madrid",
+    "ubicacion": "Madrid (Híbrido + 8 sem/año remoto)",
+    "salario": "Indefinido GMV",
+    "stack": [
+      "Python",
+      "JavaScript",
+      "FastAPI / Flask",
+      "SQL / BBDD",
+      "React",
+      "Docker",
+      "Linux",
+      "Git"
+    ],
+    "fecha": "Publicada el 13/11/2026 (Activa en Tecnoempleo)",
+    "estado": "descubierta",
+    "decision": "pendiente",
+    "match": 85,
+    "exp_min": 2,
+    "exp_rango": "2 años (100% Español)",
+    "exp_detalle": "Pide ~2 años en Python/JS/BBDD/Linux (valora React, FastAPI/Flask, Docker), 100% español. Incluye 8 semanas al año de teletrabajo desde cualquier lugar.",
+    "url": "https://www.tecnoempleo.com/ingeniero-software-ciberseguridad-gmv/python-javascript/rf-d27a1e09f205637af346",
+    "notas": "Buen encaje software en GMV con flexibilidad destacada (8 semanas/año remoto + viernes y verano intensivo) y 100% español."
+  },
+  {
+    "id": "izertis-desarrollador-python-integracion-ia-mcp-madrid",
+    "empresa": "Izertis",
+    "rol": "Desarrollador/a Python – Integración IA (RAG, Open WebUI, Skills & MCP) – Híbrido Madrid (50% Remoto)",
+    "categoria": "IA & Agentic Engineering",
+    "macro_cat": "IA & Agentes",
+    "seccion": "developer",
+    "es_beca": false,
+    "es_nueva": true,
+    "fecha_barrido": "2026-11-26",
+    "es_cyl": false,
+    "es_valladolid": false,
+    "es_leon": false,
+    "es_madrid": true,
+    "modalidad": "Híbrido (Madrid · 50% teletrabajo + Clases de inglés gratis)",
+    "mod_tag": "Híbrido / Madrid",
+    "ubicacion": "Madrid (Híbrido · 50% Remoto)",
+    "salario": "Indefinido + Clases de inglés gratis",
+    "stack": [
+      "Python",
+      "MCP",
+      "Agent Skills",
+      "RAG",
+      "Open WebUI",
+      "Agentes IA"
+    ],
+    "fecha": "Publicada el 24/11/2026 (Activa en LinkedIn)",
+    "estado": "descubierta",
+    "decision": "pendiente",
+    "match": 85,
+    "exp_min": 2,
+    "exp_rango": "Stretch 2-3 años (3a Python / 2a IA / 1a MCP · 100% Español)",
+    "exp_detalle": "Stretch en años (pide 3 años Python / ~2 IA / ~1 MCP), pero es 100% español, 50% remoto, incluye clases de inglés gratis y exige literalmente MCP + skills + agentes IA.",
+    "url": "https://www.linkedin.com/jobs/view/4494164783",
+    "notas": "Postulación estratégica (24/11): hay muy pocos perfiles en España con experiencia real en MCP + Skills + Agentes IA; merece la pena presentarse pese al stretch de años."
+  },
+  {
+    "id": "docplanner-llm-engineer-platform-ai-remoto-spain",
+    "empresa": "Docplanner (Doctoralia)",
+    "rol": "LLM Engineer – Platform AI (Python, Agent Workflows, Langfuse Evals & .NET) – 100% Remoto España",
+    "categoria": "IA & Agentic Engineering",
+    "macro_cat": "IA & Agentes",
+    "seccion": "developer",
+    "es_beca": false,
+    "es_nueva": true,
+    "fecha_barrido": "2026-11-26",
+    "es_cyl": false,
+    "es_valladolid": false,
+    "es_leon": false,
+    "es_madrid": false,
+    "modalidad": "100% Remoto (España · Hub opcional Barcelona · Verano intensivo 7h)",
+    "mod_tag": "100% Remoto",
+    "ubicacion": "España (100% Remoto)",
+    "salario": "Competitivo + Flexoh + Seguro Adeslas + Wellhub + Clases gratis de inglés",
+    "stack": [
+      "Python",
+      "LLMs (OpenAI / Anthropic / Google)",
+      "Agent Workflows",
+      "LLM Evals (Langfuse)",
+      ".NET",
+      "TypeScript",
+      "AI Act / Guardrails"
+    ],
+    "fecha": "Publicada el 20/11/2026 (Activa en Ashby)",
+    "estado": "descubierta",
+    "decision": "pendiente",
+    "match": 85,
+    "exp_min": 2,
+    "exp_rango": "2+ años (LLM Engineering & SWE)",
+    "exp_detalle": "Pide base sólida en Software Engineering y al menos 2 años en ingeniería LLM (workflows de agentes, evaluación de modelos con Langfuse/Python, producción con OpenAI/Anthropic/Google, ecosistemas Python/.NET/TypeScript).",
+    "url": "https://jobs.ashbyhq.com/docplanner/e40005fa-d2bf-44fe-9547-ad579b28de77",
+    "notas": "Publicada hace 6 días (20/11), 100% remota en España y con stack directo a tu experiencia en agentes LLM, Python y .NET. Incluye clases gratuitas de inglés. Nota honesta: posición exigente (pide 2+ años en LLM engineering y entorno internacional en inglés; tú tienes B1)."
+  },
+  {
     "id": "grupo-digital-programador-sap-abap-intensivo-remoto",
     "empresa": "Grupo Digital",
     "rol": "Programador/a SAP ABAP S/4HANA (Jornada intensiva 7:30–15:30) – 100% Remoto",
@@ -2212,6 +4743,110 @@
     "exp_detalle": "Pide al menos 2 años en desarrollo SAP ABAP (OData, CDS, S/4HANA) con inglés medio; jornada intensiva todo el año 7:30–15:30.",
     "url": "https://www.tecnoempleo.com/programador-abap-7-30-15-30-remoto-grupo-digital/sap-hana/rf-35f718faa22c33c72d40",
     "notas": "Actualizada hoy (26/11) 100% remoto con jornada intensiva continua y contrato indefinido. Aprovecha tu experiencia previa como Consultor Técnico SAP ABAP en FDS (DXC Technology)."
+  },
+  {
+    "id": "michael-page-ai-engineer-python-rag-remoto",
+    "empresa": "Michael Page",
+    "rol": "AI Engineer (Python, RAG & Inteligencia Artificial · 40k–60k €) – 100% Remoto España",
+    "categoria": "IA & Agentes",
+    "macro_cat": "IA & Agentes",
+    "seccion": "developer",
+    "es_beca": false,
+    "es_nueva": true,
+    "fecha_barrido": "2026-11-26",
+    "es_cyl": false,
+    "es_valladolid": false,
+    "es_leon": false,
+    "es_madrid": false,
+    "modalidad": "100% Remoto (España)",
+    "mod_tag": "100% Remoto",
+    "ubicacion": "España (100% Remoto)",
+    "salario": "40.000 € - 60.000 € brutos/año",
+    "stack": [
+      "Python",
+      "RAG",
+      "LLMs / IA Generativa",
+      "APIs"
+    ],
+    "fecha": "Publicada el 12/11/2026 (Activa en Tecnoempleo)",
+    "estado": "descubierta",
+    "decision": "pendiente",
+    "match": 84,
+    "exp_min": 2,
+    "exp_rango": "1-3 años (Sin mínimo rígido · Franja salarial alta)",
+    "exp_detalle": "No exige mínimo numérico de años ni grado ni inglés alto en la ficha; pide Python + RAG + IA. Stretch por franja salarial de 40k-60k €.",
+    "url": "https://www.tecnoempleo.com/ai-engineer-michael-page/inteligencia-artificial-rag/rf-56a41791825d93d9f146",
+    "notas": "100% remoto España, en español y banda 40k-60k €; buena apuesta de alto retorno."
+  },
+  {
+    "id": "telefonica-tds-tecnico-soporte-software-fp-madrid",
+    "empresa": "Telefónica (TDS)",
+    "rol": "Técnico/a de Soporte de Software (FP DAM/DAW, SQL, APIs REST, Docker & Cloud) – Madrid",
+    "categoria": "Backend / DevOps Junior",
+    "macro_cat": "Backend Dev",
+    "seccion": "developer",
+    "es_beca": false,
+    "es_nueva": true,
+    "fecha_barrido": "2026-11-26",
+    "es_cyl": false,
+    "es_valladolid": false,
+    "es_leon": false,
+    "es_madrid": true,
+    "modalidad": "Híbrido / Madrid (Confirmar % teletrabajo)",
+    "mod_tag": "Híbrido / Madrid",
+    "ubicacion": "Madrid (Confirmar híbrido)",
+    "salario": "Convenio Telefónica",
+    "stack": [
+      "SQL",
+      "APIs REST",
+      "Docker / Kubernetes",
+      "Azure / AWS",
+      "PowerShell"
+    ],
+    "fecha": "Publicada el 20/11/2026 (Activa en portal oficial Telefónica)",
+    "estado": "descubierta",
+    "decision": "pendiente",
+    "match": 84,
+    "exp_min": 2,
+    "exp_rango": "2-5 años (Exige explícitamente FP Superior DAM/DAW/ASIR)",
+    "exp_detalle": "Pide explícitamente FP Grado Superior DAM, DAW o ASIR con base en SQL, APIs REST, Docker/K8s y Cloud. 100% español.",
+    "url": "https://jobs.telefonica.com/job/MADRID-TDS_T%C3%A9cnico-de-Soporte-de-Software/1459277333/",
+    "notas": "Vacante oficial de Telefónica (20/11) dirigida expresamente a FP Superior DAM/DAW."
+  },
+  {
+    "id": "ust-data-engineer-data-scientist-python-sql-aws-madrid",
+    "empresa": "UST",
+    "rol": "Data Engineer / Data Scientist (Python, Pandas, SQL avanzado & AWS) – Híbrido Madrid (3d Remoto)",
+    "categoria": "Data Engineering",
+    "macro_cat": "Data & Analytics",
+    "seccion": "datos",
+    "es_beca": false,
+    "es_nueva": true,
+    "fecha_barrido": "2026-11-26",
+    "es_cyl": false,
+    "es_valladolid": false,
+    "es_leon": false,
+    "es_madrid": true,
+    "modalidad": "Híbrido (Madrid · 3 días teletrabajo / 2 días oficina)",
+    "mod_tag": "Híbrido / Madrid",
+    "ubicacion": "Madrid (Híbrido · 3d remoto)",
+    "salario": "Indefinido UST",
+    "stack": [
+      "Python (Pandas / NumPy / Scikit-learn)",
+      "SQL avanzado",
+      "PySpark",
+      "AWS Athena / SageMaker",
+      "Git"
+    ],
+    "fecha": "Activa verificada hoy 26/11/2026 (Tecnoempleo)",
+    "estado": "descubierta",
+    "decision": "pendiente",
+    "match": 84,
+    "exp_min": 2,
+    "exp_rango": "2 años (100% Español)",
+    "exp_detalle": "2 años de experiencia en Python (Pandas/NumPy/Scikit-learn), SQL avanzado, PySpark y AWS. 100% español (sin requisito de inglés C1).",
+    "url": "https://www.tecnoempleo.com/data-engineer-data-scientist-ust/python-pandas/rf-7e9a1a41d239e3f21d45",
+    "notas": "Híbrido cómodo (3 días teletrabajo/semana) y 100% en español."
   },
   {
     "id": "capitole-analista-rpa-sql-apis-valladolid",
@@ -2318,6 +4953,76 @@
     "notas": "Posición explícitamente Junior Java Developer en 100% remoto; gap honesto: exige nivel alto de inglés."
   },
   {
+    "id": "michael-page-programador-sap-abap-remoto",
+    "empresa": "Michael Page",
+    "rol": "Programador/a SAP ABAP (ALV, SmartForms, BAdIs & ABAP OO) – 100% Remoto España",
+    "categoria": "Enterprise & Backend Development (SAP ABAP)",
+    "macro_cat": "Backend Dev",
+    "seccion": "developer",
+    "es_beca": false,
+    "es_nueva": true,
+    "fecha_barrido": "2026-11-26",
+    "es_cyl": false,
+    "es_valladolid": false,
+    "es_leon": false,
+    "es_madrid": false,
+    "modalidad": "100% Remoto (España · Contrato indefinido)",
+    "mod_tag": "100% Remoto",
+    "ubicacion": "España (100% Remoto)",
+    "salario": "Competitivo + 1.200 €/año beneficios Cobee",
+    "stack": [
+      "SAP ABAP",
+      "ABAP OO",
+      "ALV",
+      "SmartForms",
+      "User Exits / BAdIs"
+    ],
+    "fecha": "Publicada el 23/11/2026 (Activa en Tecnoempleo)",
+    "estado": "descubierta",
+    "decision": "pendiente",
+    "match": 82,
+    "exp_min": 2,
+    "exp_rango": "2 años (SAP ABAP · Español)",
+    "exp_detalle": "Pide ≥2 años en programación SAP ABAP (ALV, SmartForms, User Exits, BAdIs, ABAP OO); inglés solo valorable. Stretch frente a tus 5 meses en FDS/DXC.",
+    "url": "https://www.tecnoempleo.com/programador-sap-abap-michael-page/alv-smartforms/rf-afcb1d27e2c2e3a3b348",
+    "notas": "Muy reciente (23/11), 100% remota España y sin requisito de inglés obligatorio (solo valorable)."
+  },
+  {
+    "id": "ebury-data-scientist-fintech-bigquery-python-llms-madrid",
+    "empresa": "Ebury",
+    "rol": "Data Scientist – Fintech (Python, SQL, GCP BigQuery & LLMs) – Híbrido Madrid",
+    "categoria": "Data Science & Analytics",
+    "macro_cat": "Data & Analytics",
+    "seccion": "datos",
+    "es_beca": false,
+    "es_nueva": true,
+    "fecha_barrido": "2026-11-26",
+    "es_cyl": false,
+    "es_valladolid": false,
+    "es_leon": false,
+    "es_madrid": true,
+    "modalidad": "Híbrido (Madrid · 4 días oficina / 1 día remoto)",
+    "mod_tag": "Híbrido / Madrid",
+    "ubicacion": "Madrid (Híbrido · 1d remoto)",
+    "salario": "Competitivo fintech internacional",
+    "stack": [
+      "Python",
+      "SQL",
+      "GCP BigQuery",
+      "LLMs",
+      "Machine Learning"
+    ],
+    "fecha": "Publicada el 19/11/2026 (Activa en Greenhouse EU)",
+    "estado": "descubierta",
+    "decision": "pendiente",
+    "match": 82,
+    "exp_min": 2,
+    "exp_rango": "2+ años (Fintech internacional · Inglés fluido)",
+    "exp_detalle": "Pide 2+ años con Python, SQL, GCP BigQuery y LLMs. Caveats honestos: 4 días presenciales/sem en Madrid e inglés fluido.",
+    "url": "https://job-boards.eu.greenhouse.io/ebury/jobs/5042148101",
+    "notas": "Muy alineada con GCP BigQuery + Python + LLMs (HORSE). Caveat: solo 1 día remoto/sem y entorno en inglés."
+  },
+  {
     "id": "infortec-tecnico-junior-kubernetes-openshift-remoto",
     "empresa": "Infortec Consultores",
     "rol": "Técnico/a JUNIOR (Kubernetes, OpenShift & AKS) – 100% Remoto",
@@ -2387,6 +5092,41 @@
     "notas": "Publicada el 25/11, 100% remoto y banda amplia (24k-39k €). Aportas automatización de flujos y soluciones GenAI; menor recorrido específico en Power Apps Canvas."
   },
   {
+    "id": "infortec-dba-junior-sql-server-remoto",
+    "empresa": "Infortec Consultores",
+    "rol": "DBA Junior SQL Server (Rendimiento, Índices & Backups) – 100% Remoto España",
+    "categoria": "Data Engineering / SQL",
+    "macro_cat": "Data & Analytics",
+    "seccion": "datos",
+    "es_beca": false,
+    "es_nueva": true,
+    "fecha_barrido": "2026-11-26",
+    "es_cyl": false,
+    "es_valladolid": false,
+    "es_leon": false,
+    "es_madrid": false,
+    "modalidad": "100% Remoto (España · Visitas puntuales planificadas Madrid)",
+    "mod_tag": "100% Remoto",
+    "ubicacion": "España (100% Remoto)",
+    "salario": "Indefinido según perfil",
+    "stack": [
+      "SQL Server",
+      "SSMS",
+      "SQL",
+      "Optimización / Índices",
+      "Backups / Monitorización"
+    ],
+    "fecha": "Publicada hoy 26/11/2026 (Activa en portal Infortec)",
+    "estado": "descubierta",
+    "decision": "pendiente",
+    "match": 81,
+    "exp_min": 2,
+    "exp_rango": "2-3 años (Perfil DBA Junior)",
+    "exp_detalle": "Pide 2-3 años en administración SQL Server (título Junior), 100% español. Stretch respecto a tus 3 meses con SQL Server/SSMS en Craftelier + SQL diario en HORSE.",
+    "url": "https://empleo.infortec.net/jobs/dba-junior-sql-server-100-remoto-madrid",
+    "notas": "Publicada hoy 26/11, 100% remota y en español; opción secundaria sólida de BBDD SQL Server."
+  },
+  {
     "id": "metrica-operacion-kubernetes-despliegues-remoto",
     "empresa": "Métrica España",
     "rol": "Técnico/a de Operación Kubernetes (K8s, Helm & Jenkins CI/CD) – 100% Remoto",
@@ -2420,6 +5160,78 @@
     "exp_detalle": "Pide 2 años operando despliegues de microservicios con Kubernetes, Helm y pipelines Jenkins en 100% remoto.",
     "url": "https://empleo.metrica-global.com/tecnico-a-de-operacion-kubernetes-k8s-despliegues-y-parcheo-lhlQrtkPRjkB",
     "notas": "Publicada el 25/11 en 100% remoto para operación de despliegues y pipelines CI/CD."
+  },
+  {
+    "id": "elevenlabs-data-scientist-product-analytics-remoto-spain",
+    "empresa": "ElevenLabs",
+    "rol": "Data Scientist – Product Analytics (SQL, Python, dbt & AI Tools) – 100% Remoto Europa/España",
+    "categoria": "Data Science & Analytics",
+    "macro_cat": "Data & Analytics",
+    "seccion": "datos",
+    "es_beca": false,
+    "es_nueva": true,
+    "fecha_barrido": "2026-11-26",
+    "es_cyl": false,
+    "es_valladolid": false,
+    "es_leon": false,
+    "es_madrid": false,
+    "modalidad": "100% Remoto (Europa / España · GMT/GMT+1)",
+    "mod_tag": "100% Remoto",
+    "ubicacion": "España / Europa (100% Remoto)",
+    "salario": "Top mercado internacional + Stipend L&D + Co-working + Offsite anual",
+    "stack": [
+      "SQL",
+      "Python",
+      "Product Analytics",
+      "A/B Testing",
+      "dbt (Dataform equiv.)",
+      "AI Agents / Tools",
+      "KPIs"
+    ],
+    "fecha": "Publicada el 19/11/2026 (Activa en Ashby)",
+    "estado": "descubierta",
+    "decision": "pendiente",
+    "match": 80,
+    "exp_min": 2,
+    "exp_rango": "1-3 años (Sin mínimo rígido · Product Analytics demostrado)",
+    "exp_detalle": "Sin mínimo numérico rígido de años; pide experiencia demostrada en Product Analytics con SQL y Python sólidos, experimentación (A/B testing), colaboración con dbt/warehouse y uso de herramientas/agentes IA para analítica.",
+    "url": "https://jobs.ashbyhq.com/ElevenLabs/41b892ba-b530-44cb-9ae1-178908fc324c",
+    "notas": "Publicada el 19/11 y abierta explícitamente a España (secondaryLocations en Ashby). Stack SQL/Python/dbt/IA muy cercano. Nota honesta: compañía hipercompetitiva con comunicación 100% en inglés fluido (stretch ambicioso para tu B1 y foco en A/B testing)."
+  },
+  {
+    "id": "arelance-analista-sap-abap-pm-remoto",
+    "empresa": "Arelance",
+    "rol": "Analista SAP ABAP (Módulo PM) – 100% Remoto España",
+    "categoria": "Enterprise & Backend Development (SAP ABAP)",
+    "macro_cat": "Backend Dev",
+    "seccion": "developer",
+    "es_beca": false,
+    "es_nueva": true,
+    "fecha_barrido": "2026-11-26",
+    "es_cyl": false,
+    "es_valladolid": false,
+    "es_leon": false,
+    "es_madrid": false,
+    "modalidad": "100% Remoto (España · Contrato indefinido)",
+    "mod_tag": "100% Remoto",
+    "ubicacion": "España (100% Remoto)",
+    "salario": "33.000 € - 36.000 € brutos/año",
+    "stack": [
+      "SAP ABAP",
+      "SAP PM",
+      "Análisis Técnico",
+      "Resolución de Incidencias",
+      "Evolutivos SAP"
+    ],
+    "fecha": "Publicada el 25/11/2026 (Activa en Tecnoempleo · 21 inscritos)",
+    "estado": "descubierta",
+    "decision": "pendiente",
+    "match": 78,
+    "exp_min": 2,
+    "exp_rango": "2 años (FP Grado Superior)",
+    "exp_detalle": "Pide FP2/Grado Superior, al menos 2 años en desarrollo SAP ABAP con módulo SAP PM (Plant Maintenance) y nivel de inglés alto.",
+    "url": "https://www.tecnoempleo.com/analista-abap-pm-arelance/sap-pm/rf-af7b1817f2f113571946",
+    "notas": "Muy reciente (25/11) con baja competencia (21 inscritos), 100% remoto en España y acepta explícitamente FP Grado Superior. Aprovecha tu experiencia real en SAP ABAP (FDS/DXC). Nota honesta: stretch por requerir 2 años en SAP PM e inglés alto frente a tu nivel B1 y 5 meses en ABAP Logística."
   },
   {
     "id": "logicalis-spain-backend-python-remoto",
@@ -2594,42 +5406,6 @@
     "exp_detalle": "Publicación oficial de Canonical abierta explícitamente 'from junior to senior level'; requiere inglés fluido en entorno distribuido internacional (tu nivel actual es B1).",
     "url": "https://job-boards.greenhouse.io/canonical/jobs/3014391",
     "notas": "100% Remoto EMEA (02/10/2026): Ingeniería de plataformas de datos (SQL/NoSQL, PostgreSQL, Kafka, OpenSearch, Linux, Python). Posición abierta desde nivel junior; principal reto a defender: comunicación técnica en inglés (B1 actual)."
-  },
-  {
-    "id": "logicalis-desarrollador-backend-python-jr-fastapi-remoto",
-    "empresa": "Logicalis Spain",
-    "rol": "Desarrollador/a Backend (Python) – Jr Python Developer (FastAPI, PyTest, Pandas & Cloud) – 100% Remoto",
-    "categoria": "Backend Development & Cloud",
-    "macro_cat": "Backend Dev",
-    "seccion": "developer",
-    "es_beca": false,
-    "es_nueva": false,
-    "fecha_barrido": "2026-11-16",
-    "es_cyl": false,
-    "es_valladolid": false,
-    "es_leon": false,
-    "es_madrid": false,
-    "modalidad": "100% Remoto (España — Viernes y verano jornada intensiva)",
-    "mod_tag": "100% Remoto",
-    "ubicacion": "España (100% Remoto)",
-    "salario": "25.000 € – 28.000 € b/a (14 pagas)",
-    "stack": [
-      "Python",
-      "FastAPI",
-      "PyTest",
-      "Pandas & NumPy",
-      "PostgreSQL / MySQL / MongoDB",
-      "GCP / Cloud & Docker"
-    ],
-    "fecha": "Publicada el 16/11/2026 (Activa hoy en portal corporativo Logicalis Spain)",
-    "estado": "descubierta",
-    "decision": "pendiente",
-    "match": 96,
-    "exp_min": 1,
-    "exp_rango": "0-1 años (Jr Python Developer / Valora proyectos propios)",
-    "exp_detalle": "0–1 año — Incorporación literal en cuerpo de oferta como Jr Python Developer sin barrera mínima de años; valora proyectos propios de programación (Contrato estable 100% remoto)",
-    "url": "https://careers.es.logicalis.com/jobs/8747758-desarrollador-a-backend-python",
-    "notas": "NUEVA HOY (16/11/2026 · Portal corporativo Logicalis Spain · 100% Remoto · 25k–28k € b/a): Vacante publicada hoy para incorporación como Jr Python Developer desarrollando servicios backend escalables en Python y FastAPI, pruebas con PyTest, análisis de datos con Pandas/NumPy, bases de datos SQL/NoSQL y despliegue en Cloud (incluyendo GCP y Docker). Encaje directo con tu experiencia real en HORSE Technologies (Python, GCP, ETL) y tus APIs REST en Python."
   },
   {
     "id": "altia-ai-ml-engineer-european-agency-python-llm-rag-remoto",
@@ -3014,40 +5790,6 @@
     "notas": "MATCH 98% — Paquete ATS completo generado en postulaciones/metrica-desarrollador-back-junior/ (CV .pdf y .docx con texto justificado adaptado a Java, Spring Boot, Maven/Gradle, SQL, patrones de arquitectura y Git + Carta en PDF justificada sin negritas + Respuestas de Viterbit)."
   },
   {
-    "id": "seresco-java-spring",
-    "empresa": "Seresco",
-    "rol": "Desarrollador/a Java (Valladolid)",
-    "categoria": "Backend Development",
-    "macro_cat": "Backend Dev",
-    "seccion": "developer",
-    "es_beca": false,
-    "es_nueva": false,
-    "fecha_barrido": "",
-    "es_cyl": true,
-    "es_valladolid": true,
-    "es_leon": false,
-    "es_madrid": false,
-    "modalidad": "Híbrido en Valladolid (50% Teletrabajo, jornada intensiva 08:00-15:00 todo el año)",
-    "mod_tag": "Castilla y León",
-    "ubicacion": "Valladolid",
-    "salario": "",
-    "stack": [
-      "Java / JEE",
-      "SQL",
-      "Spring Boot / Web",
-      "JSF / Jasper Reports"
-    ],
-    "fecha": "Activa verificada en Viterbit (Oct/Nov 2026)",
-    "estado": "preparada_para_postular",
-    "decision": "pendiente",
-    "match": 98,
-    "exp_min": 1,
-    "exp_rango": "0-1 años (Junior / Sin exp.)",
-    "exp_detalle": "1 año de experiencia en desarrollo Java y SQL (en Valladolid)",
-    "url": "https://empleo.seresco.es/desarrollador-a-java-valladolid-9E5tVln_-5yB/",
-    "notas": "MATCH 98% (EN VALLADOLID, HORARIO 08:00-15:00 TODO EL AÑO, 50% TELETRABAJO) — Paquete ATS actualizado en postulaciones/seresco-java-valladolid/ (CV en PDF y .docx con texto justificado adaptado a Java/JEE, SQL, JSF, Jasper Reports y sector rural/agrícola + Carta en PDF justificada sin negritas + Respuestas de Viterbit)."
-  },
-  {
     "id": "infojobs-fullstack-san-andres-rabanedo",
     "empresa": "Empresa en San Andrés del Rabanedo (InfoJobs)",
     "rol": "Desarrollador/a Full Stack & Automatizaciones (React/Next.js, SQL PostgreSQL/MySQL, APIs REST & n8n)",
@@ -3149,40 +5891,6 @@
     "exp_detalle": "0–1 año (Exige solo Grado Técnico/FP y experiencia práctica en Java, Python y SQL, sin barrera de años)",
     "url": "https://mcengineering.intervieweb.it/jobs/java-developer-195787/it/",
     "notas": "MATCH 98% — Paquete ATS completo generado en postulaciones/mc-engineering-java-developer/ (CV en PDF y .docx con texto justificado adaptado a Grado Técnico, Java, Spring, Python, JavaScript, APIs, SQL/NoSQL, Docker, Git/GitHub y Agile + Carta en PDF justificada sin negritas + Guía Inrecruiting)."
-  },
-  {
-    "id": "second-window-programador-junior-java-springboot-remoto",
-    "empresa": "Second Window",
-    "rol": "Programador Junior Java / Fullstack (Java, Spring Boot, JavaScript & SQL) – 100% Teletrabajo",
-    "categoria": "Backend Development",
-    "macro_cat": "Backend Dev",
-    "seccion": "developer",
-    "es_beca": false,
-    "es_nueva": false,
-    "fecha_barrido": "",
-    "es_cyl": false,
-    "es_valladolid": false,
-    "es_leon": false,
-    "es_madrid": false,
-    "modalidad": "100% Remoto (España)",
-    "mod_tag": "100% Remoto",
-    "ubicacion": "España (100% Remoto)",
-    "salario": "20.000 € Bruto/año + Beneficios",
-    "stack": [
-      "Java",
-      "Spring Boot",
-      "JavaScript / Angular / HTML / CSS",
-      "SQL"
-    ],
-    "fecha": "Activa verificada en Tecnoempleo",
-    "estado": "preparada_para_postular",
-    "decision": "pendiente",
-    "match": 94,
-    "exp_min": 1,
-    "exp_rango": "0-1 años (Junior / Sin exp.)",
-    "exp_detalle": "1 año de experiencia laboral como programador Java con Spring Boot (100% en remoto desde cualquier punto de España)",
-    "url": "https://www.tecnoempleo.com/programador-junior-java-fullstack-teletrabajo-seco/spring/rf-2b631c75f2d5f3b0b041",
-    "notas": "MATCH 98% — Paquete ATS completo generado en postulaciones/second-window-java-fullstack-junior/ (CV en PDF y .docx con texto justificado adaptado a Java, Spring Boot, Angular, CSS, HTML, JavaScript y SQL + Carta en PDF justificada sin negritas + Texto para Tecnoempleo)."
   },
   {
     "id": "mc-engineering-data-engineer-etl-remoto",
@@ -3567,41 +6275,6 @@
     "notas": "BARRIDO 16/11/2026: Publicada el 12/11/2026 (solo 53 inscritos). 100% en remoto y pide solo 1 año de experiencia en orquestación de datos, búsqueda/ranking y LLMs."
   },
   {
-    "id": "experis-desarrollador-python-data-engineer-fastapi-763294",
-    "empresa": "Experis IT",
-    "rol": "Desarrollador Python & Data Engineer Mid (FastAPI, SQL/NoSQL, Pandas, ETL & GCP) – 100% Remoto (Ref. 763294)",
-    "categoria": "Data Engineering / Backend Python",
-    "macro_cat": "Data & Analytics",
-    "seccion": "datos",
-    "es_beca": false,
-    "es_nueva": false,
-    "fecha_barrido": "",
-    "es_cyl": false,
-    "es_valladolid": false,
-    "es_leon": false,
-    "es_madrid": false,
-    "modalidad": "100% Remoto (España)",
-    "mod_tag": "100% Remoto",
-    "ubicacion": "España (100% Remoto)",
-    "salario": "",
-    "stack": [
-      "Python",
-      "FastAPI / Flask / Django",
-      "APIs REST & Microservicios",
-      "Pandas / NumPy & ETL",
-      "SQL / NoSQL & GCP"
-    ],
-    "fecha": "Publicada el 06/11/2026 (Activa en Experis)",
-    "estado": "descubierta",
-    "decision": "pendiente",
-    "match": 96,
-    "exp_min": 1,
-    "exp_rango": "0-1 años (Junior / Sin exp.)",
-    "exp_detalle": "Sin mínimo cerrado de años en oferta (Pide Python, FastAPI, APIs REST, Pandas, SQL/NoSQL, ETL y GCP)",
-    "url": "https://www.experis.es/es/oferta-de-empleo/763294/desarrollador-python-data-engineer-mid-fastapi-100-remoto-h-m-x-",
-    "notas": "BARRIDO 16/11/2026: Ref. 763294 publicada el 06/11/2026. 100% remoto y encaja 1:1 con tu perfil híbrido de Backend Python (FastAPI/APIs) + Data Engineering (ETL, Pandas, SQL, GCP)."
-  },
-  {
     "id": "ruby-labs-data-analytics-engineer-bigquery-dbt-remoto",
     "empresa": "Ruby Labs",
     "rol": "Data Analytics Engineer (SQL, dbt, BigQuery / ClickHouse & Data Quality) – 100% Remoto UE",
@@ -3703,7 +6376,7 @@
     "exp_min": 2,
     "exp_rango": "Hasta 2 años (Junior-Mid)",
     "exp_detalle": "Al menos 2 años en cuerpo (ficha Viterbit 3 años) · Educación mínima: FP Grado Superior",
-    "url": "https://ad4octogono.viterbit.site/consultor-a-llm-remoto-XU2qEg1tGoiS/",
+    "url": "https://ad4octogono.viterbit.site/consultor-a-llm-airflow-remoto-XU2qEg1tGoiS/",
     "notas": "BARRIDO 16/11/2026: Publicada hace 3 días (13/11/2026) en Viterbit. 100% remoto (35k–45k €), acepta FP Grado Superior."
   },
   {
@@ -3882,41 +6555,6 @@
     "notas": "100% REMOTO (06/11/2026): Contrato indefinido en modalidad 100% remota con Java/Spring Boot y Angular/TypeScript."
   },
   {
-    "id": "second-window-java-developer-kafka-remoto",
-    "empresa": "Second Window",
-    "rol": "Java Developer / Backend Engineer (Java, Spring Boot, Microservicios, JPA & Kafka) – 100% Remoto",
-    "categoria": "Backend Development",
-    "macro_cat": "Backend Dev",
-    "seccion": "developer",
-    "es_beca": false,
-    "es_nueva": false,
-    "fecha_barrido": "",
-    "es_cyl": false,
-    "es_valladolid": false,
-    "es_leon": false,
-    "es_madrid": false,
-    "modalidad": "100% Remoto (España)",
-    "mod_tag": "100% Remoto",
-    "ubicacion": "España (100% Remoto)",
-    "salario": "",
-    "stack": [
-      "Java 8+ & J2EE",
-      "Spring Boot & JPA",
-      "Microservicios",
-      "Apache Kafka",
-      "SQL / NoSQL & TDD"
-    ],
-    "fecha": "Publicada el 13/11/2026 (Activa en Tecnoempleo)",
-    "estado": "descubierta",
-    "decision": "pendiente",
-    "match": 91,
-    "exp_min": 2,
-    "exp_rango": "Hasta 2 años (Junior-Mid)",
-    "exp_detalle": "2 años de experiencia en cuerpo (3–5 años en ficha Tecnoempleo) en Java, Spring Boot y Kafka",
-    "url": "https://www.tecnoempleo.com/java-developer-kafka-second-window/springboot-microservios/rf-50d81130b2faa3dc1a4e",
-    "notas": "100% REMOTO (13/11/2026): El texto especifica literalmente '2 años de experiencia' en Java, Spring Boot, JPA y microservicios."
-  },
-  {
     "id": "metrica-programador-fullstack-junior-angular-remoto",
     "empresa": "Métrica España",
     "rol": "Programador/a Full Stack Junior (Microservicios Backend & Angular) – 100% Remoto",
@@ -3994,38 +6632,97 @@
       return decisionMap[id] || 'pendiente';
     }
 
-    let state = {
-      query: '',
-      activeTab: 'datos',
-      modality: 'ALL',
-      expFilter: 'ALL',
-      becaMode: 'INCLUDE',
-      decisionFilter: 'ALL',
-      onlyNew: false,
-      onlyKit: false,
-      skill: '',
-      sort: 'exp_asc'
-    };
+    function createDefaultState(activeTab = 'all') {
+      return {
+        query: '',
+        activeTab,
+        modality: 'ALL',
+        expFilter: 'ALL',
+        becaMode: 'INCLUDE',
+        decisionFilter: 'ACTIVE',
+        onlyNew: false,
+        onlyKit: false,
+        skill: '',
+        sort: 'exp_asc'
+      };
+    }
+
+    let state = createDefaultState('all');
+
+    const OFFER_SEARCH_INDEX = new Map();
+    OFFERS.forEach(o => {
+      OFFER_SEARCH_INDEX.set(
+        o.id,
+        [
+          o.empresa, o.rol, o.categoria, o.modalidad, o.ubicacion, o.mod_tag,
+          o.salario, (o.stack || []).join(' '), o.notas, o.exp_rango, o.exp_detalle, o.fecha, o.url
+        ].join(' ').toLowerCase()
+      );
+    });
 
     const tabListEl = document.getElementById('area-tablist');
+    const tabAllEl = document.getElementById('tab-all');
     const tabDatosEl = document.getElementById('tab-datos');
     const tabDevEl = document.getElementById('tab-developer');
+    const panelAllEl = document.getElementById('panel-all');
     const panelDatosEl = document.getElementById('panel-datos');
     const panelDevEl = document.getElementById('panel-developer');
+    const allGridEl = document.getElementById('all-grid');
     const datosGridEl = document.getElementById('datos-grid');
     const devGridEl = document.getElementById('developer-grid');
-    const filteredTotalCountEl = document.getElementById('filtered-total-count');
-    let lastTabCounts = { datos: 0, developer: 0 };
+    let lastTabCounts = { all: 0, datos: 0, developer: 0 };
+
     const searchInput = document.getElementById('search-input');
+    const searchClearBtn = document.getElementById('search-clear-btn');
+    const locSelect = document.getElementById('loc-select');
+    const expSelect = document.getElementById('exp-select');
     const decisionSelect = document.getElementById('decision-select');
+    const becaSelect = document.getElementById('beca-select');
     const sortSelect = document.getElementById('sort-select');
     const newOffersChip = document.getElementById('new-offers-chip');
     const kitOnlyChip = document.getElementById('kit-only-chip');
-    const toggleStackBtn = document.getElementById('toggle-stack-btn');
-    const stackDrawerEl = document.getElementById('stack-drawer');
+    const toggleMoreBtn = document.getElementById('toggle-more-filters-btn');
+    const moreDrawerEl = document.getElementById('more-filters-drawer');
+    const activePillsEl = document.getElementById('active-pills');
     const resetBtn = document.getElementById('reset-btn');
     const syncStatusEl = document.getElementById('sync-status');
     const syncDiskBtn = document.getElementById('sync-disk-btn');
+
+    const SKILL_BASE_LABELS = new Map();
+    document.querySelectorAll('#stack-drawer .skill-chip').forEach(btn => {
+      SKILL_BASE_LABELS.set(btn.getAttribute('data-skill'), (btn.textContent || '').trim());
+    });
+
+    const LOC_LABELS = {
+      'ALL': 'Todas',
+      '100% Remoto': '100% Remoto España',
+      'Castilla y León': 'Castilla y León',
+      'Valladolid': 'Valladolid',
+      'León': 'León',
+      'Híbrido / Madrid': 'Madrid ≤1 día/sem'
+    };
+
+    const EXP_LABELS = {
+      'ALL': 'Cualquiera',
+      'EXP_0': 'Sin experiencia (0 años)',
+      'MAX_1': 'Hasta 1 año',
+      'MAX_2': 'Hasta 2 años',
+      'MIN_3': '3+ años'
+    };
+
+    const DEC_LABELS = {
+      'ACTIVE': 'Activas (sin descartadas)',
+      'pendiente': 'Solo pendientes [ ]',
+      'solicitado': 'Solo solicitadas [✓]',
+      'descartado': 'Solo descartadas [×]',
+      'ALL': 'Todas'
+    };
+
+    const BECA_LABELS = {
+      'INCLUDE': 'Empleo + Becario',
+      'EXCLUDE': 'Solo empleo (sin becario)',
+      'ONLY': 'Solo becario / prácticas'
+    };
 
     let diskAutosaveAvailable = false;
     let pendingDiskSaveTimer = null;
@@ -4121,10 +6818,20 @@
       return span;
     }
 
-    function createEmptyState(message) {
+    function createEmptyState(message, actionBtnCfg = null) {
       const div = document.createElement('div');
       div.className = 'empty-state';
-      div.textContent = message;
+      const p = document.createElement('div');
+      p.textContent = message;
+      div.appendChild(p);
+      if (actionBtnCfg && actionBtnCfg.label && typeof actionBtnCfg.onClick === 'function') {
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'empty-action-btn';
+        btn.textContent = actionBtnCfg.label;
+        btn.addEventListener('click', actionBtnCfg.onClick);
+        div.appendChild(btn);
+      }
       return div;
     }
 
@@ -4152,9 +6859,16 @@
       return !offer.es_beca;
     }
 
-    function matchesSection(offer, secVal) {
-      if (!secVal || secVal === 'ALL') return true;
-      return getOfferSection(offer) === secVal;
+    function matchesDecisionFilter(offer, decFilter) {
+      if (!decFilter || decFilter === 'ALL') return true;
+      const dec = getDecision(offer.id);
+      if (decFilter === 'ACTIVE') return dec !== 'descartado';
+      return dec === decFilter;
+    }
+
+    function matchesTab(offer, tabVal) {
+      if (!tabVal || tabVal === 'all') return true;
+      return getOfferSection(offer) === tabVal;
     }
 
     function matchesLocation(offer, locVal) {
@@ -4177,6 +6891,46 @@
       if (expVal === 'MAX_2') return exp <= 2;
       if (expVal === 'MIN_3') return exp >= 3;
       return true;
+    }
+
+    function matchesQuery(offer, queryStr) {
+      const q = String(queryStr || '').toLowerCase().trim();
+      if (!q) return true;
+      const hay = OFFER_SEARCH_INDEX.get(offer.id) || '';
+      return hay.includes(q);
+    }
+
+    function matchesFilters(offer, overrides = {}) {
+      const s = Object.assign({}, state, overrides);
+      if (!matchesTab(offer, s.activeTab)) return false;
+      if (!matchesDecisionFilter(offer, s.decisionFilter)) return false;
+      if (!matchesBecaMode(offer, s.becaMode)) return false;
+      if (s.onlyNew && !offer.es_nueva) return false;
+      if (s.onlyKit && offer.estado !== 'preparada_para_postular') return false;
+      if (!matchesExpFilter(offer, s.expFilter)) return false;
+      if (!matchesLocation(offer, s.modality)) return false;
+      if (!matchesSkill(offer, s.skill)) return false;
+      if (!matchesQuery(offer, s.query)) return false;
+      return true;
+    }
+
+    function syncMin3ExpOption() {
+      if (!expSelect) return;
+      const hasMin3 = OFFERS.some(o => Number(o.exp_min) >= 3);
+      let min3Opt = expSelect.querySelector('option[value="MIN_3"]');
+      if (hasMin3 && !min3Opt) {
+        min3Opt = document.createElement('option');
+        min3Opt.value = 'MIN_3';
+        min3Opt.setAttribute('data-opt', 'exp:MIN_3');
+        min3Opt.textContent = '3+ años (0)';
+        expSelect.appendChild(min3Opt);
+      } else if (!hasMin3 && min3Opt) {
+        min3Opt.remove();
+        if (state.expFilter === 'MIN_3') {
+          state.expFilter = 'ALL';
+          expSelect.value = 'ALL';
+        }
+      }
     }
 
     window.setDecision = function(id, targetStatus) {
@@ -4453,7 +7207,7 @@
     }
 
     function setTrailingCount(selector, countText) {
-      const el = document.querySelector(selector);
+      const el = typeof selector === 'string' ? document.querySelector(selector) : selector;
       if (!el) return;
       const txt = el.textContent || '';
       el.textContent = /\(\+?\d+\)\s*$/.test(txt)
@@ -4461,54 +7215,210 @@
         : `${txt.trim()} (${countText})`;
     }
 
-    function updateFilterControlCounts() {
-      const list = Array.isArray(OFFERS) ? OFFERS : [];
-      const pool = list.filter(o => matchesBecaMode(o, state.becaMode));
-      const becasTotal = list.filter(o => Boolean(o.es_beca)).length;
-      const noBecaTotal = list.filter(o => !o.es_beca).length;
-
-      const counts = {
-        total: pool.length,
-        remoto: pool.filter(o => matchesLocation(o, '100% Remoto')).length,
-        valladolid: pool.filter(o => matchesLocation(o, 'Valladolid')).length,
-        leon: pool.filter(o => matchesLocation(o, 'León')).length,
-        madrid: pool.filter(o => matchesLocation(o, 'Híbrido / Madrid')).length,
-        exp0: pool.filter(o => matchesExpFilter(o, 'EXP_0')).length,
-        max1: pool.filter(o => matchesExpFilter(o, 'MAX_1')).length,
-        max2: pool.filter(o => matchesExpFilter(o, 'MAX_2')).length,
-        nuevas: pool.filter(o => Boolean(o.es_nueva)).length,
-        kits: pool.filter(o => o.estado === 'preparada_para_postular').length,
-        becas: becasTotal,
-        noBecas: noBecaTotal
-      };
-
-      setTrailingCount('#becario-filter-row [data-beca="INCLUDE"]', list.length);
-      setTrailingCount('#becario-filter-row [data-beca="EXCLUDE"]', counts.noBecas);
-      setTrailingCount('#becario-filter-row [data-beca="ONLY"]', counts.becas);
-
-      setTrailingCount('#primary-filters [data-loc="ALL"]', counts.total);
-      setTrailingCount('#primary-filters [data-loc="100% Remoto"]', counts.remoto);
-      setTrailingCount('#primary-filters [data-loc="Valladolid"]', counts.valladolid);
-      setTrailingCount('#primary-filters [data-loc="León"]', counts.leon);
-      setTrailingCount('#primary-filters [data-loc="Híbrido / Madrid"]', counts.madrid);
-
-      setTrailingCount('#exp-beca-filters [data-exp="ALL"]', counts.total);
-      setTrailingCount('#exp-beca-filters [data-exp="EXP_0"]', counts.exp0);
-      setTrailingCount('#exp-beca-filters [data-exp="MAX_1"]', counts.max1);
-      setTrailingCount('#exp-beca-filters [data-exp="MAX_2"]', counts.max2);
-
-      setTrailingCount('#new-offers-chip', counts.nuevas);
-      setTrailingCount('#kit-only-chip', counts.kits);
-
-      if (toggleStackBtn) {
-        toggleStackBtn.textContent = state.skill
-          ? `[stack: ${state.skill}]`
-          : (stackDrawerEl && !stackDrawerEl.hidden ? '[− ocultar stack]' : '[+ stack]');
+    function countMatching(overrides) {
+      let n = 0;
+      for (let i = 0; i < OFFERS.length; i += 1) {
+        if (matchesFilters(OFFERS[i], overrides)) n += 1;
       }
+      return n;
+    }
+
+    function updateFilterControlCounts() {
+      syncMin3ExpOption();
+
+      if (locSelect) {
+        locSelect.querySelectorAll('option').forEach(opt => {
+          const val = opt.value;
+          const label = LOC_LABELS[val] || val;
+          opt.textContent = `${label} (${countMatching({ modality: val })})`;
+        });
+        locSelect.classList.toggle('is-filtered', state.modality !== 'ALL');
+      }
+
+      if (expSelect) {
+        expSelect.querySelectorAll('option').forEach(opt => {
+          const val = opt.value;
+          const label = EXP_LABELS[val] || val;
+          opt.textContent = `${label} (${countMatching({ expFilter: val })})`;
+        });
+        expSelect.classList.toggle('is-filtered', state.expFilter !== 'ALL');
+      }
+
+      if (decisionSelect) {
+        decisionSelect.querySelectorAll('option').forEach(opt => {
+          const val = opt.value;
+          const label = DEC_LABELS[val] || val;
+          opt.textContent = `${label} (${countMatching({ decisionFilter: val })})`;
+        });
+        decisionSelect.classList.toggle('is-filtered', state.decisionFilter !== 'ACTIVE');
+      }
+
+      if (becaSelect) {
+        becaSelect.querySelectorAll('option').forEach(opt => {
+          const val = opt.value;
+          const label = BECA_LABELS[val] || val;
+          opt.textContent = `${label} (${countMatching({ becaMode: val })})`;
+        });
+        becaSelect.classList.toggle('is-filtered', state.becaMode !== 'INCLUDE');
+      }
+
+      if (sortSelect) {
+        sortSelect.classList.toggle('is-filtered', state.sort !== 'exp_asc');
+      }
+
+      setTrailingCount(newOffersChip, countMatching({ onlyNew: true }));
+      setTrailingCount(kitOnlyChip, countMatching({ onlyKit: true }));
+
+      document.querySelectorAll('#stack-drawer .skill-chip').forEach(btn => {
+        const sk = btn.getAttribute('data-skill');
+        const base = SKILL_BASE_LABELS.get(sk) || sk;
+        const c = countMatching({ skill: sk });
+        btn.textContent = `${base} (${c})`;
+        btn.classList.toggle('is-zero', c === 0);
+      });
+
+      const secondaryActiveCount =
+        (state.becaMode !== 'INCLUDE' ? 1 : 0) +
+        (state.onlyKit ? 1 : 0) +
+        (state.skill ? 1 : 0);
+
+      if (toggleMoreBtn && moreDrawerEl) {
+        const isOpen = !moreDrawerEl.hidden;
+        const arrow = isOpen ? '▴' : '▾';
+        toggleMoreBtn.textContent = secondaryActiveCount > 0
+          ? `Más filtros (${secondaryActiveCount}) ${arrow}`
+          : `Más filtros ${arrow}`;
+        toggleMoreBtn.classList.toggle('has-active', secondaryActiveCount > 0);
+        toggleMoreBtn.setAttribute('aria-expanded', String(isOpen));
+      }
+
+      if (searchClearBtn) {
+        searchClearBtn.hidden = state.query.trim() === '';
+      }
+    }
+
+    function renderActiveFilterPills() {
+      if (!activePillsEl) return;
+      const pills = [];
+
+      if (state.query.trim() !== '') {
+        pills.push({
+          label: `Buscar: "${state.query.trim()}"`,
+          cls: '',
+          clear: () => {
+            state.query = '';
+            searchInput.value = '';
+          }
+        });
+      }
+      if (state.modality !== 'ALL') {
+        pills.push({
+          label: `Zona: ${LOC_LABELS[state.modality] || state.modality}`,
+          cls: '',
+          clear: () => {
+            state.modality = 'ALL';
+            if (locSelect) locSelect.value = 'ALL';
+          }
+        });
+      }
+      if (state.expFilter !== 'ALL') {
+        pills.push({
+          label: `Exp: ${EXP_LABELS[state.expFilter] || state.expFilter}`,
+          cls: '',
+          clear: () => {
+            state.expFilter = 'ALL';
+            if (expSelect) expSelect.value = 'ALL';
+          }
+        });
+      }
+      if (state.decisionFilter !== 'ACTIVE') {
+        pills.push({
+          label: `Estado: ${DEC_LABELS[state.decisionFilter] || state.decisionFilter}`,
+          cls: '',
+          clear: () => {
+            state.decisionFilter = 'ACTIVE';
+            if (decisionSelect) decisionSelect.value = 'ACTIVE';
+          }
+        });
+      }
+      if (state.onlyNew) {
+        pills.push({
+          label: '🔥 Solo nuevas',
+          cls: 'pill-amber',
+          clear: () => {
+            state.onlyNew = false;
+            syncToggleChip(newOffersChip, false);
+          }
+        });
+      }
+      if (state.becaMode !== 'INCLUDE') {
+        pills.push({
+          label: `Tipo: ${BECA_LABELS[state.becaMode] || state.becaMode}`,
+          cls: 'pill-purple',
+          clear: () => {
+            state.becaMode = 'INCLUDE';
+            if (becaSelect) becaSelect.value = 'INCLUDE';
+          }
+        });
+      }
+      if (state.onlyKit) {
+        pills.push({
+          label: '★ Solo Kit ATS',
+          cls: '',
+          clear: () => {
+            state.onlyKit = false;
+            syncToggleChip(kitOnlyChip, false);
+          }
+        });
+      }
+      if (state.skill) {
+        pills.push({
+          label: `Stack: ${SKILL_BASE_LABELS.get(state.skill) || state.skill}`,
+          cls: '',
+          clear: () => {
+            state.skill = '';
+            syncChipGroup('#stack-drawer .skill-chip', 'data-skill', '');
+          }
+        });
+      }
+
+      activePillsEl.replaceChildren();
+      pills.forEach(p => {
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = p.cls ? `active-pill ${p.cls}` : 'active-pill';
+        btn.setAttribute('aria-label', `Quitar filtro ${p.label}`);
+        btn.append(document.createTextNode(`${p.label} ×`));
+        btn.addEventListener('click', () => {
+          p.clear();
+          filterAndRender();
+        });
+        activePillsEl.appendChild(btn);
+      });
+
+      activePillsEl.hidden = pills.length === 0;
+      if (resetBtn) {
+        resetBtn.hidden = pills.length === 0 && state.sort === 'exp_asc';
+      }
+    }
+
+    function resetAllFilters() {
+      state = createDefaultState(state.activeTab);
+      searchInput.value = '';
+      if (locSelect) locSelect.value = 'ALL';
+      if (expSelect) expSelect.value = 'ALL';
+      if (decisionSelect) decisionSelect.value = 'ACTIVE';
+      if (becaSelect) becaSelect.value = 'INCLUDE';
+      if (sortSelect) sortSelect.value = 'exp_asc';
+      syncToggleChip(newOffersChip, false);
+      syncToggleChip(kitOnlyChip, false);
+      syncChipGroup('#stack-drawer .skill-chip', 'data-skill', '');
+      filterAndRender();
     }
 
     function applyTabPanelState() {
       const tabConfigs = [
+        { id: 'all', tab: tabAllEl, panel: panelAllEl, count: lastTabCounts.all },
         { id: 'datos', tab: tabDatosEl, panel: panelDatosEl, count: lastTabCounts.datos },
         { id: 'developer', tab: tabDevEl, panel: panelDevEl, count: lastTabCounts.developer }
       ];
@@ -4534,15 +7444,15 @@
       });
       const visibleEl = document.getElementById('visible-count');
       if (visibleEl) {
-        visibleEl.textContent = state.activeTab === 'datos' ? lastTabCounts.datos : lastTabCounts.developer;
+        visibleEl.textContent = lastTabCounts[state.activeTab] ?? 0;
       }
     }
 
     function selectTab(nextTabId, opts = {}) {
-      const targetId = nextTabId === 'developer' ? 'developer' : 'datos';
+      const targetId = (nextTabId === 'datos' || nextTabId === 'developer') ? nextTabId : 'all';
       state.activeTab = targetId;
-      applyTabPanelState();
-      const targetTab = targetId === 'developer' ? tabDevEl : tabDatosEl;
+      filterAndRender();
+      const targetTab = targetId === 'datos' ? tabDatosEl : (targetId === 'developer' ? tabDevEl : tabAllEl);
       if (targetTab) {
         if (typeof targetTab.scrollIntoView === 'function') {
           try {
@@ -4559,61 +7469,57 @@
 
     function filterAndRender() {
       updateFilterControlCounts();
+      renderActiveFilterPills();
 
-      const pool = OFFERS.filter(o => matchesBecaMode(o, state.becaMode));
-      const filtered = pool.filter(o => {
-        if (state.onlyNew && !o.es_nueva) return false;
-        if (state.onlyKit && o.estado !== 'preparada_para_postular') return false;
+      const allFiltered = OFFERS.filter(o => matchesFilters(o, { activeTab: 'all' }));
+      sortOffers(allFiltered);
 
-        const dec = getDecision(o.id);
-        if (state.decisionFilter === 'ACTIVE' && dec === 'descartado') return false;
-        if (state.decisionFilter === 'solicitado' && dec !== 'solicitado') return false;
-        if (state.decisionFilter === 'pendiente' && dec !== 'pendiente') return false;
-        if (state.decisionFilter === 'descartado' && dec !== 'descartado') return false;
+      const datosOffers = allFiltered.filter(o => getOfferSection(o) === 'datos');
+      const devOffers = allFiltered.filter(o => getOfferSection(o) === 'developer');
+      lastTabCounts = { all: allFiltered.length, datos: datosOffers.length, developer: devOffers.length };
 
-        if (!matchesExpFilter(o, state.expFilter)) return false;
-        if (!matchesLocation(o, state.modality)) return false;
-        if (!matchesSkill(o, state.skill)) return false;
-
-        if (state.query.trim() !== '') {
-          const q = state.query.toLowerCase().trim();
-          const fullText = [
-            o.empresa, o.rol, o.categoria, o.modalidad, o.ubicacion, o.mod_tag,
-            o.salario, (o.stack || []).join(' '), o.notas, o.exp_rango, o.exp_detalle, o.fecha, o.url
-          ].join(' ').toLowerCase();
-          if (!fullText.includes(q)) return false;
-        }
-
-        return true;
-      });
-
-      sortOffers(filtered);
-
-      const datosOffers = filtered.filter(o => getOfferSection(o) === 'datos');
-      const devOffers = filtered.filter(o => getOfferSection(o) === 'developer');
-      lastTabCounts = { datos: datosOffers.length, developer: devOffers.length };
-
+      setTrailingCount('#tab-all', allFiltered.length);
       setTrailingCount('#tab-datos', datosOffers.length);
       setTrailingCount('#tab-developer', devOffers.length);
 
       const summary = getDecisionSummary();
-      document.getElementById('total-count').textContent = pool.length;
-      if (filteredTotalCountEl) filteredTotalCountEl.textContent = filtered.length;
-      document.getElementById('datos-count').textContent = datosOffers.length;
-      document.getElementById('dev-count').textContent = devOffers.length;
-      const becasCountEl = document.getElementById('becas-count');
-      if (becasCountEl) becasCountEl.textContent = filtered.filter(x => Boolean(x.es_beca)).length;
-      document.getElementById('exp01-count').textContent = filtered.filter(x => matchesExpFilter(x, 'MAX_1')).length;
+      const totalCountEl = document.getElementById('total-count');
+      if (totalCountEl) totalCountEl.textContent = OFFERS.length;
+      const catalogCountEl = document.getElementById('catalog-count');
+      if (catalogCountEl) catalogCountEl.textContent = OFFERS.length;
       document.getElementById('applied-count').textContent = summary.applied;
       document.getElementById('discarded-count').textContent = summary.discarded;
       document.getElementById('pending-count').textContent = summary.pending;
 
+      const allSecEl = document.getElementById('all-section-count');
+      if (allSecEl) allSecEl.textContent = allFiltered.length;
       document.getElementById('datos-section-count').textContent = datosOffers.length;
       document.getElementById('dev-section-count').textContent = devOffers.length;
 
+      const hasActiveFilters = resetBtn && !resetBtn.hidden;
+
+      if (allGridEl) {
+        if (allFiltered.length === 0) {
+          allGridEl.replaceChildren(
+            createEmptyState(
+              'No hay ofertas que coincidan con los filtros actuales.',
+              hasActiveFilters ? { label: '[limpiar filtros]', onClick: resetAllFilters } : null
+            )
+          );
+        } else {
+          allGridEl.replaceChildren(...allFiltered.map(o => renderOfferCard(o)));
+        }
+      }
+
       if (datosGridEl) {
         if (datosOffers.length === 0) {
-          datosGridEl.replaceChildren(createEmptyState('No hay ofertas de Datos que coincidan con los filtros actuales.'));
+          const action = devOffers.length > 0
+            ? { label: `Ver ${devOffers.length} coincidencia(s) en Developer`, onClick: () => selectTab('developer') }
+            : (hasActiveFilters ? { label: '[limpiar filtros]', onClick: resetAllFilters } : null);
+          const msg = devOffers.length > 0
+            ? `No hay ofertas de Datos con estos filtros, pero hay ${devOffers.length} en Developer & Backend.`
+            : 'No hay ofertas de Datos que coincidan con los filtros actuales.';
+          datosGridEl.replaceChildren(createEmptyState(msg, action));
         } else {
           datosGridEl.replaceChildren(...datosOffers.map(o => renderOfferCard(o)));
         }
@@ -4621,7 +7527,13 @@
 
       if (devGridEl) {
         if (devOffers.length === 0) {
-          devGridEl.replaceChildren(createEmptyState('No hay ofertas de Developer que coincidan con los filtros actuales.'));
+          const action = datosOffers.length > 0
+            ? { label: `Ver ${datosOffers.length} coincidencia(s) en Datos`, onClick: () => selectTab('datos') }
+            : (hasActiveFilters ? { label: '[limpiar filtros]', onClick: resetAllFilters } : null);
+          const msg = datosOffers.length > 0
+            ? `No hay ofertas de Developer con estos filtros, pero hay ${datosOffers.length} en Datos, BI & IA.`
+            : 'No hay ofertas de Developer que coincidan con los filtros actuales.';
+          devGridEl.replaceChildren(createEmptyState(msg, action));
         } else {
           devGridEl.replaceChildren(...devOffers.map(o => renderOfferCard(o)));
         }
@@ -4643,10 +7555,11 @@
       }
     }
 
+    if (allGridEl) allGridEl.addEventListener('click', handleCardGridClick);
     if (datosGridEl) datosGridEl.addEventListener('click', handleCardGridClick);
     if (devGridEl) devGridEl.addEventListener('click', handleCardGridClick);
 
-    const tabsOrder = [tabDatosEl, tabDevEl].filter(Boolean);
+    const tabsOrder = [tabAllEl, tabDatosEl, tabDevEl].filter(Boolean);
     tabsOrder.forEach(tabEl => {
       tabEl.addEventListener('click', () => {
         selectTab(tabEl.getAttribute('data-tab'));
@@ -4675,6 +7588,9 @@
       });
     }
 
+    if (panelAllEl) {
+      panelAllEl.addEventListener('beforematch', () => selectTab('all'));
+    }
     if (panelDatosEl) {
       panelDatosEl.addEventListener('beforematch', () => selectTab('datos'));
     }
@@ -4705,43 +7621,53 @@
       filterAndRender();
     });
 
-    decisionSelect.addEventListener('change', (e) => {
-      state.decisionFilter = e.target.value;
-      filterAndRender();
-    });
-
-    sortSelect.addEventListener('change', (e) => {
-      state.sort = e.target.value;
-      filterAndRender();
-    });
-
-    document.querySelectorAll('#primary-filters .loc-chip').forEach(btn => {
-      btn.addEventListener('click', () => {
-        state.modality = btn.getAttribute('data-loc');
-        syncChipGroup('#primary-filters .loc-chip', 'data-loc', state.modality);
+    if (searchClearBtn) {
+      searchClearBtn.addEventListener('click', () => {
+        state.query = '';
+        searchInput.value = '';
+        searchInput.focus();
         filterAndRender();
       });
-    });
+    }
 
-    document.querySelectorAll('#exp-beca-filters .exp-chip').forEach(btn => {
-      btn.addEventListener('click', () => {
-        state.expFilter = btn.getAttribute('data-exp');
-        syncChipGroup('#exp-beca-filters .exp-chip', 'data-exp', state.expFilter);
+    if (locSelect) {
+      locSelect.addEventListener('change', (e) => {
+        state.modality = e.target.value;
         filterAndRender();
       });
-    });
+    }
 
-    document.querySelectorAll('#becario-filter-row .beca-chip').forEach(btn => {
-      btn.addEventListener('click', () => {
-        state.becaMode = btn.getAttribute('data-beca');
+    if (expSelect) {
+      expSelect.addEventListener('change', (e) => {
+        state.expFilter = e.target.value;
+        filterAndRender();
+      });
+    }
+
+    if (decisionSelect) {
+      decisionSelect.addEventListener('change', (e) => {
+        state.decisionFilter = e.target.value;
+        filterAndRender();
+      });
+    }
+
+    if (becaSelect) {
+      becaSelect.addEventListener('change', (e) => {
+        state.becaMode = e.target.value;
         if (state.becaMode === 'ONLY' && state.expFilter === 'MIN_3') {
           state.expFilter = 'ALL';
-          syncChipGroup('#exp-beca-filters .exp-chip', 'data-exp', 'ALL');
+          if (expSelect) expSelect.value = 'ALL';
         }
-        syncChipGroup('#becario-filter-row .beca-chip', 'data-beca', state.becaMode);
         filterAndRender();
       });
-    });
+    }
+
+    if (sortSelect) {
+      sortSelect.addEventListener('change', (e) => {
+        state.sort = e.target.value;
+        filterAndRender();
+      });
+    }
 
     if (newOffersChip) {
       newOffersChip.addEventListener('click', () => {
@@ -4759,10 +7685,9 @@
       });
     }
 
-    if (toggleStackBtn && stackDrawerEl) {
-      toggleStackBtn.addEventListener('click', () => {
-        stackDrawerEl.hidden = !stackDrawerEl.hidden;
-        toggleStackBtn.setAttribute('aria-expanded', String(!stackDrawerEl.hidden));
+    if (toggleMoreBtn && moreDrawerEl) {
+      toggleMoreBtn.addEventListener('click', () => {
+        moreDrawerEl.hidden = !moreDrawerEl.hidden;
         updateFilterControlCounts();
       });
     }
@@ -4776,30 +7701,9 @@
       });
     });
 
-    resetBtn.addEventListener('click', () => {
-      state = {
-        query: '',
-        activeTab: state.activeTab,
-        modality: 'ALL',
-        expFilter: 'ALL',
-        becaMode: 'INCLUDE',
-        decisionFilter: 'ALL',
-        onlyNew: false,
-        onlyKit: false,
-        skill: '',
-        sort: 'exp_asc'
-      };
-      searchInput.value = '';
-      decisionSelect.value = 'ALL';
-      sortSelect.value = 'exp_asc';
-      syncChipGroup('#primary-filters .loc-chip', 'data-loc', 'ALL');
-      syncChipGroup('#exp-beca-filters .exp-chip', 'data-exp', 'ALL');
-      syncChipGroup('#becario-filter-row .beca-chip', 'data-beca', 'INCLUDE');
-      syncToggleChip(newOffersChip, false);
-      syncToggleChip(kitOnlyChip, false);
-      syncChipGroup('#stack-drawer .skill-chip', 'data-skill', '');
-      filterAndRender();
-    });
+    if (resetBtn) {
+      resetBtn.addEventListener('click', resetAllFilters);
+    }
 
     updateAutoSaveBanner('✓ Guardado automático activo', false);
     filterAndRender();
